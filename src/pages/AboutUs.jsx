@@ -14,7 +14,7 @@ import campus from "../assets/campus.svg";
 
 const AboutUs = () => {
   return (
-    <div className="flex flex-col justify-center items-center font-figtree relative">
+    <div className="flex flex-col justify-center items-center font-figtree relative mt-[68px]">
       <div className="bg-[#3cffff] absolute top-[54rem] left-[-15rem] h-[35.25rem]   w-[20rem] rounded-full blur-[10rem]"></div>
       <div className="bg-[#FF7A00] absolute top-[30rem] right-[-20rem]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[10rem]"></div>
 
@@ -163,7 +163,7 @@ const AboutUs = () => {
             Passionate Teachers That Make a Difference
           </h1>
           <hr className="h-[2px] w-[70%] border-[#F15A29] border-[2px] rounded-3xl" />
-          <p className="w-[350px] lg:w-[480px]">
+          <p className="w-[300px] lg:w-[480px]">
             Beginners with little or no prior programming experience.
             Individuals interested in data science or web development.
             Professionals seeking to upskill or transition to a technical role.

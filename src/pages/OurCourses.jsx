@@ -15,7 +15,7 @@ const OurCourses = () => {
 
   return (
     <>
-      <div className="bg-cover bg-center bg-no-repeat header-course w-full flex flex-col justify-center items-center">
+      <div className="bg-cover bg-center bg-no-repeat header-course w-full flex flex-col justify-center items-center mt-[68px] ">
         <h1 className="font-figtree text-[16px] mt-8 z-10 md:text-[48px] text-white font-semibold">
           Get 10% OFF all our Premium Courses{" "}
         </h1>
@@ -31,7 +31,7 @@ const OurCourses = () => {
           Our Self Paced Courses
         </h1>
 
-        <div className="flex lg:flex-row  flex-col gap-8 my-16 font-figtree">
+        <div className="flex lg:flex-row  flex-col gap-8 justify-center items-center my-16 font-figtree">
           <animated.div style={cardAnimation} className="wrapper gap-8">
             <animated.div style={cardAnimation} className="card">
               <img src={Course1} alt="Course 1" />
@@ -65,7 +65,7 @@ const OurCourses = () => {
             </animated.div>
           </animated.div>
         </div>
-        <div className="flex lg:flex-row  flex-col gap-8 my-16 font-figtree">
+        <div className="flex lg:flex-row justify-center items-center flex-col gap-8 my-16 font-figtree">
           <animated.div style={cardAnimation} className="wrapper gap-8">
             <animated.div style={cardAnimation} className="card">
               <img src={Course1} alt="Course 1" />
@@ -99,7 +99,7 @@ const OurCourses = () => {
             </animated.div>
           </animated.div>
         </div>
-        <div className="flex lg:flex-row  flex-col gap-8 my-16 font-figtree">
+        <div className="flex lg:flex-row justify-center items-center flex-col gap-8 my-16 font-figtree">
           <animated.div style={cardAnimation} className="wrapper gap-8">
             <animated.div style={cardAnimation} className="card">
               <img src={Course1} alt="Course 1" />

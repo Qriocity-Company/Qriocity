@@ -8,7 +8,7 @@ import { Footer } from "../components/Footer";
 const Home = () => {
   return (
     <>
-      <div className="bg-[#000] z-50 justify-center items-center flex flex-col">
+      <div className="bg-[#000] justify-center items-center flex flex-col">
         <Hero />
         <Courses />
         <Project />

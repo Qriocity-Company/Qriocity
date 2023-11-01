@@ -13,7 +13,7 @@ import hand from '../assets/Image COntact.png'
 
 const Contact = () => {
   return (
-    <div className='contact-page'>
+    <div className='contact-page mt-[68px] '>
       <div class="blob blob-orange"></div>
       <div class="blob blob-blue"></div>
 

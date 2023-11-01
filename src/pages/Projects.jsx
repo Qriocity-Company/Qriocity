@@ -4,7 +4,7 @@ import demo from "../assets/demo.png";
 const Projects = () => {
   return (
     <>
-      <div className="bg-cover bg-center bg-no-repeat header-course w-full flex flex-col justify-center items-center">
+      <div className="bg-cover bg-center bg-no-repeat header-course w-full flex flex-col justify-center items-center mt-[68px] ">
         <h1 className="font-figtree text-[16px] mt-8 z-10 md:text-[48px] text-white font-semibold">
           Get 20% OFF all our Premium Projects{" "}
         </h1>

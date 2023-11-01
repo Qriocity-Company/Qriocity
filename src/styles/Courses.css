@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   width: 90%;
-  justify-content: space-around;
+  justify-content: center; 
+  align-items: center;
 }
 @media (min-width: 1024px) {
   .wrapper {
@@ -12,7 +13,7 @@
 
 .card {
   width: 258px;
-  height: 300px;
+  height: 200px;
   border-radius: 15px;
   padding: 1.5rem;
   background: white;
@@ -24,8 +25,8 @@
 }
 @media (min-width: 768px) {
   .card {
-    width: 368px;
-    height: 386px;
+    width: 380px;
+    height: 270px;
   }
 }
 .card:hover {

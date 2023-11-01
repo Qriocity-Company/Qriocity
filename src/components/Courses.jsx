@@ -63,18 +63,18 @@ export const Courses = () => {
       </div>
 
       <div className="flex lg:flex-row flex-col gap-8 mt-8 text-white">
-        <div className="md:w-[530px] w-[350px] h-[120px] z-50 bg-[#414141] rounded-xl items-start pl-10 flex flex-col justify-center">
+        <div className="md:w-[530px] w-[350px] h-[120px] z-20 bg-[#414141] rounded-xl items-start pl-10 flex flex-col justify-center">
           <div className="flex gap-4 items-center ">
-            <h className="text-[40px] font-figtree font-bold">78%</h>
+            <h1 className="text-[40px] font-figtree font-bold">78%</h1>
             <span className="text-[16px] font-figtree ">New Users</span>
           </div>
           <div className="w-[90%]">
             <Progressbar totalno={78} />
           </div>
         </div>
-        <div className="md:w-[530px] w-[350px] h-[120px] z-50 bg-[#414141] rounded-xl items-start pl-10 flex flex-col justify-center">
+        <div className="md:w-[530px] w-[350px] h-[120px] z-20 bg-[#414141] rounded-xl items-start pl-10 flex flex-col justify-center">
           <div className="flex gap-4 items-center ">
-            <h className="text-[40px] font-figtree font-bold">95%</h>
+            <h1 className="text-[40px] font-figtree font-bold">95%</h1>
             <span className="text-[16px] font-figtree ">Placement Rate</span>
           </div>
           <div className="w-[90%]">
@@ -89,7 +89,7 @@ export const Courses = () => {
         Our Self Paced Courses
       </h1>
 
-      <div className="flex lg:flex-row  flex-col gap-8 my-16 font-figtree">
+      <div className="flex lg:flex-row justify-center  flex-col gap-8 my-16 font-figtree">
         <div className="wrapper gap-8 ">
           <div className="card">
             <img src={Course1} />
