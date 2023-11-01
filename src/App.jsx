@@ -11,7 +11,7 @@ import AboutUs from "./pages/AboutUs";
 function App() {
   return (
     <Router>
-      <div className="bg-[#000] z-50 justify-center items-center flex flex-col">
+      <div className="bg-[#000] z-50 justify-center items-center flex flex-col overflow-hidden">
         <Navbar />
         <Routes>
           <Route index path="/" element={<Home />} />
