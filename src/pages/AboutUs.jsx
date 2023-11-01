@@ -26,7 +26,7 @@ const AboutUs = () => {
             {" "}
             We help to Get it done easy
           </h1>
-          <p className="text-white text-[16px]  w-[388px]">
+          <p className="text-white text-[16px] w-[300px] md:w-[388px]">
             Qriocity is proud to offer a wide range of comprehensive courses.
             Our curriculum is tailored to impart practical knowledge and
             expertise, simulating real-world scenariosthat prompt students to
