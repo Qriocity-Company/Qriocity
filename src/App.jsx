@@ -7,6 +7,7 @@ import Projects from "./pages/Projects";
 import OurCourses from "./pages/OurCourses";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AboutUs from "./pages/AboutUs";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

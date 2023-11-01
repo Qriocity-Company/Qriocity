@@ -22,7 +22,7 @@ export const Footer = () => {
         <div className='footer-description md:w-[250px] pl-8'>Qriocity as a training institution for IT Graduates assisting them to scale up the IT industry</div>
 
         <div className='footer-item address pl-8 ' >
-          <img src={pin} alt="" style={{ fill: 'red' }} />
+          <img src={pin} alt="" style={{ fill: 'red' }} className='icon'/>
           <div className='md:w-[250px] '   >No:29, Vallalar Nagar, Salamedu, Villupuram, Pincode-605401</div>
           
         </div>
@@ -32,56 +32,56 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className='footer-section'>
+      <div className='footer-section courses'>
         <div className='section-heading'>Our Courses</div>
         <div className='footer-item-container'>
-          <a className='footer-item' href="/">Machine Learning</a>
-          <a className='footer-item' href="/">Python</a>
-          <a className='footer-item' href="/">Data Science</a>
-          <a className='footer-item' href="/">Artificial Intelagence</a>
-          <a className='footer-item' href="/">Full Stack Development</a>
-          <a className='footer-item' href="/">Automation Testing</a>
+          <a className='footer-item' href="/courses">Machine Learning</a>
+          <a className='footer-item' href="/courses">Python</a>
+          <a className='footer-item' href="/courses">Data Science</a>
+          <a className='footer-item' href="/courses">Artificial Intelagence</a>
+          <a className='footer-item' href="/courses">Full Stack Development</a>
+          <a className='footer-item' href="/courses">Automation Testing</a>
         </div>
       </div>
 
-      <div className='footer-section pl-8'>
+      <div className='footer-section pl-8 courses'>
         <div className='section-heading'>Resources</div>
         <div className='footer-item-container '>
           <a className='footer-item' href="/">Blog</a>
-          <a className='footer-item' href="/">About Us</a>
-          <a className='footer-item' href="/">Contact Us</a>
+          <a className='footer-item' href="/about">About Us</a>
+          <a className='footer-item' href="/contact">Contact Us</a>
           <a className='footer-item' href="/">Careers</a>
           <a className='footer-item' href="/">Review</a>
-          <a className='footer-item' href="/">Privacy Poacy</a>
+          <a className='footer-item' href="/">Privacy Policy</a>
         </div>
       </div>
 
-      <div className='footer-section'>
+      <div className='footer-section '>
         <div className='section-heading'>Follow us on</div>
-        <div className='footer-item-container'>
+        <div className='footer-item-container socials'>
           <a className='footer-item' href="/"> 
             <img src={yt}></img>
-            <div>Youtube</div>
+            <div className='social-name'>Youtube</div>
           </a>
           <a className='footer-item' href="/"> 
             <img src={linkedin}></img>
-            <div>Linkedin</div>
+            <div className='social-name'>Linkedin</div>
           </a>
           <a className='footer-item' href="/"> 
             <img src={fb}></img>
-            <div>Facebook</div>
+            <div className='social-name'>Facebook</div>
           </a>
           <a className='footer-item' href="/"> 
             <img src={twitter}></img>
-            <div>Twitter</div>
+            <div className='social-name'>Twitter</div>
           </a>
           <a className='footer-item' href="/"> 
             <img src={insta}></img>
-            <div>Instagram</div>
+            <div className='social-name'>Instagram</div>
           </a>
           <a className='footer-item' href="/"> 
             <img src={quora}></img>
-            <div>Review on Quora</div>
+            <div className='social-name'>Review on Quora</div>
           </a>
           
         </div>

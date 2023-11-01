@@ -97,7 +97,7 @@ body{
 /* Add a media query for mobile screens */
 @media screen and (max-width: 850px) {
     .footer {
-      grid-template-columns: 1fr 1fr; /* Switch to a single column layout on small screens */
+      grid-template-columns: 1fr 1fr; 
       padding: 8%;
     }
   
@@ -116,3 +116,29 @@ body{
     }
 }
 
+@media screen and (max-width: 600px) {
+
+    .footer {
+        grid-template-columns: 1fr; 
+        padding: 8%;
+      }
+    .courses{
+        display: none;
+    }
+    .socials{
+        display: flex;
+        flex-direction: row;
+        gap: 35px;
+    }
+    .social-name{
+        display: none;
+    }
+    .footer-item img{
+        width: 2rem;
+        height: 2rem;
+    }
+    .icon{
+        width: 1.2rem!important;
+        height: 1.2rem!important;
+    }
+}
