@@ -1,0 +1,169 @@
+.contact-page{
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    color:white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(160px); /* Adjust the blur strength as needed */
+}
+  
+.blob-orange {
+    background-color: #FF7A00;
+    top: 4rem;
+    right: -15rem;
+    height: 35.25rem;
+    width: 25rem;
+  }
+  
+.blob-blue {
+    background-color: #3cffff;
+    top: 23rem;
+    left: -15rem;
+    height: 20rem;
+    width: 30.25rem;
+    z-index: 10;
+    border-radius: 2rem; 
+}
+
+.contact-container{
+    position: relative;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 2% 5%;
+    width: 55%;
+    display: flex;
+    gap: 5%;
+
+}
+
+.contact-header > div{
+    font-size: 60px;
+    font-weight: 600;
+
+}
+
+.form-component{
+    display: flex;
+    margin: 5% 0;
+    gap: 1rem;
+}
+.form-component input:focus{
+    outline: none;
+}
+.form-component input{
+    width: 100%;
+    background-color: transparent;
+    border-bottom:1px solid white ;
+
+
+    padding: 2%;
+    padding-bottom: 4%;
+    transition: all 0.2s ease-in-out;
+}
+.form-component input:hover{
+    scale: 1.05;
+}
+.hid{
+    opacity: 0;
+}
+.message{
+    margin-top: 20%;
+}
+.form-button{
+    background-color: #fe5821;
+    border-radius: 20px;
+    border: none;
+    padding: 2% 4%;
+
+    margin-top: 6%;
+}
+.form-button:hover{
+    background-color: #bc461f;
+}
+.contact-socials{
+    width: 40%;
+    padding-top:4% ;
+}
+.socials-container{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content:right;
+}
+.social-img{
+    height: 40px!important;
+    width: 40px!important;
+    transition: all 0.2s ease-in-out;
+}
+.social-img:hover{
+    transform: translateY(-30%);
+}
+
+#hand-img{
+
+    width: 20rem;
+    height: 12rem;
+
+    position: absolute;
+    right: 0;
+    top: 40%;
+    z-index: 0;
+}
+
+@media screen and (max-width: 1300px) {
+
+        .contact-page{
+            padding: 2% 0;
+        }
+        .contact-container{
+            width: 55%;
+        }
+    #hand-img{
+        display: none;
+    }
+    .contact-header > div{
+        font-size: 40px;
+        font-weight: 600;
+
+    }
+    .contact-container{
+        display: block;
+    }
+    .message{
+        margin-top: 4%;
+    }
+    .form-button{
+        margin-top: 1%;
+    }
+}
+@media screen and (max-width: 600px) {
+
+        .contact-page{
+            padding: 6% 0;
+        }
+        .contact-container{
+            width: 80%;
+        }
+      
+.blob-orange {
+   
+    right: -25rem;
+   
+  }
+  
+.blob-blue {
+ 
+    left: -30rem;
+    
+}
+}
+  
