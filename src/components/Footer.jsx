@@ -115,7 +115,7 @@ export const Footer = () => {
       </footer>
 
       <div className="footer-bottom flex flex-col md:flex-row text-[14px]">
-        <p> © 2023 Qriocity Venture Privte Limited. </p>
+        <p> © 2023 Qriocity Ventures Privte Limited. </p>
         <p> All rights reserved.</p>
       </div>
     </>
