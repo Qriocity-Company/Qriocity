@@ -31,7 +31,7 @@ export const Footer = () => {
           </div>
           <div className="footer-item address pl-8 ">
             <img src={phone} alt="" className="icon" />
-            <div>9955878589</div>
+            <div>9944878589</div>
           </div>
         </div>
 
