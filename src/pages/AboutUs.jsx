@@ -21,12 +21,12 @@ const AboutUs = () => {
       <div className="flex gap-12 mt-14 z-10">
         <div className="hidden md:block md:w-[322px] md:h-[309px] lg:w-[644px] lg:h-[718px] bg-cover about-img"></div>
         <div className="flex flex-col">
-          <h2 className="text-[#F15A29] text-[26px] ">WHO WE ARE</h2>
-          <h1 className="text-[48px] text-white w-[366px] font-bold">
+          <h2 className="text-[#F15A29] text-[26px] ml-5 md:ml-0">WHO WE ARE</h2>
+          <h1 className="text-[48px] text-white w-[366px] font-bold ml-5 md:ml-0  leading-11">
             {" "}
             We help to Get it done easy
           </h1>
-          <p className="text-white text-[16px] w-[300px] md:w-[388px]">
+          <p className="text-white text-[16px] w-[300px] md:w-[388px] flex ml-5 md:ml-0 text-start">
             Qriocity is proud to offer a wide range of comprehensive courses.
             Our curriculum is tailored to impart practical knowledge and
             expertise, simulating real-world scenariosthat prompt students to
@@ -35,7 +35,7 @@ const AboutUs = () => {
             experience working on live projects, instilling confidence and
             competence to tackle real-world challenges post-graduation.
           </p>
-          <div className="flex flex-row gap-10 mt-14">
+          <div className="flex flex-row gap-10 mt-14 ml-5 md:ml-0">
             <img src={bulb} alt="bulb svg" />
             <div className="flex flex-col  text-white">
               <h4 className="text-[26px]">Vision</h4>
@@ -46,7 +46,7 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <div className="flex flex-row gap-10 mt-14">
+          <div className="flex flex-row gap-10 mt-14 ml-5 md:ml-0">
             <img src={rocket} alt="bulb svg"  />
             <div className="flex flex-col  text-white">
               <h4 className="text-[26px]">Mission</h4>
@@ -157,7 +157,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-12  lg:gap-14 items-center text-white mt-24 ">
+      <div className="flex flex-col md:flex-row gap-12  lg:gap-14 md:items-center items-start text-white mt-24 ">
         <div className="flex flex-col gap-5">
           <h1 className="text-[24px] w-[350px] md: lg:text-[48px] lg:w-[574px] font-bold ">
             Passionate Teachers That Make a Difference
@@ -171,7 +171,7 @@ const AboutUs = () => {
             curriculum or projects.
           </p>
         </div>
-        <div className="hover-div w-[300px] h-[250px] lg:w-[500px] lg:h-[383px]">
+        <div className="hover-div w-[300px] h-[250px] lg:w-[500px] lg:h-[383px] mt-5">
           <img
             src={about2}
             alt="actor2 img"

@@ -3,7 +3,7 @@ import logo from "../assets/logo.svg";
 
 import fb from "../assets/Group 1000004395.svg";
 import yt from "../assets/Group 1000004401.svg";
-import twitter from "../assets/Group 1000004403.svg";
+import { FaGoogle } from "react-icons/fa";
 import linkedin from "../assets/Group 1000004400.svg";
 import quora from "../assets/Vector.svg";
 import insta from "../assets/Group 1000004397.svg";
@@ -90,7 +90,7 @@ export const Footer = () => {
               <img src={yt}></img>
               <div className="social-name">Youtube</div>
             </a>
-            <a className="footer-item" href="/">
+            <a className="footer-item" href="https://www.linkedin.com/company/qriocity/">
               <img src={linkedin}></img>
               <div className="social-name">Linkedin</div>
             </a>
@@ -98,17 +98,13 @@ export const Footer = () => {
               <img src={fb}></img>
               <div className="social-name">Facebook</div>
             </a>
-            <a className="footer-item" href="/">
-              <img src={twitter}></img>
-              <div className="social-name">Twitter</div>
-            </a>
-            <a className="footer-item" href="/">
+            <a className="footer-item" href="https://www.instagram.com/qriocity_in/">
               <img src={insta}></img>
               <div className="social-name">Instagram</div>
             </a>
             <a className="footer-item" href="/">
-              <img src={quora}></img>
-              <div className="social-name">Review on Quora</div>
+              <FaGoogle  className="w-[32px] h-[32px] md:w-[18px] md:h-[18px]"  />
+              <div className="social-name">Google Reviews</div>
             </a>
           </div>
         </div>

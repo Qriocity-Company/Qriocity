@@ -1,5 +1,6 @@
 import React from "react";
 import demo from "../assets/demo.png";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   return (
@@ -8,9 +9,11 @@ const Projects = () => {
         <h1 className="font-figtree text-[16px] mt-8 z-10 md:text-[48px] text-white font-semibold">
           Get 20% OFF all our Premium Projects{" "}
         </h1>
+        <Link to="/contact">
         <button className=" bg-[#F15A29] mb-8 text-white rounded-2xl mt-1 p-1 w-[100px] md:p-3 text-[12px] md:text-[16px] md:rounded-3xl md:w-[200px]">
           <span>Get Offer </span>
         </button>
+        </Link>
       </div>
       <div className="relative">
         <div className="bg-[#FF7A00] absolute top-[34rem] left-[-15rem] h-[35.25rem]   w-[20rem] rounded-full blur-[10rem]"></div>
