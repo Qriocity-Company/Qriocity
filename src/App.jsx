@@ -8,6 +8,7 @@ import OurCourses from "./pages/OurCourses";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AboutUs from "./pages/AboutUs";
 import { Footer } from "./components/Footer";
+import Webinar from "./pages/Webinar";
 
 function App() {
   return (
@@ -20,9 +21,10 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/courses" element={<OurCourses />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/webinar" element={<Webinar />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );

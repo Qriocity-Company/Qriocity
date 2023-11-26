@@ -38,6 +38,9 @@ export const Navbar = () => {
           <Link to="/contact" className={isRouteActive("/contact")}>
             Contact Us
           </Link>
+          <Link to="/webinar" className={isRouteActive("/contact")}>
+            Webinars
+          </Link>
         </div>
         <div className="md:hidden flex items-center">
           {showMenu ? (
@@ -96,10 +99,22 @@ export const Navbar = () => {
             >
               Contact Us
             </Link>
+
+            <Link
+              to="/webinar"
+              className={isRouteActive("/contact")}
+              onClick={() => {
+                toggleMenu();
+              }}
+            >
+              Webinar
+            </Link>
+
             <HiX
               className="text-[white] text-4xl cursor-pointer"
               onClick={toggleMenu}
             />
+            
           </div>
         )}
       </div>
