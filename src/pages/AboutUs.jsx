@@ -26,7 +26,7 @@ const AboutUs = () => {
             {" "}
             We help to Get it done easy
           </h1>
-          <p className="text-white text-[16px] w-[300px] md:w-[388px] flex ml-5 md:ml-0 text-start">
+          <p className="text-white text-[16px] w-[350px] md:w-[388px] flex ml-5 md:ml-0 text-justify">
             Qriocity is proud to offer a wide range of comprehensive courses.
             Our curriculum is tailored to impart practical knowledge and
             expertise, simulating real-world scenariosthat prompt students to
@@ -163,7 +163,7 @@ const AboutUs = () => {
             Passionate Teachers That Make a Difference
           </h1>
           <hr className="h-[2px] w-[70%] border-[#F15A29] border-[2px] rounded-3xl" />
-          <p className="w-[300px] lg:w-[480px]">
+          <p className="w-[350px]  text-justify lg:w-[480px]">
             Beginners with little or no prior programming experience.
             Individuals interested in data science or web development.
             Professionals seeking to upskill or transition to a technical role.
