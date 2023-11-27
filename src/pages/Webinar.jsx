@@ -145,7 +145,7 @@ const Webinar = () => {
   useEffect(() => {
     setTimeout(() => {
       setShowForm(true);
-    }, 1000);
+    }, 5000);
   }, []);
 
   const handleChange = (e) => {
