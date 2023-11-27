@@ -342,7 +342,7 @@ const Webinar = () => {
                   pos="right"
                 />
               </div>
-              <div className="flex lg:flex-row flex-col  md:gap-0 gap-10 justify-between items-center ">
+              <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
                 <ProblemCard
                   content=" Couldn't manage your"
                   boldContent="academics and projects"
@@ -838,6 +838,24 @@ const Webinar = () => {
           </div>
         </div>
       </div>
+       <footer className="fixed bottom-0 left-0 w-full bg-black text-white p-4">
+    <div className='w-5/6 mx-auto'>
+    <div className="flex justify-between items-center">
+        <div>
+        <p className="text-3xl font-semibold text-[#FF7F6B]">₹99</p>
+          <p className="text-lg font-semibold">Offer Ends in 15 mins</p>
+         
+        </div>
+       
+        <div>
+        <button className="bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white px-4 py-2 rounded transition duration-300 " >
+  Book Your Spot Now
+</button>
+
+        </div>
+      </div>
+    </div>
+    </footer>
     </div>
   );
 };
