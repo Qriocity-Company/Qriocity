@@ -29,7 +29,7 @@ const images = [
 
 const MainCard = () => {
   return (
-    <div className="max-w-2xl text-center  md:py-20 py-10 mx-auto flex flex-col p-3 justify-center items-center border-2 border-white rounded-[42px] ">
+    <div className="md:max-w-2xl max-w-xs text-center  md:py-20 py-10 mx-auto flex flex-col p-3 justify-center items-center border-2 border-white rounded-[42px] ">
       <div className="md:text-6xl text-3xl  ">
         Empowering Future Tech Innovators
       </div>
@@ -37,7 +37,7 @@ const MainCard = () => {
         Your Final Year Project, Our Expert Guidance
       </p>
       <button
-        className="btn mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
+        className="btn mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl "
         style={{}}
       >
         {" "}
