@@ -126,10 +126,13 @@ const ProblemCard = ({ content, boldContent }) => {
 
 const Webinar = () => {
   return (
-    <>
+    <div className="relative ">
       <div className=" text-white w-full h-screen flex justify-center items-center  font-figtree bg-[#041313]">
-        <div class="blob blob-orange"></div>
-        <div class="blob blob-blue"></div>
+        {/* <div class="blob blob-orange"></div>
+        <div class="blob blob-blue"></div> */}
+      
+        <div className="bg-[#3cffff] absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[121rem]"></div>
+        <div className="bg-[#FF7A00] absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
         <MainCard />
       </div>
       <div className="bg-gradient-to-b  from-[#04131300] to-[#041313] w-full ">
@@ -705,7 +708,7 @@ const Webinar = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
