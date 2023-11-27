@@ -3,7 +3,7 @@ import Review from "../assets/review.png";
 import DataScience from "../assets/Data_Science.svg";
 import MachineLearning from "../assets/machineLearning.svg";
 import ArtificialIntelligence from "../assets/Ai.svg";
-import DeepLearning from "../assets/deepLearning.svg";
+import DeepLearning from "../assets/deeplearning.svg";
 import Blockchain from "../assets/blockchain.svg";
 import Cloud from "../assets/cloud.svg";
 import Cyber from "../assets/cyber.svg";
