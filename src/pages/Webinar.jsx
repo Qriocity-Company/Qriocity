@@ -131,8 +131,8 @@ const Webinar = () => {
         {/* <div class="blob blob-orange"></div>
         <div class="blob blob-blue"></div> */}
       
-        <div className="bg-[#3cffff] absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[121rem]"></div>
-        <div className="bg-[#FF7A00] absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
+        <div className="bg-[#3cffff] hidden md:block absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[121rem]"></div>
+        <div className="bg-[#FF7A00]  hidden md:block absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
         <MainCard />
       </div>
       <div className="bg-gradient-to-b  from-[#04131300] to-[#041313] w-full ">
@@ -658,7 +658,7 @@ const Webinar = () => {
                   fill="#F15A29"
                 />
               </svg>
-              <p className="text-white mb-8 w-5/6 p-8 md:text-2xl">
+              <p className="text-white text-start mb-8 w-5/6 p-8 md:text-2xl">
                 Right strategies and systems gave her a clear vision for a
                 successful business
               </p>
@@ -699,7 +699,7 @@ const Webinar = () => {
                   fill="#F15A29"
                 />
               </svg>
-              <p className="text-white mb-8 w-5/6 p-8 md:text-2xl">
+              <p className="text-white text-start mb-8 w-5/6 p-8 md:text-2xl">
                 Right strategies and systems gave her a clear vision for a
                 successful business
               </p>
