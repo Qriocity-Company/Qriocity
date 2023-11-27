@@ -70,7 +70,7 @@ const AchivementCard = ({ number, title }) => {
 
 const ContentCard = ({ content }) => {
   return (
-    <div className=" max-w-3xl rounded-xl border border-[#2ACDD0] p-6 flex gap-2 md:gap-10 items-center  mx-auto">
+    <div className=" md:max-w-3xl max-w-xs  rounded-xl border border-[#2ACDD0] p-6 flex gap-2 md:gap-10 items-center  mx-auto">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="27"
@@ -106,7 +106,7 @@ const ContentCard = ({ content }) => {
 
 const ProblemCard = ({ content, boldContent, pos }) => {
   return (
-    <div className=" min-w-[447px]  aspect-[3/1] flex flex-col md:items-start items-center md:text-start text-center bg-black p-8 rounded-3xl border border-white">
+    <div className=" md:min-w-[447px] min-w-[320px]  flex flex-col md:items-start items-center md:text-start text-center bg-black p-8 rounded-3xl border border-white">
       <div className="bg-[#26CFD3] p-1 rounded-full w-fit px-4 flex gap-2  items-center ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -318,11 +318,11 @@ const Webinar = () => {
 
           {/* What problem we will solve? section  */}
           <div className="md:mt-20 mt-10 md:p-16 p-4 z-0 ">
-            <div className="md:text-6xl text-3xl text-center text-white  ">
+            <div className="lg:text-6xl md:text-4xl text-2xl text-center text-white  ">
               What problem we will solve?
             </div>
             <div className="relative mt-16 md:px-20   space-y-12    ">
-              <div className="flex lg:flex-row flex-col md:gap-0 gap-10  justify-between items-center ">
+              <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
                 <ProblemCard
                   content="Don't know which "
                   boldContent="domain and title to choose?"
@@ -409,11 +409,11 @@ const Webinar = () => {
           </div>
 
           {/* Our Deliverables  section    */}
-          <div className="md:mt-20 mt-10 text-center md:p-16 p-4 ">
+          <div className="md:mt-20 mt-10 text-center md:p-16 p-2 ">
             <div className="md:text-6xl  text-2xl md:p-5 p-2 px-20 w-fit mx-auto   text-center text-white mb-10 ">
               Our Deliverables
             </div>
-            <div className="md:mt-20 mt-10 max-w-3xl text-center mx-auto bg-[#0C2F31] rounded-xl">
+            <div className="md:mt-20 mt-10 md:max-w-3xl max-w-[350px] text-center mx-auto bg-[#0C2F31] rounded-xl">
               <div className=" p-6 flex gap-3 md:gap-10   md:ml-10  items-center  mx-auto">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
