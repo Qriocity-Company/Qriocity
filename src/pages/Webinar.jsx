@@ -838,17 +838,17 @@ const Webinar = () => {
           </div>
         </div>
       </div>
-       <footer className="fixed bottom-0 left-0 w-full bg-black text-white p-4">
-    <div className='w-5/6 mx-auto'>
+       <footer className=" z-50  fixed bottom-0 left-0 w-full bg-black text-white p-4">
+    <div className='md:w-5/6 mx-auto'>
     <div className="flex justify-between items-center">
         <div>
-        <p className="text-3xl font-semibold text-[#FF7F6B]">₹99</p>
-          <p className="text-lg font-semibold">Offer Ends in 15 mins</p>
+        <p className="md:text-3xl text-xl font-semibold text-[#FF7F6B]">₹99</p>
+          <p className="md:text-lg  text-sm font-semibold">Offer Ends in 15 mins</p>
          
         </div>
        
         <div>
-        <button className="bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white px-4 py-2 rounded transition duration-300 " >
+        <button className="bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white px-4  py-2 rounded-xl transition duration-300 " >
   Book Your Spot Now
 </button>
 
