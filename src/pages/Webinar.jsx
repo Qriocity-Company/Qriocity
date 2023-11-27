@@ -164,7 +164,7 @@ const Webinar = () => {
   return (
     <div className=" lg:max-w-[1440px] md:max-w[660px] max-w-[760px]  ">
       {showForm && (
-        <div className="fixed top-0 left-0 z-10   w-full h-full flex justify-center   items-center">
+        <div className="fixed top-10 left-0 z-10   w-full h-full flex justify-center   items-center">
           <div className="p-6 bg-black   z-[999]  border border-white  rounded-xl w-[500px] ">
             <button
               onClick={() => {
