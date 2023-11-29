@@ -850,7 +850,7 @@ const Webinar = () => {
             {/* <div className="  w-[300px] md:h-[710px] lg:w-[974px] md:w-[460px]  m-auto md:p-16" style={{backgroundImage : `url(${Refund})` , backgroundRepeat : "no-repeat"  }}> */}
             <div className="relative  lg:h-[710px] md:h-[550px] h-[360px] md:w-[974px]  mx-auto md:p-16">
               <img src={Refund} className="hidden lg:block absolute top-1/2 left-1/2  " style={{transform :"translate(-50% , -50%)"}} />
-              <div className=" lg:absolute    lg:p-10 text-white text-justify md:leading-9 md:text-xl  flex flex-col  md:gap-10 gap-5 md:mt-28 ">
+              <div className=" lg:absolute    lg:p-10 p-5  text-white text-justify md:leading-9 md:text-xl  flex flex-col  md:gap-10 gap-5 md:mt-28 ">
                <div>   
                Secure your incredible final year project offer today and enjoy
                 a money-back guarantee. Enroll now, explore our project details,
