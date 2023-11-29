@@ -166,63 +166,57 @@ const Webinar = () => {
   return (
     <div className=" lg:max-w-[1440px] md:max-w[660px] max-w-[760px]  ">
       {showForm && (
-        <div className="fixed top-10 left-0 z-10   w-full h-full flex justify-center   items-center">
-          <div className="p-6 bg-black   z-[999]  border border-white  rounded-xl w-[500px] ">
+        <div className="fixed top-0 left-0 z-10   w-full h-full flex justify-center   items-center">
+          <div className="p-3 bg-white text-black   z-[999]  border border-white  rounded-xl w-[500px] ">
             <button
               onClick={() => {
                 setShowForm(false);
               }}
               className="w-full "
             >
-              <MdCancel size={32} className="text-white ml-auto " />
+              <MdCancel size={32} className="text-[#F15A29] ml-auto " />
             </button>
-
+           <div className="text-4xl font-[700] text-center mb-5">Reach to us!</div>
             <form onSubmit={onSubmit}>
-              <div className="form-component">
-                <img src={name} alt="" />
+              <div className="flex flex-col gap-2 p-2">
+                <label className="font-[500]">Your Name</label>
                 <input
                   type="text"
                   placeholder="Your Name"
                   name="name"
+                  className="p-2"
                   value={formData.name}
                   onChange={handleChange}
                 />
               </div>
-              <div className="form-component">
-                <img src={email} alt="" />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  name="senderEmail"
-                  value={formData.senderEmail}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="form-component">
-                <img src={phone} alt="" />
+             
+              <div className="flex flex-col gap-2 p-2">
+              <label className="font-[500]" >Your Mobile No.</label>
                 <input
                   type="text"
                   placeholder="Your phone number"
                   name="phoneNumber"
+                  className="p-2"
                   value={formData.phoneNumber}
                   onChange={handleChange}
                 />
               </div>
 
-              <div className="form-component message">
-                <img src={phone} alt="" className="hid" />
+              <div className="flex flex-col gap-2 p-2">
+               <label className="font-[500]" >Message</label>
                 <input
                   type="text"
                   placeholder="Message "
                   name="message"
+                  className="p-2"
                   value={formData.message}
                   onChange={handleChange}
                 />
               </div>
 
-              <div className="form-component form-btn">
-                <img src={phone} alt="" className="hid" />
-                <button className="form-button" type="submit">
+              <div className=" flex justify-center">
+                {/* <img src={phone} alt="" className="hid" /> */}
+                <button  className="btn  text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-8 py-2 rounded-full  " type="submit">
                   Send Message
                 </button>
               </div>
@@ -884,7 +878,7 @@ const Webinar = () => {
 
       
 
-      <footer className=" z-50  fixed bottom-0 left-0 w-full bg-black text-white p-4">
+      <footer className=" z-50  fixed bottom-0 left-0 w-full bg-black text-white p-2">
         <div className="md:w-5/6 mx-auto">
           <div className="flex justify-between items-center">
             <div>
