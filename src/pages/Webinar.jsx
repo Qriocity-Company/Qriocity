@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Faq from "../components/Faq";
 import "../styles/Contact.css";
 import { MdCancel } from "react-icons/md";
 import Review from "../assets/review.png";
@@ -14,7 +15,8 @@ import App from "../assets/app.svg";
 import Testimonial from "../assets/testimonial.png";
 import Laptop from "../assets/laptop.png";
 import Group from "../assets/group.png";
-
+import MoneyBack from "../assets/money_back.png";
+import Refund from "../assets/refund.png";
 import fb from "../assets/Group 1000004395.svg";
 import insta from "../assets/Group 1000004397.svg";
 import name from "../assets/ri_user-4-fill.svg";
@@ -836,26 +838,75 @@ const Webinar = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-       <footer className=" z-50  fixed bottom-0 left-0 w-full bg-black text-white p-4">
-    <div className='md:w-5/6 mx-auto'>
-    <div className="flex justify-between items-center">
-        <div>
-        <p className="md:text-3xl text-xl font-semibold text-[#FF7F6B]">₹99</p>
-          <p className="md:text-lg  text-sm font-semibold">Offer Ends in 15 mins</p>
-         
-        </div>
-       
-        <div>
-        <button className="bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white px-4  py-2 rounded-xl transition duration-300 " >
-  Book Your Spot Now
-</button>
+
+          {/* Still Not Sure? We Have */}
+          <div className="md:mt-20 mt-10 text-center mb-20 md:p-16 p-4 ">
+            <div className="lg:text-6xl md:text-4l  text-2xl md:p-5 p-2 px-20 w-fit mx-auto   text-center text-white mb-10 ">
+              Still Not Sure? We Have
+            </div>
+            <img src={MoneyBack} className="w-1/2 mx-auto mb-10" />
+
+
+            {/* <div className="  w-[300px] md:h-[710px] lg:w-[974px] md:w-[460px]  m-auto md:p-16" style={{backgroundImage : `url(${Refund})` , backgroundRepeat : "no-repeat"  }}> */}
+            <div className="relative  lg:h-[710px] md:h-[550px] h-[360px] md:w-[974px]  mx-auto md:p-16">
+              <img src={Refund} className="hidden lg:block absolute top-1/2 left-1/2  " style={{transform :"translate(-50% , -50%)"}} />
+              <div className=" lg:absolute    lg:p-10 text-white text-justify md:leading-9 md:text-xl  flex flex-col  md:gap-10 gap-5 md:mt-28 ">
+               <div>   
+               Secure your incredible final year project offer today and enjoy
+                a money-back guarantee. Enroll now, explore our project details,
+                and if you're not satisfied for any reason, just drop us an
+                email, and{" "}
+                <span className="bg-[#F15A29]">
+                  we'll refund your entire investment - no questions asked! 
+                </span>
+               </div>
+               <div>
+               At Qriocity, we are committed to your satisfaction and success.
+                Dive into our comprehensive <span className="bg-[#F15A29]" >project resources, expert guidance,</span>
+                and dedicated support.
+               </div>
+               <div>
+               Your venture into your final year project
+                is <span className="bg-[#F15A29]"  > completely risk-free</span> with our money-back guarantee. Your
+                success, satisfaction, and peace of mind are our top priorities.
+                Join us today and experience the difference!
+               </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+         <Faq/>
 
         </div>
       </div>
-    </div>
-    </footer>
+
+      
+
+      <footer className=" z-50  fixed bottom-0 left-0 w-full bg-black text-white p-4">
+        <div className="md:w-5/6 mx-auto">
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="md:text-5xl text-xl font-semibold  text-white ">
+                ₹99
+                <span className="ml-3 text-2xl line-through"> ₹12000</span>
+              </p>
+              <p className="md:text-lg  text-sm font-semibold">
+              Offer ends in 15 Minutes!!!
+              </p>
+            </div>
+
+            <div>
+              <button className="md:text-2xl bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white md:px-12  py-4 rounded-full transition duration-300 ">
+              Book Free Consultation Call
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
