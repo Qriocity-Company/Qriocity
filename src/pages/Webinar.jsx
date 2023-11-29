@@ -884,7 +884,7 @@ const Webinar = () => {
             <div>
               <p className="md:text-5xl text-xl font-semibold  text-white ">
                 ₹99
-                <span className="ml-3 text-2xl line-through"> ₹12000</span>
+                <span className="ml-3 md:text-2xl text-xs line-through"> ₹12000</span>
               </p>
               <p className="md:text-lg  text-sm font-semibold">
               Offer ends in 15 Minutes!!!
@@ -892,7 +892,7 @@ const Webinar = () => {
             </div>
 
             <div>
-              <button className="md:text-2xl bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white md:px-12  py-4 rounded-full transition duration-300 ">
+              <button className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white md:px-12 px-4 md:py-4 py-2 rounded-full transition duration-300 ">
               Book Free Consultation Call
               </button>
             </div>
