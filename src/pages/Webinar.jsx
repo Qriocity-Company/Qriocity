@@ -404,7 +404,7 @@ const Webinar = () => {
 
           {/* Your Path to Project Success section */}
           <div className="md:mt-20 mt-10   ">
-            <div className="md:text-6xl  text-2xl md:p-5 p-2 px-20 w-fit mx-auto   text-center text-white mb-10 ">
+            <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
               Your Path to Project Success Our Deliverables
             </div>
             <img src={Group} />
@@ -412,7 +412,7 @@ const Webinar = () => {
 
           {/* Our Deliverables  section    */}
           <div className="md:mt-20 mt-10 text-center md:p-16 p-2 ">
-            <div className="md:text-6xl  text-2xl md:p-5 p-2 px-20 w-fit mx-auto   text-center text-white mb-10 ">
+            <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
               Our Deliverables
             </div>
             <div className="md:mt-20 mt-10 md:max-w-3xl max-w-[350px] text-center mx-auto bg-[#0C2F31] rounded-xl">
@@ -632,7 +632,7 @@ const Webinar = () => {
 
           {/* Exclusive Bonuses for Our Students section */}
           <div className="md:mt-20 mt-10 text-center md:p-16 p-4 ">
-            <div className="md:text-6xl  text-2xl md:p-5 p-2 px-20 w-fit mx-auto   text-center text-white mb-10 ">
+            <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
               Exclusive Bonuses for Our Students
             </div>
             <div className="grid gap-10 mt-10 md:mt-20 md:gap-20 md:grid-cols-2  place-items-center">
@@ -841,13 +841,11 @@ const Webinar = () => {
 
           {/* Still Not Sure? We Have */}
           <div className="md:mt-20 mt-10 text-center mb-20 md:p-16 p-4 ">
-            <div className="lg:text-6xl md:text-4l  text-2xl md:p-5 p-2 px-20 w-fit mx-auto   text-center text-white mb-10 ">
+            <div className="lg:text-6xl md:text-4l  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
               Still Not Sure? We Have
             </div>
             <img src={MoneyBack} className="w-1/2 mx-auto mb-10" />
 
-
-            {/* <div className="  w-[300px] md:h-[710px] lg:w-[974px] md:w-[460px]  m-auto md:p-16" style={{backgroundImage : `url(${Refund})` , backgroundRepeat : "no-repeat"  }}> */}
             <div className="relative  lg:h-[710px] md:h-[550px] h-[360px] md:w-[974px]  mx-auto md:p-16">
               <img src={Refund} className="hidden lg:block absolute top-1/2 left-1/2  " style={{transform :"translate(-50% , -50%)"}} />
               <div className=" absolute    lg:p-10 p-8  text-white text-justify md:leading-9 md:text-xl  flex flex-col  md:gap-10 gap-5 md:mt-28 ">
