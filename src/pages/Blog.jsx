@@ -1,0 +1,52 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import blogimage from "../assets/about2.jpeg";
+import {  useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+
+const Blog = () => {
+  const navigate = useNavigate()
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/blog//company/Qriocity")
+      .then((res) => {
+        console.log(res.data);
+        setBlogs(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  return (
+    <div className="w-5/6 mx-auto  mt-[100px]">
+      <div className="bg-[#3cffff] hidden md:block absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
+          <div className="bg-[#FF7A00]  hidden md:block absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
+      <h1 className="text-white md:text-5xl text-2xl md:mb-5  font-bold">Blogs </h1>
+      <div className="grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
+        {blogs.map((b, index) => {
+          return (
+            <Link  key={index}  to={`/blogs/${b}`} state={{ b}} className="max-w-md mx-auto mt-4 p-4 bg-white border rounded-lg shadow-lg">
+              <img src={blogimage} alt={b.title} className="mb-4 w-full rounded-lg" />
+
+              <h2 className="text-2xl font-bold mb-2">{b.title}</h2>
+              <p className="text-gray-600 mb-2">{b.caption}</p>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default Blog;
+
+
+
+  {/* <div key={index}  className='my-10 text-white flex md:flex-row flex-col md:items-center  gap-5'>
+               <img src={blogimage} className='md:w-[200px] rounded-xl' />
+                <div className='flex flex-col gap-3'>
+                  <div className='lg:text-3xl md:text-2xl text-xl  '>  {b.title}</div>
+                  <div className='md:text-xl italic'> {b.caption} </div>
+                </div>
+            </div> */}
