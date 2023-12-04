@@ -10,7 +10,7 @@ const Blog = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/blog//company/Qriocity")
+      .get("http://localhost:5000/blog/company/Qriocity")
       .then((res) => {
         console.log(res.data);
         setBlogs(res.data);
@@ -19,9 +19,8 @@ const Blog = () => {
   }, []);
 
   return (
-    <div className="w-5/6 mx-auto  mt-[100px] mb-10">
-      <div className="bg-[#3cffff] hidden md:block absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
-          <div className="bg-[#FF7A00]  hidden md:block absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
+    <div className="w-5/6 mx-auto max-w-[1440px]  mt-[100px] mb-10">
+    
       <h1 className="text-white md:text-5xl text-2xl md:mb-5  font-bold">Blogs </h1>
       <div className="grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
         {blogs.map((b, index) => {
