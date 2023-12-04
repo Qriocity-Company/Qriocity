@@ -16,12 +16,12 @@ const BlogItem = () => {
     "October", "November", "December"
   ];
   return (
-    <div className="mt-[100px]  w-5/6  mx-auto ">
+    <div className="mt-[100px] mb-10 w-5/6  mx-auto ">
       <Link
         to={-1}
-        className="w-fit text-white  flex items-center gap-2 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-4 py-2 rounded-full mb-5 "
+        className="w-fit text-white  flex items-center gap-2 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-5 md:py-2 py-1 rounded-full mb-5 "
       >
-        back <IoArrowBackCircle size={32} />{" "}
+        back <IoArrowBackCircle className="md:text-4xl text-2xl" />{" "}
       </Link>
       <div className="md:hidden max-w-md mx-auto mt-4 p-4 bg-white border rounded-lg shadow-lg">
         <img
@@ -33,6 +33,14 @@ const BlogItem = () => {
         <h2 className="text-2xl font-bold mb-2">{blog.title}</h2>
         <p className="text-gray-600 mb-2">{blog.caption}</p>
         <p className="text-gray-700 ">{blog.description}</p>
+        <p className="text-gray-700 mt-3 ">
+            {" "}
+            By : <span className="font-medium italic">{blog.writer}</span>{" "}
+          </p>
+          <p className="text-gray-700 ">
+           
+            Date : <span className="italic">{date.getDay() +" " + monthNames[date.getMonth()]  + " " +  date.getFullYear()}</span>
+          </p>
       </div>
       <div className=" p-4 md:flex  hidden gap-10  bg-white border rounded-lg shadow-lg">
         <img src={blogimage} className="mb-4 w-1/2 max-h-[500px] rounded-lg" />

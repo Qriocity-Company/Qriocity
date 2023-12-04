@@ -19,7 +19,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <div className="w-5/6 mx-auto  mt-[100px]">
+    <div className="w-5/6 mx-auto  mt-[100px] mb-10">
       <div className="bg-[#3cffff] hidden md:block absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
           <div className="bg-[#FF7A00]  hidden md:block absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
       <h1 className="text-white md:text-5xl text-2xl md:mb-5  font-bold">Blogs </h1>
@@ -27,9 +27,9 @@ const Blog = () => {
         {blogs.map((b, index) => {
           return (
             <Link  key={index}  to={`/blogs/${b}`} state={{ b}} className="max-w-md mx-auto mt-4 p-4 bg-white border rounded-lg shadow-lg">
-              <img src={blogimage} alt={b.title} className="mb-4 w-full rounded-lg" />
+              <img src={blogimage} alt={b.title} className="mb-4 w-full  rounded-lg" />
 
-              <h2 className="text-2xl font-bold mb-2">{b.title}</h2>
+              <h2 className="md:text-2xl font-bold mb-2">{b.title}</h2>
               <p className="text-gray-600 mb-2">{b.caption}</p>
             </Link>
           );
