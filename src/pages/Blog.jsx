@@ -10,7 +10,7 @@ const Blog = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/blog/company/Qriocity")
+      .get("https://crm-backend-o6sb.onrender.com/blog/company/Qriocity")
       .then((res) => {
         console.log(res.data);
         setBlogs(res.data);
