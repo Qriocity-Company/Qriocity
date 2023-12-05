@@ -112,10 +112,10 @@ export const Navbar = () => {
             >
               Webinar
             </Link>
-            <Link to="/blogs" className={isRouteActive("/blogs")}>
+            <Link to="/blogs" className={isRouteActive("/blogs")}
             onClick={() => {
                 toggleMenu();
-              }}
+              }}>
             Blogs
           </Link>
 
