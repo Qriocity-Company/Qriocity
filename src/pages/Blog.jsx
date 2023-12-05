@@ -26,7 +26,7 @@ const Blog = () => {
         {blogs.map((b, index) => {
           return (
             <Link  key={index}  to={`/blogs/${b}`} state={{ b}} className="max-w-md mx-auto mt-4 p-4 bg-white border rounded-lg shadow-lg">
-              <img src={`${URL}${b.imageURL}`} alt={b.title} className="mb-4 w-full  rounded-lg" />
+              <img src={`${URL}/${b.imageURL}`} alt={b.title} className="mb-4 w-full  rounded-lg" />
 
               <h2 className="md:text-2xl font-bold mb-2">{b.title}</h2>
               <p className="text-gray-600 mb-2">{b.caption}</p>

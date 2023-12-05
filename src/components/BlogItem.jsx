@@ -25,7 +25,7 @@ const BlogItem = () => {
       </Link>
       <div className="md:hidden max-w-md mx-auto mt-4 p-4 bg-white border rounded-lg shadow-lg">
         <img
-          src={`${URL}${b.imageURL}`}
+          src={`${URL}/${b.imageURL}`}
           alt={blog.title}
           className="mb-4 w-full  rounded-lg"
         />
@@ -43,7 +43,7 @@ const BlogItem = () => {
           </p>
       </div>
       <div className=" p-4 md:flex  hidden gap-10  bg-white border rounded-lg shadow-lg">
-        <img src={`${URL}${b.imageURL}`} className="mb-4 w-1/2 max-h-[500px] rounded-lg" />
+        <img src={`${URL}/${b.imageURL}`} className="mb-4 w-1/2 max-h-[500px] rounded-lg" />
 
         <div className="flex flex-col gap-5">
           <h2 className="text-2xl font-bold ">{blog.title}</h2>
