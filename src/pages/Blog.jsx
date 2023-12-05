@@ -3,14 +3,14 @@ import axios from "axios";
 import blogimage from "../assets/about2.jpeg";
 import {  useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-
+const URL = "https://crm-backend-o6sb.onrender.com"
 const Blog = () => {
   const navigate = useNavigate()
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://crm-backend-o6sb.onrender.com/blog/company/Qriocity")
+      .get(`${URL}/blog/company/Qriocity`)
       .then((res) => {
         console.log(res.data);
         setBlogs(res.data);
@@ -26,7 +26,7 @@ const Blog = () => {
         {blogs.map((b, index) => {
           return (
             <Link  key={index}  to={`/blogs/${b}`} state={{ b}} className="max-w-md mx-auto mt-4 p-4 bg-white border rounded-lg shadow-lg">
-              <img src={blogimage} alt={b.title} className="mb-4 w-full  rounded-lg" />
+              <img src={`${URL}${b.imageURL}`} alt={b.title} className="mb-4 w-full  rounded-lg" />
 
               <h2 className="md:text-2xl font-bold mb-2">{b.title}</h2>
               <p className="text-gray-600 mb-2">{b.caption}</p>
