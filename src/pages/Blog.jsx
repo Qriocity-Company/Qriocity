@@ -25,7 +25,7 @@ const Blog = () => {
       <div className="grid grid-flow-row lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
         {blogs.map((b, index) => {
           return (
-            <Link  key={index}  to={`/blogs/${b}`} state={{ b}} className="max-w-md mx-auto mt-4 p-4 bg-white border rounded-lg shadow-lg">
+            <Link  key={index}  to={`/blogs/${index}`} state={{b}} className="max-w-md mx-auto mt-4 p-4 bg-white border rounded-lg shadow-lg">
               <img src={`${URL}/${b.imageURL}`} alt={b.title} className="mb-4 w-full  rounded-lg" />
 
               <h2 className="md:text-2xl font-bold mb-2">{b.title}</h2>

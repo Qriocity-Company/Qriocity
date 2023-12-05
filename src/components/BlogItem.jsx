@@ -7,7 +7,7 @@ const URL = "https://crm-backend-o6sb.onrender.com"
 const BlogItem = () => {
   const location = useLocation();
   const blog = location.state.b;
-  console.log(blog);
+  // console.log(blog);
   const date = new Date(blog.createdAt);
   const monthNames = [
     "January", "February", "March",
@@ -25,7 +25,7 @@ const BlogItem = () => {
       </Link>
       <div className="md:hidden max-w-md mx-auto mt-4 p-4 bg-white border rounded-lg shadow-lg">
         <img
-          src={`${URL}/${b.imageURL}`}
+          src={`${URL}/${blog.imageURL}`}
           alt={blog.title}
           className="mb-4 w-full  rounded-lg"
         />
@@ -42,13 +42,14 @@ const BlogItem = () => {
             Date : <span className="italic">{date.getDay() +" " + monthNames[date.getMonth()]  + " " +  date.getFullYear()}</span>
           </p>
       </div>
-      <div className=" p-4 md:flex  hidden gap-10  bg-white border rounded-lg shadow-lg">
-        <img src={`${URL}/${b.imageURL}`} className="mb-4 w-1/2 max-h-[500px] rounded-lg" />
+      <div className=" p-5  md:block  hidden   gap-10  bg-white border rounded-lg shadow-lg">
+       <h2 className="text-2xl w-full  font-bold ">{blog.title}</h2>
+       <p className="text-gray-600  italic mb-3">{blog.caption}</p>
+        <img src={`${URL}/${blog.imageURL}`} className="mb-4  max-h-[500px] rounded-lg" />
 
         <div className="flex flex-col gap-5">
-          <h2 className="text-2xl font-bold ">{blog.title}</h2>
-          <p className="text-gray-600  italic">{blog.caption}</p>
-          <p className="text-gray-700 ">{blog.description}</p>
+  
+          <p className="text-gray-700 text-lg ">{blog.description}</p>
           <p className="text-gray-700 ">
             {" "}
             By : <span className="font-medium italic">{blog.writer}</span>{" "}
