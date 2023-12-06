@@ -1,8 +1,14 @@
-import React from "react";
+import React , {useState} from "react";
 import demo from "../assets/demo.png";
 import { Link } from "react-router-dom";
+import Modal from "./Modal";
 export const Project = () => {
+  const [showForm, setShowForm] = useState(false);
   return (
+   <>
+     {showForm && (
+      <Modal setShowForm={setShowForm}/>
+   )}
     <div className="my-24 flex flex-col items-center font-figtree">
       <h1 className="font-figtree text-[32px]  z-10 md:text-[60px] text-white font-semibold">
         Our Custom Projects{" "}
@@ -19,8 +25,8 @@ export const Project = () => {
           <h3 className="text-white text-[24px] mb- font-bold">
             Generative AI
           </h3>
-          <button className="button w-[220px] group-hover:bg-black">
-            <span>Explore More </span>
+          <button  onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
+            <span>Buy Now </span>
           </button>
         </div>
 
@@ -34,8 +40,8 @@ export const Project = () => {
           <h3 className="text-white text-[24px] mb- font-bold">
             Generative AI
           </h3>
-          <button className="button w-[220px] group-hover:bg-black">
-            <span>Explore More </span>
+          <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
+            <span>Buy Now </span>
           </button>
         </div>
 
@@ -49,8 +55,8 @@ export const Project = () => {
           <h3 className="text-white text-[24px] mb- font-bold">
             Generative AI
           </h3>
-          <button className="button w-[220px] group-hover:bg-black">
-            <span>Explore More </span>
+          <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
+            <span>Buy Now </span>
           </button>
         </div>
       </div>
@@ -60,5 +66,6 @@ export const Project = () => {
         </button>
       </Link>
     </div>
+   </>
   );
 };

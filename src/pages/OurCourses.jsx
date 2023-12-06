@@ -1,12 +1,16 @@
-import React from "react";
+import React , {useState } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
 import "../styles/Courses.css";
 import Course1 from "../assets/courses1.jpeg";
 import Course2 from "../assets/courses2.jpeg";
 import Course3 from "../assets/courses3.jpeg";
 import { Link } from "react-router-dom";
-
+import { Footer } from "../components/Footer";
+import Modal from "../components/Modal";
 const OurCourses = () => {
+
+  const [showForm, setShowForm] = useState(false);
+
   // Define a common animation config
   const cardAnimation = useSpring({
     from: { opacity: 0, transform: "translateY(50px)" },
@@ -15,7 +19,10 @@ const OurCourses = () => {
   });
 
   return (
-    <>
+    <> 
+     {showForm && (
+         <Modal setShowForm={setShowForm}/>
+      )}
       <div className="bg-cover bg-center bg-no-repeat header-course w-full flex flex-col justify-center items-center mt-[68px] ">
         <h1 className="font-figtree text-[16px] mt-8 z-10 md:text-[48px] text-white font-semibold">
           Get 10% OFF all our Premium Courses{" "}
@@ -33,7 +40,7 @@ const OurCourses = () => {
         <h1 className="font-figtree  text-[32px]  z-10 md:text-[60px] mt-8 bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent font-semibold">
           Our Self Paced Courses
         </h1>
-
+   
         <div className="flex lg:flex-row  flex-col gap-8 justify-center items-center my-16 font-figtree">
           <animated.div style={cardAnimation} className="wrapper gap-8">
             <animated.div style={cardAnimation} className="card">
@@ -43,7 +50,7 @@ const OurCourses = () => {
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
-                <button>Learn More</button>
+                <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
               </div>
             </animated.div>
             <animated.div style={cardAnimation} className="card">
@@ -53,7 +60,7 @@ const OurCourses = () => {
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
-                <button>Learn More</button>
+                <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
               </div>
             </animated.div>
             <animated.div style={cardAnimation} className="card">
@@ -63,7 +70,7 @@ const OurCourses = () => {
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
-                <button>Learn More</button>
+                <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
               </div>
             </animated.div>
           </animated.div>
@@ -77,7 +84,7 @@ const OurCourses = () => {
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
-                <button>Learn More</button>
+                <button onClick={()=>{setShowForm(true)}}>Buy Now</button>
               </div>
             </animated.div>
             <animated.div style={cardAnimation} className="card">
@@ -87,7 +94,7 @@ const OurCourses = () => {
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
-                <button>Learn More</button>
+                <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
               </div>
             </animated.div>
             <animated.div style={cardAnimation} className="card">
@@ -97,12 +104,12 @@ const OurCourses = () => {
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
-                <button>Learn More</button>
+                <button onClick={()=>{setShowForm(true)}}>Buy Now</button>
               </div>
             </animated.div>
           </animated.div>
         </div>
-        <div className="flex lg:flex-row justify-center items-center flex-col gap-8 my-16 font-figtree">
+        {/* <div className="flex lg:flex-row justify-center items-center flex-col gap-8 my-16 font-figtree">
           <animated.div style={cardAnimation} className="wrapper gap-8">
             <animated.div style={cardAnimation} className="card">
               <img src={Course1} alt="Course 1" />
@@ -111,7 +118,7 @@ const OurCourses = () => {
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
-                <button>Learn More</button>
+                <button>Buy Now</button>
               </div>
             </animated.div>
             <animated.div style={cardAnimation} className="card">
@@ -121,7 +128,7 @@ const OurCourses = () => {
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
-                <button>Learn More</button>
+                <button>Buy Now</button>
               </div>
             </animated.div>
             <animated.div style={cardAnimation} className="card">
@@ -131,12 +138,13 @@ const OurCourses = () => {
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
-                <button>Learn More</button>
+                <button>Buy Now</button>
               </div>
             </animated.div>
           </animated.div>
-        </div>
+        </div> */}
       </div>
+      <Footer/>
     </>
   );
 };

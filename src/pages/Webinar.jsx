@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Faq from "../components/Faq";
 import "../styles/Contact.css";
-import { MdCancel } from "react-icons/md";
+
 import Review from "../assets/review.png";
 import DataScience from "../assets/Data_Science.svg";
 import MachineLearning from "../assets/machineLearning.svg";
@@ -24,6 +24,7 @@ import email from "../assets/ic_round-alternate-email.svg";
 import phone from "../assets/fluent_phone-20-filled.svg";
 import { FaLinkedin } from "react-icons/fa";
 import hand from "../assets/Image COntact.png";
+import Modal from "../components/Modal";
 // import MachineLearning from "../assets/machineLearning.svg";
 
 const images = [
@@ -39,7 +40,7 @@ const images = [
   // Add more objects as needed
 ];
 
-const MainCard = () => {
+const MainCard = ({setShowForm}) => {
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
       <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
@@ -51,6 +52,9 @@ const MainCard = () => {
       <button
         className="btn mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl "
         style={{}}
+        onClick={() => {
+                setShowForm(true);
+              }}
       >
         {" "}
         Book Free Consultation Call{" "}
@@ -137,102 +141,27 @@ const ProblemCard = ({ content, boldContent, pos }) => {
 
 const Webinar = () => {
   const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    senderEmail: "",
-    phoneNumber: "",
-    message: "",
-  });
-
+ 
   useEffect(() => {
     setTimeout(() => {
       setShowForm(true);
     }, 5000);
   }, []);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
-
-  async function onSubmit(event) {
-    event.preventDefault();
-    //   const { data, error } = await sendEmail(formData);
-  }
-
+  
   return (
     <div className=" lg:max-w-[1440px] md:max-w[660px] max-w-[760px]  ">
       {showForm && (
-        <div className="fixed top-0 left-0 z-10   w-full h-full flex justify-center   items-center">
-          <div className="p-3 bg-white text-black   z-[999]  border border-white  rounded-xl w-[500px] ">
-            <button
-              onClick={() => {
-                setShowForm(false);
-              }}
-              className="w-full "
-            >
-              <MdCancel size={32} className="text-[#F15A29] ml-auto " />
-            </button>
-           <div className="text-4xl font-[700] text-center mb-5">Reach to us!</div>
-            <form onSubmit={onSubmit}>
-              <div className="flex flex-col gap-2 p-2">
-                <label className="font-[500]">Your Name</label>
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  name="name"
-                  className="p-2"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-              </div>
-             
-              <div className="flex flex-col gap-2 p-2">
-              <label className="font-[500]" >Your Mobile No.</label>
-                <input
-                  type="text"
-                  placeholder="Your phone number"
-                  name="phoneNumber"
-                  className="p-2"
-                  value={formData.phoneNumber}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="flex flex-col gap-2 p-2">
-               <label className="font-[500]" >Message</label>
-                <input
-                  type="text"
-                  placeholder="Message "
-                  name="message"
-                  className="p-2"
-                  value={formData.message}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className=" flex justify-center">
-                {/* <img src={phone} alt="" className="hid" /> */}
-                <button  className="btn  text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-8 py-2 rounded-full  " type="submit">
-                  Send Message
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+         <Modal setShowForm={setShowForm}/>
       )}
 
       <div className="relative mt-20">
         <div className=" text-white w-full md:mt-20 mt-10  flex justify-center items-center  font-figtree ">
           {/* <div class="blob blob-orange"></div>
     <div class="blob blob-blue"></div> */}
-
+          
           <div className="bg-[#3cffff] hidden md:block absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
           <div className="bg-[#FF7A00]  hidden md:block absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
-          <MainCard />
+          <MainCard  setShowForm={setShowForm}/>
         </div>
         <div className="bg-gradient-to-b  md:mt-20 mt-10  from-[#04131300] to-[#041313] w-full ">
           <div className=" md:w-5/6 mx-auto   md:p-16 p-4">
@@ -304,6 +233,9 @@ const Webinar = () => {
             <button
               className="btn md:mt-20  mt-10 text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
+              onClick={() => {
+                setShowForm(true);
+              }}
             >
               {" "}
               Book Free Consultation Call{" "}
@@ -390,6 +322,9 @@ const Webinar = () => {
             <button
               className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
+              onClick={() => {
+                setShowForm(true);
+              }}
             >
               {" "}
               Book Free Consultation Call{" "}
@@ -683,6 +618,9 @@ const Webinar = () => {
             <button
               className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
+              onClick={() => {
+                setShowForm(true);
+              }}
             >
               {" "}
               Unlock These Bonuses Now!{" "}
@@ -732,6 +670,9 @@ const Webinar = () => {
             <button
               className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
+              onClick={() => {
+                setShowForm(true);
+              }}
             >
               {" "}
               Book Free Consultation Call{" "}
@@ -892,7 +833,11 @@ const Webinar = () => {
             </div>
 
             <div>
-              <button className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white md:px-12 px-4 md:py-4 py-2 rounded-full transition duration-300 ">
+              <button className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white md:px-12 px-4 md:py-4 py-2 rounded-full transition duration-300 " 
+               onClick={() => {
+                setShowForm(true);
+              }}
+              >
               Book Free Consultation Call
               </button>
             </div>

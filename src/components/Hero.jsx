@@ -12,17 +12,17 @@ export const Hero = () => {
 
       <div className="group lg:w-[990px] w-[350px] md:w-[600px] lg:h-[166px] h-[80px] md:h-[120px] bg-white hover:cursor-pointer font-figtree lg:rounded-[27px] rounded-2xl z-[30] flex flex-row lg:px-[150px]  px-[50px] justify-between items-center  mt-20 lg:mt-0">
         <div className="flex flex-col items-center">
-          <h2 className="font-bold  text-[20px] md:text-[32px] lg:text-[40px] animate-charcter ">4.1</h2>
+          <h2 className="font-bold  text-[20px] md:text-[32px] lg:text-[40px] animate-charcter ">5</h2>
           <span className="font-medium text-[8px] md:text-[16px] animate-charcter">Google Ratings</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <h2 className="font-bold text-[20px] md:text-[32px] lg:text-[40px] animate-charcter ">12 LPA</h2>
+          <h2 className="font-bold text-[20px] md:text-[32px] lg:text-[40px] animate-charcter ">22 LPA</h2>
           <span className="font-medium text-[8px] md:text-[16px] animate-charcter">Highest Package</span>
         </div>
 
         <div className="flex flex-col items-center">
-          <h2 className="font-bold text-[20px] md:text-[32px] lg:text-[40px] animate-charcter ">500+</h2>
+          <h2 className="font-bold text-[20px] md:text-[32px] lg:text-[40px] animate-charcter ">100+</h2>
           <span className="font-medium text-[8px] md:text-[16px] animate-charcter ">Hiring Partners</span>
         </div>
       </div>

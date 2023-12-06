@@ -1,10 +1,15 @@
-import React from "react";
+import React , {useState} from "react";
 import demo from "../assets/demo.png";
 import { Link } from "react-router-dom";
-
+import { Footer } from "../components/Footer";
+import Modal from "../components/Modal";
 const Projects = () => {
+  const [showForm, setShowForm] = useState(false);
   return (
     <>
+     {showForm && (
+         <Modal setShowForm={setShowForm}/>
+      )}
       <div className="bg-cover bg-center bg-no-repeat header-course w-full flex flex-col justify-center items-center mt-[68px] ">
         <h1 className="font-figtree text-[16px] mt-8 z-10 md:text-[48px] text-white font-semibold">
           Get 20% OFF all our Premium Projects{" "}
@@ -33,8 +38,8 @@ const Projects = () => {
             <h3 className="text-white text-[24px] mb- font-bold">
               Generative AI
             </h3>
-            <button className="button w-[220px] group-hover:bg-black">
-              <span>Explore More </span>
+            <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
+              <span>Buy Now </span>
             </button>
           </div>
 
@@ -48,8 +53,8 @@ const Projects = () => {
             <h3 className="text-white text-[24px] mb- font-bold">
               Generative AI
             </h3>
-            <button className="button w-[220px] group-hover:bg-black">
-              <span>Explore More </span>
+            <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
+              <span>Buy Now </span>
             </button>
           </div>
 
@@ -63,8 +68,8 @@ const Projects = () => {
             <h3 className="text-white text-[24px] mb- font-bold">
               Generative AI
             </h3>
-            <button className="button w-[220px] group-hover:bg-black">
-              <span>Explore More </span>
+            <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
+              <span>Buy Now </span>
             </button>
           </div>
         </div>
@@ -80,8 +85,8 @@ const Projects = () => {
             <h3 className="text-white text-[24px] mb- font-bold">
               Generative AI
             </h3>
-            <button className="button w-[220px] group-hover:bg-black">
-              <span>Explore More </span>
+            <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
+              <span>Buy Now </span>
             </button>
           </div>
 
@@ -95,8 +100,8 @@ const Projects = () => {
             <h3 className="text-white text-[24px] mb- font-bold">
               Generative AI
             </h3>
-            <button className="button w-[220px] group-hover:bg-black">
-              <span>Explore More </span>
+            <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
+              <span>Buy Now </span>
             </button>
           </div>
 
@@ -110,12 +115,13 @@ const Projects = () => {
             <h3 className="text-white text-[24px] mb- font-bold">
               Generative AI
             </h3>
-            <button className="button w-[220px] group-hover:bg-black">
-              <span>Explore More </span>
+            <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
+              <span>Buy Now </span>
             </button>
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

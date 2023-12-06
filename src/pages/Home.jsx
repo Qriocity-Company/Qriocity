@@ -14,6 +14,7 @@ const Home = () => {
         <Project />
         <Testimonial />
       </div>
+      <Footer />
     </>
   );
 };

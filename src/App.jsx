@@ -1,4 +1,5 @@
 // App.js
+import React , {useState } from "react"
 import "./App.css";
 import { Navbar } from "./components/Navbar";
 import Home from "./pages/Home";
@@ -13,6 +14,7 @@ import Blog from "./pages/Blog";
 import BlogItem from "./components/BlogItem"
 
 function App() {
+ 
   return (
     <Router>
       <div className="bg-[rgb(0,0,0)] z-50 justify-center items-center flex flex-col overflow-hidden">
@@ -24,11 +26,11 @@ function App() {
           <Route path="/courses" element={<OurCourses />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/webinar" element={<Webinar />} />
-          <Route path="/blogs" element={<Blog />} />
-          <Route path="/blogs/:blog" element={<BlogItem />} />
+          {/* <Route path="/blogs" element={<Blog />} />
+          <Route path="/blogs/:blog" element={<BlogItem />} /> */}
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
-        <Footer />
+       
       </div>
     </Router>
   );

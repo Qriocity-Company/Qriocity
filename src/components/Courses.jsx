@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useSpring, animated } from "@react-spring/web";
 import Progressbar from "./utils/Progressbar";
 import "../styles/Courses.css";
@@ -6,30 +6,36 @@ import Course1 from "../assets/courses1.jpeg";
 import Course2 from "../assets/courses2.jpeg";
 import Course3 from "../assets/courses3.jpeg";
 import { Link } from "react-router-dom";
+import Modal from "./Modal";
 
 export const Courses = () => {
+  const [showForm, setShowForm] = useState(false);
   const numberProps = useSpring({
     from: { number: 0 },
-    to: { number: 1489032 }, // Define your target number here
+    to: { number: 10000 }, // Define your target number here
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
   });
 
   const number2Props = useSpring({
     from: { number: 0 },
-    to: { number: 273928397 }, // Define your target number here
+    to: { number: 1000 }, // Define your target number here
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
   });
 
   const number3Props = useSpring({
     from: { number: 0 },
-    to: { number: 287 }, // Define your target number here
+    to: { number: 30 }, // Define your target number here
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
   });
 
   return (
+   <>
+     {showForm && (
+      <Modal setShowForm={setShowForm}/>
+   )}
     <div className=" relative mt-24 flex flex-col items-center font-figtree">
       <h1 className="font-figtree text-[36px]  z-10 md:text-[60px] text-white font-semibold">
         We are Proud of{" "}
@@ -65,17 +71,18 @@ export const Courses = () => {
       <div className="flex lg:flex-row flex-col gap-8 mt-8 text-white">
         <div className="md:w-[530px] w-[350px] h-[120px] z-20 bg-[#414141] rounded-xl items-start pl-10 flex flex-col justify-center">
           <div className="flex gap-4 items-center ">
-            <h1 className="text-[40px] font-figtree font-bold">78%</h1>
-            <span className="text-[16px] font-figtree ">New Users</span>
+            <h1 className="text-[40px] font-figtree font-bold">95%</h1>
+            <span className="text-[16px] font-figtree ">students successfully completed courses
+</span>
           </div>
           <div className="w-[90%]">
-            <Progressbar totalno={78} />
+            <Progressbar totalno={95} />
           </div>
         </div>
         <div className="md:w-[530px] w-[350px] h-[120px] z-20 bg-[#414141] rounded-xl items-start pl-10 flex flex-col justify-center">
           <div className="flex gap-4 items-center ">
             <h1 className="text-[40px] font-figtree font-bold">95%</h1>
-            <span className="text-[16px] font-figtree ">Placement Rate</span>
+            <span className="text-[16px] font-figtree ">students got dream placement offers</span>
           </div>
           <div className="w-[90%]">
             <Progressbar totalno={95} />
@@ -98,7 +105,7 @@ export const Courses = () => {
               <p className="text-[16px]">
                 Reach out to us for something awesome together
               </p>
-              <button>Learn More</button>
+              <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
             </div>
           </div>
           <div className="card">
@@ -108,7 +115,7 @@ export const Courses = () => {
               <p className="text-[16px]">
                 Reach out to us for something awesome together
               </p>
-              <button>Learn More</button>
+              <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
             </div>
           </div>
           <div className="card">
@@ -118,7 +125,7 @@ export const Courses = () => {
               <p className="text-[16px]">
                 Reach out to us for something awesome together
               </p>
-              <button>Learn More</button>
+              <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
             </div>
           </div>
         </div>
@@ -129,5 +136,6 @@ export const Courses = () => {
       </button>
       </Link>
     </div>
+   </>
   );
 };

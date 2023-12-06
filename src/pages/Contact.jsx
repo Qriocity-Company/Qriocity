@@ -7,7 +7,7 @@ import email from '../assets/ic_round-alternate-email.svg'
 import phone from '../assets/fluent_phone-20-filled.svg'
 import { FaLinkedin } from "react-icons/fa";
 import hand from '../assets/Image COntact.png'
-
+import { Footer } from "../components/Footer";
 
 const Contact = () => {
 
@@ -33,7 +33,8 @@ const Contact = () => {
   }
 
   return (
-    <div className='contact-page mt-[68px] '>
+   <>
+     <div className='contact-page mt-[68px] '>
       <div class="blob blob-orange"></div>
       <div class="blob blob-blue"></div>
 
@@ -93,6 +94,8 @@ const Contact = () => {
 
 
     </div>
+    <Footer/>
+   </>
   )
 }
 

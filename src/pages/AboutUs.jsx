@@ -11,10 +11,11 @@ import hire from "../assets/hire.svg";
 import lateralhire from "../assets/lateralhire.svg";
 import time from "../assets/time.svg";
 import campus from "../assets/campus.svg";
-
+import { Footer } from "../components/Footer";
 const AboutUs = () => {
   return (
-    <div className="flex flex-col justify-center items-center font-figtree relative mt-[68px]">
+   <>
+     <div className="flex flex-col justify-center items-center font-figtree relative mt-[68px]">
       <div className="bg-[#3cffff] absolute top-[54rem] left-[-15rem] h-[35.25rem]   w-[20rem] rounded-full blur-[10rem]"></div>
       <div className="bg-[#FF7A00] absolute top-[30rem] right-[-20rem]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[10rem]"></div>
 
@@ -230,6 +231,8 @@ const AboutUs = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+   </>
   );
 };
 

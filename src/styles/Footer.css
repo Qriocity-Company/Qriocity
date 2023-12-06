@@ -4,19 +4,24 @@
 body{
     overflow-x:hidden ;
 }
+.footer-main{
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
 .footer{
     /* max-width:1440px; */
-    width: 100%;
+    /* width: 100%; */
     /* max-width: 1440px; */
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;  */
+    display: flex;
+    justify-content: space-between;
     gap: 2rem;
     background-color: black;
     color: white;
     padding: 4%;
     transition: all 0.3s ease-out;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+   
 }
 
 .footer-logo{

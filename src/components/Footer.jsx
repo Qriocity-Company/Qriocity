@@ -15,7 +15,8 @@ import "../styles/Footer.css";
 export const Footer = () => {
   return (
     <>
-      <footer className="footer">
+     <div className="footer-main w-full">
+     <footer className="footer flex md:flex-row flex-col w-5/6 mx-auto">
         <div className="footer-section">
           <img src={logo} alt="" className="footer-logo pl-8" />
           <div className="footer-description md:w-[250px] pl-8">
@@ -59,7 +60,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-section pl-8 courses">
+        {/* <div className="footer-section pl-8 courses">
           <div className="section-heading">Resources</div>
           <div className="footer-item-container ">
             <a className="footer-item" href="/">
@@ -81,7 +82,7 @@ export const Footer = () => {
               Privacy Policy
             </a>
           </div>
-        </div>
+        </div> */}
 
         <div className="footer-section ">
           <div className="section-heading">Follow us on</div>
@@ -109,6 +110,7 @@ export const Footer = () => {
           </div>
         </div>
       </footer>
+     </div>
 
       <div className="footer-bottom flex flex-col md:flex-row text-[14px]">
         <p> © 2023 Qriocity Ventures Privte Limited. </p>
