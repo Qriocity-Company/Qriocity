@@ -49,13 +49,13 @@ export const Footer = () => {
               Data Science
             </a>
             <a className="footer-item" href="/courses">
-              Artificial Intelagence
+              Artificial Intelligence
             </a>
             <a className="footer-item" href="/courses">
               Full Stack Development
             </a>
             <a className="footer-item" href="/courses">
-              Automation Testing
+              Data Structures And Algorithms
             </a>
           </div>
         </div>

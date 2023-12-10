@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Faq from "../components/Faq";
 import "../styles/Contact.css";
-
+import User1 from "../assets/user_01.jpg";
+import User2 from "../assets/user_02.jpg";
+import User3 from "../assets/user_03.jpg";
 import Review from "../assets/review.png";
 import DataScience from "../assets/Data_Science.svg";
 import MachineLearning from "../assets/machineLearning.svg";
@@ -707,7 +709,7 @@ const Webinar = () => {
                   Right strategies and systems gave her a clear vision for a
                   successful business
                 </p>
-                <img src={Testimonial} className="md:w-[400px] w-[300px]" />
+                <img src={User1} className=" w-[300px]" />
               </div>
 
               <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl ">
@@ -728,7 +730,7 @@ const Webinar = () => {
                   Right strategies and systems gave her a clear vision for a
                   successful business
                 </p>
-                <img src={Testimonial} className="md:w-[400px] w-[300px]" />
+                <img src={User2} className=" w-[3800px] " />
               </div>
               <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl ">
                 <svg
@@ -748,7 +750,7 @@ const Webinar = () => {
                   Right strategies and systems gave her a clear vision for a
                   successful business
                 </p>
-                <img src={Testimonial} className="md:w-[400px] w-[300px]" />
+                <img src={User3} className=" w-[300px]" />
               </div>
 
               <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl ">
@@ -769,7 +771,7 @@ const Webinar = () => {
                   Right strategies and systems gave her a clear vision for a
                   successful business
                 </p>
-                <img src={Testimonial} className="md:w-[400px] w-[300px]" />
+                <img src={User3} className=" w-[300px]" />
               </div>
             </div>
           </div>
@@ -811,8 +813,8 @@ const Webinar = () => {
 
           </div>
 
-
-         <Faq/>
+        {/* FAQ  section here .... */}
+         {/* <Faq/> */}
 
         </div>
       </div>

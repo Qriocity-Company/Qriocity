@@ -7,6 +7,14 @@ import Course3 from "../assets/courses3.jpeg";
 import { Link } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import Modal from "../components/Modal";
+import Python from "../assets/Courses/Python.jpg";
+import FullStackDev from "../assets/Courses/FullStackDev.jpg";
+import MachineLearning from "../assets/Courses/MachineLearning.jpg";
+import DataScience from "../assets/Courses/DataScience.jpg";
+import DSA from "../assets/Courses/DSA.jpg";
+import Automation from "../assets/Courses/Automation.jpg";
+
+
 const OurCourses = () => {
 
   const [showForm, setShowForm] = useState(false);
@@ -44,7 +52,7 @@ const OurCourses = () => {
         <div className="flex lg:flex-row  flex-col gap-8 justify-center items-center my-16 font-figtree">
           <animated.div style={cardAnimation} className="wrapper gap-8">
             <animated.div style={cardAnimation} className="card">
-              <img src={Course1} alt="Course 1" />
+              <img src={Python} alt="Course 1" />
               <div className="info">
                 <h1 className="font-bold text-[20px]">Python</h1>
                 <p className="text-[16px]">
@@ -54,9 +62,9 @@ const OurCourses = () => {
               </div>
             </animated.div>
             <animated.div style={cardAnimation} className="card">
-              <img src={Course2} alt="Course 1" />
+              <img src={FullStackDev} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">Python</h1>
+                <h1 className="font-bold text-[20px]">Full Stack Web Development</h1>
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
@@ -64,9 +72,9 @@ const OurCourses = () => {
               </div>
             </animated.div>
             <animated.div style={cardAnimation} className="card">
-              <img src={Course3} alt="Course 1" />
+              <img src={MachineLearning} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">Python</h1>
+                <h1 className="font-bold text-[20px]">Machine Learning</h1>
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
@@ -78,9 +86,9 @@ const OurCourses = () => {
         <div className="flex lg:flex-row justify-center items-center flex-col gap-8 my-16 font-figtree">
           <animated.div style={cardAnimation} className="wrapper gap-8">
             <animated.div style={cardAnimation} className="card">
-              <img src={Course1} alt="Course 1" />
+              <img src={DSA} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">Python</h1>
+                <h1 className="font-bold text-[20px]">Data Structures And Algorithms</h1>
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
@@ -88,9 +96,9 @@ const OurCourses = () => {
               </div>
             </animated.div>
             <animated.div style={cardAnimation} className="card">
-              <img src={Course2} alt="Course 1" />
+              <img src={DataScience} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">Python</h1>
+                <h1 className="font-bold text-[20px]">Data Science</h1>
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
@@ -98,9 +106,9 @@ const OurCourses = () => {
               </div>
             </animated.div>
             <animated.div style={cardAnimation} className="card">
-              <img src={Course3} alt="Course 1" />
+              <img src={Automation} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">Python</h1>
+                <h1 className="font-bold text-[20px]">Automation Testing</h1>
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>

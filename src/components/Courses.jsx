@@ -7,6 +7,10 @@ import Course2 from "../assets/courses2.jpeg";
 import Course3 from "../assets/courses3.jpeg";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
+import Python from "../assets/Courses/Python.jpg";
+import FullStackDev from "../assets/Courses/FullStackDev.jpg";
+import MachineLearning from "../assets/Courses/MachineLearning.jpg";
+
 
 export const Courses = () => {
   const [showForm, setShowForm] = useState(false);
@@ -99,7 +103,7 @@ export const Courses = () => {
       <div className="flex lg:flex-row justify-center  flex-col gap-8 my-16 font-figtree">
         <div className="wrapper gap-8 ">
           <div className="card">
-            <img src={Course1} />
+            <img src={Python} />
             <div className="info">
               <h1 className="font-bold text-[20px]">Python</h1>
               <p className="text-[16px]">
@@ -109,9 +113,9 @@ export const Courses = () => {
             </div>
           </div>
           <div className="card">
-            <img src={Course2} />
+            <img src={FullStackDev} />
             <div className="info">
-              <h1 className="font-bold text-[20px]">HTML</h1>
+              <h1 className="font-bold text-[20px]">Full Stack Web Development</h1>
               <p className="text-[16px]">
                 Reach out to us for something awesome together
               </p>
@@ -119,9 +123,9 @@ export const Courses = () => {
             </div>
           </div>
           <div className="card">
-            <img src={Course3} />
+            <img src={MachineLearning} />
             <div className="info">
-              <h1 className="font-bold text-[20px]">CSS</h1>
+              <h1 className="font-bold text-[20px]">Machine Learning</h1>
               <p className="text-[16px]">
                 Reach out to us for something awesome together
               </p>
