@@ -57,7 +57,7 @@ export const Testimonial = () => {
     <div className="testimonial-container">
 
       <img src={quote} alt="" className="quote"/>
-      <div className="testimonial-header">Our Students speak</div>
+      <div className="testimonial-header">Our Students Success Stories</div>
 
       <div className="outer-container">
         
