@@ -4,6 +4,10 @@ import img2 from '../assets/courses1.jpeg'
 import img3 from '../assets/demo.png'
 import quote from '../assets/“.svg'
 import "../styles/Testimonial.css";
+import User1 from "../assets/user_01.jpg";
+import User2 from "../assets/user_02.jpg";
+import User3 from "../assets/user_03.jpg";
+
 
 export const Testimonial = () => {
   const [slideIndex, setSlideIndex] = useState(1);
@@ -63,13 +67,13 @@ export const Testimonial = () => {
 
           <div className="mySlides fade">
             <div className="slide-img-container">
-              <img src={img1} alt="" className="slide-img"/>
+              <img src={User1} alt="" className="slide-img"/>
             </div>
             <div className="content">
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, nihil! Deleniti reprehenderit tempora nulla quidem reiciendis temporibus sed asperiores est error saepe, suscipit atque obcaecati at dolorem? Saepe, odio reiciendis.</p>
               <div className="credentials">
-                <div>Andreq Jackson</div>
-                <p >Final year ,CSE, Panimalar</p>
+                <div>Bhatri Narayana</div>
+                <p >CSE,VIT Univeristy </p>
               </div>
               <div className="dot-div">
                 <span className="dot" onClick={() => currentSlide(1)}></span>
@@ -80,13 +84,13 @@ export const Testimonial = () => {
           </div>
           <div className="mySlides fade">
             <div className="slide-img-container">
-              <img src={img2} alt="" className="slide-img"/>
+              <img src={User2} alt="" className="slide-img"/>
             </div>
             <div className="content">
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, nihil! Deleniti reprehenderit tempora nulla quidem reiciendis temporibus sed asperiores est error saepe, suscipit atque obcaecati at dolorem? Saepe, odio reiciendis.</p>
               <div className="credentials">
-                <div>Andreq Jackson</div>
-                <p >Final year ,CSE, Panimalar</p>
+                <div>Gowtham</div>
+                <p >ECE, Satyabama University</p>
               </div>
               <div className="dot-div">
                 <span className="dot" onClick={() => currentSlide(1)}></span>
@@ -97,13 +101,13 @@ export const Testimonial = () => {
           </div>
           <div className="mySlides fade">
             <div className="slide-img-container">
-              <img src={img3} alt="" className="slide-img"/>
+              <img src={User3} alt="" className="slide-img"/>
             </div>
             <div className="content">
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, nihil! Deleniti reprehenderit tempora nulla quidem reiciendis temporibus sed asperiores est error saepe, suscipit atque obcaecati at dolorem? Saepe, odio reiciendis.</p>
               <div className="credentials">
-                <div>Andreq Jackson</div>
-                <p >Final year ,CSE, Panimalar</p>
+                <div>Deekha</div>
+                <p >IT , Githam University</p>
               </div>
               <div className="dot-div">
                 <span className="dot" onClick={() => currentSlide(1)}></span>
