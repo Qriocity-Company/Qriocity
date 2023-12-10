@@ -692,7 +692,7 @@ const Webinar = () => {
             </p>
 
             <div className="md:mt-20 mt-10  grid md:grid-cols-2 gap-10 place-items-center">
-              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl ">
+              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl flex justify-center items-center flex-col ">
                 <svg
                   className="absolute -top-5 right-5"
                   xmlns="http://www.w3.org/2000/svg"
@@ -706,14 +706,15 @@ const Webinar = () => {
                     fill="#F15A29"
                   />
                 </svg>
-                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-2xl">
+                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
+                <div> <b>Bhatri Narayana </b> <span className="italic">CSE, VIT University</span> </div> <br /> <br />
                 Qriocity made my final project so much easier. They helped me choose a good topic and were there to help me whenever I needed. They answered quickly and explained things in a way I could understand. I'm really glad I found them
                 </p>
-               <div> <b>Bhatri Narayana </b> <span className="italic">CSE, VIT University</span> </div>
+               
                 <img src={User1} className=" w-[300px]" />
               </div>
 
-              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl ">
+              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl flex justify-center items-center flex-col ">
                 <svg
                   className="absolute -top-5 right-5"
                   xmlns="http://www.w3.org/2000/svg"
@@ -727,13 +728,14 @@ const Webinar = () => {
                     fill="#F15A29"
                   />
                 </svg>
-                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-2xl">
+                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
+                <div> <b>Goutham </b> <span className="italic">ECE, Satyabama University</span> </div> <br /><br />
                 I didn't have to worry about writing reports or making slides for my project because Qriocity did all that. This let me focus on My placements.
                 </p>
-                <div> <b>Goutham </b> <span className="italic">ECE, Satyabama University</span> </div>
-                <img src={User2} className=" w-[3800px] " />
+               
+                <img src={User2} className=" w-[300]" />
               </div>
-              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl ">
+              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl flex justify-center items-center flex-col">
                 <svg
                   className="absolute -top-5 right-5"
                   xmlns="http://www.w3.org/2000/svg"
@@ -747,14 +749,15 @@ const Webinar = () => {
                     fill="#F15A29"
                   />
                 </svg>
-                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-2xl">
+                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
+                <div> <b>Deeksha </b> <span className="italic">IT, Githam University</span> </div> <br /><br />
                 Qriocity was super fast in giving me the materials I needed for my project. They also gave me some great advice about my future career. Working with them taught me a lot and made me feel more confident.
                 </p>
-                <div> <b>Deeksha </b> <span className="italic">IT, Githam University</span> </div>
+               
                 <img src={User3} className=" w-[300px]" />
               </div>
 
-              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl ">
+              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl flex justify-center items-center flex-col">
                 <svg
                   className="absolute -top-5 right-5"
                   xmlns="http://www.w3.org/2000/svg"
@@ -768,11 +771,11 @@ const Webinar = () => {
                     fill="#F15A29"
                   />
                 </svg>
-                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-2xl">
+                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
+                <div> <b>Ramya </b> <span className="italic">CSE, Veltech University</span> </div> <br /> <br />
                 Working with Qriocity was a stress-free experience. They took care of the tough parts of my project, so I could focus on learning. They're awesome!
-                  
                 </p>
-                <div> <b>Ramya </b> <span className="italic">CSE, Veltech University</span> </div>
+              
                 <img src={User4} className=" w-[300px]" /> 
               </div>
             </div>

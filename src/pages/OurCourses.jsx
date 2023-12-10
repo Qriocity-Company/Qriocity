@@ -108,7 +108,7 @@ const OurCourses = () => {
             <animated.div style={cardAnimation} className="card">
               <img src={Automation} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">Automation Testing</h1>
+                <h1 className="font-bold text-[20px]">UI/UX</h1>
                 <p className="text-[16px]">
                   Reach out to us for something awesome together
                 </p>
