@@ -4,7 +4,7 @@ import "../styles/Contact.css";
 import User1 from "../assets/user_01.jpg";
 import User2 from "../assets/user_02.jpg";
 import User3 from "../assets/user_03.jpg";
-import User4 from "../assets/user4.jpg";
+import User4 from "../assets/User4.jpg";
 import Review from "../assets/review.png";
 import DataScience from "../assets/Data_Science.svg";
 import MachineLearning from "../assets/machineLearning.svg";
