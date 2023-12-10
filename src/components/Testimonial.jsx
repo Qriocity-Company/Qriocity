@@ -106,7 +106,7 @@ export const Testimonial = () => {
             <div className="content">
               <p>Qriocity was super fast in giving me the materials I needed for my project. They also gave me some great advice about my future career. Working with them taught me a lot and made me feel more confident.</p>
               <div className="credentials">
-                <div>Deekha</div>
+                <div>Deeksha</div>
                 <p >IT , Githam University</p>
               </div>
               <div className="dot-div">

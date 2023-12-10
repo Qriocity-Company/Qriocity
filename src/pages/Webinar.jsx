@@ -4,6 +4,7 @@ import "../styles/Contact.css";
 import User1 from "../assets/user_01.jpg";
 import User2 from "../assets/user_02.jpg";
 import User3 from "../assets/user_03.jpg";
+import User4 from "../assets/user4.jpg";
 import Review from "../assets/review.png";
 import DataScience from "../assets/Data_Science.svg";
 import MachineLearning from "../assets/machineLearning.svg";
@@ -706,9 +707,9 @@ const Webinar = () => {
                   />
                 </svg>
                 <p className="text-white text-start mb-8 w-5/6 p-8 md:text-2xl">
-                  Right strategies and systems gave her a clear vision for a
-                  successful business
+                Qriocity made my final project so much easier. They helped me choose a good topic and were there to help me whenever I needed. They answered quickly and explained things in a way I could understand. I'm really glad I found them
                 </p>
+               <div> <b>Bhatri Narayana </b> <span className="italic">CSE, VIT University</span> </div>
                 <img src={User1} className=" w-[300px]" />
               </div>
 
@@ -727,9 +728,9 @@ const Webinar = () => {
                   />
                 </svg>
                 <p className="text-white text-start mb-8 w-5/6 p-8 md:text-2xl">
-                  Right strategies and systems gave her a clear vision for a
-                  successful business
+                I didn't have to worry about writing reports or making slides for my project because Qriocity did all that. This let me focus on My placements.
                 </p>
+                <div> <b>Goutham </b> <span className="italic">ECE, Satyabama University</span> </div>
                 <img src={User2} className=" w-[3800px] " />
               </div>
               <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl ">
@@ -747,9 +748,9 @@ const Webinar = () => {
                   />
                 </svg>
                 <p className="text-white text-start mb-8 w-5/6 p-8 md:text-2xl">
-                  Right strategies and systems gave her a clear vision for a
-                  successful business
+                Qriocity was super fast in giving me the materials I needed for my project. They also gave me some great advice about my future career. Working with them taught me a lot and made me feel more confident.
                 </p>
+                <div> <b>Deeksha </b> <span className="italic">IT, Githam University</span> </div>
                 <img src={User3} className=" w-[300px]" />
               </div>
 
@@ -768,10 +769,11 @@ const Webinar = () => {
                   />
                 </svg>
                 <p className="text-white text-start mb-8 w-5/6 p-8 md:text-2xl">
-                  Right strategies and systems gave her a clear vision for a
-                  successful business
+                Working with Qriocity was a stress-free experience. They took care of the tough parts of my project, so I could focus on learning. They're awesome!
+                  
                 </p>
-                <img src={User3} className=" w-[300px]" />
+                <div> <b>Ramya </b> <span className="italic">CSE, Veltech University</span> </div>
+                <img src={User4} className=" w-[300px]" /> 
               </div>
             </div>
           </div>
@@ -826,8 +828,8 @@ const Webinar = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="md:text-5xl text-xl font-semibold  text-white ">
-                ₹99
-                <span className="ml-3 md:text-2xl text-xs line-through"> ₹12000</span>
+                ₹7999
+                <span className="ml-3 md:text-2xl text-xs line-through"> ₹22495</span>
               </p>
               <p className="md:text-lg  text-sm font-semibold">
               Offer ends in 15 Minutes!!!
