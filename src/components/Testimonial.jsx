@@ -68,7 +68,8 @@ export const Testimonial = () => {
               <img src={User1} alt="" className="slide-img"/>
             </div>
             <div className="content">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, nihil! Deleniti reprehenderit tempora nulla quidem reiciendis temporibus sed asperiores est error saepe, suscipit atque obcaecati at dolorem? Saepe, odio reiciendis.</p>
+              <p>Qriocity made my final project so much easier. They helped me choose a good topic and were there to help me whenever I needed. They answered quickly and explained things in a way I could understand. I'm really glad I found them
+</p>
               <div className="credentials">
                 <div>Bhatri Narayana</div>
                 <p >CSE,VIT Univeristy </p>
@@ -85,7 +86,8 @@ export const Testimonial = () => {
               <img src={User2} alt="" className="slide-img"/>
             </div>
             <div className="content">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, nihil! Deleniti reprehenderit tempora nulla quidem reiciendis temporibus sed asperiores est error saepe, suscipit atque obcaecati at dolorem? Saepe, odio reiciendis.</p>
+              <p>I didn't have to worry about writing reports or making slides for my project because Qriocity did all that. This let me focus on My placements.
+</p>
               <div className="credentials">
                 <div>Gowtham</div>
                 <p >ECE, Satyabama University</p>
@@ -102,7 +104,7 @@ export const Testimonial = () => {
               <img src={User3} alt="" className="slide-img"/>
             </div>
             <div className="content">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, nihil! Deleniti reprehenderit tempora nulla quidem reiciendis temporibus sed asperiores est error saepe, suscipit atque obcaecati at dolorem? Saepe, odio reiciendis.</p>
+              <p>Qriocity was super fast in giving me the materials I needed for my project. They also gave me some great advice about my future career. Working with them taught me a lot and made me feel more confident.</p>
               <div className="credentials">
                 <div>Deekha</div>
                 <p >IT , Githam University</p>
