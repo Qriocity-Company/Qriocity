@@ -1,7 +1,5 @@
 import {React,useState,useEffect} from "react";
-import img1 from '../assets/img1.jpeg'
-import img2 from '../assets/courses1.jpeg'
-import img3 from '../assets/demo.png'
+
 import quote from '../assets/“.svg'
 import "../styles/Testimonial.css";
 import User1 from "../assets/user_01.jpg";
