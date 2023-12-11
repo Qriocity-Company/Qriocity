@@ -12,8 +12,8 @@ export const Hero = () => {
         alt="hero-image absolute "
         className="mt-20 z-20 lg:block hidden"
       />
-      <h1 className="lg:absolute static z-10 md:z-1 lg:top-[130px] lg:left-[100px] font-figtree  text-[44px] lg:text-[72px] text-white lg:w-[600px] w-[350px] md:w-[380px] font-semibold lg:mt-0 mt-[20px]">
-        Simple solutions for complex projects
+      <h1 className="lg:absolute static z-10 md:z-1 lg:top-[130px] lg:left-[80px] font-figtree  text-[44px] lg:text-[72px] text-white lg:w-[600px] w-[350px] md:w-[380px] font-semibold lg:mt-0 mt-[20px]">
+        Empowering Projects, Ensuring Placements
       </h1>
 
       <div className="group lg:w-[990px] w-[350px] md:w-[600px] lg:h-[166px] h-[80px] md:h-[120px] bg-white hover:cursor-pointer font-figtree lg:rounded-[27px] rounded-2xl z-[30] flex flex-row lg:px-[150px] px-[15px] md:px-[50px] justify-between items-center  mt-20 lg:mt-0 py-[45px] md:py-0">
