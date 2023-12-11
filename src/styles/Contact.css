@@ -152,6 +152,7 @@
         }
         .contact-container{
             width: 80%;
+            padding: 1.5rem;
         }
       
 .blob-orange {
@@ -164,6 +165,14 @@
  
     left: -30rem;
     
+}
+.social-img{
+    height: 30px!important;
+    width: 30px;
+}
+.contact-socials{
+    margin-top: 1.75rem;
+    width: 70%;
 }
 }
   

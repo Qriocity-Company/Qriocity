@@ -51,7 +51,7 @@ const Projects = () => {
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
-            <h3 className="text-white text-[24px] my-2 font-bold text-center">
+            <h3 className="text-white text-[16px] md:text-[24px] my-2 font-bold text-center">
             Secure System for Tracking Missing Persons with CCTV Integration
             </h3>
             <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
@@ -66,7 +66,7 @@ const Projects = () => {
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
-            <h3 className="text-white text-[24px] my-2 font-bold text-center">
+            <h3 className="text-white text-[16px] md:text-[24px] my-2 font-bold text-center">
             Women's Safety App with Emergency Features and Police Navigation
             </h3>
             <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
@@ -81,7 +81,7 @@ const Projects = () => {
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
-            <h3 className="text-white text-[24px] my-2 font-bold text-center">
+            <h3 className="text-white text-[16px] md:text-[24px] my-2 font-bold text-center">
             AI Trauma Chatbot Analyzing Voice, Text, and Direct Doctor Link
             </h3>
             <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
@@ -98,7 +98,7 @@ const Projects = () => {
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
-            <h3 className="text-white text-[24px] my-2 font-bold text-center">
+            <h3 className="text-white text-[16px] md:text-[24px] my-2 font-bold text-center">
             Farm_era: GIS Mapping, AI Pest Management, Smart Irrigation Analytics
             </h3>
             <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
@@ -113,7 +113,7 @@ const Projects = () => {
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
-            <h3 className="text-white text-[24px] my-2 font-bold text-center">
+            <h3 className="text-white text-[16px] md:text-[24px] my-2 font-bold text-center">
             Intelligent Parking: Real-time Spot Detection and Navigation System
             </h3>
             <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
@@ -128,7 +128,7 @@ const Projects = () => {
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
-            <h3 className="text-white text-[24px] my-2 font-bold text-center">
+            <h3 className="text-white text-[16px] md:text-[24px] my-2 font-bold text-center">
              Dual Server Authentication for Enhanced Cryptographic Login Security
             </h3>
             <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
@@ -144,7 +144,7 @@ const Projects = () => {
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
-            <h3 className="text-white text-[24px] my-2 font-bold text-center">
+            <h3 className="text-white text-[16px] md:text-[24px] my-2 font-bold text-center">
             Role-Based Authentication for Server File Access Control
             </h3>
             <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
@@ -159,7 +159,7 @@ const Projects = () => {
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
-            <h3 className="text-white text-[24px] my-2 font-bold text-center">
+            <h3 className="text-white text-[16px] md:text-[24px] my-2 px-2 font-bold text-center">
             Collaborative Cybersecurity: Comprehensive IT Threat Analysis Platform
             </h3>
             <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">
@@ -174,7 +174,7 @@ const Projects = () => {
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
-            <h3 className="text-white text-[24px] my-2 font-bold text-center">
+            <h3 className="text-white text-[16px] md:text-[24px] my-2 font-bold text-center">
               Automated Home Electricity Management with Pygame and Consumption Tracking
             </h3>
             <button onClick={()=>{setShowForm(true)}} className="button w-[220px] group-hover:bg-black">

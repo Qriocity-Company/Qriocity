@@ -5,7 +5,7 @@ import insta from '../assets/Group 1000004397.svg'
 import name from '../assets/ri_user-4-fill.svg'
 import email from '../assets/ic_round-alternate-email.svg'
 import phone from '../assets/fluent_phone-20-filled.svg'
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin,FaFacebook,FaInstagram } from "react-icons/fa";
 import hand from '../assets/Image COntact.png'
 import { Footer } from "../components/Footer";
 
@@ -77,13 +77,13 @@ const Contact = () => {
         <div className='contact-socials'>
           <div className='socials-container'>
             <a href="">
-              <img src={fb} alt="" className='social-img'/>
+              <FaFacebook className='social-img'/>
             </a>
             <a href="https://www.linkedin.com/company/qriocity/">
             <FaLinkedin  className='social-img'/>
             </a>
             <a href="https://www.instagram.com/qriocity_in/">
-              <img src={insta} alt="" className='social-img'/>
+              <FaInstagram className='social-img'/>
             </a>
           </div>
         </div>

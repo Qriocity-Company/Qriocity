@@ -54,8 +54,8 @@ const OurCourses = () => {
             <animated.div style={cardAnimation} className="card">
               <img src={Python} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">Python</h1>
-                <p className="text-[16px] mb-3">
+                <h1 className="font-bold text-[16px] md:text-[20px]">Python</h1>
+                <p className="text-[12px] md:text-[16px] mb-3">
                 Master Python programming, from basics to advanced topics, and unleash your coding potential. Start building real-world applications and scripts confidently.
                 </p>
                 <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
@@ -64,8 +64,8 @@ const OurCourses = () => {
             <animated.div style={cardAnimation} className="card">
               <img src={FullStackDev} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">Full Stack Web Development</h1>
-                <p className="text-[16px] mb-3">
+                <h1 className="font-bold text-[16px] md:text-[20px]">Full Stack Web Development</h1>
+                <p className="text-[12px] md:text-[16px] mb-3">
                 Transform into a Full Stack developer, mastering both front-end and back-end technologies. Craft dynamic and responsive websites with hands-on, practical learning.
                 </p>
                 <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
@@ -74,8 +74,8 @@ const OurCourses = () => {
             <animated.div style={cardAnimation} className="card">
               <img src={MachineLearning} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">Machine Learning</h1>
-                <p className="text-[16px] mb-3">
+                <h1 className="font-bold text-[14px] md:text-[20px]">Machine Learning</h1>
+                <p className="text-[12px] md:text-[16px] mb-1 md:mb-3">
                 Journey through the intricacies of Machine Learning, mastering algorithms and applications. Empower yourself to create intelligent solutions and elevate your skills in the rapidly evolving field of AI.
                 </p>
                 <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
@@ -88,8 +88,8 @@ const OurCourses = () => {
             <animated.div style={cardAnimation} className="card">
               <img src={DSA} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">Data Structures And Algorithms</h1>
-                <p className="text-[16px] mb-3">
+                <h1 className="font-bold text-[14px] md:text-[20px]">Data Structures And Algorithms</h1>
+                <p className="text-[12px] md:text-[16px] mb-1 md:mb-3">
                 Master the core pillars of efficient coding – data structures and algorithms. Elevate your programming prowess and problem-solving abilities in just a few key lessons.
                 </p>
                 <button onClick={()=>{setShowForm(true)}}>Buy Now</button>
@@ -98,8 +98,8 @@ const OurCourses = () => {
             <animated.div style={cardAnimation} className="card">
               <img src={DataScience} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">Data Science</h1>
-                <p className="text-[16px] mb-3">
+                <h1 className="font-bold text-[16px] md:text-[20px]">Data Science</h1>
+                <p className="text-[12px] md:text-[16px] mb-3">
                 Dive into the world of data with our Data Science course. From analysis to visualization, acquire the skills needed to extract valuable insights and make informed decisions.
                 </p>
                 <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
@@ -108,8 +108,8 @@ const OurCourses = () => {
             <animated.div style={cardAnimation} className="card">
               <img src={uiux} alt="Course 1" />
               <div className="info">
-                <h1 className="font-bold text-[20px]">UI/UX</h1>
-                <p className="text-[16px] mb-3">
+                <h1 className="font-bold text-[16px] md:text-[20px]">UI/UX</h1>
+                <p className="text-[12px] md:text-[16px] mb-3">
                 Immerse yourself in the art of user-centric design with our UI/UX course. Learn to create visually stunning and user-friendly interfaces, bridging the gap between aesthetics and functionality.
                 </p>
                 <button onClick={()=>{setShowForm(true)}}>Buy Now</button>

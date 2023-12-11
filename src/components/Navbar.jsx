@@ -105,13 +105,13 @@ export const Navbar = () => {
             </Link>
 
             <Link
-              to="/webinar"
+              to="/consultations"
               className={isRouteActive("/webinar")}
               onClick={() => {
                 toggleMenu();
               }}
             >
-              Webinar
+              Free Consultations
             </Link>
             {/* <Link to="/blogs" className={isRouteActive("/blogs")}
             onClick={() => {

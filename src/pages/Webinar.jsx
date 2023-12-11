@@ -638,7 +638,7 @@ const Webinar = () => {
               </div>
 
               <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img src={pdf} alt="" className="absolute top-[7%] left-[10%]"/>
+                <img src={pdf} alt="" className="absolute top-[9%] left-[12%] md:top-[7%] md:left-[10%]"/>
                 <img src={cap} />
                 <div className="text-start text-3xl font-[700]">
                   Internship & Project Certificate
@@ -649,7 +649,7 @@ const Webinar = () => {
               </div>
 
               <div className="md:col-span-2 p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img src={vcbtn} alt="" className="absolute top-[7%] left-[10%] rounded-[100%]"/>
+                <img src={vcbtn} alt="" className="absolute top-[9%] left-[12%] md:top-[7%] md:left-[10%] rounded-[100%]"/>
                 <img src={cguidance} />
                 <div className="text-start text-3xl font-[700]">
                   Free Career Guidance session
@@ -823,7 +823,7 @@ const Webinar = () => {
           </div>
 
           {/* Still Not Sure? We Have */}
-          <div className="md:mt-20 mt-10 text-center mb-20 md:p-16 p-4 ">
+          <div className="md:mt-20 mt-10 text-center mb-36 md:mb-20 md:p-16 p-4 ">
             <div className="lg:text-6xl md:text-4l  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
               Still Not Sure? We Have
             </div>
