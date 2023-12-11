@@ -12,8 +12,8 @@ import FullStackDev from "../assets/Courses/FullStackDev.jpg";
 import MachineLearning from "../assets/Courses/MachineLearning.jpg";
 import DataScience from "../assets/Courses/DataScience.jpg";
 import DSA from "../assets/Courses/DSA.jpg";
-import Automation from "../assets/Courses/Automation.jpg";
-
+// import Automation from "../assets/Courses/Automation.jpg";
+import uiux from '../assets/Courses/ui-ux.png'
 
 const OurCourses = () => {
 
@@ -33,13 +33,13 @@ const OurCourses = () => {
       )}
       <div className="bg-cover bg-center bg-no-repeat header-course w-full flex flex-col justify-center items-center mt-[68px] ">
         <h1 className="font-figtree text-[16px] mt-8 z-10 md:text-[48px] text-white font-semibold">
-          Get 10% OFF all our Premium Courses{" "}
+          Get 50% OFF all our Premium Courses{" "}
         </h1>
-        <Link to="/contact">
-        <button className=" bg-[#F15A29] mb-8 text-white rounded-2xl mt-1 p-1 w-[100px] md:p-3 text-[12px] md:text-[16px] md:rounded-3xl md:w-[200px]">
+        
+        <button className=" bg-[#F15A29] mb-8 text-white rounded-2xl mt-1 p-1 w-[100px] md:p-3 text-[12px] md:text-[16px] md:rounded-3xl md:w-[200px]" onClick={()=>{setShowForm(true)}}>
           <span>Get Offer </span>
         </button>
-        </Link>
+        
       </div>
       <div className="relative">
         <div className="bg-[#FF7A00] absolute top-[34rem] left-[-15rem] h-[35.25rem]   w-[20rem] rounded-full blur-[10rem]"></div>
@@ -106,7 +106,7 @@ const OurCourses = () => {
               </div>
             </animated.div>
             <animated.div style={cardAnimation} className="card">
-              <img src={Automation} alt="Course 1" />
+              <img src={uiux} alt="Course 1" />
               <div className="info">
                 <h1 className="font-bold text-[20px]">UI/UX</h1>
                 <p className="text-[16px] mb-3">

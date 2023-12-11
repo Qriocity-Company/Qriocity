@@ -22,12 +22,12 @@ const AboutUs = () => {
       <div className="flex gap-12 mt-14 z-10">
         <div className="hidden md:block md:w-[322px] md:h-[309px] lg:w-[644px] lg:h-[718px] bg-cover about-img"></div>
         <div className="flex flex-col">
-          <h2 className="text-[#F15A29] text-[26px] ml-5 md:ml-0">WHO WE ARE</h2>
+          <h2 className="text-[#F15A29] text-[26px] ml-5 md:ml-0">Why we started Qriocity ?</h2>
           <h1 className="text-[48px] text-white w-[366px] font-bold ml-5 md:ml-0  leading-11">
             {" "}
             We help to Get it done easy
           </h1>
-          <p className="text-white text-[16px] w-[350px] md:w-[388px] flex ml-5 md:ml-0 text-justify">
+          {/* <p className="text-white text-[16px] w-[350px] md:w-[388px] flex ml-5 md:ml-0 text-justify">
             Qriocity is proud to offer a wide range of comprehensive courses.
             Our curriculum is tailored to impart practical knowledge and
             expertise, simulating real-world scenariosthat prompt students to
@@ -35,14 +35,13 @@ const AboutUs = () => {
             industry experts and innovative resources, students gain first-hand
             experience working on live projects, instilling confidence and
             competence to tackle real-world challenges post-graduation.
-          </p>
+          </p> */}
           <div className="flex flex-row gap-10 mt-14 ml-5 md:ml-0">
             <img src={bulb} alt="bulb svg" />
             <div className="flex flex-col  text-white">
-              <h4 className="text-[26px]">Vision</h4>
-              <span className="text-[14px] w-[200px]">
-                To provide an real time industry level learning and experience
-                for college students
+              <h4 className="text-[26px] font-bold">Complex Project Challenges</h4>
+              <span className="text-[14px] w-[500px]">
+              Students frequently encounter difficulties in tackling complex projects, which can be overwhelming alongside their regular studies.
               </span>
             </div>
           </div>
@@ -50,126 +49,152 @@ const AboutUs = () => {
           <div className="flex flex-row gap-10 mt-14 ml-5 md:ml-0">
             <img src={rocket} alt="bulb svg"  />
             <div className="flex flex-col  text-white">
-              <h4 className="text-[26px]">Mission</h4>
-              <span className="text-[14px] w-[200px]">
-                10Lakh Students Trained across PAN India
+              <h4 className="text-[26px] font-bold">Job Placement Pressures</h4>
+              <span className="text-[14px]  w-[500px]">
+              There is significant stress related to preparing for job placements while managing academic responsibilities.
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-row gap-10 mt-14 ml-5 md:ml-0">
+            <img src={bulb} alt="bulb svg" />
+            <div className="flex flex-col  text-white">
+              <h4 className="text-[26px] font-bold">Non-Essential Task Overload</h4>
+              <span className="text-[14px]  w-[500px]">
+              Students face a busy schedule creating presentations and documents for projects and activities that often don't directly contribute to their career development
               </span>
             </div>
           </div>
         </div>
       </div>
 
-      <h1 className="font-figtree text-[32px]  my-[20px] md:text-[60px] text-white font-semibold">
-        What Qriocity offers you?{" "}
+      <h1 className="font-figtree text-[32px] mt-16 my-[30px] md:text-[60px] text-white font-semibold">
+      Why choose Qriocity?{" "}
       </h1>
       <div className="flex flex-col lg:flex-row gap-12 z-10">
+
         <div className="w-[300px] h-[200px] md:w-[500px] md:h-[300px]  flex-col justify-between p-8 rounded-lg bg-[#161616] text-white border border-[#fff]">
           <div className="flex flex-col">
-            {" "}
-            <h4 className="text-[24px] md:text-[32px] font-bold ">
-              Self Paced Course
-            </h4>
-            <p className="w-[150px] md:w-[200px] text-[8px] md:text-[16px]">
-              Learn & Upskill via Online Courses
-            </p>
-          </div>
-
-          <div className="flex justify-between items-baseline ">
-            <button className=" bg-[#F15A29] mb-8 text-white rounded-2xl mt-1 p-1 w-[100px] md:p-3 text-[12px] md:text-[16px] md:rounded-3xl md:w-[200px]">
-              <span>Learn More </span>
-            </button>
             <img
               src={notes}
               alt="icon of notes"
-              className="w-[50px] h-[50px] md:w-[107px] md:h-[107px]"
+              className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] mb-3  right-[5%] bottom-[5%]"
             />
-          </div>
-        </div>
-
-        <div className="w-[300px] h-[200px] md:w-[500px] md:h-[300px] flex-col justify-between p-8 rounded-lg bg-[#161616] text-white border border-[#fff]">
-          <div className="flex flex-col">
             {" "}
-            <h4 className="text-[24px] md:text-[32px] font-bold ">
-              Live Classes
+            <h4 className="text-[24px] my-2 md:text-[32px] font-bold ">
+            Customized Projects in College Template
             </h4>
-            <p className="w-[150px] md:w-[200px] text-[8px] md:text-[16px]">
-              Live Classes offering Guaranteed Job Placement Support
+            <p className="w-[150px] md:w-[400px] text-[8px] md:text-[16px] my-2">
+            We provide projects tailored to fit the specific template and requirements of their colleges.
             </p>
           </div>
 
-          <div className="flex justify-between items-baseline ">
-            <button className=" bg-[#F15A29] mb-8 text-white rounded-2xl mt-1 p-1 w-[100px] md:p-3 text-[12px] md:text-[16px] md:rounded-3xl md:w-[200px]">
-              <span>Learn More </span>
-            </button>
+        </div>
+
+        <div className="w-[300px] h-[200px] md:w-[500px] md:h-[300px]  flex-col justify-between p-8 rounded-lg bg-[#161616] text-white border border-[#fff]">
+          <div className="flex flex-col">
             <img
-              src={video}
-              alt="icon of video"
-              className="w-[50px] h-[50px] md:w-[107px] md:h-[107px]"
+              src={building}
+              alt="icon of notes"
+              className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] mb-3  right-[5%] bottom-[5%]"
             />
+            {" "}
+            <h4 className="text-[24px] my-2 md:text-[32px] font-bold ">
+            Advanced, Industry-Relevant Projects
+            </h4>
+            <p className="w-[150px] md:w-[400px] text-[8px] md:text-[16px] my-2">
+            Our projects are not just academic exercises; they are advanced, mirroring real industry demands.
+            </p>
           </div>
+
         </div>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-12 mt-12 z-10">
-        <div className="w-[300px] h-[200px] md:w-[500px] md:h-[300px] flex-col justify-between px-4 py-8 rounded-lg bg-[#161616] text-white border border-[#fff]">
-          <div className="flex flex-col">
-            {" "}
-            <h4 className="text-[24px] md:text-[32px] font-bold ">
-              Interactive Practice Platforms
-            </h4>
-            <p className=" w-[150px] md:w-[200px] text-[8px] md:text-[16px]">
-              Learn through Hands-on Coding Experience
-            </p>
-          </div>
 
-          <div className="flex justify-between items-baseline ">
-            <button className=" bg-[#F15A29] mb-8 text-white rounded-2xl mt-1 p-1 w-[100px] md:p-3 text-[12px] md:text-[16px] md:rounded-3xl md:w-[200px]">
-              <span>Learn More </span>
-            </button>
+        <div className="w-[300px] h-[200px] md:w-[500px] md:h-[300px]  flex-col justify-between p-8 rounded-lg bg-[#161616] text-white border border-[#fff]">
+          <div className="flex flex-col">
             <img
               src={tictac}
               alt="icon of notes"
-              className="w-[50px] h-[50px] md:w-[107px] md:h-[107px]"
+              className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] mb-3  right-[5%] bottom-[5%]"
             />
-          </div>
-        </div>
-
-        <div className="w-[300px] h-[180px] md:w-[500px] md:h-[300px] flex-col justify-between p-8 rounded-lg bg-[#161616] text-white border border-[#fff]">
-          <div className="flex flex-col">
             {" "}
-            <h4 className="text-[24px] md:text-[32px] font-bold ">
-              For Corporates
+            <h4 className="text-[24px] my-2 md:text-[32px] font-bold ">
+            Full Project Assistance
             </h4>
-            <p className=" w-[150px] md:w-[200px] text-[8px] md:text-[16px]">
-              Meet your hiring needs at ease
+            <p className="w-[150px] md:w-[400px] text-[8px] md:text-[16px] my-2">
+            We take complete responsibility for guiding the projects, allowing students to focus on crucial aspects like placements and further studies.
             </p>
           </div>
 
-          <div className="flex justify-between items-baseline ">
-            <button className=" bg-[#F15A29] mb-8 text-white rounded-2xl mt-1 p-1 w-[100px] md:p-3 text-[12px] md:text-[16px] md:rounded-3xl md:w-[200px]">
-              <span>Learn More </span>
-            </button>
+        </div>
+
+        <div className="w-[300px] h-[200px] md:w-[500px] md:h-[300px]  flex-col justify-between p-8 rounded-lg bg-[#161616] text-white border border-[#fff]">
+          <div className="flex flex-col">
+            <img
+              src={notes}
+              alt="icon of notes"
+              className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] mb-3  right-[5%] bottom-[5%]"
+            />
+            {" "}
+            <h4 className="text-[24px] my-2 md:text-[32px] font-bold ">
+            Group Discounts
+            </h4>
+            <p className="w-[150px] md:w-[400px] text-[8px] md:text-[16px] my-2">
+            We offer attractive discounts for groups, making our services more accessible.
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div className="flex flex-col lg:flex-row gap-12 mt-12 z-10 pb-4">
+
+        <div className="w-[300px] h-[200px] md:w-[500px] md:h-[300px]  flex-col justify-between p-8 rounded-lg bg-[#161616] text-white border border-[#fff]">
+          <div className="flex flex-col">
+            <img
+              src={tictac}
+              alt="icon of notes"
+              className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] mb-3  right-[5%] bottom-[5%]"
+            />
+            {" "}
+            <h4 className="text-[24px] my-2 md:text-[32px] font-bold ">
+            Holistic Career Development
+            </h4>
+            <p className="w-[150px] md:w-[400px] text-[8px] md:text-[16px] my-2">
+            Access free career counseling, internships, a Data Structures course, and HackerRank exercises to boost your job readiness and technical skills.
+            </p>
+          </div>
+
+        </div>
+
+        <div className="w-[300px] h-[200px] md:w-[500px] md:h-[300px]  flex-col justify-between p-8 rounded-lg bg-[#161616] text-white border border-[#fff]">
+          <div className="flex flex-col">
             <img
               src={building}
-              alt="icon of video"
-              className="w-[50px] h-[50px] md:w-[107px] md:h-[107px]"
+              alt="icon of notes"
+              className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] mb-3  right-[5%] bottom-[5%]"
             />
+            {" "}
+            <h4 className="text-[24px] my-2 md:text-[32px] font-bold ">
+            Earn While You Learn
+            </h4>
+            <p className="w-[150px] md:w-[400px] text-[8px] md:text-[16px] my-2">
+            Students have the opportunity to earn through our affiliate marketing program and by becoming campus ambassadors.
+            </p>
           </div>
+
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-12  lg:gap-14 md:items-center items-start text-white mt-24 ">
+      <div className=" flex flex-col md:flex-row gap-12  lg:gap-14 md:items-center items-start text-white mt-24 pb-20">
         <div className="flex flex-col gap-5">
           <h1 className="text-[24px] w-[350px] md: lg:text-[48px] lg:w-[574px] font-bold ">
             Passionate Teachers That Make a Difference
           </h1>
           <hr className="h-[2px] w-[70%] border-[#F15A29] border-[2px] rounded-3xl" />
           <p className="w-[350px]  text-justify lg:w-[480px]">
-            Beginners with little or no prior programming experience.
-            Individuals interested in data science or web development.
-            Professionals seeking to upskill or transition to a technical role.
-            Educators or students looking to integrate Python into their
-            curriculum or projects.
+          Embark on a transformative learning experience with our team of passionate educators who are not just mentors but difference-makers. Our courses, ranging from Python Programming to Full Stack Web Development and Machine Learning, are crafted by these inspiring teachers who bring expertise, enthusiasm, and a commitment to empowering you in every aspect of your educational journey.
           </p>
         </div>
         <div className="hover-div w-[300px] h-[250px] lg:w-[500px] lg:h-[383px] mt-5">
@@ -183,7 +208,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="flex flex-col  items-center gap-14 text-white my-24 ">
+      {/* <div className="flex flex-col  items-center gap-14 text-white my-24 ">
         <h1 className="text-[36px] w-[350px] flex  justify-center  md:w-full md:text-[48px] lg:text-[60px] font-semibold ">
           Want to become our Hiring Partner?
         </h1>
@@ -229,7 +254,7 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
     <Footer/>
    </>

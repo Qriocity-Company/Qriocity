@@ -21,8 +21,8 @@ export const Footer = () => {
         <div className="footer-section">
           <img src={logo} alt="" className="footer-logo pl-8" />
           <div className="footer-description md:w-[250px] pl-8">
-            Qriocity as a training institution for IT Graduates assisting them
-            to scale up the IT industry
+            Qriocity is a training institution for IT Graduates assisting them
+            to scale up the IT industry.
           </div>
 
           <div className="footer-item address pl-8 ">

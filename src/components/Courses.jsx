@@ -59,7 +59,7 @@ export const Courses = () => {
               Math.floor(value).toLocaleString()+" +"
             )}
           </animated.h2>
-          <span className="text-[16px] ">Lines of Codes</span>
+          <span className="text-[16px] ">Live Sessions</span>
         </div>
 
         <div className="w-[254px] h-[130px] bg-[#414141] rounded-xl items-start p-10 flex flex-col justify-center">

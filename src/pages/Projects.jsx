@@ -10,6 +10,13 @@ import ml from '../assets/projects/MachineLearning.png'
 import dl from '../assets/projects/deepLearning.png'
 import dl2 from '../assets/projects/image.png'
 
+import person from '../assets/projects/missing.png'
+import chatbot from '../assets/projects/chatbot.png'
+import farm from '../assets/projects/ds.png'
+import parking from '../assets/projects/parking.png'
+import home from '../assets/projects/home.png'
+import threats from '../assets/projects/threats.png'
+
 import { Footer } from "../components/Footer";
 import Modal from "../components/Modal";
 const Projects = () => {
@@ -40,7 +47,7 @@ const Projects = () => {
           <div className=" group w-[258px] h-[450px] md:w-[388px] md:h-[574px] flex flex-col justify-between items-center py-10 border-[#cac9c9]  border rounded-3xl hover:bg-[#F4511E] cursor-pointer ">
             <h3 className="text-white text-[24px] my-2 font-bold text-center">Deep Learning</h3>
             <img
-              src={dl}
+              src={person}
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
@@ -70,7 +77,7 @@ const Projects = () => {
           <div className=" group w-[258px] h-[450px] md:w-[388px] md:h-[574px]  flex flex-col justify-between items-center py-10 border-[#cac9c9]  border rounded-3xl hover:bg-[#F4511E] cursor-pointer ">
             <h3 className="text-white text-[24px] my-2 font-bold text-center">Artificial Intelligence</h3>
             <img
-              src={ai}
+              src={chatbot}
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
@@ -87,7 +94,7 @@ const Projects = () => {
           <div className=" group w-[258px] h-[450px] md:w-[388px] md:h-[574px] flex flex-col justify-between items-center py-10 border-[#cac9c9]  border rounded-3xl hover:bg-[#F4511E] cursor-pointer ">
             <h3 className="text-white text-[24px] my-2 font-bold text-center">Data Science</h3>
             <img
-              src={dataScience}
+              src={farm}
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
@@ -102,7 +109,7 @@ const Projects = () => {
           <div className=" group w-[258px] h-[450px] md:w-[388px] md:h-[574px]  flex flex-col justify-between items-center py-10 border-[#cac9c9]  border rounded-3xl hover:bg-[#F4511E] cursor-pointer ">
             <h3 className="text-white text-[24px] my-2 font-bold text-center">Artificial Intelligence</h3>
             <img
-              src={dl2}
+              src={parking}
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
@@ -148,7 +155,7 @@ const Projects = () => {
           <div className=" group w-[258px] h-[450px] md:w-[388px] md:h-[574px]  flex flex-col justify-between items-center py-10 border-[#cac9c9]  border rounded-3xl hover:bg-[#F4511E] cursor-pointer ">
             <h3 className="text-white text-[24px] my-2 font-bold text-center">Cyber Security</h3>
             <img
-              src={cyber}
+              src={threats}
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
@@ -163,7 +170,7 @@ const Projects = () => {
           <div className=" group w-[258px] h-[450px] md:w-[388px] md:h-[574px]  flex flex-col justify-between items-center py-10 border-[#cac9c9]  border rounded-3xl hover:bg-[#F4511E] cursor-pointer ">
             <h3 className="text-white text-[24px] my-2 font-bold text-center">Cloud Computing</h3>
             <img
-              src={cloud}
+              src={home}
               alt="image"
               className="grayscale group-hover:grayscale-0 h-[55%] w-full object-cover"
             />
