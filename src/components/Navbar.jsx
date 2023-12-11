@@ -38,8 +38,8 @@ export const Navbar = () => {
           <Link to="/contact" className={isRouteActive("/contact")}>
             Contact Us
           </Link>
-          <Link to="/webinar" className={isRouteActive("/webinar")}>
-            Webinars
+          <Link to="/consultations" className={isRouteActive("/webinar")}>
+            Free Consultations
           </Link>
           {/* <Link to="/blogs" className={isRouteActive("/blogs")}>
             Blogs

@@ -189,41 +189,41 @@ const AboutUs = () => {
         </h1>
 
         <div class="grid grid-rows-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-white">
-          <div className=" group flex flex-col gap-2">
+          <div className=" group flex flex-col gap-2 items-center">
             <img src={corporate} alt="corporate" className="z-20" />
-            <div className="text-[24px] font-semibold h-full justify-center items-center  flex-col  -z-10 group-hover:flex  group-hover:z-0 -translate-y-36 group-hover:translate-y-0 transition-transform duration-700 ease-in-out">
+            <div className="text-[24px] font-semibold h-full justify-center items-center  flex-col">
               <p className="text-[24px] font-semibold">Corporate</p>
               <p className="text-[24px] font-semibold"> Training</p>
             </div>
           </div>
 
-          <div className=" group flex flex-col gap-2">
+          <div className=" group flex flex-col gap-2 items-center">
             <img src={hire} alt="corporate" className="z-20" />
-            <div className="text-[24px] font-semibold h-full justify-center items-center  flex-col  -z-10 group-hover:flex  group-hover:z-0 -translate-y-36 group-hover:translate-y-0 transition-transform duration-700 ease-in-out">
+            <div className="text-[24px] font-semibold h-full justify-center items-center flex-col">
               <p className="text-[24px] font-semibold">Hire Trained </p>
               <p className="text-[24px] font-semibold">Freshers</p>
             </div>
           </div>
 
-          <div className=" group flex flex-col gap-2">
+          <div className=" group flex flex-col gap-2 items-center">
             <img src={lateralhire} alt="corporate" className="z-20" />
-            <div className="text-[24px] font-semibold h-full justify-center items-center  flex-col  -z-10 group-hover:flex  group-hover:z-0 -translate-y-36 group-hover:translate-y-0 transition-transform duration-700 ease-in-out">
+            <div className="text-[24px] font-semibold h-full justify-center items-center flex-col">
               <p className="text-[24px] font-semibold">Lateral </p>
               <p className="text-[24px] font-semibold">Hiring</p>
             </div>
           </div>
 
-          <div className=" group flex flex-col gap-2">
+          <div className=" group flex flex-col gap-2 items-center">
             <img src={time} alt="corporate" className="z-20" />
-            <div className="text-[24px] font-semibold h-full justify-center items-center flex-col -z-10 group-hover:flex  group-hover:z-0 -translate-y-36 group-hover:translate-y-0 transition-transform duration-700 ease-in-out">
+            <div className="text-[24px] font-semibold h-full justify-center items-center flex-col">
               <p className="text-[24px] font-semibold">Candidate</p>
               <p className="text-[24px] font-semibold">assessment</p>
             </div>
           </div>
 
-          <div className="group flex flex-col gap-2">
+          <div className="group flex flex-col gap-2 items-center">
             <img src={campus} alt="corporate" className="z-20" />
-            <div className="text-[24px] font-semibold h-full justify-center items-center flex-col -z-10 group-hover:flex  group-hover:z-0 -translate-y-36 group-hover:translate-y-0 transition-transform duration-700 ease-in-out">
+            <div className="text-[24px] font-semibold h-full justify-center items-center flex-col ">
               <p className="text-[24px] font-semibold">Campus </p>
               <p className="text-[24px] font-semibold">Hiring</p>
             </div>

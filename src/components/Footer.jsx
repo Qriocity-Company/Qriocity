@@ -11,6 +11,7 @@ import insta from "../assets/Group 1000004397.svg";
 import pin from "../assets/geo-alt-fill.svg";
 import phone from "../assets/telephone-fill.svg";
 import "../styles/Footer.css";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -37,26 +38,20 @@ export const Footer = () => {
         </div>
 
         <div className="footer-section courses">
-          <div className="section-heading">Our Courses</div>
+          <div className="section-heading">Quick Links</div>
           <div className="footer-item-container">
-            <a className="footer-item" href="/courses">
-              Machine Learning
-            </a>
-            <a className="footer-item" href="/courses">
-              Python
-            </a>
-            <a className="footer-item" href="/courses">
-              Data Science
-            </a>
-            <a className="footer-item" href="/courses">
-              Artificial Intelligence
-            </a>
-            <a className="footer-item" href="/courses">
-              Full Stack Development
-            </a>
-            <a className="footer-item" href="/courses">
-              Data Structures And Algorithms
-            </a>
+            <Link className="footer-item" to="/courses">
+              Our Courses
+            </Link>
+            <Link className="footer-item" to="/projects">
+              Projects
+            </Link>
+            <Link className="footer-item" to="/about">
+              About Us
+            </Link>
+            <Link className="footer-item" to="/consultations">
+              Free Consultations
+            </Link>
           </div>
         </div>
 
@@ -87,10 +82,6 @@ export const Footer = () => {
         <div className="footer-section ">
           <div className="section-heading">Follow us on</div>
           <div className="footer-item-container socials">
-            <a className="footer-item" href="/">
-              <img src={yt}></img>
-              <div className="social-name">Youtube</div>
-            </a>
             <a className="footer-item" href="https://www.linkedin.com/company/qriocity/">
               <img src={linkedin}></img>
               <div className="social-name">Linkedin</div>

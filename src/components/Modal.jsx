@@ -26,7 +26,7 @@ const Modal = ({setShowForm}) => {
     
   return (
     <div className="fixed top-0 left-0 z-10   w-full h-full flex justify-center   items-center">
-    <div className="p-3 bg-white text-black   z-[999]  border border-white  rounded-xl w-[500px] ">
+    <div className="p-8 bg-white text-black   z-[999]  border border-white  rounded-xl w-[500px] ">
       <button
         onClick={() => {
           setShowForm(false);

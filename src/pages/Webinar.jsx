@@ -159,6 +159,33 @@ const Webinar = () => {
       setShowForm(true);
     }, 5000);
   }, []);
+
+  const offerEndTime = new Date();
+  offerEndTime.setHours(offerEndTime.getHours() + 12);
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  function calculateTimeLeft() {
+    let difference = Math.max(0, offerEndTime - new Date());
+
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    difference -= hours * 60 * 60 * 1000;
+
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    difference -= minutes * 60 * 1000;
+
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    return { hours, minutes, seconds };
+  }
   
   return (
     <div className=" lg:max-w-[1440px] md:max-w[660px] max-w-[760px]  ">
@@ -844,12 +871,12 @@ const Webinar = () => {
         <div className="md:w-5/6 mx-auto">
           <div className="flex justify-between items-center">
             <div>
-              <p className="md:text-5xl text-xl font-semibold  text-white ">
+              <p className="md:text-5xl text-xl font-semibold  text-[#F15A29] ">
                 ₹7999
                 <span className="ml-3 md:text-2xl text-xs line-through"> ₹22495</span>
               </p>
               <p className="md:text-lg  text-sm font-semibold">
-              Offer ends in 15 Minutes!!!
+              Offer ends in {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s!!!
               </p>
             </div>
 
