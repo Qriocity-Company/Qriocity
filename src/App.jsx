@@ -12,6 +12,7 @@ import { Footer } from "./components/Footer";
 import Webinar from "./pages/Webinar";
 import Blog from "./pages/Blog";
 import BlogItem from "./components/BlogItem"
+import Privacy from "./pages/Privacy";
 
 function App() {
  
@@ -26,6 +27,7 @@ function App() {
           <Route path="/courses" element={<OurCourses />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/consultations" element={<Webinar />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
           {/* <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:blog" element={<BlogItem />} /> */}
           {/* <Route path="*" element={<NoPage />} /> */}
