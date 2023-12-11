@@ -168,7 +168,7 @@ const Projects = () => {
           </div>
 
           <div className=" group w-[258px] h-[450px] md:w-[388px] md:h-[574px]  flex flex-col justify-between items-center py-10 border-[#cac9c9]  border rounded-3xl hover:bg-[#F4511E] cursor-pointer ">
-            <h3 className="text-white text-[24px] my-2 font-bold text-center">Cloud Computing</h3>
+            <h3 className="text-white text-[24px] my-2 font-bold text-center">Data Science</h3>
             <img
               src={home}
               alt="image"
