@@ -104,7 +104,7 @@ export const Footer = () => {
               <div className="social-name">Instagram</div>
             </a>
             <a className="footer-item" href="https://www.google.com/search?q=qriocity+chennai+&sca_esv=589592780&sxsrf=AM9HkKnOB6dfca6ogOLa8XjFdi26X6Dqpg%3A1702230430157&ei=nvl1Ze-WCZnf2roPlIWR6AE&ved=0ahUKEwjv3fXAtoWDAxWZr1YBHZRCBB0Q4dUDCBA&uact=5&oq=qriocity+chennai+&gs_lp=Egxnd3Mtd2l6LXNlcnAiEXFyaW9jaXR5IGNoZW5uYWkgMgQQIxgnMgIQJkinBVDMA1jMA3ABeAGQAQCYAW6gAW6qAQMwLjG4AQPIAQD4AQHCAgoQABhHGNYEGLADwgINEAAYRxjWBBjJAxiwA-IDBBgAIEGIBgGQBgg&sclient=gws-wiz-serp">
-              <FaGoogle  className="w-[32px] h-[32px] md:w-[18px] md:h-[18px]"  />
+              <FaGoogle  className="w-[22px] h-[22px] md:w-[18px] md:h-[18px]"  />
               <div className="social-name">Google Reviews</div>
             </a>
           </div>

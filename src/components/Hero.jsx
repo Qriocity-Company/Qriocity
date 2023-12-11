@@ -16,16 +16,17 @@ export const Hero = () => {
         Simple solutions for complex projects
       </h1>
 
-      <div className="group lg:w-[990px] w-[350px] md:w-[600px] lg:h-[166px] h-[80px] md:h-[120px] bg-white hover:cursor-pointer font-figtree lg:rounded-[27px] rounded-2xl z-[30] flex flex-row lg:px-[150px]  px-[50px] justify-between items-center  mt-20 lg:mt-0">
+      <div className="group lg:w-[990px] w-[350px] md:w-[600px] lg:h-[166px] h-[80px] md:h-[120px] bg-white hover:cursor-pointer font-figtree lg:rounded-[27px] rounded-2xl z-[30] flex flex-row lg:px-[150px] px-[15px] md:px-[50px] justify-between items-center  mt-20 lg:mt-0 py-[45px] md:py-0">
         <div className="flex flex-col items-center">
           <h2 className="font-bold  text-[20px] md:text-[32px] lg:text-[40px] animate-charcter justify-center items-center text-center "> 5 
-            <div className="flex items-end justify-between">
+            <div className="flex flex-col md:flex-row  items-end justify-center md:justify-between">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="122"
                 height="40"
                 viewBox="0 0 122 41"
                 fill="none"
+                className="w-[100%] md:w-auto h-[20px] md:h-auto"
               >
                 <g clip-path="url(#clip0_208_3815)">
                   <path
@@ -59,10 +60,10 @@ export const Hero = () => {
                   </clipPath>
                 </defs>
               </svg>
-              <img src={Review} />
+              <img src={Review} className="w-[100%] md:w-auto"/>
             </div>
           </h2>
-          <span className="font-medium text-[8px] md:text-[16px] animate-charcter">
+          <span className="hidden md:block font-medium text-[8px] md:text-[16px] animate-charcter">
             Google Ratings
           </span>
         </div>

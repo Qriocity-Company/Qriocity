@@ -28,6 +28,15 @@ import phone from "../assets/fluent_phone-20-filled.svg";
 import { FaLinkedin } from "react-icons/fa";
 import hand from "../assets/Image COntact.png";
 import Modal from "../components/Modal";
+import laptop2 from '../assets/laptop-2.png'
+import hs from '../assets/higher-studies.png'
+import cap from '../assets/g-cap.png'
+import cguidance from '../assets/career-guidance.png'
+import play from '../assets/play-btn.svg'
+import vcbtn from '../assets/vc-icon.png'
+import pdf from '../assets/pdf.png'
+
+
 // import MachineLearning from "../assets/machineLearning.svg";
 
 const images = [
@@ -568,9 +577,10 @@ const Webinar = () => {
               Exclusive Bonuses for Our Students
             </div>
             <div className="grid gap-10 mt-10 md:mt-20 md:gap-20 md:grid-cols-2  place-items-center">
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl">
+              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
+                <img src={play} alt="" className="absolute top-[7%] left-[10%]"/>
                 <img src={Laptop} />
-                <div className="text-start text-2xl font-[700]">
+                <div className="text-start text-3xl font-[700]">
                   Master Python from basics to Advanced Levels
                 </div>
                 <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
@@ -578,43 +588,47 @@ const Webinar = () => {
                 </div>
               </div>
 
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl">
-                <img src={Laptop} />
-                <div className="text-start text-2xl font-[700]">
-                  Master Python from basics to Advanced Levels
+              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
+                <img src={play} alt="" className="absolute top-[7%] left-[10%]"/>
+                <img src={laptop2} />
+                <div className="text-start text-3xl font-[700]">
+                  Enhance Problem-Solving with HackerRank solutions
+                </div>
+                <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
+                  Worth ₹ 4999
+                </div>
+              </div>
+
+              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
+                <img src={play} alt="" className="absolute top-[7%] left-[10%]"/>
+                <img src={hs} />
+                <div className="text-start text-3xl font-[700]">
+                  Roadmap to Higher Studies Education
                 </div>
                 <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
                   Worth ₹ 999
                 </div>
               </div>
 
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl">
-                <img src={Laptop} />
-                <div className="text-start text-2xl font-[700]">
-                  Master Python from basics to Advanced Levels
+              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
+                <img src={pdf} alt="" className="absolute top-[7%] left-[10%]"/>
+                <img src={cap} />
+                <div className="text-start text-3xl font-[700]">
+                  Internship & Project Certificate
                 </div>
                 <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
-                  Worth ₹ 999
+                  Worth ₹ 2999
                 </div>
               </div>
 
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl">
-                <img src={Laptop} />
-                <div className="text-start text-2xl font-[700]">
-                  Master Python from basics to Advanced Levels
+              <div className="md:col-span-2 p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
+                <img src={vcbtn} alt="" className="absolute top-[7%] left-[10%] rounded-[100%]"/>
+                <img src={cguidance} />
+                <div className="text-start text-3xl font-[700]">
+                  Free Career Guidance session
                 </div>
                 <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
-                  Worth ₹ 999
-                </div>
-              </div>
-
-              <div className="md:col-span-2 p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl">
-                <img src={Laptop} />
-                <div className="text-start text-2xl font-[700]">
-                  Master Python from basics to Advanced Levels
-                </div>
-                <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
-                  Worth ₹ 999
+                  Worth ₹ 499
                 </div>
               </div>
             </div>
