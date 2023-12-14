@@ -14,10 +14,15 @@ import DataScience from "../assets/Courses/DataScience.jpg";
 import DSA from "../assets/Courses/DSA.jpg";
 // import Automation from "../assets/Courses/Automation.jpg";
 import uiux from '../assets/Courses/ui-ux.png'
+import Popup from "../components/Popup";
+
+
 
 const OurCourses = () => {
 
+
   const [showForm, setShowForm] = useState(false);
+ 
 
   // Define a common animation config
   const cardAnimation = useSpring({
@@ -28,11 +33,12 @@ const OurCourses = () => {
 
   return (
     <> 
+      {/* <Popup/> */}
      {showForm && (
-         <Modal setShowForm={setShowForm}/>
+         <Modal setShowForm={setShowForm} />
       )}
       <div className="bg-cover bg-center bg-no-repeat header-course w-full flex flex-col justify-center items-center mt-[68px] ">
-        <h1 className="font-figtree text-[16px] mt-8 z-10 md:text-[48px] text-white font-semibold">
+        <h1 className="font-figtree text-[16px] mt-8 z-1 md:text-[48px] text-white font-semibold">
           Get 50% OFF all our Premium Courses{" "}
         </h1>
         
@@ -152,6 +158,7 @@ const OurCourses = () => {
           </animated.div>
         </div> */}
       </div>
+      
       <Footer/>
     </>
   );

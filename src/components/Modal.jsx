@@ -1,7 +1,11 @@
 import React , {useState , useEffect} from 'react'
 import { MdCancel } from "react-icons/md";
+import Popup from './Popup';
 
-const Modal = ({setShowForm}) => {
+
+const Modal = ({setShowForm,notify}) => {
+
+    const [showPopup,setShowPopup] = useState(false)
     const [formData, setFormData] = useState({
         name: "",
         senderEmail: "",
@@ -9,8 +13,6 @@ const Modal = ({setShowForm}) => {
         message: "",
       });
     
-     
-      
       const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevFormData) => ({
@@ -21,22 +23,39 @@ const Modal = ({setShowForm}) => {
       
       async function onSubmit(event) {
         event.preventDefault();
-        const res = await fetch('https://form-submitter.onrender.com/submit-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ formData }),
-      });
+        // const res = await fetch('https://form-submitter.onrender.com/submit-form', {
+        //   method: 'POST',
+        //   headers: {
+        //     'Content-Type': 'application/json',
+        //   },
+        //   body: JSON.stringify({ formData }),
+        // });
+        setFormData({
+          name: '',
+          senderEmail: '',
+          phoneNumber: '',
+          message: '',
+        });
+        setShowPopup(true);
     
-      const data = await res.json();
-      console.log(data);
-      setShowForm(false);
+        const data = await res.json();
+        console.log(data);
+        // setShowForm(false);
+      
       }
+
+      useEffect(()=>{
+        const timeout= setTimeout(()=>{
+          setShowPopup(false);
+        },2500)
+
+        return ()=>{clearTimeout(timeout)}
+      },[showPopup])
     
   return (
     <div className="fixed top-0 left-0 z-10   w-full h-full flex justify-center   items-center">
-    <div className="p-8 bg-white text-black   z-[999]  border border-white  rounded-xl w-[500px] ">
+      { showPopup?<Popup/>:
+    <div className="p-8 bg-white text-black   z-[1000]  border border-white  rounded-xl w-[500px] ">
       <button
         onClick={() => {
           setShowForm(false);
@@ -56,6 +75,7 @@ const Modal = ({setShowForm}) => {
             className="p-2 border rounded-xl border-gray-300"
             value={formData.name}
             onChange={handleChange}
+            required
           />
         </div>
        
@@ -68,17 +88,7 @@ const Modal = ({setShowForm}) => {
             className="p-2 border rounded-xl border-gray-300"
             value={formData.phoneNumber}
             onChange={handleChange}
-          />
-        </div>
-        <div className="flex flex-col gap-2 p-2">
-        <label className="font-[500]" >Your Email</label>
-          <input
-            type="email"
-            placeholder="Enter Your Email"
-            name="senderEmail"
-            className="p-2 border rounded-xl border-gray-300"
-            value={formData.senderEmail}
-            onChange={handleChange}
+            required
           />
         </div>
 
@@ -91,17 +101,19 @@ const Modal = ({setShowForm}) => {
             className="p-2 border rounded-xl border-gray-300"
             value={formData.message}
             onChange={handleChange}
+            required
           />
         </div>
 
         <div className=" flex justify-center">
           {/* <img src={phone} alt="" className="hid" /> */}
-          <button  className="btn  text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-8 py-2 rounded-full  " type="submit">
+          <button  className="btn mt-8  text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-8 py-2 rounded-full  " type="submit">
           Book Free Consultation Call
           </button>
         </div>
       </form>
     </div>
+    }
   </div>
   )
 }
