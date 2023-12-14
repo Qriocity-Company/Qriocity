@@ -21,7 +21,17 @@ const Modal = ({setShowForm}) => {
       
       async function onSubmit(event) {
         event.preventDefault();
-        //   const { data, error } = await sendEmail(formData);
+        const res = await fetch('https://form-submitter.onrender.com/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ formData }),
+      });
+    
+      const data = await res.json();
+      console.log(data);
+      setShowForm(false);
       }
     
   return (
@@ -57,6 +67,17 @@ const Modal = ({setShowForm}) => {
             name="phoneNumber"
             className="p-2 border rounded-xl border-gray-300"
             value={formData.phoneNumber}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex flex-col gap-2 p-2">
+        <label className="font-[500]" >Your Email</label>
+          <input
+            type="email"
+            placeholder="Enter Your Email"
+            name="senderEmail"
+            className="p-2 border rounded-xl border-gray-300"
+            value={formData.senderEmail}
             onChange={handleChange}
           />
         </div>
