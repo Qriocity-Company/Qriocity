@@ -33,7 +33,7 @@ const Contact = () => {
     const res = await fetch('https://crm-backend-o6sb.onrender.com/customer/send', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json', 
       },
       body: JSON.stringify({ formData }),
     });
