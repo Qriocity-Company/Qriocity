@@ -111,7 +111,7 @@ const MainCard = ({setShowForm}) => {
       </p>
 
       <form onSubmit={onSubmit} className="w-[80%] mt-8">
-        <div className="flex w-[100%] justify-between gap-4 text-black">
+        <div className="flex  flex-col md:flex-row w-[100%] justify-between gap-4 text-black">
 
           <input type="text" name="name" placeholder="Enter Name" className="p-4 bg-white rounded-lg outline-none w-full " value={formData.name} onChange={handleChange} required/>
         
