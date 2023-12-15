@@ -82,7 +82,7 @@ const Modal = ({setShowForm,notify}) => {
         <div className="flex flex-col gap-2 p-2">
         <label className="font-[500]" >Your Mobile No.</label>
           <input
-            type="text"
+            type="text" maxlength="10" pattern="\d{10}" 
             placeholder="Your phone number"
             name="phoneNumber"
             className="p-2 border rounded-xl border-gray-300"

@@ -73,16 +73,16 @@ const Contact = () => {
 
             <div className='form-component'>
               <img src={name} alt="" />
-              <input type="text" placeholder='Your Name' name='name' value={formData.name} onChange={handleChange}/>
+              <input type="text" placeholder='Your Name' name='name' value={formData.name} onChange={handleChange} required/>
             </div>
             <div className='form-component'>
               <img src={phone} alt="" />
-              <input type="text" placeholder='Your phone number' name='phoneNumber'  value={formData.phoneNumber} onChange={handleChange}/>
+              <input type="text" maxlength="10" pattern="\d{10}" placeholder='Your phone number' name='phoneNumber'  value={formData.phoneNumber} onChange={handleChange} required/>
             </div>
 
             <div className='form-component message'>
               <img src={phone} alt="" className='hid'/>
-              <input type="text" placeholder='Message ' name='message'  value={formData.message} onChange={handleChange}/>
+              <input type="text" placeholder='Message ' name='message'  value={formData.message} onChange={handleChange} required/>
             </div>
 
             <div className='form-component form-btn'>
