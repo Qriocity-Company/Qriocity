@@ -23,13 +23,13 @@ const Modal = ({setShowForm,notify}) => {
       
       async function onSubmit(event) {
         event.preventDefault();
-        // const res = await fetch('https://form-submitter.onrender.com/submit-form', {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //   },
-        //   body: JSON.stringify({ formData }),
-        // });
+        const res = await fetch('https://form-submitter.onrender.com/submit-form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ formData }),
+        });
         setFormData({
           name: '',
           senderEmail: '',

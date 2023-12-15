@@ -35,7 +35,7 @@ import cguidance from '../assets/career-guidance.png'
 import play from '../assets/play-btn.svg'
 import vcbtn from '../assets/vc-icon.png'
 import pdf from '../assets/pdf.png'
-
+import Popup from "../components/Popup";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 
@@ -52,25 +52,83 @@ const images = [
   // Add more objects as needed
 ];
 
+
+const scrollToTop=()=>{
+  window.scrollTo(0,0);
+}
+
 const MainCard = ({setShowForm}) => {
+
+  const [showPopup,setShowPopup] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    senderEmail: '',
+    phoneNumber: '',
+    message: '',
+  });
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+  async function onSubmit(event) {
+    event.preventDefault();
+    const res = await fetch('https://form-submitter.onrender.com/submit-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ formData }),
+    });
+    setFormData({
+      name: '',
+      senderEmail: '',
+      phoneNumber: '',
+      message: '',
+    });
+    setShowPopup(true)
+  
+    setTimeout(()=>{
+      setShowPopup(false)
+    },2500);
+  
+    const data = await res.json();
+    console.log(data);
+  
+  }
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
+      {showPopup && <Popup/> }
       <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
         Empowering Future <br /> Tech Innovators
       </div>
       <p className="text-[#FBA154] md:text-3xl mt-5 ">
         Your Final Year Project, Our Expert Guidance
       </p>
-      <button
-        className="btn mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl "
-        style={{}}
-        onClick={() => {
-                setShowForm(true);
-              }}
-      >
-        {" "}
-        Book Free Consultation Call{" "}
-      </button>
+
+      <form onSubmit={onSubmit} className="w-[80%] mt-8">
+        <div className="flex w-[100%] justify-between gap-4 text-black">
+
+          <input type="text" name="name" placeholder="Enter Name" className="p-4 bg-white rounded-lg outline-none w-full " value={formData.name} onChange={handleChange} required/>
+        
+          <input type="text" maxlength="10" pattern="\d{10}" name="phoneNumber" placeholder="Enter Contact Number" className="p-4 bg-white rounded-lg outline-none w-full" value={formData.phoneNumber} onChange={handleChange} required/>
+        
+          <input type="text" name="message" placeholder="Enter Message" className="p-4 bg-white rounded-lg outline-none w-full" value={formData.message} onChange={handleChange} />
+      
+        </div>
+        <button
+          className="btn mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl "
+          type="submit"
+
+        >
+          {" "}
+          Book Free Consultation Call{" "}
+        </button>
+      </form>
     </div>
   );
 };
@@ -155,9 +213,9 @@ const Webinar = () => {
   const [showForm, setShowForm] = useState(false);
  
   useEffect(() => {
-    setTimeout(() => {
-      setShowForm(true);
-    }, 5000);
+    // setTimeout(() => {
+    //   setShowForm(true);
+    // }, 5000);
   }, []);
 
   const offerEndTime = new Date();
@@ -273,7 +331,7 @@ const Webinar = () => {
               className="btn md:mt-20  mt-10 text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
               onClick={() => {
-                setShowForm(true);
+                scrollToTop();
               }}
             >
               {" "}
@@ -362,7 +420,7 @@ const Webinar = () => {
               className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
               onClick={() => {
-                setShowForm(true);
+                scrollToTop();
               }}
             >
               {" "}
@@ -663,7 +721,7 @@ const Webinar = () => {
               className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
               onClick={() => {
-                setShowForm(true);
+                scrollToTop();
               }}
             >
               {" "}
@@ -715,7 +773,7 @@ const Webinar = () => {
               className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
               onClick={() => {
-                setShowForm(true);
+                scrollToTop();
               }}
             >
               {" "}
@@ -883,7 +941,7 @@ const Webinar = () => {
             <div>
               <button className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white md:px-12 px-4 md:py-4 py-2 rounded-full transition duration-300 " 
                onClick={() => {
-                setShowForm(true);
+                scrollToTop();
               }}
               >
               Book Free Consultation Call

@@ -82,7 +82,7 @@ const Contact = () => {
 
             <div className='form-component message'>
               <img src={phone} alt="" className='hid'/>
-              <input type="text" placeholder='Message ' name='message'  value={formData.message} onChange={handleChange} required/>
+              <input type="text" placeholder='Message ' name='message'  value={formData.message} onChange={handleChange}/>
             </div>
 
             <div className='form-component form-btn'>
