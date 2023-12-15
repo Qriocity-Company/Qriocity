@@ -23,7 +23,7 @@ const Modal = ({setShowForm,notify}) => {
       
       async function onSubmit(event) {
         event.preventDefault();
-        const res = await fetch('https://form-submitter.onrender.com/submit-form', {
+        const res = await fetch('https://crm-backend-o6sb.onrender.com/customer/send', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
