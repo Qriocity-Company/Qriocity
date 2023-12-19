@@ -29,7 +29,7 @@ function App() {
           <Route path="/webinar" element={<Webinar />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:blog" element={<BlogItem />} />
-          <Route path="*" element={<NoPage />} />
+          {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
        
       </div>
