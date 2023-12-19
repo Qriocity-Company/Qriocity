@@ -48,7 +48,7 @@ export const Courses = () => {
         <div className="w-[254px] h-[130px] bg-[#414141] rounded-xl items-start pl-10 flex flex-col justify-center">
           <animated.h2 className="text-[40px] font-figtree font-bold">
             {numberProps.number.to((value) =>
-              Math.floor(value).toLocaleString()
+              Math.floor(value).toLocaleString()+" +"
             )}
           </animated.h2>
           <span className="text-[16px] ">Learners</span>
@@ -56,16 +56,16 @@ export const Courses = () => {
         <div className="w-[304px] h-[130px] bg-[#414141] rounded-xl items-start p-10 flex flex-col justify-center">
           <animated.h2 className="text-[40px] font-figtree font-bold">
             {number2Props.number.to((value) =>
-              Math.floor(value).toLocaleString()
+              Math.floor(value).toLocaleString()+" +"
             )}
           </animated.h2>
-          <span className="text-[16px] ">Lines of Codes</span>
+          <span className="text-[16px] ">Live Sessions</span>
         </div>
 
         <div className="w-[254px] h-[130px] bg-[#414141] rounded-xl items-start p-10 flex flex-col justify-center">
           <animated.h2 className="text-[40px] font-figtree font-bold">
             {number3Props.number.to((value) =>
-              Math.floor(value).toLocaleString()
+              Math.floor(value).toLocaleString()+" +"
             )}
           </animated.h2>
           <span className="text-[16px] ">Mentors</span>
@@ -75,7 +75,7 @@ export const Courses = () => {
       <div className="flex lg:flex-row flex-col gap-8 mt-8 text-white">
         <div className="md:w-[530px] w-[350px] h-[120px] z-20 bg-[#414141] rounded-xl items-start pl-10 flex flex-col justify-center">
           <div className="flex gap-4 items-center ">
-            <h1 className="text-[40px] font-figtree font-bold">95%</h1>
+            <h1 className="text-[40px] font-figtree font-bold">98%</h1>
             <span className="text-[16px] font-figtree ">students successfully completed courses
 </span>
           </div>
@@ -85,7 +85,7 @@ export const Courses = () => {
         </div>
         <div className="md:w-[530px] w-[350px] h-[120px] z-20 bg-[#414141] rounded-xl items-start pl-10 flex flex-col justify-center">
           <div className="flex gap-4 items-center ">
-            <h1 className="text-[40px] font-figtree font-bold">95%</h1>
+            <h1 className="text-[40px] font-figtree font-bold">98%</h1>
             <span className="text-[16px] font-figtree ">students got dream placement offers</span>
           </div>
           <div className="w-[90%]">
@@ -105,9 +105,9 @@ export const Courses = () => {
           <div className="card">
             <img src={Python} />
             <div className="info">
-              <h1 className="font-bold text-[20px]">Python</h1>
-              <p className="text-[16px]">
-                Reach out to us for something awesome together
+              <h1 className="font-bold text-[16px] md:text-[20px]">Python</h1>
+              <p className="text-[12px] md:text-[16px] mb-1 md:mb-3">
+              Master Python programming, from basics to advanced topics, and unleash your coding potential. Start building real-world applications and scripts confidently.
               </p>
               <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
             </div>
@@ -115,9 +115,9 @@ export const Courses = () => {
           <div className="card">
             <img src={FullStackDev} />
             <div className="info">
-              <h1 className="font-bold text-[20px]">Full Stack Web Development</h1>
-              <p className="text-[16px]">
-                Reach out to us for something awesome together
+              <h1 className="font-bold text-[16px] md:text-[20px]">Full Stack Web Development</h1>
+              <p className="text-[12px] md:text-[16px] mb-1 md:mb-3">
+              Transform into a Full Stack developer, mastering both front-end and back-end technologies. Craft dynamic and responsive websites with hands-on, practical learning.
               </p>
               <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
             </div>
@@ -125,9 +125,9 @@ export const Courses = () => {
           <div className="card">
             <img src={MachineLearning} />
             <div className="info">
-              <h1 className="font-bold text-[20px]">Machine Learning</h1>
-              <p className="text-[16px]">
-                Reach out to us for something awesome together
+              <h1 className="font-bold text-[16px] md:text-[20px]">Machine Learning</h1>
+              <p className="text-[12px] md:text-[16px] mb-1 md:mb-3">
+              Journey through the intricacies of Machine Learning, mastering algorithms and applications. Empower yourself to create intelligent solutions and elevate your skills in the rapidly evolving field of AI.
               </p>
               <button onClick={()=>{setShowForm(true)}} >Buy Now</button>
             </div>

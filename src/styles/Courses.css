@@ -15,7 +15,7 @@
   width: 258px;
   height: 200px;
   border-radius: 15px;
-  padding: 1.5rem;
+  padding: 1rem;
   background: white;
   position: relative;
   display: flex;
@@ -76,7 +76,7 @@
 }
 .card .info p {
   letter-spacing: 1px;
-  font-size: 15px;
+  /* font-size: 15px; */
   margin-top: 8px;
 }
 .card .info button {
@@ -110,6 +110,7 @@
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  margin-top: 12px;
 }
 
 .button span {
@@ -135,4 +136,29 @@
 .button:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .button{
+    margin-top: 8px;
+    padding: 6px 2px;
+    font-size: medium;
+  }
+
+  .card .info button {
+    padding: 4px 10px;
+    font-size: small;
+  }
+  .card {
+    
+    padding: 0.75rem;
+    
+  }
+  .card .info p {
+    letter-spacing: 1px;
+    /* font-size: 15px; */
+    margin-top: 2px;
+  }
 }

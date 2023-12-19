@@ -4,7 +4,7 @@ import "../styles/Contact.css";
 import User1 from "../assets/user_01.jpg";
 import User2 from "../assets/user_02.jpg";
 import User3 from "../assets/user_03.jpg";
-import User4 from "../assets/user4.jpg";
+import User4 from "../assets/User4.jpg";
 import Review from "../assets/review.png";
 import DataScience from "../assets/Data_Science.svg";
 import MachineLearning from "../assets/machineLearning.svg";
@@ -28,6 +28,15 @@ import phone from "../assets/fluent_phone-20-filled.svg";
 import { FaLinkedin } from "react-icons/fa";
 import hand from "../assets/Image COntact.png";
 import Modal from "../components/Modal";
+import laptop2 from '../assets/laptop-2.png'
+import hs from '../assets/higher-studies.png'
+import cap from '../assets/g-cap.png'
+import cguidance from '../assets/career-guidance.png'
+import play from '../assets/play-btn.svg'
+import vcbtn from '../assets/vc-icon.png'
+import pdf from '../assets/pdf.png'
+import Popup from "../components/Popup";
+
 // import MachineLearning from "../assets/machineLearning.svg";
 
 const images = [
@@ -43,25 +52,83 @@ const images = [
   // Add more objects as needed
 ];
 
+
+const scrollToTop=()=>{
+  window.scrollTo(0,0);
+}
+
 const MainCard = ({setShowForm}) => {
+
+  const [showPopup,setShowPopup] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    senderEmail: '',
+    phoneNumber: '',
+    message: '',
+  });
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+  async function onSubmit(event) {
+    event.preventDefault();
+    const res = await fetch('https://crm-backend-o6sb.onrender.com/customer/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ formData }),
+    });
+    setFormData({
+      name: '',
+      senderEmail: '',
+      phoneNumber: '',
+      message: '',
+    });
+    setShowPopup(true)
+  
+    setTimeout(()=>{
+      setShowPopup(false)
+    },2500);
+  
+    const data = await res.json();
+    console.log(data);
+  
+  }
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
+      {showPopup && <Popup/> }
       <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
         Empowering Future <br /> Tech Innovators
       </div>
       <p className="text-[#FBA154] md:text-3xl mt-5 ">
         Your Final Year Project, Our Expert Guidance
       </p>
-      <button
-        className="btn mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl "
-        style={{}}
-        onClick={() => {
-                setShowForm(true);
-              }}
-      >
-        {" "}
-        Book Free Consultation Call{" "}
-      </button>
+
+      <form onSubmit={onSubmit} className="w-[80%] mt-8">
+        <div className="flex  flex-col md:flex-row w-[100%] justify-between gap-4 text-black">
+
+          <input type="text" name="name" placeholder="Enter Name" className="p-4 bg-white rounded-lg outline-none w-full " value={formData.name} onChange={handleChange} required/>
+        
+          <input type="text" maxlength="10" pattern="\d{10}" name="phoneNumber" placeholder="Enter Contact Number" className="p-4 bg-white rounded-lg outline-none w-full" value={formData.phoneNumber} onChange={handleChange} required/>
+        
+          <input type="text" name="message" placeholder="Enter Message" className="p-4 bg-white rounded-lg outline-none w-full" value={formData.message} onChange={handleChange} />
+      
+        </div>
+        <button
+          className="btn mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl "
+          type="submit"
+
+        >
+          {" "}
+          Book Free Consultation Call{" "}
+        </button>
+      </form>
     </div>
   );
 };
@@ -146,10 +213,37 @@ const Webinar = () => {
   const [showForm, setShowForm] = useState(false);
  
   useEffect(() => {
-    setTimeout(() => {
-      setShowForm(true);
-    }, 5000);
+    // setTimeout(() => {
+    //   setShowForm(true);
+    // }, 5000);
   }, []);
+
+  const offerEndTime = new Date();
+  offerEndTime.setHours(offerEndTime.getHours() + 12);
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  function calculateTimeLeft() {
+    let difference = Math.max(0, offerEndTime - new Date());
+
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    difference -= hours * 60 * 60 * 1000;
+
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    difference -= minutes * 60 * 1000;
+
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    return { hours, minutes, seconds };
+  }
   
   return (
     <div className=" lg:max-w-[1440px] md:max-w[660px] max-w-[760px]  ">
@@ -237,7 +331,7 @@ const Webinar = () => {
               className="btn md:mt-20  mt-10 text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
               onClick={() => {
-                setShowForm(true);
+                scrollToTop();
               }}
             >
               {" "}
@@ -326,7 +420,7 @@ const Webinar = () => {
               className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
               onClick={() => {
-                setShowForm(true);
+                scrollToTop();
               }}
             >
               {" "}
@@ -568,9 +662,10 @@ const Webinar = () => {
               Exclusive Bonuses for Our Students
             </div>
             <div className="grid gap-10 mt-10 md:mt-20 md:gap-20 md:grid-cols-2  place-items-center">
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl">
+              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
+                <img src={play} alt="" className="absolute top-[7%] left-[10%]"/>
                 <img src={Laptop} />
-                <div className="text-start text-2xl font-[700]">
+                <div className="text-start text-3xl font-[700]">
                   Master Python from basics to Advanced Levels
                 </div>
                 <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
@@ -578,43 +673,47 @@ const Webinar = () => {
                 </div>
               </div>
 
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl">
-                <img src={Laptop} />
-                <div className="text-start text-2xl font-[700]">
-                  Master Python from basics to Advanced Levels
+              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
+                <img src={play} alt="" className="absolute top-[7%] left-[10%]"/>
+                <img src={laptop2} />
+                <div className="text-start text-3xl font-[700]">
+                  Enhance Problem-Solving with HackerRank solutions
+                </div>
+                <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
+                  Worth ₹ 4999
+                </div>
+              </div>
+
+              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
+                <img src={play} alt="" className="absolute top-[7%] left-[10%]"/>
+                <img src={hs} />
+                <div className="text-start text-3xl font-[700]">
+                  Roadmap to Higher Studies Education
                 </div>
                 <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
                   Worth ₹ 999
                 </div>
               </div>
 
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl">
-                <img src={Laptop} />
-                <div className="text-start text-2xl font-[700]">
-                  Master Python from basics to Advanced Levels
+              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
+                <img src={pdf} alt="" className="absolute top-[9%] left-[12%] md:top-[7%] md:left-[10%]"/>
+                <img src={cap} />
+                <div className="text-start text-3xl font-[700]">
+                  Internship & Project Certificate
                 </div>
                 <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
-                  Worth ₹ 999
+                  Worth ₹ 2999
                 </div>
               </div>
 
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl">
-                <img src={Laptop} />
-                <div className="text-start text-2xl font-[700]">
-                  Master Python from basics to Advanced Levels
+              <div className="md:col-span-2 p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
+                <img src={vcbtn} alt="" className="absolute top-[9%] left-[12%] md:top-[7%] md:left-[10%] rounded-[100%]"/>
+                <img src={cguidance} />
+                <div className="text-start text-3xl font-[700]">
+                  Free Career Guidance session
                 </div>
                 <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
-                  Worth ₹ 999
-                </div>
-              </div>
-
-              <div className="md:col-span-2 p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl">
-                <img src={Laptop} />
-                <div className="text-start text-2xl font-[700]">
-                  Master Python from basics to Advanced Levels
-                </div>
-                <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
-                  Worth ₹ 999
+                  Worth ₹ 499
                 </div>
               </div>
             </div>
@@ -622,7 +721,7 @@ const Webinar = () => {
               className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
               onClick={() => {
-                setShowForm(true);
+                scrollToTop();
               }}
             >
               {" "}
@@ -674,7 +773,7 @@ const Webinar = () => {
               className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
               onClick={() => {
-                setShowForm(true);
+                scrollToTop();
               }}
             >
               {" "}
@@ -782,7 +881,7 @@ const Webinar = () => {
           </div>
 
           {/* Still Not Sure? We Have */}
-          <div className="md:mt-20 mt-10 text-center mb-20 md:p-16 p-4 ">
+          <div className="md:mt-20 mt-10 text-center mb-36 md:mb-20 md:p-16 p-4 ">
             <div className="lg:text-6xl md:text-4l  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
               Still Not Sure? We Have
             </div>
@@ -830,19 +929,19 @@ const Webinar = () => {
         <div className="md:w-5/6 mx-auto">
           <div className="flex justify-between items-center">
             <div>
-              <p className="md:text-5xl text-xl font-semibold  text-white ">
+              <p className="md:text-5xl text-xl font-semibold  text-[#F15A29] ">
                 ₹7999
                 <span className="ml-3 md:text-2xl text-xs line-through"> ₹22495</span>
               </p>
               <p className="md:text-lg  text-sm font-semibold">
-              Offer ends in 15 Minutes!!!
+              Offer ends in {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s!!!
               </p>
             </div>
 
             <div>
               <button className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white md:px-12 px-4 md:py-4 py-2 rounded-full transition duration-300 " 
                onClick={() => {
-                setShowForm(true);
+                scrollToTop();
               }}
               >
               Book Free Consultation Call

@@ -1,0 +1,32 @@
+.popup{
+    animation: up 0.3s ease-in forwards;
+    perspective: 1000px;
+}
+.tick{
+    animation: rotate 0.5s ease-in forwards;
+    animation-delay: 0.15s;
+}
+@keyframes up {
+
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(-50px);
+        opacity: 1;
+      
+    }
+    
+}
+@keyframes rotate {
+
+    0%{
+        
+    }
+    100%{
+        transform: rotateY(360deg);
+        
+    }
+    
+}
