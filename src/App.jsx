@@ -27,9 +27,9 @@ function App() {
           <Route path="/courses" element={<OurCourses />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/webinar" element={<Webinar />} />
-          {/* <Route path="/blogs" element={<Blog />} />
-          <Route path="/blogs/:blog" element={<BlogItem />} /> */}
-          {/* <Route path="*" element={<NoPage />} /> */}
+          <Route path="/blogs" element={<Blog />} />
+          <Route path="/blogs/:blog" element={<BlogItem />} />
+          <Route path="*" element={<NoPage />} />
         </Routes>
        
       </div>
