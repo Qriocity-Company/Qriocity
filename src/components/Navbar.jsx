@@ -41,9 +41,9 @@ export const Navbar = () => {
           <Link to="/consultations" className={isRouteActive("/consultations")}>
             Free Consultations
           </Link>
-          {/* <Link to="/blogs" className={isRouteActive("/blogs")}>
+          <Link to="/blogs" className={isRouteActive("/blogs")}>
             Blogs
-          </Link> */}
+          </Link>
         </div>
         <div className="md:hidden flex items-center">
           {showMenu ? (
@@ -113,12 +113,12 @@ export const Navbar = () => {
             >
               Free Consultations
             </Link>
-            {/* <Link to="/blogs" className={isRouteActive("/blogs")}
+            <Link to="/blogs" className={isRouteActive("/blogs")}
             onClick={() => {
                 toggleMenu();
               }}>
             Blogs
-          </Link> */}
+          </Link>
 
             <HiX
               className="text-[white] text-4xl cursor-pointer"
