@@ -20,7 +20,7 @@ export const Footer = () => {
         <footer className="footer flex md:flex-row flex-col w-5/6 mx-auto">
           <div className="footer-section">
             <img src={logo} alt="" className="footer-logo pl-8" />
-            <div className="footer-description md:w-[250px] pl-8">
+            <div className="footer-description md:w-[350px] pl-8">
               Qriocity is a training institution for IT Graduates assisting them
               to scale up the IT industry.
             </div>
@@ -28,7 +28,7 @@ export const Footer = () => {
             <div className="footer-item address pl-8 ">
               <img src={pin} alt="" style={{ fill: "red" }} className="icon" />
               <div className="md:w-[250px] ">
-                No:29, Vallalar Nagar, Salamedu, Villupuram, Pincode-605401
+              20, Elango Adigal St, Avvai Nagar, Choolaimedu, Chennai, Tamil Nadu 600094
               </div>
             </div>
             <div className="footer-item address pl-8 ">
@@ -89,10 +89,7 @@ export const Footer = () => {
                 <img src={linkedin}></img>
                 <div className="social-name">Linkedin</div>
               </a>
-              <a className="footer-item" href="/">
-                <img src={fb}></img>
-                <div className="social-name">Facebook</div>
-              </a>
+              
               <a
                 className="footer-item"
                 href="https://www.instagram.com/qriocity_in/"
