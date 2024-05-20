@@ -92,7 +92,7 @@ export const Footer = () => {
               
               <a
                 className="footer-item"
-                href="https://www.instagram.com/qriocity_in/"
+                href="https://www.instagram.com/qriocity.projects/"
               >
                 <img src={insta}></img>
                 <div className="social-name">Instagram</div>
