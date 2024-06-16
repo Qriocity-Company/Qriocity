@@ -15,6 +15,8 @@ import BlogItem from "./components/BlogItem";
 import Privacy from "./pages/Privacy";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ResourceLandingPage from "./pages/ResourcesLandingPage";
+import FormPage from "./pages/FormPage";
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route path="/consultations" element={<Webinar />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:blog" element={<BlogItem />} />
+          <Route path="/resources" element={<ResourceLandingPage />} />
+          <Route path="/form" element={<FormPage />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
         <ToastContainer
