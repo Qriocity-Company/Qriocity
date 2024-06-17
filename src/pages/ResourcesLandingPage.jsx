@@ -16,7 +16,7 @@ const ResourceLandingPage = () => {
   return (
     <div className="bg-black h-screen flex items-center justify-center">
       <div className="relative flex items-center justify-between w-full p-4 ">
-        <div className="relative  p-8  bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg shadow-lg w-[500px] h-[500px] flex flex-col">
+        <div className="relative box -m-8 p-8  bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg shadow-lg w-[500px] h-[500px] flex flex-col">
           <div className="place-self-center p-3 w-[300px] flex justify-center items-center rounded-full text-white border-2 border-white mt-5">
             <h1 className="text-xl font-bold place-self-center ">
               FREE PDF RESOURCE
@@ -42,7 +42,7 @@ const ResourceLandingPage = () => {
             Download Free PDF Resource
           </button>
         </div>
-        <img className=" h-[700px]  " src={bg} alt="background" />
+        <img className=" h-[700px] -m-24 " src={bg} alt="background" />
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import rectangle from "../Utils/Rectangle.png";
 import toast, { Toaster } from "react-hot-toast";
 import { ImSpinner8 } from "react-icons/im";
 import axios from "axios";
+
 const FormPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -29,6 +30,17 @@ const FormPage = () => {
       toast.error("Please fill all fields!!");
       return;
     }
+
+    if (!validateEmail(email)) {
+      toast.error("Please enter a valid email address!");
+      return;
+    }
+
+    if (!validatePhone(phone)) {
+      toast.error("Please enter a valid phone number!");
+      return;
+    }
+
     try {
       setLoading(true);
       const { data } = await axios.post(`${URL}/students/newStudent`, {
@@ -47,7 +59,19 @@ const FormPage = () => {
       }
     } catch (error) {
       console.log(error);
+      toast.error("Submission failed. Please try again later.");
+      setLoading(false);
     }
+  };
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const validatePhone = (phone) => {
+    const re = /^\d{10}$/; // Change this according to your phone number format
+    return re.test(String(phone));
   };
 
   const divStyle = {
@@ -56,6 +80,7 @@ const FormPage = () => {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
   };
+
   return (
     <div className="bg-black h-screen p-4 flex justify-center items-center">
       <div
