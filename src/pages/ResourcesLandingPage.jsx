@@ -15,17 +15,17 @@ const ResourceLandingPage = () => {
   };
   return (
     <div className="bg-black h-screen flex items-center justify-center">
-      <div className="relative flex items-center justify-between w-full p-4 ">
-        <div className="relative box -m-8 p-8  bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg shadow-lg w-[500px] h-[500px] flex flex-col">
-          <div className="place-self-center p-3 w-[300px] flex justify-center items-center rounded-full text-white border-2 border-white mt-5">
+      <div className="relative flex flex-col lg:flex-row items-center justify-between w-full p-4 ">
+        <div className="relative box mt-32 lg:-m-8  p-8  bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg shadow-lg lg:w-[500px] lg:h-[500px] flex flex-col">
+          <div className="place-self-center p-3 lg:w-[300px] w-auto flex justify-center items-center rounded-full text-white border-2 border-white mt-5">
             <h1 className="text-xl font-bold place-self-center ">
               FREE PDF RESOURCE
             </h1>
           </div>
-          <h2 className="text-5xl font-bold  mt-10 place-self-center bg-clip-text text-transparent bg-gradient-to-r from-white to-[#FF5924]">
+          <h2 className="lg:text-5xl text-4xl font-bold  mt-10 place-self-center bg-clip-text text-transparent bg-gradient-to-r from-white to-[#FF5924]">
             Top 100
           </h2>
-          <h2 className="text-4xl font-semibold mt-2 place-self-center">
+          <h2 className="lg:text-4xl text-xl font-semibold mt-2 place-self-center">
             APTITUDE QUESTIONS
           </h2>
           <div className="mt-10 flex items-center justify-center">
@@ -36,13 +36,17 @@ const ResourceLandingPage = () => {
           </div>
 
           <button
-            className="mt-auto relative bg-orange-500 text-white text-xl font-bold rounded-full shadow-lg hover:opacity-90 transition duration-300 background p-4"
+            className="mt-4 relative bg-orange-500 text-white lg:text-xl font-bold  rounded-full shadow-lg hover:opacity-90 transition duration-300 background p-4"
             onClick={handleClick}
           >
             Download Free PDF Resource
           </button>
         </div>
-        <img className=" h-[700px] -m-24 " src={bg} alt="background" />
+        <img
+          className="h-[500px] lg:h-[700px] lg:-m-24 -m-20  "
+          src={bg}
+          alt="background"
+        />
       </div>
     </div>
   );
