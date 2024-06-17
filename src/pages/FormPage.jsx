@@ -84,22 +84,22 @@ const FormPage = () => {
   return (
     <div className="bg-black h-screen p-4 flex justify-center items-center">
       <div
-        className="rectangle p-4 rounded-xl  w-[1000px] flex flex-col mt-16"
+        className="rectangle p-4 rounded-xl lg:w-[1000px]  flex flex-col mt-16"
         style={divStyle}
       >
-        <div className="heading flex justify-center items-center gap-2 text-5xl font-bold">
+        <div className="heading flex justify-center items-center gap-2 lg:text-5xl text-2xl font-bold">
           <h1 className="text-white">FILL THIS TO</h1>
           <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-[#ed9b9b] to-[#FF5924]">
             DOWNLOAD
           </h1>
         </div>
         <div className="flex mt-5 justify-center items-center">
-          <h1 className="font-semibold text-2xl text-gray-400">
+          <h1 className="font-semibold lg:text-2xl text-xl text-gray-400">
             Don't miss this anyday
           </h1>
         </div>
         <div className="flex flex-col justify-center items-center mt-10 gap-5 text-white">
-          <div className="flex items-center gap-4 bg-black p-2 rounded-xl w-[600px]">
+          <div className="flex items-center gap-4 bg-black p-2 rounded-xl lg:w-[600px] w-full">
             <img className="h-5" src={namepic} />
             <input
               className="outline-none bg-black p-2 w-full rounded-xl"
@@ -109,7 +109,7 @@ const FormPage = () => {
               required
             />
           </div>
-          <div className="flex items-center gap-4 bg-black p-2 rounded-xl w-[600px]">
+          <div className="flex items-center gap-4 bg-black p-2 rounded-xl lg:w-[600px] w-full">
             <img className="h-5" src={emailpic} />
             <input
               className="outline-none bg-black p-2 w-full rounded-xl"
@@ -119,7 +119,7 @@ const FormPage = () => {
               required
             />
           </div>
-          <div className="flex items-center gap-4 bg-black p-2 rounded-xl w-[600px]">
+          <div className="flex items-center gap-4 bg-black p-2 rounded-xl lg:w-[600px] w-full">
             <img className="h-5" src={phonepic} />
             <input
               className="outline-none bg-black p-2 w-full rounded-xl"
@@ -129,7 +129,7 @@ const FormPage = () => {
               required
             />
           </div>
-          <div className="flex items-center gap-4 bg-black rounded-xl w-[600px] p-2">
+          <div className="flex items-center gap-4 bg-black rounded-xl lg:w-[600px] w-full p-2">
             <img className="h-5" src={collegepic} />
             <input
               className="outline-none bg-black p-2 w-full rounded-xl"
@@ -139,10 +139,10 @@ const FormPage = () => {
               required
             />
           </div>
-          <div className="flex items-center gap-5 bg-black p-4 rounded-xl w-[600px]">
+          <div className="flex items-center gap-4 bg-black p-2 rounded-xl lg:w-[600px] w-full">
             <img className="h-5" src={yearpic} />
             <select
-              className="outline-none bg-black w-full rounded-xl"
+              className="outline-none bg-black w-full p-2 rounded-xl"
               value={year}
               onChange={(e) => setYear(e.target.value)}
               required
