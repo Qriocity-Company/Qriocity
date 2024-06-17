@@ -70,7 +70,7 @@ const FormPage = () => {
   };
 
   const validatePhone = (phone) => {
-    const re = /^\d{10}$/; // Change this according to your phone number format
+    const re = /^\d{10}$/;
     return re.test(String(phone));
   };
 
@@ -125,7 +125,12 @@ const FormPage = () => {
               className="outline-none bg-black p-2 w-full rounded-xl"
               placeholder="Phone Number"
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (value.length <= 10 && /^\d*$/.test(value)) {
+                  setPhone(value);
+                }
+              }}
               required
             />
           </div>
