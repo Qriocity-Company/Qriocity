@@ -117,10 +117,10 @@ export const Footer = () => {
           Privacy Policy
         </a>
         <a className="hover:underline hover:underline-offset-4 " href="/terms">
-          Terms of Services
+          Terms and Conditions
         </a>
         <a className="hover:underline hover:underline-offset-4 " href="/refund">
-          Refund Policy
+          Refund & Cancellation policy
         </a>
       </div>
       <div className="items-center text-gray-400 mt-4 flex flex-col md:flex-row text-[14px]">
