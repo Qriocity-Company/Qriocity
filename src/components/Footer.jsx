@@ -12,7 +12,7 @@ import pin from "../assets/geo-alt-fill.svg";
 import phone from "../assets/telephone-fill.svg";
 import "../styles/Footer.css";
 import { Link } from "react-router-dom";
-
+import { IoIosMail } from "react-icons/io";
 export const Footer = () => {
   return (
     <>
@@ -35,6 +35,10 @@ export const Footer = () => {
             <div className="footer-item address pl-8 ">
               <img src={phone} alt="" className="icon" />
               <div>9944878589</div>
+            </div>
+            <div className="footer-item mail pl-8 ">
+              <IoIosMail size={22} />
+              <div>contact@qriocity.in</div>
             </div>
           </div>
 
