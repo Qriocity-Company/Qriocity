@@ -28,7 +28,8 @@ export const Footer = () => {
             <div className="footer-item address pl-8 ">
               <img src={pin} alt="" style={{ fill: "red" }} className="icon" />
               <div className="md:w-[250px] ">
-              20, Elango Adigal St, Avvai Nagar, Choolaimedu, Chennai, Tamil Nadu 600094
+                20, Elango Adigal St, Avvai Nagar, Choolaimedu, Chennai, Tamil
+                Nadu 600094
               </div>
             </div>
             <div className="footer-item address pl-8 ">
@@ -89,10 +90,10 @@ export const Footer = () => {
                 <img src={linkedin}></img>
                 <div className="social-name">Linkedin</div>
               </a>
-              
+
               <a
                 className="footer-item"
-                href="https://www.instagram.com/qriocity.projects/"
+                href="https://www.instagram.com/qriocity.in/"
               >
                 <img src={insta}></img>
                 <div className="social-name">Instagram</div>
@@ -108,11 +109,22 @@ export const Footer = () => {
           </div>
         </footer>
       </div>
-      <div className="flex items-center text-gray-400 mt-3 flex-col md:flex-row text-[14px]">
-        <a href="/privacy-policy">Privacy Policy</a>
+      <div className="flex items-center text-gray-400 mt-3 flex-col md:flex-row text-[14px] gap-8">
+        <a
+          className="hover:underline hover:underline-offset-4 "
+          href="/privacy-policy"
+        >
+          Privacy Policy
+        </a>
+        <a className="hover:underline hover:underline-offset-4 " href="/terms">
+          Terms of Services
+        </a>
+        <a className="hover:underline hover:underline-offset-4 " href="/refund">
+          Refund Policy
+        </a>
       </div>
       <div className="items-center text-gray-400 mt-4 flex flex-col md:flex-row text-[14px]">
-        <p> © 2023 Qriocity Ventures Privte Limited. </p>
+        <p> © 2024 Qriocity Ventures Privte Limited. </p>
         <p> All rights reserved.</p>
         <br />
       </div>

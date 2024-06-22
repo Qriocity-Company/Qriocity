@@ -17,6 +17,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ResourceLandingPage from "./pages/ResourcesLandingPage";
 import FormPage from "./pages/FormPage";
+import TermsandServices from "./pages/TermsandServices";
+import Refund from "./pages/Refund";
 
 function App() {
   return (
@@ -34,6 +36,9 @@ function App() {
           <Route path="/blogs/:blog" element={<BlogItem />} />
           <Route path="/resources" element={<ResourceLandingPage />} />
           <Route path="/form" element={<FormPage />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/terms" element={<TermsandServices />} />
+          <Route path="/refund" element={<Refund />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
         <ToastContainer
