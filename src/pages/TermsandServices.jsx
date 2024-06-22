@@ -33,8 +33,8 @@ const TermsandServices = () => {
 
         <li>
           Contact Us If you have any questions, concerns, or requests regarding
-          this Privacy Policy, please contact us at
-          [responses.qriocity@gmail.com].
+          this Terms and Conditions, please contact us at
+          responses.qriocity@gmail.com.
         </li>
       </div>
       <Footer />

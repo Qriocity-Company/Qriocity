@@ -27,8 +27,8 @@ const Refund = () => {
         </li>
         <li>
           Contact Us If you have any questions, concerns, or requests regarding
-          this Privacy Policy, please contact us at
-          [responses.qriocity@gmail.com].
+          this Refund and Cancellation policy, please contact us at
+          responses.qriocity@gmail.com
         </li>
       </div>
       <Footer />
