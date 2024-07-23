@@ -76,16 +76,13 @@ const MainCard = ({ setShowForm }) => {
   };
   async function onSubmit(event) {
     event.preventDefault();
-    const res = await fetch(
-      "https://crm-backend-o6sb.onrender.com/customer/send",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ formData }),
-      }
-    );
+    await fetch("https://crm-backend-o6sb.onrender.com/customer/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ formData }),
+    });
     await updateSpreadSheet();
     setFormData({
       name: "",
@@ -98,9 +95,6 @@ const MainCard = ({ setShowForm }) => {
     setTimeout(() => {
       setShowPopup(false);
     }, 2500);
-
-    const data = await res.json();
-    console.log(data);
   }
 
   const updateSpreadSheet = async () => {
