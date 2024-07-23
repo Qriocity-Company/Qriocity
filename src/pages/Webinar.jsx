@@ -28,14 +28,15 @@ import phone from "../assets/fluent_phone-20-filled.svg";
 import { FaLinkedin } from "react-icons/fa";
 import hand from "../assets/Image COntact.png";
 import Modal from "../components/Modal";
-import laptop2 from '../assets/laptop-2.png'
-import hs from '../assets/higher-studies.png'
-import cap from '../assets/g-cap.png'
-import cguidance from '../assets/career-guidance.png'
-import play from '../assets/play-btn.svg'
-import vcbtn from '../assets/vc-icon.png'
-import pdf from '../assets/pdf.png'
+import laptop2 from "../assets/laptop-2.png";
+import hs from "../assets/higher-studies.png";
+import cap from "../assets/g-cap.png";
+import cguidance from "../assets/career-guidance.png";
+import play from "../assets/play-btn.svg";
+import vcbtn from "../assets/vc-icon.png";
+import pdf from "../assets/pdf.png";
 import Popup from "../components/Popup";
+import axios from "axios";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 
@@ -52,22 +53,20 @@ const images = [
   // Add more objects as needed
 ];
 
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
 
-const scrollToTop=()=>{
-  window.scrollTo(0,0);
-}
-
-const MainCard = ({setShowForm}) => {
-
-  const [showPopup,setShowPopup] = useState(false);
+const MainCard = ({ setShowForm }) => {
+  const [showPopup, setShowPopup] = useState(false);
 
   const [formData, setFormData] = useState({
-    name: '',
-    senderEmail: '',
-    phoneNumber: '',
-    message: '',
+    name: "",
+    senderEmail: "",
+    phoneNumber: "",
+    message: "",
   });
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
@@ -77,32 +76,57 @@ const MainCard = ({setShowForm}) => {
   };
   async function onSubmit(event) {
     event.preventDefault();
-    const res = await fetch('https://crm-backend-o6sb.onrender.com/customer/send', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ formData }),
-    });
+    const res = await fetch(
+      "https://crm-backend-o6sb.onrender.com/customer/send",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ formData }),
+      }
+    );
+    await updateSpreadSheet();
     setFormData({
-      name: '',
-      senderEmail: '',
-      phoneNumber: '',
-      message: '',
+      name: "",
+      senderEmail: "",
+      phoneNumber: "",
+      message: "",
     });
-    setShowPopup(true)
-  
-    setTimeout(()=>{
-      setShowPopup(false)
-    },2500);
-  
+    setShowPopup(true);
+
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 2500);
+
     const data = await res.json();
     console.log(data);
-  
   }
+
+  const updateSpreadSheet = async () => {
+    const currentDate = new Date();
+    try {
+      const data = {
+        Name: formData.name,
+        Email: formData.senderEmail,
+        Date: currentDate.toLocaleDateString(),
+        Time: currentDate.toLocaleTimeString(),
+        Number: formData.phoneNumber,
+        Message: formData.message,
+      };
+
+      await axios.post(
+        "https://sheet.best/api/sheets/611fa611-d555-4173-8069-177490fd8c08",
+        data
+      );
+      return;
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
-      {showPopup && <Popup/> }
+      {showPopup && <Popup />}
       <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
         Empowering Future <br /> Tech Innovators
       </div>
@@ -112,18 +136,40 @@ const MainCard = ({setShowForm}) => {
 
       <form onSubmit={onSubmit} className="w-[80%] mt-8">
         <div className="flex  flex-col md:flex-row w-[100%] justify-between gap-4 text-black">
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter Name"
+            className="p-4 bg-white rounded-lg outline-none w-full "
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
 
-          <input type="text" name="name" placeholder="Enter Name" className="p-4 bg-white rounded-lg outline-none w-full " value={formData.name} onChange={handleChange} required/>
-        
-          <input type="text" maxlength="10" pattern="\d{10}" name="phoneNumber" placeholder="Enter Contact Number" className="p-4 bg-white rounded-lg outline-none w-full" value={formData.phoneNumber} onChange={handleChange} required/>
-        
-          <input type="text" name="message" placeholder="Enter Message" className="p-4 bg-white rounded-lg outline-none w-full" value={formData.message} onChange={handleChange} />
-      
+          <input
+            type="text"
+            maxlength="10"
+            pattern="\d{10}"
+            name="phoneNumber"
+            placeholder="Enter Contact Number"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="text"
+            name="message"
+            placeholder="Enter Message"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.message}
+            onChange={handleChange}
+          />
         </div>
         <button
           className="btn mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl "
           type="submit"
-
         >
           {" "}
           Book Free Consultation Call{" "}
@@ -211,7 +257,7 @@ const ProblemCard = ({ content, boldContent, pos }) => {
 
 const Webinar = () => {
   const [showForm, setShowForm] = useState(false);
- 
+
   useEffect(() => {
     // setTimeout(() => {
     //   setShowForm(true);
@@ -244,21 +290,19 @@ const Webinar = () => {
 
     return { hours, minutes, seconds };
   }
-  
+
   return (
     <div className=" lg:max-w-[1440px] md:max-w[660px] max-w-[760px]  ">
-      {showForm && (
-         <Modal setShowForm={setShowForm}/>
-      )}
+      {showForm && <Modal setShowForm={setShowForm} />}
 
       <div className="relative mt-20">
         <div className=" text-white w-full md:mt-20 mt-10  flex justify-center items-center  font-figtree ">
           {/* <div class="blob blob-orange"></div>
     <div class="blob blob-blue"></div> */}
-          
+
           <div className="bg-[#3cffff] hidden md:block absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
           <div className="bg-[#FF7A00]  hidden md:block absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
-          <MainCard  setShowForm={setShowForm}/>
+          <MainCard setShowForm={setShowForm} />
         </div>
         <div className="bg-gradient-to-b  md:mt-20 mt-10  from-[#04131300] to-[#041313] w-full ">
           <div className=" md:w-5/6 mx-auto   md:p-16 p-4">
@@ -663,7 +707,11 @@ const Webinar = () => {
             </div>
             <div className="grid gap-10 mt-10 md:mt-20 md:gap-20 md:grid-cols-2  place-items-center">
               <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img src={play} alt="" className="absolute top-[7%] left-[10%]"/>
+                <img
+                  src={play}
+                  alt=""
+                  className="absolute top-[7%] left-[10%]"
+                />
                 <img src={Laptop} />
                 <div className="text-start text-3xl font-[700]">
                   Master Python from basics to Advanced Levels
@@ -674,7 +722,11 @@ const Webinar = () => {
               </div>
 
               <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img src={play} alt="" className="absolute top-[7%] left-[10%]"/>
+                <img
+                  src={play}
+                  alt=""
+                  className="absolute top-[7%] left-[10%]"
+                />
                 <img src={laptop2} />
                 <div className="text-start text-3xl font-[700]">
                   Enhance Problem-Solving with HackerRank solutions
@@ -685,7 +737,11 @@ const Webinar = () => {
               </div>
 
               <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img src={play} alt="" className="absolute top-[7%] left-[10%]"/>
+                <img
+                  src={play}
+                  alt=""
+                  className="absolute top-[7%] left-[10%]"
+                />
                 <img src={hs} />
                 <div className="text-start text-3xl font-[700]">
                   Roadmap to Higher Studies Education
@@ -696,7 +752,11 @@ const Webinar = () => {
               </div>
 
               <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img src={pdf} alt="" className="absolute top-[9%] left-[12%] md:top-[7%] md:left-[10%]"/>
+                <img
+                  src={pdf}
+                  alt=""
+                  className="absolute top-[9%] left-[12%] md:top-[7%] md:left-[10%]"
+                />
                 <img src={cap} />
                 <div className="text-start text-3xl font-[700]">
                   Internship & Project Certificate
@@ -707,7 +767,11 @@ const Webinar = () => {
               </div>
 
               <div className="md:col-span-2 p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img src={vcbtn} alt="" className="absolute top-[9%] left-[12%] md:top-[7%] md:left-[10%] rounded-[100%]"/>
+                <img
+                  src={vcbtn}
+                  alt=""
+                  className="absolute top-[9%] left-[12%] md:top-[7%] md:left-[10%] rounded-[100%]"
+                />
                 <img src={cguidance} />
                 <div className="text-start text-3xl font-[700]">
                   Free Career Guidance session
@@ -806,10 +870,18 @@ const Webinar = () => {
                   />
                 </svg>
                 <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
-                <div> <b>Bhatri Narayana </b> <span className="italic">CSE, VIT University</span> </div> <br /> <br />
-                Qriocity made my final project so much easier. They helped me choose a good topic and were there to help me whenever I needed. They answered quickly and explained things in a way I could understand. I'm really glad I found them
+                  <div>
+                    {" "}
+                    <b>Bhatri Narayana </b>{" "}
+                    <span className="italic">CSE, VIT University</span>{" "}
+                  </div>{" "}
+                  <br /> <br />
+                  Qriocity made my final project so much easier. They helped me
+                  choose a good topic and were there to help me whenever I
+                  needed. They answered quickly and explained things in a way I
+                  could understand. I'm really glad I found them
                 </p>
-               
+
                 <img src={User1} className=" w-[300px]" />
               </div>
 
@@ -828,10 +900,17 @@ const Webinar = () => {
                   />
                 </svg>
                 <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
-                <div> <b>Goutham </b> <span className="italic">ECE, Satyabama University</span> </div> <br /><br />
-                I didn't have to worry about writing reports or making slides for my project because Qriocity did all that. This let me focus on My placements.
+                  <div>
+                    {" "}
+                    <b>Goutham </b>{" "}
+                    <span className="italic">ECE, Satyabama University</span>{" "}
+                  </div>{" "}
+                  <br />
+                  <br />I didn't have to worry about writing reports or making
+                  slides for my project because Qriocity did all that. This let
+                  me focus on My placements.
                 </p>
-               
+
                 <img src={User2} className=" w-[300]" />
               </div>
               <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl flex justify-center items-center flex-col">
@@ -849,10 +928,19 @@ const Webinar = () => {
                   />
                 </svg>
                 <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
-                <div> <b>Deeksha </b> <span className="italic">IT, Githam University</span> </div> <br /><br />
-                Qriocity was super fast in giving me the materials I needed for my project. They also gave me some great advice about my future career. Working with them taught me a lot and made me feel more confident.
+                  <div>
+                    {" "}
+                    <b>Deeksha </b>{" "}
+                    <span className="italic">IT, Githam University</span>{" "}
+                  </div>{" "}
+                  <br />
+                  <br />
+                  Qriocity was super fast in giving me the materials I needed
+                  for my project. They also gave me some great advice about my
+                  future career. Working with them taught me a lot and made me
+                  feel more confident.
                 </p>
-               
+
                 <img src={User3} className=" w-[300px]" />
               </div>
 
@@ -871,11 +959,18 @@ const Webinar = () => {
                   />
                 </svg>
                 <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
-                <div> <b>Ramya </b> <span className="italic">CSE, Veltech University</span> </div> <br /> <br />
-                Working with Qriocity was a stress-free experience. They took care of the tough parts of my project, so I could focus on learning. They're awesome!
+                  <div>
+                    {" "}
+                    <b>Ramya </b>{" "}
+                    <span className="italic">CSE, Veltech University</span>{" "}
+                  </div>{" "}
+                  <br /> <br />
+                  Working with Qriocity was a stress-free experience. They took
+                  care of the tough parts of my project, so I could focus on
+                  learning. They're awesome!
                 </p>
-              
-                <img src={User4} className=" w-[300px]" /> 
+
+                <img src={User4} className=" w-[300px]" />
               </div>
             </div>
           </div>
@@ -888,42 +983,44 @@ const Webinar = () => {
             <img src={MoneyBack} className="w-1/2 mx-auto mb-10" />
 
             <div className="relative  lg:h-[710px] md:h-[550px] h-[360px] md:w-[974px]  mx-auto md:p-16">
-              <img src={Refund} className="hidden lg:block absolute top-1/2 left-1/2  " style={{transform :"translate(-50% , -50%)"}} />
+              <img
+                src={Refund}
+                className="hidden lg:block absolute top-1/2 left-1/2  "
+                style={{ transform: "translate(-50% , -50%)" }}
+              />
               <div className=" absolute    lg:p-10 p-8  text-white text-justify md:leading-9 md:text-xl  flex flex-col  md:gap-10 gap-5 md:mt-28 ">
-               <div>   
-               Secure your incredible final year project offer today and enjoy
-                a money-back guarantee. Enroll now, explore our project details,
-                and if you're not satisfied for any reason, just drop us an
-                email, and{" "}
-                <span className="bg-[#F15A29]">
-                  we'll refund your entire investment - no questions asked! 
-                </span>
-               </div>
-               <div>
-               At Qriocity, we are committed to your satisfaction and success.
-                Dive into our comprehensive <span className="bg-[#F15A29]" >project resources, expert guidance,</span>
-                and dedicated support.
-               </div>
-               <div>
-               Your venture into your final year project
-                is <span className="bg-[#F15A29]"  > completely risk-free</span> with our money-back guarantee. Your
-                success, satisfaction, and peace of mind are our top priorities.
-                Join us today and experience the difference!
-               </div>
+                <div>
+                  Secure your incredible final year project offer today and
+                  enjoy a money-back guarantee. Enroll now, explore our project
+                  details, and if you're not satisfied for any reason, just drop
+                  us an email, and{" "}
+                  <span className="bg-[#F15A29]">
+                    we'll refund your entire investment - no questions asked!
+                  </span>
+                </div>
+                <div>
+                  At Qriocity, we are committed to your satisfaction and
+                  success. Dive into our comprehensive{" "}
+                  <span className="bg-[#F15A29]">
+                    project resources, expert guidance,
+                  </span>
+                  and dedicated support.
+                </div>
+                <div>
+                  Your venture into your final year project is{" "}
+                  <span className="bg-[#F15A29]"> completely risk-free</span>{" "}
+                  with our money-back guarantee. Your success, satisfaction, and
+                  peace of mind are our top priorities. Join us today and
+                  experience the difference!
+                </div>
               </div>
             </div>
-
-
-
           </div>
 
-        {/* FAQ  section here .... */}
-         {/* <Faq/> */}
-
+          {/* FAQ  section here .... */}
+          {/* <Faq/> */}
         </div>
       </div>
-
-      
 
       <footer className=" z-50  fixed bottom-0 left-0 w-full bg-black text-white p-2">
         <div className="md:w-5/6 mx-auto">
@@ -931,20 +1028,25 @@ const Webinar = () => {
             <div>
               <p className="md:text-5xl text-xl font-semibold  text-[#F15A29] ">
                 ₹7999
-                <span className="ml-3 md:text-2xl text-xs line-through"> ₹22495</span>
+                <span className="ml-3 md:text-2xl text-xs line-through">
+                  {" "}
+                  ₹22495
+                </span>
               </p>
               <p className="md:text-lg  text-sm font-semibold">
-              Offer ends in {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s!!!
+                Offer ends in {timeLeft.hours}h {timeLeft.minutes}m{" "}
+                {timeLeft.seconds}s!!!
               </p>
             </div>
 
             <div>
-              <button className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white md:px-12 px-4 md:py-4 py-2 rounded-full transition duration-300 " 
-               onClick={() => {
-                scrollToTop();
-              }}
+              <button
+                className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white md:px-12 px-4 md:py-4 py-2 rounded-full transition duration-300 "
+                onClick={() => {
+                  scrollToTop();
+                }}
               >
-              Book Free Consultation Call
+                Book Free Consultation Call
               </button>
             </div>
           </div>
