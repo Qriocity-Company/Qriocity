@@ -99,12 +99,18 @@ const MainCard = ({ setShowForm }) => {
 
   const updateSpreadSheet = async () => {
     const currentDate = new Date();
+    const hours = String(currentDate.getHours()).padStart(2, "0");
+    const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+    const seconds = String(currentDate.getSeconds()).padStart(2, "0");
+
+    // Format the time as HH:MM:SS
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
     try {
       const data = {
         Name: formData.name,
         Email: formData.senderEmail,
         Date: currentDate.toLocaleDateString(),
-        Time: currentDate.toLocaleTimeString(),
+        Time: formattedTime,
         Number: formData.phoneNumber,
         Message: formData.message,
       };
