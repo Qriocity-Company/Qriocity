@@ -55,7 +55,8 @@ const FormPage = () => {
         toast.success("Succesfully Submitted");
         localStorage.setItem("Filled", true);
         setLoading(false);
-        window.location.href = "https://www.geeksforgeeks.org/";
+        window.location.href =
+          "https://docs.google.com/document/d/1p3nWOTCdn80Jfyb0t9BH1rrBSOcdFCuzb2UBQjIuBJY/edit?usp=drivesdk";
       }
     } catch (error) {
       console.log(error);
