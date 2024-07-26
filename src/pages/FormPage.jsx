@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import namepic from "../Utils/name.png";
 import emailpic from "../Utils/email.png";
 import phonepic from "../Utils/phone.png";
@@ -8,8 +8,11 @@ import rectangle from "../Utils/Rectangle.png";
 import toast, { Toaster } from "react-hot-toast";
 import { ImSpinner8 } from "react-icons/im";
 import axios from "axios";
+import { useParams, useNavigate } from 'react-router-dom';
 
 const FormPage = () => {
+  const { uniqueLink } = useParams();
+  const [docLink, setDocLink] = useState('');
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -17,6 +20,23 @@ const FormPage = () => {
   const [year, setYear] = useState("");
   const [loading, setLoading] = useState(false);
   const URL = "https://crm-backend-o6sb.onrender.com";
+  
+  useEffect(() => {
+    const fetchDocLink = async () => {
+      try {
+        const response = await axios.get(`https://crm-backend-o6sb.onrender.com/api/doc/getDocLink/${uniqueLink}`);
+        
+        setDocLink(response.data.doc.docLink);
+       
+      } catch (error) {
+        console.error('Error fetching document link', error);
+      }
+    };
+
+    if (uniqueLink) {
+      fetchDocLink();
+    }
+  }, [uniqueLink]);
 
   const handleSubmit = async () => {
     const currentDate = new Date().toISOString();
@@ -55,8 +75,8 @@ const FormPage = () => {
         toast.success("Succesfully Submitted");
         localStorage.setItem("Filled", true);
         setLoading(false);
-        window.location.href =
-          "https://docs.google.com/document/d/1p3nWOTCdn80Jfyb0t9BH1rrBSOcdFCuzb2UBQjIuBJY/edit?usp=drivesdk";
+        window.location.href =docLink;
+          
       }
     } catch (error) {
       console.log(error);

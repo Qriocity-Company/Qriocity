@@ -34,8 +34,8 @@ function App() {
           <Route path="/consultations" element={<Webinar />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:blog" element={<BlogItem />} />
-          <Route path="/resources" element={<ResourceLandingPage />} />
-          <Route path="/form" element={<FormPage />} />
+          <Route path="/resource/:uniqueLink" element={<ResourceLandingPage />} />
+          <Route path="/form/:uniqueLink" element={<FormPage />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<TermsandServices />} />
           <Route path="/refund" element={<Refund />} />
