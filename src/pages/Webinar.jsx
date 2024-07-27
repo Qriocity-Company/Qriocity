@@ -37,6 +37,7 @@ import vcbtn from "../assets/vc-icon.png";
 import pdf from "../assets/pdf.png";
 import Popup from "../components/Popup";
 import axios from "axios";
+import { ImSpinner8 } from "react-icons/im";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 
@@ -58,7 +59,12 @@ const scrollToTop = () => {
 };
 
 const MainCard = ({ setShowForm }) => {
+  const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [popupForm, setpopForm] = useState(false);
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -75,6 +81,7 @@ const MainCard = ({ setShowForm }) => {
     }));
   };
   async function onSubmit(event) {
+    setLoading(true);
     event.preventDefault();
     await fetch("https://crm-backend-o6sb.onrender.com/customer/send", {
       method: "POST",
@@ -84,6 +91,7 @@ const MainCard = ({ setShowForm }) => {
       body: JSON.stringify({ formData }),
     });
     await updateSpreadSheet();
+    setLoading(false);
     setFormData({
       name: "",
       senderEmail: "",
@@ -96,6 +104,19 @@ const MainCard = ({ setShowForm }) => {
       setShowPopup(false);
     }, 2500);
   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log("Form submitted");
+  };
+
+  const handleClose = () => {
+    setpopForm(false);
+  };
+  useEffect(() => {
+    // Show the modal as soon as the component mounts
+    setpopForm(true);
+  }, []);
 
   const updateSpreadSheet = async () => {
     const currentDate = new Date();
@@ -126,6 +147,67 @@ const MainCard = ({ setShowForm }) => {
   };
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
+      {popupForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-gradient-to-br from-green-400 via-black to-orange-400 mt-10  rounded-lg shadow-lg w-96 p-6 text-white flex flex-col">
+            <h1
+              onClick={handleClose}
+              className="place-self-end cursor-pointer text-2xl text-gray-100"
+            >
+              &times;
+            </h1>
+            <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
+              Fill out the form
+            </h2>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="w-full p-2 border-2 border-black  outline-none focus:ring-2  text-black rounded-xl"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="w-full p-2 border-2 border-black rounded-xl outline-none focus:ring-2  text-black"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                  placeholder="Contact Number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="flex justify-center items-center">
+                <button
+                  type="submit"
+                  className="bg-gradient-to-r from-orange-600 to-orange-400 text-white  py-2 rounded-full hover:from-orange-500 hover:to-orange-600 px-10"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
       {showPopup && <Popup />}
       <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
         Empowering Future <br /> Tech Innovators
@@ -167,13 +249,19 @@ const MainCard = ({ setShowForm }) => {
             onChange={handleChange}
           />
         </div>
-        <button
-          className="btn mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl "
-          type="submit"
-        >
-          {" "}
-          Book Free Consultation Call{" "}
-        </button>
+        <div className="flex justify-center items-center">
+          <button
+            className="btn mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl  flex justify-center items-center"
+            type="submit"
+          >
+            {" "}
+            {loading ? (
+              <ImSpinner8 size={30} className="animate-spin" />
+            ) : (
+              "Book Free Consultation Call"
+            )}
+          </button>
+        </div>
       </form>
     </div>
   );
