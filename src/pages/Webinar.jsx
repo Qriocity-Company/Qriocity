@@ -60,11 +60,13 @@ const scrollToTop = () => {
 
 const MainCard = ({ setShowForm }) => {
   const [loading, setLoading] = useState(false);
+  const [popuploading, setPopuploading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [popupForm, setpopForm] = useState(false);
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
+  const filled = localStorage.getItem("PopUp");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -114,8 +116,9 @@ const MainCard = ({ setShowForm }) => {
     setpopForm(false);
   };
   useEffect(() => {
-    // Show the modal as soon as the component mounts
-    setpopForm(true);
+    if (!filled) {
+      setpopForm(true);
+    }
   }, []);
 
   const updateSpreadSheet = async () => {
@@ -141,6 +144,29 @@ const MainCard = ({ setShowForm }) => {
         data
       );
       return;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handlePopUp = async () => {
+    setPopuploading(true);
+    const currentDate = new Date();
+    try {
+      const { data } = await axios.post(
+        "https://crm-backend-o6sb.onrender.com/enquiry/newStudent",
+        {
+          name: name,
+          email: email,
+          phone: phone,
+          date: currentDate.toLocaleDateString(),
+        }
+      );
+      if (data?.success) {
+        localStorage.setItem("PopUp", true);
+        setPopuploading(false);
+        setpopForm(false);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -200,8 +226,13 @@ const MainCard = ({ setShowForm }) => {
                 <button
                   type="submit"
                   className="bg-gradient-to-r from-orange-600 to-orange-400 text-white  py-2 rounded-full hover:from-orange-500 hover:to-orange-600 px-10"
+                  onClick={handlePopUp}
                 >
-                  Submit
+                  {popuploading ? (
+                    <ImSpinner8 className="animate-spin" />
+                  ) : (
+                    "Submit"
+                  )}
                 </button>
               </div>
             </form>
