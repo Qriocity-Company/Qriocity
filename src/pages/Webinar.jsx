@@ -148,6 +148,32 @@ const MainCard = ({ setShowForm }) => {
       console.log(error);
     }
   };
+  const updatePopSpreadSheet = async () => {
+    const currentDate = new Date();
+    const hours = String(currentDate.getHours()).padStart(2, "0");
+    const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+    const seconds = String(currentDate.getSeconds()).padStart(2, "0");
+
+    // Format the time as HH:MM:SS
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
+    try {
+      const data = {
+        Name: name,
+        Email: email,
+        Date: currentDate.toLocaleDateString(),
+        Time: formattedTime,
+        Contact: phone,
+      };
+
+      await axios.post(
+        "https://sheet.best/api/sheets/81b8b9cb-3a66-487f-903d-cd2554101ff4",
+        data
+      );
+      return;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handlePopUp = async () => {
     setPopuploading(true);
@@ -162,10 +188,12 @@ const MainCard = ({ setShowForm }) => {
           date: currentDate.toLocaleDateString(),
         }
       );
+
       if (data?.success) {
         localStorage.setItem("PopUp", true);
         setPopuploading(false);
         setpopForm(false);
+        await updatePopSpreadSheet();
       }
     } catch (error) {
       console.log(error);
