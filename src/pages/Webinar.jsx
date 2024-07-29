@@ -38,7 +38,7 @@ import pdf from "../assets/pdf.png";
 import Popup from "../components/Popup";
 import axios from "axios";
 import { ImSpinner8 } from "react-icons/im";
-
+import emailjs from "@emailjs/browser";
 // import MachineLearning from "../assets/machineLearning.svg";
 
 const images = [
@@ -93,6 +93,7 @@ const MainCard = ({ setShowForm }) => {
       body: JSON.stringify({ formData }),
     });
     await updateSpreadSheet();
+    handleClick();
     setLoading(false);
     setFormData({
       name: "",
@@ -123,53 +124,80 @@ const MainCard = ({ setShowForm }) => {
 
   const updateSpreadSheet = async () => {
     const currentDate = new Date();
+    const day = String(currentDate.getDate()).padStart(2, "0");
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are 0-based
+    const year = currentDate.getFullYear();
+    const formattedDate = `${day}/${month}/${year}`;
+
+    // Format the time as HH:MM:SS
     const hours = String(currentDate.getHours()).padStart(2, "0");
     const minutes = String(currentDate.getMinutes()).padStart(2, "0");
     const seconds = String(currentDate.getSeconds()).padStart(2, "0");
-
-    // Format the time as HH:MM:SS
     const formattedTime = `${hours}:${minutes}:${seconds}`;
     try {
-      const data = {
-        Name: formData.name,
-        Email: formData.senderEmail,
-        Date: currentDate.toLocaleDateString(),
-        Time: formattedTime,
-        Number: formData.phoneNumber,
-        Message: formData.message,
-      };
-
-      await axios.post(
-        "https://sheet.best/api/sheets/611fa611-d555-4173-8069-177490fd8c08",
-        data
-      );
+      fetch("https://sheetdb.io/api/v1/jjsk0slgx4fy2", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          data: [
+            {
+              Name: formData.name,
+              Email: formData.senderEmail,
+              Date: formattedDate,
+              Time: formattedTime,
+              Number: formData.phoneNumber,
+              Message: formData.message,
+            },
+          ],
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
       return;
     } catch (error) {
       console.log(error);
     }
   };
+
   const updatePopSpreadSheet = async () => {
     const currentDate = new Date();
+    // Format the date as DD/MM/YYYY
+    const day = String(currentDate.getDate()).padStart(2, "0");
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are 0-based
+    const year = currentDate.getFullYear();
+    const formattedDate = `${day}/${month}/${year}`;
+
+    // Format the time as HH:MM:SS
     const hours = String(currentDate.getHours()).padStart(2, "0");
     const minutes = String(currentDate.getMinutes()).padStart(2, "0");
     const seconds = String(currentDate.getSeconds()).padStart(2, "0");
-
-    // Format the time as HH:MM:SS
     const formattedTime = `${hours}:${minutes}:${seconds}`;
-    try {
-      const data = {
-        Name: name,
-        Email: email,
-        Date: currentDate.toLocaleDateString(),
-        Time: formattedTime,
-        Contact: phone,
-      };
 
-      await axios.post(
-        "https://sheet.best/api/sheets/81b8b9cb-3a66-487f-903d-cd2554101ff4",
-        data
-      );
-      return;
+    try {
+      const response = await fetch("https://sheetdb.io/api/v1/qr63j4ua71frc", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          data: [
+            {
+              Name: name,
+              Email: email,
+              Date: formattedDate,
+              Time: formattedTime,
+              Contact: phone,
+            },
+          ],
+        }),
+      });
+
+      const data = await response.json();
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -190,6 +218,7 @@ const MainCard = ({ setShowForm }) => {
       );
 
       if (data?.success) {
+        handleClickPopup();
         localStorage.setItem("PopUp", true);
         setPopuploading(false);
         setpopForm(false);
@@ -198,6 +227,38 @@ const MainCard = ({ setShowForm }) => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleClick = (e) => {
+    var data = {
+      name: formData.name,
+      phone: formData.phoneNumber,
+      message: formData.message,
+    };
+    emailjs
+      .send("service_audiui6", "template_mwv0oup", data, "gNK_PfCqn5ho5f0Kb")
+      .then(
+        (result) => {},
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  const handleClickPopup = (e) => {
+    var data = {
+      name: name,
+      phone: phone,
+      email: email,
+    };
+    emailjs
+      .send("service_audiui6", "template_gftaflp", data, "gNK_PfCqn5ho5f0Kb")
+      .then(
+        (result) => {},
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
