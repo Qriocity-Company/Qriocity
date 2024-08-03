@@ -17,7 +17,7 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-screen z-[40] bg-[#0000006c] backdrop-blur-[0.5rem] ">
+    <header className="fixed top-0 left-0 w-screen z-[50] bg-[#0000006c] backdrop-blur-[0.5rem] ">
       <div className="flex flex-row justify-between max-w-[1440px] h-[66px] w-full items-center px-8 md:px-[64px] ">
         <Link to="/">
           <img src={logo} alt="company logo" />
@@ -84,7 +84,7 @@ export const Navbar = () => {
             >
               Our Courses
             </Link>
-            
+
             <Link
               to="/projects"
               className={isRouteActive("/projects")}
@@ -113,18 +113,20 @@ export const Navbar = () => {
             >
               Free Consultations
             </Link>
-            <Link to="/blogs" className={isRouteActive("/blogs")}
-            onClick={() => {
+            <Link
+              to="/blogs"
+              className={isRouteActive("/blogs")}
+              onClick={() => {
                 toggleMenu();
-              }}>
-            Blogs
-          </Link>
+              }}
+            >
+              Blogs
+            </Link>
 
             <HiX
               className="text-[white] text-4xl cursor-pointer"
               onClick={toggleMenu}
             />
-            
           </div>
         )}
       </div>
