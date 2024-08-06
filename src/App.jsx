@@ -20,11 +20,13 @@ import FormPage from "./pages/FormPage";
 import TermsandServices from "./pages/TermsandServices";
 import Refund from "./pages/Refund";
 import RoadMap from "./pages/RoadMap";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 function App() {
   return (
     <Router>
       <div className="bg-[rgb(0,0,0)] z-50 justify-center items-center flex flex-col overflow-hidden">
+        <GoogleAnalytics/>
         <Navbar />
         <Routes>
           <Route index path="/" element={<Home />} />
