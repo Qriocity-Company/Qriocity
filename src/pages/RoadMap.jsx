@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import path from "../assets/path.png";
 import person from "../assets/person.png";
 import clock from "../assets/clock.png";
@@ -19,11 +19,117 @@ import internship from "../assets/internship.png";
 import hacks from "../assets/hacks.png";
 import interviewprep from "../assets/interviewprep.png";
 import { Testimonial } from "../components/Testimonial";
+import { ImSpinner8 } from "react-icons/im";
 import Faq from "../components/Faq";
+import axios from "axios";
 const RoadMap = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [popuploading, setPopuploading] = useState(false);
+  const filled = localStorage.getItem("RoadmapPopUp");
+  const [popupForm, setpopForm] = useState(false);
+
+  const handleClose = () => {
+    setpopForm(false);
+  };
+  const handlePopUp = async () => {
+    setPopuploading(true);
+    const currentDate = new Date();
+    try {
+      const { data } = await axios.post(
+        "https://crm-backend-o6sb.onrender.com/roadmap-popup/newStudent",
+        {
+          name: name,
+          email: email,
+          phone: phone,
+          date: currentDate.toLocaleDateString(),
+        }
+      );
+
+      if (data?.success) {
+        localStorage.setItem("RoadmapPopUp", true);
+        setPopuploading(false);
+        setpopForm(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    if (!filled) {
+      setpopForm(true);
+    }
+  }, []);
   return (
     <>
       <div className="flex flex-col p-4 bg-white min-h-screen w-full">
+        {popupForm && (
+          <div className="fixed inset-0 bg-black h-screen  bg-opacity-10 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+            <div className="bg-gradient-to-bl from-orange-500 via-slate-500 to-white mt-10  rounded-lg shadow-lg w-96 p-6 text-white flex flex-col">
+              <h1
+                onClick={handleClose}
+                className="place-self-end cursor-pointer text-4xl font-bold text-gray-100"
+              >
+                &times;
+              </h1>
+              <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
+                Fill out the form
+              </h2>
+              <div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="w-full p-2 border-2 border-black  outline-none focus:ring-2  text-black rounded-xl"
+                    placeholder="Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="w-full p-2 border-2 border-black rounded-xl outline-none focus:ring-2  text-black"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                    placeholder="Contact Number"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="flex justify-center items-center">
+                  <button
+                    type="submit"
+                    className="bg-gradient-to-r from-orange-600 to-orange-400 text-white  py-2 rounded-full hover:from-orange-500 hover:to-orange-600 px-10"
+                    onClick={handlePopUp}
+                  >
+                    {popuploading ? (
+                      <ImSpinner8 className="animate-spin" />
+                    ) : (
+                      "Submit"
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
         <div className="flex lg:flex-row flex-col justify-between items-center">
           <div className="flex justify-start items-start mt-40">
             <img
@@ -37,7 +143,7 @@ const RoadMap = () => {
               src={path}
               alt="Road"
             />
-            <img className="h-[300px] -ml-52 z-50" src={person} alt="Person" />
+            <img className="h-[300px] -ml-52 z-40" src={person} alt="Person" />
           </div>
           <div className="flex flex-col justify-center lg:items-start items-center lg:mr-40 mt-14 lg:mt-40">
             <h1 className=" font-bold text-3xl lg:text-[40px]">
