@@ -27,12 +27,21 @@ const RoadMap = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [popuploading, setPopuploading] = useState(false);
+
   const [department, setDepartment] = useState("");
   const [college, setCollege] = useState("");
   const [year, setYear] = useState("");
   const filled = localStorage.getItem("RoadmapPopUp");
   const [popupForm, setpopForm] = useState(false);
+  const [form, setForm] = useState(false);
+  const [popuploading, setPopuploading] = useState(false);
+  const [name2, setName2] = useState("");
+  const [email2, setEmail2] = useState("");
+  const [phone2, setPhone2] = useState("");
+
+  const [department2, setDepartment2] = useState("");
+  const [college2, setCollege2] = useState("");
+  const [year2, setYear2] = useState("");
 
   const handleClose = () => {
     setpopForm(false);
@@ -63,7 +72,9 @@ const RoadMap = () => {
       console.log(error);
     }
   };
-
+  const handleForm = () => {
+    setForm(!form);
+  };
   const timelineData = [
     {
       content: "Clear roadmap to get your dream job",
@@ -96,6 +107,32 @@ const RoadMap = () => {
       alt: "Interview preparation",
     },
   ];
+
+  const handleSubmitForm = async () => {
+    setPopuploading(true);
+    const currentDate = new Date();
+    try {
+      const { data } = await axios.post(
+        "https://crm-backend-o6sb.onrender.com/roadmap/newStudent",
+        {
+          name: name2,
+          email: email2,
+          phone: phone2,
+          college: college2,
+          department: department2,
+          year: year2,
+          date: currentDate.toLocaleDateString(),
+        }
+      );
+
+      if (data?.success) {
+        setPopuploading(false);
+        setForm(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     AOS.init({ duration: 1000 });
     if (!filled) {
@@ -210,6 +247,111 @@ const RoadMap = () => {
             </div>
           </div>
         )}
+
+        {form && (
+          <div className="fixed inset-0 bg-black h-screen  bg-opacity-10 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+            <div className="bg-gradient-to-bl from-orange-500 via-orang4-300 to-white rounded-lg shadow-lg w-96 p-4 text-white flex flex-col">
+              <h1
+                onClick={() => setForm(!form)}
+                className="place-self-end cursor-pointer text-4xl font-bold text-gray-100"
+              >
+                &times;
+              </h1>
+              <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
+                Book Your Free Spot Now
+              </h2>
+              <div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="w-full p-2 border-2 border-black  outline-none focus:ring-2  text-black rounded-xl"
+                    placeholder="Name"
+                    value={name2}
+                    onChange={(e) => setName2(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="w-full p-2 border-2 border-black rounded-xl outline-none focus:ring-2  text-black"
+                    placeholder="Email"
+                    value={email2}
+                    onChange={(e) => setEmail2(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                    placeholder="Contact Number"
+                    value={phone2}
+                    onChange={(e) => setPhone2(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="college"
+                    name="college"
+                    className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                    placeholder="College Name"
+                    value={college2}
+                    onChange={(e) => setCollege2(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="department"
+                    name="department"
+                    className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                    placeholder="Department"
+                    value={department2}
+                    onChange={(e) => setDepartment2(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <select
+                    className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                    value={year2}
+                    onChange={(e) => setYear2(e.target.value)}
+                  >
+                    <option hidden>Select Your Year</option>
+                    <option>First Year</option>
+                    <option>Second Year</option>
+                    <option>Third Year</option>
+                    <option>Fourth Year</option>
+                    <option>Graduate</option>
+                  </select>
+                </div>
+                <div className="flex justify-center items-center">
+                  <button
+                    type="submit"
+                    className="bg-gradient-to-r from-orange-600 to-orange-400 text-white  py-2 rounded-full hover:from-orange-500 hover:to-orange-600 px-10"
+                    onClick={handleSubmitForm}
+                  >
+                    {popuploading ? (
+                      <ImSpinner8 className="animate-spin" />
+                    ) : (
+                      "Submit"
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
         <div className="flex lg:flex-row flex-col justify-between items-center">
           <div className="flex justify-start items-start mt-40">
             <img
@@ -268,6 +410,7 @@ const RoadMap = () => {
                   background:
                     "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
                 }}
+                onClick={handleForm}
               >
                 Book your Free spot
               </button>

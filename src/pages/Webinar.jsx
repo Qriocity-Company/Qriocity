@@ -66,6 +66,9 @@ const MainCard = ({ setShowForm }) => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
+  const [department, setDepartment] = useState();
+  const [college, setCollege] = useState();
+  const [year, setYear] = useState();
   const filled = localStorage.getItem("PopUp");
 
   const [formData, setFormData] = useState({
@@ -223,6 +226,7 @@ const MainCard = ({ setShowForm }) => {
         setPopuploading(false);
         setpopForm(false);
         await updatePopSpreadSheet();
+        window.location.href = "https://www.geeksforgeeks.org/";
       }
     } catch (error) {
       console.log(error);
@@ -264,15 +268,15 @@ const MainCard = ({ setShowForm }) => {
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
       {popupForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-gradient-to-br from-green-400 via-black to-orange-400 mt-10  rounded-lg shadow-lg w-96 p-6 text-white flex flex-col">
+          <div className="bg-gradient-to-br from-green-400 via-black to-orange-400 mb-10  rounded-lg shadow-lg w-96 p-6 text-white flex flex-col">
             <h1
               onClick={handleClose}
               className="place-self-end cursor-pointer text-2xl text-gray-100"
             >
               &times;
             </h1>
-            <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
-              Fill out the form
+            <h2 className="text-xl font-bold mb-4 text-center text-gray-100">
+              Get Free Top 10 HR Questions and Answers
             </h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
@@ -311,6 +315,44 @@ const MainCard = ({ setShowForm }) => {
                   required
                 />
               </div>
+              <div className="mb-4">
+                <input
+                  type="text"
+                  id="college"
+                  name="college"
+                  className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                  placeholder="College Name"
+                  value={college}
+                  onChange={(e) => setCollege(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <input
+                  type="text"
+                  id="department"
+                  name="department"
+                  className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                  placeholder="Department"
+                  value={department}
+                  onChange={(e) => setDepartment(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <select
+                  className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                  value={year}
+                  onChange={(e) => setYear(e.target.value)}
+                >
+                  <option hidden>Select Your Year</option>
+                  <option>First Year</option>
+                  <option>Second Year</option>
+                  <option>Third Year</option>
+                  <option>Fourth Year</option>
+                  <option>Graduate</option>
+                </select>
+              </div>
               <div className="flex justify-center items-center">
                 <button
                   type="submit"
@@ -320,7 +362,7 @@ const MainCard = ({ setShowForm }) => {
                   {popuploading ? (
                     <ImSpinner8 className="animate-spin" />
                   ) : (
-                    "Submit"
+                    "Download"
                   )}
                 </button>
               </div>
