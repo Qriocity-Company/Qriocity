@@ -158,6 +158,12 @@ const RoadMap = () => {
       if (data?.success) {
         toast.success("Your seat has been booked succesfully");
         setLoading(false);
+        setName2("");
+        setEmail2("");
+        setDepartment2("");
+        setCollege2("");
+        setPhone2("");
+        setYear2("");
         setForm(false);
       }
     } catch (error) {
@@ -766,54 +772,75 @@ const RoadMap = () => {
             </div>
           </div>
         </div>
-        <div className="mt-20 flex flex-col ">
+        <div className="mt-20 flex flex-col">
           <h1 className="place-self-center mt-10 text-[50px] font-serif font-bold">
             Testimonials
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
-            <div className="p-4 border rounded-lg shadow-xl bg-white">
-              <p className="text-gray-700">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
+              <p className="text-gray-700 mb-4">
                 "This webinar was incredibly insightful and well-organized. The
                 speakers were knowledgeable and engaging. Highly recommend!"
               </p>
-              <p className="text-sm text-gray-500 mt-2">- Alex Johnson</p>
-              <p className="text-sm text-gray-500 mt-2">
-                College - Graphic Era
-              </p>
+              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
+                <p className="text-sm"> Alex Johnson</p>
+                <p className="text-sm">College - Graphic Era</p>
+              </div>
             </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white">
-              <p className="text-gray-700">
+            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
+              <p className="text-gray-700 mb-4">
                 "I learned so much from this webinar. The content was relevant
                 and the delivery was excellent. Looking forward to the next
                 one!"
               </p>
-              <p className="text-sm text-gray-500 mt-2">- Taylor Smith</p>
-              <p className="text-sm text-gray-500 mt-2">
-                College - Graphic Era
-              </p>
+              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
+                <p className="text-sm">Taylor Smith</p>
+                <p className="text-sm">College - Graphic Era</p>
+              </div>
             </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white">
-              <p className="text-gray-700">
+            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
+              <p className="text-gray-700 mb-4">
                 "A must-attend event for anyone interested in the topic. The
                 insights shared were practical and actionable."
               </p>
-              <p className="text-sm text-gray-500 mt-2">- Jamie Lee</p>
-              <p className="text-sm text-gray-500 mt-2">
-                College - Graphic Era
-              </p>
+              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
+                <p className="text-sm">Jamie Lee</p>
+                <p className="text-sm">College - Graphic Era</p>
+              </div>
             </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white">
-              <p className="text-gray-700">
+            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
+              <p className="text-gray-700 mb-4">
                 "Fantastic webinar! The presenters were top-notch, and the
                 content was both informative and inspiring."
               </p>
-              <p className="text-sm text-gray-500 mt-2">- Casey Brown</p>
-              <p className="text-sm text-gray-500 mt-2">
-                College - Graphic Era
+              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
+                <p className="text-sm">Casey Brown</p>
+                <p className="text-sm">College - Graphic Era</p>
+              </div>
+            </div>
+            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
+              <p className="text-gray-700 mb-4">
+                "The webinar exceeded my expectations. The topics covered were
+                current and the speakers were engaging."
               </p>
+              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
+                <p className="text-sm">Jordan Davis</p>
+                <p className="text-sm">College - Graphic Era</p>
+              </div>
+            </div>
+            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
+              <p className="text-gray-700 mb-4">
+                "Great webinar with valuable insights. The Q&A session was
+                particularly helpful."
+              </p>
+              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
+                <p className="text-sm">Morgan Taylor</p>
+                <p className="text-sm">College - Graphic Era</p>
+              </div>
             </div>
           </div>
         </div>
+
         <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
           <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
             90% seats booked
@@ -828,8 +855,8 @@ const RoadMap = () => {
             Book your Free spot
           </button>
         </div>
-        <div className="w-full flex items-center p-2 md:p-0 justify-center mt-20 bg-[#e3efec]">
-          <div className="max-w-2xl mx-auto py-8 md:mt-20 mb-20 ">
+        <div className="w-full flex flex-col items-center p-2 md:p-0 justify-center mt-20 bg-[#e3efec]">
+          <div className="max-w-2xl mx-auto py-8 md:mt-20  ">
             <h2 className="lg:text-[36px] text-[20px] font-bold text-center text-blue-600">
               FAQs :
               <span className=" ml-2 text-gray-800">
@@ -855,6 +882,21 @@ const RoadMap = () => {
                 </div>
               ))}
             </div>
+          </div>
+          <div className="flex flex-col justify-center items-center lg:mr-10 mt-5 mb-40">
+            <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
+              90% seats booked
+            </span>
+            <button
+              className="px-14 py-4 rounded-full font-bold text-white "
+              style={{
+                background:
+                  "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+              }}
+              onClick={handleForm}
+            >
+              Book your Free spot
+            </button>
           </div>
         </div>
       </div>
