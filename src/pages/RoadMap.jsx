@@ -23,6 +23,7 @@ import { Testimonial } from "../components/Testimonial";
 import { ImSpinner8 } from "react-icons/im";
 import Faq from "../components/Faq";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 const RoadMap = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -157,6 +158,7 @@ const RoadMap = () => {
       if (data?.success) {
         setPopuploading(false);
         setForm(false);
+        toast.success("Your seat is successfully filled");
       }
     } catch (error) {
       console.log(error);
@@ -195,6 +197,7 @@ const RoadMap = () => {
 
   return (
     <>
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="flex flex-col p-4 bg-white min-h-screen w-full">
         {popupForm && (
           <div className="fixed inset-0 bg-black h-screen  bg-opacity-10 backdrop-blur-sm flex items-center justify-center z-50 p-4">

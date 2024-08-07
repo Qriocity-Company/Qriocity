@@ -226,7 +226,8 @@ const MainCard = ({ setShowForm }) => {
         setPopuploading(false);
         setpopForm(false);
         await updatePopSpreadSheet();
-        window.location.href = "https://www.geeksforgeeks.org/";
+        window.location.href =
+          "https://docs.google.com/document/d/1p3nWOTCdn80Jfyb0t9BH1rrBSOcdFCuzb2UBQjIuBJY/edit?usp=drivesdk";
       }
     } catch (error) {
       console.log(error);
