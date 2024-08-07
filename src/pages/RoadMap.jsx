@@ -188,9 +188,9 @@ const RoadMap = () => {
   ];
   useEffect(() => {
     AOS.init({ duration: 1000 });
-    // if (!filled) {
-    //   setpopForm(true);
-    // }
+    if (!filled) {
+      setpopForm(true);
+    }
   }, []);
 
   return (
