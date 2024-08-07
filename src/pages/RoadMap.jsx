@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import path from "../assets/path.png";
 import person from "../assets/person.png";
 import clock from "../assets/clock.png";
 import calendar from "../assets/calendar.png";
 import bullet from "../assets/bullet.png";
-import line_circle from "../assets/line_circle.png";
 import { FaStar } from "react-icons/fa";
 import Linkedin from "../assets/linkedin.png";
 import doc from "../assets/doc.png";
@@ -27,6 +28,9 @@ const RoadMap = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [popuploading, setPopuploading] = useState(false);
+  const [department, setDepartment] = useState("");
+  const [college, setCollege] = useState("");
+  const [year, setYear] = useState("");
   const filled = localStorage.getItem("RoadmapPopUp");
   const [popupForm, setpopForm] = useState(false);
 
@@ -43,6 +47,9 @@ const RoadMap = () => {
           name: name,
           email: email,
           phone: phone,
+          college: college,
+          department: department,
+          year: year,
           date: currentDate.toLocaleDateString(),
         }
       );
@@ -56,17 +63,52 @@ const RoadMap = () => {
       console.log(error);
     }
   };
+
+  const timelineData = [
+    {
+      content: "Clear roadmap to get your dream job",
+      img: dream,
+      alt: "Clear roadmap",
+    },
+    {
+      content: "How to build an attractive portfolio",
+      img: portfolio,
+      alt: "Portfolio",
+    },
+    {
+      content: "How to find hidden job market?",
+      img: jobmarket,
+      alt: "Job market",
+    },
+    {
+      content: "Magical Process to get any internship or job",
+      img: internship,
+      alt: "Internship",
+    },
+    {
+      content: "Best LinkedIn hacks to get your dream job",
+      img: hacks,
+      alt: "LinkedIn hacks",
+    },
+    {
+      content: "Complete Interview preparation guide",
+      img: interviewprep,
+      alt: "Interview preparation",
+    },
+  ];
   useEffect(() => {
+    AOS.init({ duration: 1000 });
     if (!filled) {
       setpopForm(true);
     }
   }, []);
+
   return (
     <>
       <div className="flex flex-col p-4 bg-white min-h-screen w-full">
         {popupForm && (
           <div className="fixed inset-0 bg-black h-screen  bg-opacity-10 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-gradient-to-bl from-orange-500 via-slate-500 to-white mt-10  rounded-lg shadow-lg w-96 p-6 text-white flex flex-col">
+            <div className="bg-gradient-to-bl from-orange-500 via-slate-500 to-white  rounded-lg shadow-lg w-96 p-4 text-white flex flex-col">
               <h1
                 onClick={handleClose}
                 className="place-self-end cursor-pointer text-4xl font-bold text-gray-100"
@@ -74,7 +116,7 @@ const RoadMap = () => {
                 &times;
               </h1>
               <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
-                Fill out the form
+                Book Your Free Spot Now
               </h2>
               <div>
                 <div className="mb-4">
@@ -112,6 +154,44 @@ const RoadMap = () => {
                     onChange={(e) => setPhone(e.target.value)}
                     required
                   />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="college"
+                    name="college"
+                    className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                    placeholder="College Name"
+                    value={college}
+                    onChange={(e) => setCollege(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="department"
+                    name="department"
+                    className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                    placeholder="Department"
+                    value={department}
+                    onChange={(e) => setDepartment(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <select
+                    className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
+                    value={year}
+                    onChange={(e) => setYear(e.target.value)}
+                  >
+                    <option hidden>Select Your Year</option>
+                    <option>First Year</option>
+                    <option>Second Year</option>
+                    <option>Third Year</option>
+                    <option>Fourth Year</option>
+                    <option>Graduate</option>
+                  </select>
                 </div>
                 <div className="flex justify-center items-center">
                   <button
@@ -279,72 +359,38 @@ const RoadMap = () => {
               </div>
             </div>
 
-            {/* Content */}
-            <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 z-40">
-              <div className="bg-white p-4 rounded-xl h-[100px] w-full md:w-[200px] font-semibold text-lg flex justify-center items-center order-2 md:order-1">
-                Clear roadmap to get your dream job
+            {timelineData.map((item, index) => (
+              <div
+                key={index}
+                data-aos="fade-up"
+                className={`flex flex-col md:flex-row ${
+                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                } justify-center items-center gap-10 md:gap-20 z-40`}
+              >
+                <img
+                  className="h-[200px] w-full md:w-[250px] object-cover"
+                  src={item.img}
+                  alt={item.alt}
+                />
+                <div className="bg-white p-4 rounded-xl h-[100px] w-full md:w-[200px] lg:w-[230px] font-semibold text-lg flex justify-center items-center">
+                  {item.content}
+                </div>
               </div>
-              <img
-                className="h-[200px] w-full md:w-[250px] object-cover order-1 md:order-2"
-                src={dream}
-                alt="Clear roadmap"
-              />
-            </div>
-
-            <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 z-40">
-              <div className="bg-white p-4 rounded-xl h-[100px] w-full md:w-[200px] font-semibold text-lg flex justify-center items-center order-2 md:order-1">
-                How to build an attractive portfolio
-              </div>
-              <img
-                className="h-[200px] w-full md:w-[250px] object-cover order-1 md:order-2"
-                src={portfolio}
-                alt="Portfolio"
-              />
-            </div>
-
-            <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 z-40">
-              <div className="bg-white p-4 rounded-xl h-[100px] w-full md:w-[200px] font-semibold text-lg flex justify-center items-center order-2 md:order-1">
-                How to find hidden job market?
-              </div>
-              <img
-                className="h-[200px] w-full md:w-[250px] object-cover order-1 md:order-2"
-                src={jobmarket}
-                alt="Job market"
-              />
-            </div>
-
-            <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 z-40">
-              <div className="bg-white p-4 rounded-xl h-[100px] w-full md:w-[230px] font-semibold text-lg flex justify-center items-center order-2 md:order-1">
-                Magical Process to get any internship or job
-              </div>
-              <img
-                className="h-[200px] w-full md:w-[250px] object-cover order-1 md:order-2"
-                src={internship}
-                alt="Internship"
-              />
-            </div>
-
-            <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 z-40">
-              <div className="bg-white p-4 rounded-xl h-[100px] w-full md:w-[230px] font-semibold text-lg flex justify-center items-center order-2 md:order-1">
-                Best LinkedIn hacks to get your dream job
-              </div>
-              <img
-                className="h-[200px] w-full md:w-[250px] object-cover order-1 md:order-2"
-                src={hacks}
-                alt="LinkedIn hacks"
-              />
-            </div>
-
-            <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 z-40">
-              <div className="bg-white p-4 rounded-xl h-[100px] w-full md:w-[200px] font-semibold text-lg flex justify-center items-center order-2 md:order-1">
-                Complete Interview preparation guide
-              </div>
-              <img
-                className="h-[200px] w-full md:w-[250px] object-cover order-1 md:order-2"
-                src={interviewprep}
-                alt="Interview preparation"
-              />
-            </div>
+            ))}
+          </div>
+          <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
+            <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
+              90% seats booked
+            </span>
+            <button
+              className="px-14 py-4 rounded-full font-bold text-white "
+              style={{
+                background:
+                  "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+              }}
+            >
+              Book your Free spot
+            </button>
           </div>
         </div>
 
@@ -430,8 +476,22 @@ const RoadMap = () => {
               </div>
             </div>
           </div>
+          <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
+            <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
+              90% seats booked
+            </span>
+            <button
+              className="px-14 py-4 rounded-full font-bold text-white "
+              style={{
+                background:
+                  "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+              }}
+            >
+              Book your Free spot
+            </button>
+          </div>
 
-          <div className="mt-10 bg-[#FEEEE9] h-auto lg:h-[500px] max-w-full rounded-xl flex flex-col justify-start items-center p-4 mb-10">
+          <div className="mt-20 bg-[#FEEEE9] h-auto lg:h-[500px] max-w-full rounded-xl flex flex-col justify-start items-center p-4 mb-10">
             <h1 className="text-4xl font-bold mt-6 lg:text-[50px]">
               Exciting <span className="text-[#F26530]">bonuses</span>
             </h1>
@@ -487,6 +547,20 @@ const RoadMap = () => {
                   src={leetcode}
                 />
               </div>
+            </div>
+            <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
+              <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
+                90% seats booked
+              </span>
+              <button
+                className="px-14 py-4 rounded-full font-bold text-white "
+                style={{
+                  background:
+                    "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                }}
+              >
+                Book your Free spot
+              </button>
             </div>
           </div>
         </div>
