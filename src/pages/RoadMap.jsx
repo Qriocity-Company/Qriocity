@@ -38,7 +38,36 @@ const RoadMap = () => {
   const [name2, setName2] = useState("");
   const [email2, setEmail2] = useState("");
   const [phone2, setPhone2] = useState("");
+  const [activeIndex, setActiveIndex] = useState(null);
+  const offerEndTime = new Date();
+  offerEndTime.setHours(offerEndTime.getHours() + 12);
 
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  function calculateTimeLeft() {
+    let difference = Math.max(0, offerEndTime - new Date());
+
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    difference -= hours * 60 * 60 * 1000;
+
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    difference -= minutes * 60 * 1000;
+
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    return { hours, minutes, seconds };
+  }
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
   const [department2, setDepartment2] = useState("");
   const [college2, setCollege2] = useState("");
   const [year2, setYear2] = useState("");
@@ -133,11 +162,35 @@ const RoadMap = () => {
       console.log(error);
     }
   };
+
+  const faqs = [
+    {
+      question: "How I’ll get the link to attend the program?",
+      answer:
+        "You will get an email right after you register. Do check the spam and promotions tab just in case it landed there.",
+    },
+    {
+      question: "How I’ll get the bonus items?",
+      answer: "You will get the bonus items through email.",
+    },
+    {
+      question: "Why does this program cost only ₹99?",
+      answer: "We aim to make it affordable for everyone.",
+    },
+    {
+      question: "Will I get the recording of the program?",
+      answer: "Yes, the recording will be provided.",
+    },
+    {
+      question: "Why is the training during business hours?",
+      answer: "It's designed to fit into the workday schedule.",
+    },
+  ];
   useEffect(() => {
     AOS.init({ duration: 1000 });
-    if (!filled) {
-      setpopForm(true);
-    }
+    // if (!filled) {
+    //   setpopForm(true);
+    // }
   }, []);
 
   return (
@@ -250,7 +303,7 @@ const RoadMap = () => {
 
         {form && (
           <div className="fixed inset-0 bg-black h-screen  bg-opacity-10 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-gradient-to-bl from-orange-500 via-orang4-300 to-white rounded-lg shadow-lg w-96 p-4 text-white flex flex-col">
+            <div className="bg-gradient-to-br from-orange-500 via-orang4-300 to-white rounded-lg shadow-lg w-96 p-4 text-white flex flex-col">
               <h1
                 onClick={() => setForm(!form)}
                 className="place-self-end cursor-pointer text-4xl font-bold text-gray-100"
@@ -531,6 +584,7 @@ const RoadMap = () => {
                 background:
                   "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
               }}
+              onClick={handleForm}
             >
               Book your Free spot
             </button>
@@ -629,6 +683,7 @@ const RoadMap = () => {
                 background:
                   "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
               }}
+              onClick={handleForm}
             >
               Book your Free spot
             </button>
@@ -701,16 +756,136 @@ const RoadMap = () => {
                   background:
                     "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
                 }}
+                onClick={handleForm}
               >
                 Book your Free spot
               </button>
             </div>
           </div>
         </div>
+        <div className="mt-20 flex flex-col ">
+          <h1 className="place-self-center mt-10 text-[50px] font-serif font-bold">
+            Testimonials
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+            <div className="p-4 border rounded-lg shadow-xl bg-white">
+              <p className="text-gray-700">
+                "This webinar was incredibly insightful and well-organized. The
+                speakers were knowledgeable and engaging. Highly recommend!"
+              </p>
+              <p className="text-sm text-gray-500 mt-2">- Alex Johnson</p>
+              <p className="text-sm text-gray-500 mt-2">
+                College - Graphic Era
+              </p>
+            </div>
+            <div className="p-4 border rounded-lg shadow-xl bg-white">
+              <p className="text-gray-700">
+                "I learned so much from this webinar. The content was relevant
+                and the delivery was excellent. Looking forward to the next
+                one!"
+              </p>
+              <p className="text-sm text-gray-500 mt-2">- Taylor Smith</p>
+              <p className="text-sm text-gray-500 mt-2">
+                College - Graphic Era
+              </p>
+            </div>
+            <div className="p-4 border rounded-lg shadow-xl bg-white">
+              <p className="text-gray-700">
+                "A must-attend event for anyone interested in the topic. The
+                insights shared were practical and actionable."
+              </p>
+              <p className="text-sm text-gray-500 mt-2">- Jamie Lee</p>
+              <p className="text-sm text-gray-500 mt-2">
+                College - Graphic Era
+              </p>
+            </div>
+            <div className="p-4 border rounded-lg shadow-xl bg-white">
+              <p className="text-gray-700">
+                "Fantastic webinar! The presenters were top-notch, and the
+                content was both informative and inspiring."
+              </p>
+              <p className="text-sm text-gray-500 mt-2">- Casey Brown</p>
+              <p className="text-sm text-gray-500 mt-2">
+                College - Graphic Era
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
+          <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
+            90% seats booked
+          </span>
+          <button
+            className="px-14 py-4 rounded-full font-bold text-white "
+            style={{
+              background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+            }}
+            onClick={handleForm}
+          >
+            Book your Free spot
+          </button>
+        </div>
+        <div className="w-full flex items-center p-2 md:p-0 justify-center mt-20 bg-[#e3efec]">
+          <div className="max-w-2xl mx-auto py-8 md:mt-20 mb-20 ">
+            <h2 className="lg:text-[36px] text-[20px] font-bold text-center text-blue-600">
+              FAQs :
+              <span className=" ml-2 text-gray-800">
+                Here’s everything you may ask...
+              </span>
+            </h2>
+
+            <div className="mt-20">
+              {faqs.map((faq, index) => (
+                <div key={index} className="border-2 border-gray-300 mb-2">
+                  <button
+                    className="w-full text-left flex justify-between items-center p-4 text-lg text-gray-800 font-semibold hover:bg-gray-100 focus:outline-none"
+                    onClick={() => toggleAccordion(index)}
+                  >
+                    {faq.question}
+                    <span>{activeIndex === index ? "-" : "+"}</span>
+                  </button>
+                  {activeIndex === index && (
+                    <div className="p-4 text-gray-700 bg-gray-50">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-      <Testimonial />
-      <Faq />
-      <Book />
+
+      <div className="bg-[#000000] h-[100px] w-full p-4 flex justify-between z-50 items-center bottom-0 fixed">
+        <div className="flex flex-col">
+          <div className="flex justify-center items-center lg:gap-6 gap-2 h-full">
+            <h1 className="font-bold text-2xl lg:text-5xl text-white lg:ml-10">
+              FREE
+            </h1>
+            <h1 className=" text-[20px] text-white line-through">₹999</h1>
+          </div>
+          <h1 className="mt-2 text-white lg:ml-10 text-sm">
+            Offer ends in {timeLeft.hours}h {timeLeft.minutes}m{" "}
+            {timeLeft.seconds}
+            s!!
+          </h1>
+        </div>
+
+        <div className="flex flex-col justify-center items-center lg:mr-10">
+          <span className="lg:-mr-20 -mr-10 -mb-2 bg-[#DCDCDC] rounded-2xl px-2 lg:px-4 z-50 py-1">
+            90% seats booked
+          </span>
+          <button
+            className="lg:px-14 py-4 px-2 rounded-full lg:font-bold text-white "
+            style={{
+              background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+            }}
+            onClick={handleForm}
+          >
+            Book your Free spot
+          </button>
+        </div>
+      </div>
     </>
   );
 };
