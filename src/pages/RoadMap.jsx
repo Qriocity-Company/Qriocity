@@ -28,7 +28,7 @@ const RoadMap = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-
+  const [loading, setLoading] = useState(false);
   const [department, setDepartment] = useState("");
   const [college, setCollege] = useState("");
   const [year, setYear] = useState("");
@@ -139,7 +139,7 @@ const RoadMap = () => {
   ];
 
   const handleSubmitForm = async () => {
-    setPopuploading(true);
+    setLoading(true);
     const currentDate = new Date();
     try {
       const { data } = await axios.post(
@@ -156,12 +156,8 @@ const RoadMap = () => {
       );
 
       if (data?.success) {
-        toast.promise(saveSettings(settings), {
-          loading: "Saving...",
-          success: <b>Your seat is sucessfully booked</b>,
-          error: <b>Could not save.</b>,
-        });
-        setPopuploading(false);
+        toast.success("Your seat has been booked succesfully");
+        setLoading(false);
         setForm(false);
       }
     } catch (error) {
@@ -401,7 +397,7 @@ const RoadMap = () => {
                     className="bg-gradient-to-r from-orange-600 to-orange-400 text-white  py-2 rounded-full hover:from-orange-500 hover:to-orange-600 px-10"
                     onClick={handleSubmitForm}
                   >
-                    {popuploading ? (
+                    {loading ? (
                       <ImSpinner8 className="animate-spin" />
                     ) : (
                       "Submit"
