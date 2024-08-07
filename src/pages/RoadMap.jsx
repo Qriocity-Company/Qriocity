@@ -156,9 +156,13 @@ const RoadMap = () => {
       );
 
       if (data?.success) {
+        toast.promise(saveSettings(settings), {
+          loading: "Saving...",
+          success: <b>Your seat is sucessfully booked</b>,
+          error: <b>Could not save.</b>,
+        });
         setPopuploading(false);
         setForm(false);
-        toast.success("Your seat is successfully filled");
       }
     } catch (error) {
       console.log(error);
