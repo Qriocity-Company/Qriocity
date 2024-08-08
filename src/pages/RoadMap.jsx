@@ -232,13 +232,14 @@ const RoadMap = () => {
               <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
                 Book Your Free Spot Now
               </h2>
+              <p className="text-center mb-2 text-[12px]">After submitting this form, you will be redirected to the Graphy website. Please register using Google to receive the WhatsApp group link and the webinar link via your registered email.</p>
               <div>
                 <div className="mb-4">
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full p-2 border-2 border-black  outline-none focus:ring-2  text-black rounded-xl"
+                    className="w-full p-2 md:p-2 border-2 border-black  outline-none focus:ring-2  text-black rounded-xl"
                     placeholder="Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -337,6 +338,7 @@ const RoadMap = () => {
               <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
                 Book Your Free Spot Now
               </h2>
+              <p className="text-center mb-2 text-[12px]">After submitting this form, you will be redirected to the Graphy website. Please register using Google to receive the WhatsApp group link and the webinar link via your registered email.</p>
               <div>
                 <div className="mb-4">
                   <input

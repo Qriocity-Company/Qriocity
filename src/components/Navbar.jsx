@@ -41,8 +41,8 @@ export const Navbar = () => {
           <Link to="/consultations" className={isRouteActive("/consultations")}>
             Free Consultations
           </Link>
-          <Link to="/blogs" className={isRouteActive("/blogs")}>
-            Blogs
+          <Link to="/webinar" className={isRouteActive("/webinar")}>
+            Webinar
           </Link>
         </div>
         <div className="md:hidden flex items-center">
