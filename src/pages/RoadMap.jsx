@@ -95,6 +95,7 @@ const RoadMap = () => {
 
       if (data?.success) {
         localStorage.setItem("RoadmapPopUp", true);
+        window.location.href="https://courses.qriocity.in/single-checkout/66b35ef1dee0af7f1cf35ee4?pid=p1"
         setPopuploading(false);
         setpopForm(false);
       }
@@ -157,7 +158,9 @@ const RoadMap = () => {
 
       if (data?.success) {
         toast.success("Your seat has been booked succesfully");
+
         setLoading(false);
+         window.location.href="https://courses.qriocity.in/single-checkout/66b35ef1dee0af7f1cf35ee4?pid=p1";
         setName2("");
         setEmail2("");
         setDepartment2("");
@@ -173,27 +176,39 @@ const RoadMap = () => {
 
   const faqs = [
     {
-      question: "How I’ll get the link to attend the program?",
-      answer:
-        "You will get an email right after you register. Do check the spam and promotions tab just in case it landed there.",
+      question: "What will I learn from this webinar?",
+      answer: "You will learn strategies to access the hidden job market, find high-paying jobs, and the exact steps followed by over 10,000 students to land their dream jobs within 3 months.",
     },
     {
-      question: "How I’ll get the bonus items?",
-      answer: "You will get the bonus items through email.",
+      question: "Who is this webinar for?",
+      answer: "This webinar is ideal for job seekers, recent graduates, and professionals looking to switch careers or find better job opportunities.",
     },
     {
-      question: "Why does this program cost only ₹99?",
-      answer: "We aim to make it affordable for everyone.",
+      question: "Is the webinar really free?",
+      answer: "Yes, the webinar is completely free of charge. Our goal is to provide valuable insights and strategies to help you achieve your career goals.",
     },
     {
-      question: "Will I get the recording of the program?",
-      answer: "Yes, the recording will be provided.",
+      question: "How long is the webinar?",
+      answer: "The webinar will last for 3 hours, providing in-depth knowledge and actionable strategies to enhance your job search.",
     },
     {
-      question: "Why is the training during business hours?",
-      answer: "It's designed to fit into the workday schedule.",
+      question: "Will there be a Q&A session?",
+      answer: "Yes, there will be a Q&A session at the end of the webinar where you can ask any questions you have regarding the job search process.",
+    },
+    {
+      question: "How can I register for the webinar?",
+      answer: "You can register by clicking the Book your Free Spot button.",
+    },
+    {
+      question: "Can I share the webinar information with my friends?",
+      answer: "Absolutely! We encourage you to share the webinar details with anyone who might benefit from it.",
+    },
+    {
+      question: "Will I get recording of this program?",
+      answer: "No, this is a live webinar and no recording will be shared.",
     },
   ];
+  
   useEffect(() => {
     AOS.init({ duration: 1000 });
     if (!filled) {
@@ -434,10 +449,10 @@ const RoadMap = () => {
               Get your Dream Career{" "}
             </h1>
             <h1 className=" font-bold text-3xl mt-2 lg:mt-5 lg:text-[40px]">
-              Roadmap in 2 hours
+              Roadmap in 3 hours
             </h1>
             <h1 className="font-semibold text-xl mt-5">
-              Learn how to fund Hidden job market and High paying jobs.
+              Learn how to find Hidden job market and High paying jobs.
             </h1>
             <div className="bg-[#FFF7F4] border-2 border-[#F15A29] h-[121px] w-auto lg:w-[550px] mt-5 rounded-2xl flex justify-center items-center p-4 text-lg">
               <h1>
@@ -450,15 +465,17 @@ const RoadMap = () => {
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={clock} />
                 <h1 className="font-bold text-lg lg:text-xl flex flex-col justify-center items-start">
-                  2 hour <span>Session</span>{" "}
+                  3 hour <span>Session</span>{" "}
                 </h1>
               </div>
 
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={calendar} />
                 <h1 className="font-bold lg:text-xl text-lg flex flex-col justify-center items-start">
-                  August 5, <span>2024</span>{" "}
+                  August 18, <span>2024</span>
+                  <span className="text-lg">11am - 2pm</span>{" "}
                 </h1>
+                
               </div>
             </div>
 
@@ -493,39 +510,45 @@ const RoadMap = () => {
                 transformOrigin: "center", // Optional: adjust the pivot point of the rotation
               }}
             >
-              should attend{" "}
+              Should Attend{" "}
             </span>{" "}
-            this session?
+            This Webinar?
           </h1>
           <div className="flex justify-center flex-col gap-8 items-start mt-10 lg:mt-20">
             <div className="flex justify-center items-center gap-5 lg:gap-10">
               <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
               <h1 className="lg:text-xl text-lg font-semibold">
-                Overcome Stress & Anxiety
+              Recent Graduates: Kickstart your career with a high-paying job.
               </h1>
             </div>
             <div className="flex justify-center items-center gap-5 lg:gap-10">
               <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
               <h1 className="lg:text-xl text-lg font-semibold">
-                Improve physical and emotional health naturally
+              Career Changers: Transition smoothly into a new industry or role.
               </h1>
             </div>
             <div className="flex justify-center items-center gap-5 lg:gap-10">
               <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
               <h1 className="lg:text-xl text-lg font-semibold">
-                Experience powerful meditative states
+              Job Seekers: Enhance your career prospects with better opportunities
               </h1>
             </div>
             <div className="flex justify-center items-center gap-5 lg:gap-10">
               <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
               <h1 className="lg:text-xl text-lg font-semibold">
-                Experience peace and happiness
+              Working Professionals: Advance in your field and secure promotions.
               </h1>
             </div>
             <div className="flex justify-center items-center gap-5 lg:gap-10">
               <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
               <h1 className="lg:text-xl text-lg font-semibold">
-                Experience powerful meditative states
+              Students: Prepare for your future career with effective job search strategies.
+              </h1>
+            </div>
+            <div className="flex justify-center items-center gap-5 lg:gap-10">
+              <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
+              <h1 className="lg:text-xl text-lg font-semibold">
+              Individuals Seeking Career Growth: Reach new heights in your professional journey.
               </h1>
             </div>
           </div>
@@ -546,7 +569,7 @@ const RoadMap = () => {
             >
               you learn{" "}
             </span>{" "}
-            in this 2 hours session?
+            in this 3 hours session?
           </h1>
 
           <div className="relative flex flex-col justify-center items-center mt-10 gap-10 px-4 sm:px-8 md:px-16">
@@ -622,29 +645,27 @@ const RoadMap = () => {
               <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
                 <FaStar color="#26CFD3" />
                 <h1 className="text-center lg:text-left">
-                  Feel immediate calm and gain tools for lasting stress
-                  reduction.
+                Unlock Hidden Job Markets : Access unadvertised job opportunities.
+
                 </h1>
               </div>
               <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
                 <FaStar color="#26CFD3" />
                 <h1 className="text-center lg:text-left">
-                  Feel immediate calm and gain tools for lasting stress
-                  reduction.
+                Achieve High-Paying Jobs : Secure lucrative dream jobs with proven techniques.
                 </h1>
               </div>
               <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
                 <FaStar color="#26CFD3" />
                 <h1 className="text-center lg:text-left">
-                  Feel immediate calm and gain tools for lasting stress
-                  reduction.
+                  
+                Accelerate Career Growth : Fast-track your professional developmen
                 </h1>
               </div>
               <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
                 <FaStar color="#26CFD3" />
                 <h1 className="text-center lg:text-left">
-                  Feel immediate calm and gain tools for lasting stress
-                  reduction.
+                Master Job Interviews : Confidently navigate interviews and leave a lasting impression.
                 </h1>
               </div>
             </div>
@@ -783,8 +804,8 @@ const RoadMap = () => {
                 speakers were knowledgeable and engaging. Highly recommend!"
               </p>
               <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm"> Alex Johnson</p>
-                <p className="text-sm">College - Graphic Era</p>
+                <p className="text-sm"> Rahul</p>
+                <p className="text-sm">Chennai</p>
               </div>
             </div>
             <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
@@ -794,18 +815,17 @@ const RoadMap = () => {
                 one!"
               </p>
               <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Taylor Smith</p>
-                <p className="text-sm">College - Graphic Era</p>
+                <p className="text-sm">Gowthami</p>
+                <p className="text-sm">Chennai</p>
               </div>
             </div>
             <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
               <p className="text-gray-700 mb-4">
-                "A must-attend event for anyone interested in the topic. The
-                insights shared were practical and actionable."
+                "I attended Qriocity’s Webinar last week, the webinar was really good and I got a clear process of how I can get my dream job. Also I understood how to crack high package jobs in top companies"
               </p>
               <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Jamie Lee</p>
-                <p className="text-sm">College - Graphic Era</p>
+                <p className="text-sm">Krithika</p>
+                <p className="text-sm">Bangalore</p>
               </div>
             </div>
             <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
@@ -814,8 +834,8 @@ const RoadMap = () => {
                 content was both informative and inspiring."
               </p>
               <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Casey Brown</p>
-                <p className="text-sm">College - Graphic Era</p>
+                <p className="text-sm">Ayush</p>
+                <p className="text-sm">Delhi</p>
               </div>
             </div>
             <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
@@ -824,8 +844,8 @@ const RoadMap = () => {
                 current and the speakers were engaging."
               </p>
               <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Jordan Davis</p>
-                <p className="text-sm">College - Graphic Era</p>
+                <p className="text-sm">Kishore</p>
+                <p className="text-sm">Vellore</p>
               </div>
             </div>
             <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
@@ -834,8 +854,8 @@ const RoadMap = () => {
                 particularly helpful."
               </p>
               <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Morgan Taylor</p>
-                <p className="text-sm">College - Graphic Era</p>
+                <p className="text-sm">Arthi</p>
+                <p className="text-sm">Coimbatore</p>
               </div>
             </div>
           </div>
