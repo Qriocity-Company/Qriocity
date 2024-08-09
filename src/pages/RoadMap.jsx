@@ -207,7 +207,7 @@ const RoadMap = () => {
       <div className="flex flex-col p-4 bg-white min-h-screen w-full">
         {popupForm && (
           <div className="fixed inset-0 bg-black h-screen  bg-opacity-10 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-gradient-to-bl from-orange-500 via-slate-500 to-white  rounded-lg shadow-lg w-96 p-4 text-white flex flex-col">
+            <div className="bg-gradient-to-bl from-orange-500 via-slate-500 to-white z-50  rounded-lg shadow-lg w-96 p-4 text-white flex flex-col">
               <h1
                 onClick={handleClose}
                 className="place-self-end cursor-pointer text-4xl font-bold text-gray-100"
@@ -901,7 +901,7 @@ const RoadMap = () => {
         </div>
       </div>
 
-      <div className="bg-[#000000] h-[100px] w-full p-4 flex justify-between z-50 items-center bottom-0 fixed">
+      <div className="bg-[#000000] h-[100px] w-full p-4 flex justify-between z-40 items-center bottom-0 fixed">
         <div className="flex flex-col">
           <div className="flex justify-center items-center lg:gap-6 gap-2 h-full">
             <h1 className="font-bold text-2xl lg:text-5xl text-white lg:ml-10">

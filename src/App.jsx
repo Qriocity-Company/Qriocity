@@ -26,7 +26,7 @@ function App() {
   return (
     <Router>
       <div className="bg-[rgb(0,0,0)] z-50 justify-center items-center flex flex-col overflow-hidden">
-        <GoogleAnalytics/>
+        <GoogleAnalytics />
         <Navbar />
         <Routes>
           <Route index path="/" element={<Home />} />
