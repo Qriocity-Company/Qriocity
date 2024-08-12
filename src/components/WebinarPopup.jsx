@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router";
 
 const WebinarPopup = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const navigate=useNavigate()
 
   const closePopup = () => {
     setIsOpen(false);
@@ -27,7 +29,7 @@ const WebinarPopup = () => {
             Get your dream job in just 3 hours! Join Today!
           </p>
           <button
-            onClick={closePopup}
+            onClick={()=>navigate("/webinar")}
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
           >
             Join Now
