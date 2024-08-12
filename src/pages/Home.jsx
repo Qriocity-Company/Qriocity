@@ -4,6 +4,7 @@ import { Courses } from "../components/Courses";
 import { Project } from "../components/Project";
 import { Testimonial } from "../components/Testimonial";
 import { Footer } from "../components/Footer";
+import WebinarPopup from "../components/WebinarPopup";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <Courses />
         <Project />
         <Testimonial />
+        <WebinarPopup/>
       </div>
       <Footer />
     </>
