@@ -60,15 +60,15 @@ const Placement = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-b from-[#020816] via-[#040509] to-black flex flex-col relative">
-        <div className="mt-20 flex justify-between items-start relative">
-          <div className="flex flex-col justify-center items-start mt-20 ml-16 gap-2 relative z-10">
-            <h1 className="font-bold text-white text-[60px]">
+        <div className="mt-20 flex lg:flex-row flex-col lg:justify-between justify-center items-center lg:items-start lg:relative">
+          <div className="flex flex-col justify-center items-start mt-20 lg:ml-16 ml-5 gap-2 relative z-10">
+            <h1 className="font-bold text-white lg:text-[60px] text-[30px]">
               Get your Dream Job
             </h1>
-            <h1 className="font-bold text-white text-[60px]">
+            <h1 className="font-bold text-white lg:text-[60px] text-[30px]">
               with Complete Placement
             </h1>
-            <h1 className="font-bold text-white text-[60px]">
+            <h1 className="font-bold text-white lg:text-[60px] text-[30px]">
               Preparation Course
             </h1>
 
@@ -95,7 +95,7 @@ const Placement = () => {
           </div>
 
           <img
-            className="h-[700px] w-[850px] relative z-0 -ml-32"
+            className="lg:h-[700px] lg:w-[850px] h-auto w-auto lg:relative z-0 lg:-ml-32 lg:mt-0 mt-20"
             src={placement}
             alt="Placement"
           />
@@ -103,7 +103,7 @@ const Placement = () => {
 
         <div className="mt-20 flex justify-center items-center flex-col">
           <h1 className="mt-10 text-[#FA9D51] text-[40px]">FEATURES</h1>
-          <h1 className="text-white  font-semibold text-[45px]">
+          <h1 className="text-white  font-semibold lg:text-[45px] text-[30px] lg:mt-0 mt-5">
             What makes us standout?
           </h1>
 
@@ -111,21 +111,21 @@ const Placement = () => {
         </div>
 
         <div className="mt-20 flex justify-center items-center flex-col">
-          <h1 className="mt-10 text-[#FA9D51] text-[40px]">FEATURES</h1>
-          <h1 className="text-white  font-semibold text-[55px]">
+          <h1 className="mt-10 text-[#FA9D51] text-[40px]   ">FEATURES</h1>
+          <h1 className="text-white  font-semibold lg:text-[55px] text-[40px] lg:mt-0">
             What we offer?
           </h1>
 
-          <div className="flex justify-center items-center gap-[90px] text-white">
+          <div className="flex lg:flex-row flex-col justify-center items-center lg:gap-[90px] text-white">
             <div className="flex flex-col justify-center items-center gap-10 mt-20">
-              <div className="bg-[#0F0F0F] rounded-xl p-4 h-[190px] w-[521px] flex  justify-start items-center gap-10">
+              <div className="bg-[#0F0F0F] rounded-xl p-4 lg:h-[180px] h-auto lg:w-[521px] w-[300px] flex lg:flex-row flex-col lg:justify-start lg:items-center justify-center items-center lg:gap-10">
                 <div className="border-[#FA9D51] border-2 p-[1px] rounded-xl">
                   <div className="bg-white p-2 rounded-xl ">
-                    <img className="h-[30px]" src={portal} />
+                    <img className="lg:h-[30px] h-auto w-auto" src={portal} />
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center items-start w-[400px] gap-3">
+                <div className="flex flex-col justify-center items-start lg:w-[400px] gap-5">
                   <h1 className="font-bold text-xl">Portal</h1>
                   <p className="">
                     You can write code, and submit on our platform, making it a
@@ -135,15 +135,17 @@ const Placement = () => {
                 </div>
               </div>
 
-              <div className="bg-[#0F0F0F] rounded-xl p-4 h-[180px] w-[521px] flex  justify-start items-center gap-10">
+              <div className="bg-[#0F0F0F] rounded-xl p-4 lg:h-[180px] h-auto lg:w-[521px] w-[300px] flex lg:flex-row flex-col lg:justify-start lg:items-center justify-center items-center lg:gap-10">
                 <div className="border-[#FA9D51] border-2 p-[1px] rounded-xl">
                   <div className="bg-white p-2 rounded-xl ">
-                    <img className="h-[30px]" src={discord} />
+                    <img className="lg:h-[30px] h-auto w-auto" src={discord} />
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center items-start w-[400px] gap-5">
-                  <h1 className="font-bold text-2xl">Free Discord community</h1>
+                <div className="flex flex-col justify-center items-start lg:w-[400px] gap-5">
+                  <h1 className="font-bold lg:text-2xl text-xl mt-5 lg:mt-0">
+                    Free Discord community
+                  </h1>
                   <p className="">
                     We tell you where every DSA question is used in the industry
                     or real life, so that you end up relating DSA even while
@@ -152,15 +154,17 @@ const Placement = () => {
                 </div>
               </div>
 
-              <div className="bg-[#0F0F0F] rounded-xl p-4 h-[180px] w-[521px] flex  justify-start items-center gap-10">
+              <div className="bg-[#0F0F0F] rounded-xl p-4 lg:h-[180px] h-auto lg:w-[521px] w-[300px] flex lg:flex-row flex-col lg:justify-start lg:items-center justify-center items-center lg:gap-10">
                 <div className="border-[#FA9D51] border-2 p-[1px] rounded-xl">
                   <div className="bg-white p-2 rounded-xl ">
-                    <img className="h-[30px]" src={contest} />
+                    <img className="lg:h-[30px] w-auto h-auto " src={contest} />
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center items-start w-[400px] gap-5">
-                  <h1 className="font-bold text-2xl">Multiple Contests</h1>
+                <div className="flex flex-col justify-center items-start lg:w-[400px] gap-5">
+                  <h1 className="font-bold text-2xl mt-5 lg:mt-0">
+                    Multiple Contests
+                  </h1>
                   <p className="">
                     After completing the learning process, you can test yourself
                     by giving multiple contests having question from mixed
@@ -169,15 +173,17 @@ const Placement = () => {
                 </div>
               </div>
 
-              <div className="bg-[#0F0F0F] rounded-xl p-4 h-[180px] w-[521px] flex  justify-start items-center gap-10">
+              <div className="bg-[#0F0F0F] rounded-xl p-4 lg:h-[180px] h-auto lg:w-[521px] w-[300px] flex lg:flex-row flex-col lg:justify-start lg:items-center justify-center items-center lg:gap-10">
                 <div className="border-[#FA9D51] border-2 p-[1px] rounded-xl">
                   <div className="bg-white p-2 rounded-xl ">
-                    <img className="h-[30px]" src={doubts} />
+                    <img className="lg:h-[30px] h-auto w-auto" src={doubts} />
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center items-start w-[400px] gap-5">
-                  <h1 className="font-bold text-2xl">Doubt Portal </h1>
+                <div className="flex flex-col justify-center items-start lg:w-[400px] gap-5">
+                  <h1 className="font-bold text-2xl mt-5 lg:mt-0">
+                    Doubt Portal{" "}
+                  </h1>
                   <p className="">
                     You can post your doubts, which will be instantly solved by
                     our AI TA who has been trained with all our data set,
@@ -186,16 +192,16 @@ const Placement = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center gap-10 mt-20">
-              <div className="bg-[#0F0F0F] rounded-xl p-4 h-[180px] w-[521px] flex  justify-start items-center gap-10">
+            <div className="flex flex-col justify-center items-center gap-10 lg:mt-20 mt-10">
+              <div className="bg-[#0F0F0F] rounded-xl p-4 lg:h-[180px] h-auto lg:w-[521px] w-[300px] flex lg:flex-row flex-col lg:justify-start lg:items-center justify-center items-center lg:gap-10">
                 <div className="border-[#FA9D51] border-2 p-[1px] rounded-xl">
                   <div className="bg-white p-2 rounded-xl ">
-                    <img className="h-[30px]" src={sessions} />
+                    <img className="lg:h-[30px] h-auto w-auto" src={sessions} />
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center items-start w-[400px] gap-5">
-                  <h1 className="font-bold text-2xl">
+                <div className="flex flex-col justify-center items-start lg:w-[400px] gap-5">
+                  <h1 className="font-bold text-2xl mt-5 lg:mt-0">
                     Weekly Sessions with Experts
                   </h1>
                   <p className="">
@@ -207,15 +213,15 @@ const Placement = () => {
                 </div>
               </div>
 
-              <div className="bg-[#0F0F0F] rounded-xl p-4 h-[180px] w-[521px] flex  justify-start items-center gap-10">
+              <div className="bg-[#0F0F0F] rounded-xl p-4 lg:h-[180px] h-auto lg:w-[521px] w-[300px] flex lg:flex-row flex-col lg:justify-start lg:items-center justify-center items-center lg:gap-10">
                 <div className="border-[#FA9D51] border-2 p-[1px] rounded-xl">
                   <div className="bg-white p-2 rounded-xl ">
-                    <img className="h-[30px]" src={video} />
+                    <img className="lg:h-[30px] h-auto w-auto" src={video} />
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center items-start w-[400px] gap-5">
-                  <h1 className="font-bold text-2xl">
+                <div className="flex flex-col justify-center items-start lg:w-[400px] gap-5">
+                  <h1 className="font-bold text-2xl mt-5 lg:mt-0">
                     Approach-wise Video Solutions
                   </h1>
                   <p className="">
@@ -224,15 +230,15 @@ const Placement = () => {
                   </p>
                 </div>
               </div>
-              <div className="bg-[#0F0F0F] rounded-xl p-4 h-[180px] w-[521px] flex  justify-start items-center gap-10">
+              <div className="bg-[#0F0F0F] rounded-xl p-4 lg:h-[180px] h-auto lg:w-[521px] w-[300px] flex lg:flex-row flex-col lg:justify-start lg:items-center justify-center items-center lg:gap-10">
                 <div className="border-[#FA9D51] border-2 p-[1px] rounded-xl">
                   <div className="bg-white p-2 rounded-xl ">
-                    <img className="h-[30px]" src={blog} />
+                    <img className="lg:h-[30px] h-auto w-auto" src={blog} />
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center items-start w-[400px] gap-5">
-                  <h1 className="font-bold text-2xl">
+                <div className="flex flex-col justify-center items-start lg:w-[400px] gap-5">
+                  <h1 className="font-bold text-2xl mt-5 lg:mt-0">
                     Approach-wise Premium Blogs
                   </h1>
                   <p className="">
@@ -243,15 +249,15 @@ const Placement = () => {
                 </div>
               </div>
 
-              <div className="bg-[#0F0F0F] rounded-xl p-4 h-[180px] w-[521px] flex  justify-start items-center gap-10">
+              <div className="bg-[#0F0F0F] rounded-xl p-4 lg:h-[180px] h-auto lg:w-[521px] w-[300px] flex lg:flex-row flex-col lg:justify-start lg:items-center justify-center items-center lg:gap-10">
                 <div className="border-[#FA9D51] border-2 p-[1px] rounded-xl">
                   <div className="bg-white p-2 rounded-xl ">
-                    <img className="h-[30px]" src={blog} />
+                    <img className="lg:h-[30px] h-auto w-auto" src={blog} />
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-center items-start w-[400px] gap-5">
-                  <h1 className="font-bold text-2xl">
+                <div className="flex flex-col justify-center items-start lg:w-[400px] gap-5">
+                  <h1 className="font-bold text-2xl mt-5 lg:mt-0">
                     Approach-wise Premium Blogs
                   </h1>
                   <p className="">
@@ -270,7 +276,7 @@ const Placement = () => {
 
         <div className="mt-20 flex justify-center items-center flex-col">
           <h1 className="mt-10 text-[#FA9D51] text-[40px]">COMPARISON</h1>
-          <h1 className="text-white  font-semibold text-[45px]">
+          <h1 className="text-white  font-semibold lg:text-[45px] text-[30px] lg:mt-0 mt-5">
             What makes us standout?
           </h1>
 
@@ -282,12 +288,15 @@ const Placement = () => {
         </button>
 
         <div className="mt-20 flex justify-center items-center flex-col">
-          <h1 className="mt-10 text-[#FA9D51] text-[40px]">
+          <h1 className="mt-10 text-[#FA9D51] lg:text-[40px] text-[30px]">
             Make your resume shine
           </h1>
           <h1 className="text-white  font-semibold text-[45px]">Certificate</h1>
         </div>
-        <img className="place-self-center mt-20" src={certificate} />
+        <img
+          className="place-self-center lg:mt-20 mt-10 p-4"
+          src={certificate}
+        />
 
         <button className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-20 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
           Start Your Journey Now

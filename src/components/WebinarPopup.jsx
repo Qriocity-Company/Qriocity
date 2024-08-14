@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 
 const WebinarPopup = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const closePopup = () => {
     setIsOpen(false);
@@ -12,9 +12,7 @@ const WebinarPopup = () => {
 
   return (
     isOpen && (
-      <div
-        className="fixed inset-0 flex items-center justify-center z-50"
-      >
+      <div className="fixed inset-0 flex items-center justify-center z-50">
         <div className="relative bg-white p-6 rounded-lg shadow-lg w-[400px]   bg-gradient-to-br from-blue-400 to-white bg-opacity-80 z-50">
           <button
             onClick={closePopup}
@@ -29,7 +27,7 @@ const WebinarPopup = () => {
             Get your dream job in just 3 hours! Join Today!
           </p>
           <button
-            onClick={()=>navigate("/webinar")}
+            onClick={() => navigate("/webinar")}
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
           >
             Join Now
