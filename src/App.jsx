@@ -21,11 +21,12 @@ import TermsandServices from "./pages/TermsandServices";
 import Refund from "./pages/Refund";
 import RoadMap from "./pages/RoadMap";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import Placement from "./pages/Placement";
 
 function App() {
   return (
     <Router>
-      <div className="bg-[rgb(0,0,0)] z-50 justify-center items-center flex flex-col overflow-hidden">
+      <div className="bg-[rgb(0,0,0)] z-50  flex flex-col overflow-hidden">
         <GoogleAnalytics />
         <Navbar />
         <Routes>
@@ -46,6 +47,7 @@ function App() {
           <Route path="/terms" element={<TermsandServices />} />
           <Route path="/refund" element={<Refund />} />
           <Route path="/webinar" element={<RoadMap />} />
+          <Route path="/placement" element={<Placement />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
         <ToastContainer
