@@ -11,6 +11,7 @@ import blog from "../assets/blog.png";
 import certificate from "../assets/certificate.png";
 
 import { TiTick } from "react-icons/ti";
+import Testimonials from "../components/Testimonials";
 const Placement = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -734,76 +735,7 @@ const Placement = () => {
           Start Your Journey Now
         </button>
 
-        <div className="mt-20 flex flex-col p-4">
-          <h1 className="place-self-center mt-10 text-[50px] font-serif font-bold text-white">
-            Testimonials
-          </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "This webinar was incredibly insightful and well-organized. The
-                speakers were knowledgeable and engaging. Highly recommend!"
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm"> Rahul</p>
-                <p className="text-sm">Chennai</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "I learned so much from this webinar. The content was relevant
-                and the delivery was excellent. Looking forward to the next
-                one!"
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Gowthami</p>
-                <p className="text-sm">Chennai</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "I attended Qriocity’s Webinar last week, the webinar was really
-                good and I got a clear process of how I can get my dream job.
-                Also I understood how to crack high package jobs in top
-                companies"
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Krithika</p>
-                <p className="text-sm">Bangalore</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "Fantastic webinar! The presenters were top-notch, and the
-                content was both informative and inspiring."
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Ayush</p>
-                <p className="text-sm">Delhi</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "The webinar exceeded my expectations. The topics covered were
-                current and the speakers were engaging."
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Kishore</p>
-                <p className="text-sm">Vellore</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "Great webinar with valuable insights. The Q&A session was
-                particularly helpful."
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Arthi</p>
-                <p className="text-sm">Coimbatore</p>
-              </div>
-            </div>
-          </div>
-        </div>
+         <Testimonials/>
         <button className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-20 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
           Start Your Journey Now
         </button>
