@@ -318,7 +318,7 @@ const Placement = () => {
                   </span>
                 </div>
 
-                <ul className="mt-4 text-green-400 space-y-2">
+                <ul className="mt-4 text-white space-y-2">
                   <li>✅ Complexity Analysis</li>
                   <li>✅ Evaluate time and space efficiency</li>
                   <li>✅ Real-Life Examples</li>
@@ -349,7 +349,7 @@ const Placement = () => {
                   </span>
                 </div>
 
-                <ul className="mt-4 text-green-400 space-y-2">
+                <ul className="mt-4 text-white space-y-2">
                   <li>✅ Complexity Analysis</li>
                   <li>✅ Evaluate time and space efficiency</li>
                   <li>✅ Real-Life Examples</li>
@@ -380,7 +380,7 @@ const Placement = () => {
                   </span>
                 </div>
 
-                <ul className="mt-4 text-green-400 space-y-2">
+                <ul className="mt-4 text-white space-y-2">
                   <li>✅ Complexity Analysis</li>
                   <li>✅ Evaluate time and space efficiency</li>
                   <li>✅ Real-Life Examples</li>
@@ -571,18 +571,18 @@ const Placement = () => {
             What makes us standout?
           </h1>
 
-          <div className="lg:w-[900px] lg:block hidden w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
+          <div className="lg:w-[900px]  w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
             <table className="w-full table-fixed border-collapse">
               <thead>
                 <tr>
-                  <th className="text-center p-4 text-white lg:text-2xl text-sm border-b border-gray-700">
+                  <th className="text-center p-4 text-white lg:text-2xl text-xl border-b border-gray-700 border-r">
                     Features
                   </th>
 
-                  <th className=" text-center p-4 text-orange-500 lg:text-2xl text-sm border-b border-gray-700">
+                  <th className=" text-center p-4 text-orange-500 lg:text-2xl text-xl border-b border-r border-gray-700">
                     Qriocity
                   </th>
-                  <th className=" text-center p-4 text-white lg:text-2xl text-sm border-b border-gray-700">
+                  <th className=" text-center p-4 text-white lg:text-2xl text-xl border-b border-gray-700">
                     Other Platforms
                   </th>
                 </tr>
@@ -592,54 +592,54 @@ const Placement = () => {
 
                 {/* Feature Rows */}
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Recorded lectures
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b  border-gray-700 text-green-400">
                     ✅
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Weekly sessions
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b  border-gray-700 text-green-400">
                     ✅
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Placement Support
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b  border-gray-700 text-green-400">
                     ✅
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Practice Portal
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b  border-gray-700 text-green-400">
                     ✅
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Curated list separately for beginners
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-red-500">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-red-500">
                     ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
@@ -647,71 +647,29 @@ const Placement = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     300 curated list for everyone
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-red-500">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-red-500">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b  border-gray-700 text-green-400">
                     ❌
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Personalised Roadmaps
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b  border-gray-700 text-green-400">
                     ✅
                   </td>
                 </tr>
               </tbody>
             </table>
-          </div>
-
-          <div className="lg:hidden block">
-            <div className="space-y-4 p-4  rounded-lg mt-10">
-              {/* Repeat for each plan */}
-              <div className="p-4 bg-gray-800 rounded-lg">
-                <h3 className="text-center text-orange-500  text-xl font-bold">
-                  QRIOCITY
-                </h3>
-
-                <ul className="mt-4 text-green-400 space-y-2">
-                  <li>✅ Recorded lectures</li>
-                  <li>✅ Weekly sessions</li>
-                  <li>✅ Placement Support</li>
-                  <li>✅ Practice Portal</li>
-                  <li>✅ Curated list separately for beginners</li>
-                  <li>✅ 300 curated list for everyone</li>
-                  <li>✅ Personalised Roadmaps</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="space-y-4 p-4  rounded-lg mt-10">
-              {/* Repeat for each plan */}
-              <div className="p-4 bg-gray-800 rounded-lg">
-                <h3 className="text-center text-white  text-xl font-bold">
-                  OTHER PLATFORMS
-                </h3>
-
-                <ul className="mt-4 text-green-400 space-y-2">
-                  <li>✅ Recorded lectures</li>
-                  <li>✅ Weekly sessions</li>
-                  <li>✅ Placement Support</li>
-                  <li>✅ Practice Portal</li>
-                  <li>❌ Curated list separately for beginners</li>
-                  <li>❌ 300 curated list for everyone</li>
-                  <li>✅ Personalised Roadmaps</li>
-                  {/* Add more features as list items */}
-                </ul>
-              </div>
-            </div>
-            {/* Repeat similar blocks for PREMIUM and CLASSIC */}
           </div>
         </div>
 
