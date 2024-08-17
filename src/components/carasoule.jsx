@@ -162,7 +162,7 @@ function Carousel() {
         </Slider>
         <Slider
           {...settings2}
-          className="md:w-[95%]  justify-between hidden md:flex"
+          className="w-full md:w-[95%] flex justify-between  "
         >
           {Banners2.map((banner, index) => (
             <div className="p-5 ">
