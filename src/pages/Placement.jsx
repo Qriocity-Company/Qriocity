@@ -107,7 +107,160 @@ const Placement = () => {
             What makes us standout?
           </h1>
 
-          <img className="mt-20" src={plans} />
+          <div className="lg:w-[900px] w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
+            <table className="w-full table-fixed border-collapse">
+              <thead>
+                <tr>
+                  <th className="p-4 border-b border-gray-700"></th>
+                  <th className=" text-center p-4 text-white lg:text-xl text-sm border-b border-gray-700">
+                    STANDARD
+                  </th>
+                  <th className=" text-center p-4 text-orange-500 lg:text-xl text-sm border-b border-gray-700">
+                    PREMIUM
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-white">
+                {/* Pricing Row */}
+                <tr className="">
+                  <td className="p-4 h-full">
+                    <div className="lg:text-xl text-sm flex flex-col justify-center items-start lg:font-semibold ">
+                      Compare plans
+                      <span className=" text-sm">What we offer?</span>
+                    </div>
+                  </td>
+                  <td className="p-4 text-center ">
+                    <div className="lg:text-3xl text-xl font-semibold">
+                      ₹5699{" "}
+                      <span className="line-through text-gray-400 lg:text-2xl text-sm">
+                        ₹9999
+                      </span>
+                    </div>
+                    <button className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
+                      Register Now
+                    </button>
+                  </td>
+                  <td className="p-4 text-center ">
+                    <div className="lg:text-3xl text-xl font-semibold">
+                      ₹9999{" "}
+                      <span className="line-through text-gray-400 lg:text-2xl text-sm">
+                        ₹9999
+                      </span>
+                    </div>
+                    <button className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
+                      Register Now
+                    </button>
+                  </td>
+                </tr>
+
+                {/* Feature Rows */}
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700 border-t">
+                    Complexity Analysis
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 border-t text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 border-t text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Evaluate time and space efficiency.
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Real-Life Examples
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Practical applications for every problem
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Progress Tracking
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-red-500">
+                    ❌
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Monitor your advancement.
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-red-500">
+                    ❌
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Leaderboard
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Compete with others or opt-out.
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Completion Certificate
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left">Showcase your achievement</td>
+                  <td className="p-4 text-center text-green-400">✔️</td>
+                  <td className="p-4 text-center text-green-400">✔️</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div className="mt-20 flex justify-center items-center flex-col">
@@ -280,7 +433,106 @@ const Placement = () => {
             What makes us standout?
           </h1>
 
-          <img className="mt-20" src={plans} />
+          <div className="lg:w-[900px] w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
+            <table className="w-full table-fixed border-collapse">
+              <thead>
+                <tr>
+                  <th className="text-center p-4 text-white lg:text-2xl text-sm border-b border-gray-700">
+                    Features
+                  </th>
+
+                  <th className=" text-center p-4 text-orange-500 lg:text-2xl text-sm border-b border-gray-700">
+                    Qriocity
+                  </th>
+                  <th className=" text-center p-4 text-white lg:text-2xl text-sm border-b border-gray-700">
+                    Other Platforms
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-white ">
+                {/* Pricing Row */}
+
+                {/* Feature Rows */}
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Recorded lectures
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Weekly sessions
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Placement Support
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Practice Portal
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Curated list separately for beginners
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-red-500">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ❌
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    300 curated list for everyone
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-red-500">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ❌
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-left border-b border-gray-700">
+                    Personalised Roadmaps
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✔️
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <button className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-20 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
