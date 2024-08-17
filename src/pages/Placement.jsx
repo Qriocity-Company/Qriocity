@@ -111,11 +111,11 @@ const Placement = () => {
             <table className="w-full table-fixed border-collapse">
               <thead>
                 <tr>
-                  <th className="p-4 border-b border-gray-700"></th>
-                  <th className=" text-center p-4 text-white lg:text-xl text-sm border-b border-gray-700">
+                  <th className="p-4 border-b border-r border-gray-700"></th>
+                  <th className=" text-center p-4 text-white lg:text-xl text-sm border-b border-r border-gray-700">
                     STANDARD
                   </th>
-                  <th className=" text-center p-4 text-orange-500 lg:text-xl text-sm border-b border-gray-700">
+                  <th className=" text-center p-4 text-orange-500 lg:text-xl text-sm border-b border-r border-gray-700">
                     PREMIUM
                   </th>
                   <th className=" text-center p-4 text-orange-500 lg:text-xl text-sm border-b border-gray-700">
@@ -126,13 +126,13 @@ const Placement = () => {
               <tbody className="text-white">
                 {/* Pricing Row */}
                 <tr className="">
-                  <td className="p-4 h-full">
+                  <td className="p-4 h-full border-r border-gray-700">
                     <div className="lg:text-xl text-sm flex flex-col justify-center items-start lg:font-semibold ">
                       Compare plans
                       <span className=" text-sm">What we offer?</span>
                     </div>
                   </td>
-                  <td className="p-4 text-center ">
+                  <td className="p-4 text-center border-r border-gray-700">
                     <div className="lg:text-3xl text-xl font-semibold">
                       ₹5699{" "}
                       <span className="line-through text-gray-400 lg:text-2xl text-sm">
@@ -143,7 +143,7 @@ const Placement = () => {
                       Register Now
                     </button>
                   </td>
-                  <td className="p-4 text-center ">
+                  <td className="p-4 text-center border-r border-gray-700">
                     <div className="lg:text-3xl text-xl font-semibold">
                       ₹9999{" "}
                       <span className="line-through text-gray-400 lg:text-2xl text-sm">
@@ -169,13 +169,13 @@ const Placement = () => {
 
                 {/* Feature Rows */}
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700 border-t">
+                  <td className="p-4 text-left border-b border-r border-gray-700 border-t">
                     Complexity Analysis
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 border-t text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 border-t text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 border-t text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 border-t text-green-400">
                     ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 border-t text-green-400">
@@ -183,13 +183,13 @@ const Placement = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Evaluate time and space efficiency.
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
@@ -197,13 +197,13 @@ const Placement = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Real-Life Examples
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
@@ -211,13 +211,13 @@ const Placement = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Practical applications for every problem
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
@@ -225,13 +225,13 @@ const Placement = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Progress Tracking
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-red-500">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-red-500">
                     ❌
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
@@ -239,13 +239,13 @@ const Placement = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Monitor your advancement.
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-red-500">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-red-500">
                     ❌
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
@@ -253,13 +253,13 @@ const Placement = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Leaderboard
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
@@ -267,27 +267,27 @@ const Placement = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Compete with others or opt-out.
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b  border-gray-700 text-green-400">
                     ✅
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-gray-700">
+                  <td className="p-4 text-left border-b border-r border-gray-700">
                     Completion Certificate
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
                     ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
@@ -295,9 +295,15 @@ const Placement = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left">Showcase your achievement</td>
-                  <td className="p-4 text-center text-green-400">✅</td>
-                  <td className="p-4 text-center text-green-400">✅</td>
+                  <td className="p-4 text-left border-r border-gray-700">
+                    Showcase your achievement
+                  </td>
+                  <td className="p-4 text-center border-r border-gray-700 text-green-400">
+                    ✅
+                  </td>
+                  <td className="p-4 text-center border-r border-gray-700 text-green-400">
+                    ✅
+                  </td>
                   <td className="p-4 text-center text-green-400">✅</td>
                 </tr>
               </tbody>
@@ -658,13 +664,13 @@ const Placement = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4 text-left border-b border-r border-gray-700">
+                  <td className="p-4 text-left  border-r border-gray-700">
                     Personalised Roadmaps
                   </td>
-                  <td className="p-4 text-center border-b border-r border-gray-700 text-green-400">
+                  <td className="p-4 text-center  border-r border-gray-700 text-green-400">
                     ✅
                   </td>
-                  <td className="p-4 text-center border-b  border-gray-700 text-green-400">
+                  <td className="p-4 text-center   border-gray-700 text-green-400">
                     ✅
                   </td>
                 </tr>
