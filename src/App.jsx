@@ -33,7 +33,7 @@ function App() {
           <Route index path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/courses" element={<OurCourses />} />
+          {/*<Route path="/courses" element={<OurCourses />} />*/}
           <Route path="/about" element={<AboutUs />} />
           <Route path="/consultations" element={<Webinar />} />
           <Route path="/blogs" element={<Blog />} />
@@ -47,7 +47,7 @@ function App() {
           <Route path="/terms" element={<TermsandServices />} />
           <Route path="/refund" element={<Refund />} />
           <Route path="/webinar" element={<RoadMap />} />
-          <Route path="/placement" element={<Placement />} />
+          <Route path="/courses" element={<Placement />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
         <ToastContainer
