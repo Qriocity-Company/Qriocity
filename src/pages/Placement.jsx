@@ -9,8 +9,8 @@ import sessions from "../assets/sessions.png";
 import video from "../assets/video.png";
 import blog from "../assets/blog.png";
 import certificate from "../assets/certificate.png";
-import plans from "../assets/plans.png";
 
+import { TiTick } from "react-icons/ti";
 const Placement = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -159,10 +159,10 @@ const Placement = () => {
                     Complexity Analysis
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 border-t text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 border-t text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -170,10 +170,10 @@ const Placement = () => {
                     Evaluate time and space efficiency.
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -181,10 +181,10 @@ const Placement = () => {
                     Real-Life Examples
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -192,10 +192,10 @@ const Placement = () => {
                     Practical applications for every problem
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -206,7 +206,7 @@ const Placement = () => {
                     ❌
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -217,7 +217,7 @@ const Placement = () => {
                     ❌
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -225,10 +225,10 @@ const Placement = () => {
                     Leaderboard
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -236,10 +236,10 @@ const Placement = () => {
                     Compete with others or opt-out.
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -247,16 +247,16 @@ const Placement = () => {
                     Completion Certificate
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
                   <td className="p-4 text-left">Showcase your achievement</td>
-                  <td className="p-4 text-center text-green-400">✔️</td>
-                  <td className="p-4 text-center text-green-400">✔️</td>
+                  <td className="p-4 text-center text-green-400">✅</td>
+                  <td className="p-4 text-center text-green-400">✅</td>
                 </tr>
               </tbody>
             </table>
@@ -458,10 +458,10 @@ const Placement = () => {
                     Recorded lectures
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -469,10 +469,10 @@ const Placement = () => {
                     Weekly sessions
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -480,10 +480,10 @@ const Placement = () => {
                     Placement Support
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -491,10 +491,10 @@ const Placement = () => {
                     Practice Portal
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
                 <tr>
@@ -502,7 +502,7 @@ const Placement = () => {
                     Curated list separately for beginners
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-red-500">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
                     ❌
@@ -513,7 +513,7 @@ const Placement = () => {
                     300 curated list for everyone
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-red-500">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
                     ❌
@@ -524,10 +524,10 @@ const Placement = () => {
                     Personalised Roadmaps
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
-                    ✔️
+                    ✅
                   </td>
                 </tr>
               </tbody>
