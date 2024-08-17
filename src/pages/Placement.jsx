@@ -87,15 +87,7 @@ const Placement = () => {
       answer:
         "Definitely! Joining this course will help you build a strong foundation in DSA, which will significantly aid you during the placement process.",
     },
-    {
-      question: "What is the time period for which we will have access to the community?",
-      answer: "You will have lifetime access to the community.",
-    },
-    {
-      question: "What is the benefit of being a member of the community?",
-      answer:
-        "The community offers more guest lectures and sessions by people from top companies, which can be very helpful in getting placed in those companies.",
-    },
+ 
   ];
   
 
@@ -544,11 +536,11 @@ const handleSubmit=()=>{
                     Features
                   </th>
 
-                  <th className=" text-center p-4 text-orange-500 lg:text-2xl text-xl border-b border-r border-gray-700">
-                    Qriocity
-                  </th>
-                  <th className=" text-center p-4 text-white lg:text-2xl text-xl border-b border-gray-700">
+                  <th className=" text-center p-4 text-white lg:text-2xl text-xl border-b border-r border-gray-700">
                     Other Platforms
+                  </th>
+                  <th className=" text-center p-4 text-orange-500 lg:text-2xl text-xl border-b border-gray-700">
+                    Qriocity
                   </th>
                 </tr>
               </thead>
