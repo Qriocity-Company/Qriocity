@@ -5,81 +5,125 @@ import "slick-carousel/slick/slick-theme.css";
 
 import "../App.css";
 
+
 const Banners = [
   {
     content:
-      "I felt so refreshed and calm after the session. It was an incredible experience. Highly recommended to anyone needing relaxation. The session exceeded my expectations. Thank you so much!",
-    name: "Sarah",
-    location: "New York",
-   
+      "This course gave me a solid grasp of DSA basics and a strong foundation through numerous practice problems. It was invaluable for building my understanding.",
+    name: "Rahul",
+    location: "Bangalore",
   },
   {
     content:
-      "Lydia was fantastic during the session. I learned a lot in just one hour. The meditation was very informative and beneficial. I highly appreciate Lydia's guidance. Great session!",
-    name: "David",
-    location: "Los Angeles",
-   
+      "The course clarified my path for placement and deepened my knowledge, making a significant difference during my final interview rounds.",
+    name: "Rohith",
+    location: "Chennai",
   },
   {
     content:
-      "This was the most relaxing hour of my week. I feel great after the session. It significantly boosted my well-being. The calmness I felt was unparalleled. Thank you for the wonderful experience!",
-    name: "Akshaya",
-    location: "San Francisco",
-   
+      "Qriocity’s focused approach helped me tackle important problems and stay motivated, enhancing my consistency and problem-solving skills.",
+    name: "Harshit",
+    location: "Trichy",
   },
   {
     content:
-      "A truly peaceful experience that helped me de-stress. I felt completely at ease during the session. The meditative experience was calming and effective. It greatly reduced my stress. Highly recommend it!",
-    name: "Riya",
-    location: "Chicago",
-   
+      "Joining this course connected me with a community of like-minded individuals and provided a comprehensive structure to address all my DSA questions.",
+    name: "Naresh",
+    location: "Coimbatore",
   },
   {
     content:
-      "This meditation session was a game-changer for me. I felt so relaxed afterward. Lydia provided an amazing session. The experience was deeply relaxing and transformative. Thank you, Lydia!",
-    name: "Jessica",
-    location: "Miami",
-   
+      "The course was well-organized with clear explanations on data structures and algorithms. The curated problems boosted my confidence and skills.",
+    name: "Khishore",
+    location: "Chennai",
+  },
+  {
+    content:
+      "An excellent course with thorough content. The logical flow of topics made complex concepts easier to grasp and understand.",
+    name: "Karthika",
+    location: "Coimbatore",
+  },
+  {
+    content:
+      "The course went beyond my expectations with detailed content and challenging tasks, significantly improving my programming abilities.",
+    name: "Monish",
+    location: "Trichy",
+  },
+  {
+    content:
+      "An intense course covering algorithms, data structures, and Python basics, greatly benefiting my coding skills and placement preparation.",
+    name: "Vasanth Marshall",
+    location: "Rameswaram",
+  },
+  {
+    content:
+      "DSA Batch 2 offered clear explanations and valuable weekly doubt-solving sessions, which have greatly enhanced my understanding and skills.",
+    name: "Nitin",
+    location: "Chennai",
   },
 ];
+
+
+
 
 const Banners2 = [
   {
     content:
-      "The session was incredibly insightful and relaxing. I felt a sense of calm wash over me. It's a wonderful way to unwind and find inner peace. Thank you for such a fantastic experience!",
-    name: "Emily",
-    location: "Boston",
-   
+      "This course gave me a solid grasp of DSA basics and a strong foundation through numerous practice problems. It was invaluable for building my understanding.",
+    name: "Rahul",
+    location: "Bangalore",
   },
   {
     content:
-      "I couldn't believe how effective the meditation session was. It provided me with the clarity I needed. Lydia's guidance was spot-on. I'll definitely be returning for more sessions!",
-    name: "Michael",
-    location: "Seattle",
-   
+      "The course clarified my path for placement and deepened my knowledge, making a significant difference during my final interview rounds.",
+    name: "Rohith",
+    location: "Chennai",
   },
   {
     content:
-      "An absolutely amazing session that left me feeling rejuvenated. The atmosphere was perfect for relaxation. I appreciate the attention to detail and care. Highly recommended for anyone!",
-    name: "Priya",
-    location: "Austin",
-   
+      "Qriocity’s focused approach helped me tackle important problems and stay motivated, enhancing my consistency and problem-solving skills.",
+    name: "Harshit",
+    location: "Trichy",
   },
   {
     content:
-      "This meditation session helped me connect with myself on a deeper level. It was a transformative experience. Lydia's expertise and soothing voice made it even more special. Thank you!",
-    name: "Arjun",
-    location: "Denver",
-   
+      "Joining this course connected me with a community of like-minded individuals and provided a comprehensive structure to address all my DSA questions.",
+    name: "Naresh",
+    location: "Coimbatore",
   },
   {
     content:
-      "A wonderful session that left me feeling at peace. The guided meditation was exactly what I needed to de-stress. Lydia's approach is gentle and effective. Can't wait for the next one!",
-    name: "Sophia",
-    location: "San Diego",
-   
+      "The course was well-organized with clear explanations on data structures and algorithms. The curated problems boosted my confidence and skills.",
+    name: "Khishore",
+    location: "Chennai",
+  },
+  {
+    content:
+      "An excellent course with thorough content. The logical flow of topics made complex concepts easier to grasp and understand.",
+    name: "Karthika",
+    location: "Coimbatore",
+  },
+  {
+    content:
+      "The course went beyond my expectations with detailed content and challenging tasks, significantly improving my programming abilities.",
+    name: "Monish",
+    location: "Trichy",
+  },
+  {
+    content:
+      "An intense course covering algorithms, data structures, and Python basics, greatly benefiting my coding skills and placement preparation.",
+    name: "Vasanth Marshall",
+    location: "Rameswaram",
+  },
+  {
+    content:
+      "DSA Batch 2 offered clear explanations and valuable weekly doubt-solving sessions, which have greatly enhanced my understanding and skills.",
+    name: "Nitin",
+    location: "Chennai",
   },
 ];
+
+
 
 
 
@@ -151,6 +195,7 @@ function Carousel() {
                       <h1 className="gabarito font-bold text-[19.2px]">
                         {banner.name}
                       </h1>
+                       <p>{banner.location}</p>
                       
                     </div>
                     
@@ -177,6 +222,7 @@ function Carousel() {
                     <h1 className="gabarito font-bold text-[19.2px]">
                       {banner.name}
                     </h1>
+                    <p>{banner.location}</p>
                     
                   </div>
                   
