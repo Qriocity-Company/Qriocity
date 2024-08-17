@@ -107,7 +107,7 @@ const Placement = () => {
             What makes us standout?
           </h1>
 
-          <div className="lg:w-[900px] w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
+          <div className="lg:w-[1300px] lg:block hidden  w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
             <table className="w-full table-fixed border-collapse">
               <thead>
                 <tr>
@@ -117,6 +117,9 @@ const Placement = () => {
                   </th>
                   <th className=" text-center p-4 text-orange-500 lg:text-xl text-sm border-b border-gray-700">
                     PREMIUM
+                  </th>
+                  <th className=" text-center p-4 text-orange-500 lg:text-xl text-sm border-b border-gray-700">
+                    CLASSIC
                   </th>
                 </tr>
               </thead>
@@ -151,12 +154,26 @@ const Placement = () => {
                       Register Now
                     </button>
                   </td>
+                  <td className="p-4 text-center ">
+                    <div className="lg:text-3xl text-xl font-semibold">
+                      ₹9999{" "}
+                      <span className="line-through text-gray-400 lg:text-2xl text-sm">
+                        ₹9999
+                      </span>
+                    </div>
+                    <button className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
+                      Register Now
+                    </button>
+                  </td>
                 </tr>
 
                 {/* Feature Rows */}
                 <tr>
                   <td className="p-4 text-left border-b border-gray-700 border-t">
                     Complexity Analysis
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 border-t text-green-400">
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 border-t text-green-400">
                     ✅
@@ -175,10 +192,16 @@ const Placement = () => {
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
                     ✅
                   </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✅
+                  </td>
                 </tr>
                 <tr>
                   <td className="p-4 text-left border-b border-gray-700">
                     Real-Life Examples
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
                     ✅
@@ -197,6 +220,9 @@ const Placement = () => {
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
                     ✅
                   </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✅
+                  </td>
                 </tr>
                 <tr>
                   <td className="p-4 text-left border-b border-gray-700">
@@ -204,6 +230,9 @@ const Placement = () => {
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-red-500">
                     ❌
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
                     ✅
@@ -219,10 +248,16 @@ const Placement = () => {
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
                     ✅
                   </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✅
+                  </td>
                 </tr>
                 <tr>
                   <td className="p-4 text-left border-b border-gray-700">
                     Leaderboard
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
                     ✅
@@ -241,10 +276,16 @@ const Placement = () => {
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
                     ✅
                   </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✅
+                  </td>
                 </tr>
                 <tr>
                   <td className="p-4 text-left border-b border-gray-700">
                     Completion Certificate
+                  </td>
+                  <td className="p-4 text-center border-b border-gray-700 text-green-400">
+                    ✅
                   </td>
                   <td className="p-4 text-center border-b border-gray-700 text-green-400">
                     ✅
@@ -257,9 +298,106 @@ const Placement = () => {
                   <td className="p-4 text-left">Showcase your achievement</td>
                   <td className="p-4 text-center text-green-400">✅</td>
                   <td className="p-4 text-center text-green-400">✅</td>
+                  <td className="p-4 text-center text-green-400">✅</td>
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <div className="lg:hidden block">
+            <div className="space-y-4 p-4  rounded-lg mt-10">
+              {/* Repeat for each plan */}
+              <div className="p-4 bg-gray-800 rounded-lg">
+                <h3 className="text-center text-white  text-xl font-bold">
+                  STANDARD
+                </h3>
+                <div className="text-center text-orange-500 lg:text-3xl text-xl font-semibold mt-2">
+                  ₹5699{" "}
+                  <span className="line-through text-gray-400 lg:text-2xl text-sm">
+                    ₹9999
+                  </span>
+                </div>
+
+                <ul className="mt-4 text-green-400 space-y-2">
+                  <li>✅ Complexity Analysis</li>
+                  <li>✅ Evaluate time and space efficiency</li>
+                  <li>✅ Real-Life Examples</li>
+                  <li>✅ LeaderBoard</li>
+                  <li>✅ Compete with others or opt-out.</li>
+                  <li>✅ Completion Certificate</li>
+                  <li>✅ Showcase your achievement</li>
+                  <li>❌ Progress Tracking</li>
+                  <li>❌ Monitor your advancement.</li>
+                  {/* Add more features as list items */}
+                </ul>
+                <button className="bg-orange-500 text-white lg:w-[200px] w-full p-1 mt-5 rounded-lg hover:bg-orange-600">
+                  Register Now
+                </button>
+              </div>
+            </div>
+
+            <div className="space-y-4 p-4  rounded-lg mt-10">
+              {/* Repeat for each plan */}
+              <div className="p-4 bg-gray-800 rounded-lg">
+                <h3 className="text-center text-white  text-xl font-bold">
+                  PREMIUM
+                </h3>
+                <div className="text-center text-orange-500 lg:text-3xl text-xl font-semibold mt-2">
+                  ₹9999{" "}
+                  <span className="line-through text-gray-400 lg:text-2xl text-sm">
+                    ₹9999
+                  </span>
+                </div>
+
+                <ul className="mt-4 text-green-400 space-y-2">
+                  <li>✅ Complexity Analysis</li>
+                  <li>✅ Evaluate time and space efficiency</li>
+                  <li>✅ Real-Life Examples</li>
+                  <li>✅ LeaderBoard</li>
+                  <li>✅ Compete with others or opt-out.</li>
+                  <li>✅ Completion Certificate</li>
+                  <li>✅ Showcase your achievement</li>
+                  <li>✅ Progress Tracking</li>
+                  <li>✅ Monitor your advancement.</li>
+                  {/* Add more features as list items */}
+                </ul>
+                <button className="bg-orange-500 text-white lg:w-[200px] w-full p-1 mt-5 rounded-lg hover:bg-orange-600">
+                  Register Now
+                </button>
+              </div>
+            </div>
+
+            <div className="space-y-4 p-4  rounded-lg mt-10">
+              {/* Repeat for each plan */}
+              <div className="p-4 bg-gray-800 rounded-lg">
+                <h3 className="text-center text-white  text-xl font-bold">
+                  CLASSIC
+                </h3>
+                <div className="text-center text-orange-500 lg:text-3xl text-xl font-semibold mt-2">
+                  ₹9999{" "}
+                  <span className="line-through text-gray-400 lg:text-2xl text-sm">
+                    ₹9999
+                  </span>
+                </div>
+
+                <ul className="mt-4 text-green-400 space-y-2">
+                  <li>✅ Complexity Analysis</li>
+                  <li>✅ Evaluate time and space efficiency</li>
+                  <li>✅ Real-Life Examples</li>
+                  <li>✅ LeaderBoard</li>
+                  <li>✅ Compete with others or opt-out.</li>
+                  <li>✅ Completion Certificate</li>
+                  <li>✅ Showcase your achievement</li>
+                  <li>✅ Progress Tracking</li>
+                  <li>✅ Monitor your advancement.</li>
+                  {/* Add more features as list items */}
+                </ul>
+                <button className="bg-orange-500 text-white lg:w-[200px] w-full p-1 mt-5 rounded-lg hover:bg-orange-600">
+                  Register Now
+                </button>
+              </div>
+            </div>
+            {/* Repeat similar blocks for PREMIUM and CLASSIC */}
           </div>
         </div>
 
@@ -433,7 +571,7 @@ const Placement = () => {
             What makes us standout?
           </h1>
 
-          <div className="lg:w-[900px] w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
+          <div className="lg:w-[900px] lg:block hidden w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
             <table className="w-full table-fixed border-collapse">
               <thead>
                 <tr>
@@ -532,6 +670,48 @@ const Placement = () => {
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <div className="lg:hidden block">
+            <div className="space-y-4 p-4  rounded-lg mt-10">
+              {/* Repeat for each plan */}
+              <div className="p-4 bg-gray-800 rounded-lg">
+                <h3 className="text-center text-orange-500  text-xl font-bold">
+                  QRIOCITY
+                </h3>
+
+                <ul className="mt-4 text-green-400 space-y-2">
+                  <li>✅ Recorded lectures</li>
+                  <li>✅ Weekly sessions</li>
+                  <li>✅ Placement Support</li>
+                  <li>✅ Practice Portal</li>
+                  <li>✅ Curated list separately for beginners</li>
+                  <li>✅ 300 curated list for everyone</li>
+                  <li>✅ Personalised Roadmaps</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="space-y-4 p-4  rounded-lg mt-10">
+              {/* Repeat for each plan */}
+              <div className="p-4 bg-gray-800 rounded-lg">
+                <h3 className="text-center text-white  text-xl font-bold">
+                  OTHER PLATFORMS
+                </h3>
+
+                <ul className="mt-4 text-green-400 space-y-2">
+                  <li>✅ Recorded lectures</li>
+                  <li>✅ Weekly sessions</li>
+                  <li>✅ Placement Support</li>
+                  <li>✅ Practice Portal</li>
+                  <li>❌ Curated list separately for beginners</li>
+                  <li>❌ 300 curated list for everyone</li>
+                  <li>✅ Personalised Roadmaps</li>
+                  {/* Add more features as list items */}
+                </ul>
+              </div>
+            </div>
+            {/* Repeat similar blocks for PREMIUM and CLASSIC */}
           </div>
         </div>
 
