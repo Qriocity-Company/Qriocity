@@ -267,6 +267,9 @@ const featureDetails = [
     icon: <FaVideo size="2em" />,
   },
 ];
+const handleSubmit=()=>{
+  window.location.href="https://courses.qriocity.in/s/store"
+}
   
   return (
     <>
@@ -300,7 +303,7 @@ const featureDetails = [
               </div>
             </div>
 
-            <button className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-10 text-[22px] hover:scale-105 cursor-pointer font-semibold">
+            <button onClick={handleSubmit} className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-10 text-[22px] hover:scale-105 cursor-pointer font-semibold">
               Start Your Journey Now
             </button>
           </div>
@@ -350,7 +353,7 @@ const featureDetails = [
                         ₹4999
                       </span>
                     </div>
-                    <button className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
+                    <button onClick={handleSubmit} className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
                       Register Now
                     </button>
                   </td>
@@ -361,7 +364,7 @@ const featureDetails = [
                         ₹9999
                       </span>
                     </div>
-                    <button className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
+                    <button onClick={handleSubmit} className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
                       Register Now
                     </button>
                   </td>
@@ -372,7 +375,7 @@ const featureDetails = [
                         ₹19999
                       </span>
                     </div>
-                    <button className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
+                    <button onClick={handleSubmit} className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
                       Register Now
                     </button>
                   </td>
@@ -424,7 +427,7 @@ const featureDetails = [
                 ))}
                   {/* Add more features as list items */}
                 </ul>
-                <button className="bg-orange-500 text-white lg:w-[200px] w-full p-1 mt-5 rounded-lg hover:bg-orange-600">
+                <button onClick={handleSubmit} className="bg-orange-500 text-white lg:w-[200px] w-full p-1 mt-5 rounded-lg hover:bg-orange-600">
                   Register Now
                 </button>
               </div>
@@ -453,7 +456,7 @@ const featureDetails = [
                 ))}
                   {/* Add more features as list items */}
                 </ul>
-                <button className="bg-orange-500 text-white lg:w-[200px] w-full p-1 mt-5 rounded-lg hover:bg-orange-600">
+                <button onClick={handleSubmit} className="bg-orange-500 text-white lg:w-[200px] w-full p-1 mt-5 rounded-lg hover:bg-orange-600">
                   Register Now
                 </button>
               </div>
@@ -483,7 +486,7 @@ const featureDetails = [
                   
                   {/* Add more features as list items */}
                 </ul>
-                <button className="bg-orange-500 text-white lg:w-[200px] w-full p-1 mt-5 rounded-lg hover:bg-orange-600">
+                <button onClick={handleSubmit} className="bg-orange-500 text-white lg:w-[200px] w-full p-1 mt-5 rounded-lg hover:bg-orange-600">
                   Register Now
                 </button>
               </div>
@@ -522,7 +525,7 @@ const featureDetails = [
              
             </div>
           </div>
-          <button className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-20 text-[22px] hover:scale-105 cursor-pointer font-semibold">
+          <button onClick={handleSubmit} className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-20 text-[22px] hover:scale-105 cursor-pointer font-semibold">
             Start Your Journey Now
           </button>
         </div>
@@ -572,7 +575,7 @@ const featureDetails = [
           </div>
         </div>
 
-        <button className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-20 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
+        <button onClick={handleSubmit} className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-20 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
           Start Your Journey Now
         </button>
 
@@ -587,12 +590,12 @@ const featureDetails = [
           src={certificate}
         />
 
-        <button className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-20 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
+        <button onClick={handleSubmit} className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-20 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
           Start Your Journey Now
         </button>
 
          <Testimonials/>
-        <button className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-20 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
+        <button onClick={handleSubmit} className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-20 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
           Start Your Journey Now
         </button>
         <div className="mt-20 lg:w-[700px] w-auto place-self-center text-white p-4">
@@ -604,7 +607,7 @@ const featureDetails = [
           </h2>
           {faqs.map((faq, index) => (
             <div key={index} className="border-2 border-gray-300 mb-10">
-              <button
+              <button 
                 className="w-full text-left flex justify-between items-center p-4 text-lg  font-semibold  focus:outline-none"
                 onClick={() => toggleAccordion(index)}
               >
@@ -618,7 +621,7 @@ const featureDetails = [
           ))}
         </div>
 
-        <button className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-10 mb-10 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
+        <button onClick={handleSubmit} className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-10 mb-10 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
           Start Your Journey Now
         </button>
       </div>
