@@ -23,11 +23,11 @@ const Placement = () => {
   const faqs = [
     {
       question: "In which language is the course being taught?",
-      answer: "Tamil",
+      answer: "All the recorded lectures will be in Tamil language and weekly doubts sessions can be in English or Tamil.",
     },
     {
       question: "What is the programming language used?",
-      answer: "Python",
+      answer: "Python is the programming language being used in this course because it’s simple and easy to learn for beginners. ",
     },
     {
       question: "Will the basics of the programming language be taught in the course?",
@@ -45,7 +45,7 @@ const Placement = () => {
     },
     {
       question: "How many hours do I need to spend on a daily basis?",
-      answer: "It varies from person to person.",
+      answer: "It totally depends on your schedule. Please plan a sustainable schedule so you can be consistently. We advise everyone to spend 1-2 hours everyday. ",
     },
     {
       question: "Will I get a placement because of this course?",
@@ -79,13 +79,13 @@ const Placement = () => {
         "Since this course includes teaching the basics of Python, you can join even if you have no prior knowledge of programming.",
     },
     {
-      question: "I’m from a different department; can I join?",
+      question: "I’m from a different department, can I join?",
       answer: "Yes, you can join.",
     },
     {
-      question: "I’m in my 1st or 2nd year; can I join this course?",
+      question: "I’ve  just completed my schooling or I’m in my 1st or 2nd year, can I join this course?",
       answer:
-        "Definitely! Joining this course will help you build a strong foundation in DSA, which will significantly aid you during the placement process.",
+        "Definitely! Joining this course will help you build a strong foundation in DSA, which will significantly aid you during the placement process",
     },
  
   ];
