@@ -107,7 +107,7 @@ const Placement = () => {
             What makes us standout?
           </h1>
 
-          <div className="lg:w-[1300px] lg:block hidden  w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
+          <div className="lg:w-[1200px] lg:block hidden  w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
             <table className="w-full table-fixed border-collapse">
               <thead>
                 <tr>
