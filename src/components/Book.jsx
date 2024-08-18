@@ -45,12 +45,10 @@ const Book = () => {
     <div className="bg-[#000000] h-[100px] w-full p-4 flex justify-between z-50 items-center bottom-0 fixed">
       <div className="flex flex-col">
         <div className="flex justify-center items-center lg:gap-6 gap-2 h-full">
-          <h1 className="font-bold text-2xl lg:text-5xl text-white lg:ml-10">
-            FREE
-          </h1>
-          <h1 className="text-[20px] text-white line-through">₹999</h1>
+          
+        
         </div>
-        <h1 className="mt-2 text-white lg:ml-10 text-sm">
+        <h1 className="mt-2 text-white lg:text-bold lg:text-xl lg:ml-10 text-sm">
           Offer ends in {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s!!
         </h1>
       </div>
@@ -66,7 +64,7 @@ const Book = () => {
           }}
           onClick={toggleTimer} // Toggle the timer on click
         >
-          {isTimerActive ? "Stop Timer" : "Start Your Journey Now"}
+          {isTimerActive ? "Register Now" : "Start Your Journey Now"}
         </button>
       </div>
     </div>

@@ -135,11 +135,11 @@ const Placement = () => {
     { name: "Accountability Mentor", check: "❌" },
     { name: "Higher Studies A-Z - 3 hours recorded videos", check: "❌" },
     { name: "Doubt solving support(Only community forum support)", check: "✅" },
-    { name: "Resume & Cold Email Live", check: "❌" },
+    { name: "Resume & Cold Email Live Session", check: "❌" },
     { name: "Live Mock Interviews by Industry Experts", check: "❌" },
-    { name: "LinkedIn Mastery Live", check: "❌" },
-    { name: "1-1 Mentorship with Founder & CEO Kesaven", check: "❌" },
-    { name: "Side hustle Income generation", check: "❌" },
+    { name: "LinkedIn Mastery Live Session", check: "❌" },
+    { name: "1-1 Mentorship with Founder & CEO of Qriocity , Kesaven", check: "❌" },
+    { name: "How to generate passive income using your skills, live session with founder and CEO of Qriocity,Kesavan", check: "❌" },
     { name: "6 months Validity of Recordings", check: "✅" },
   ];
   
@@ -162,9 +162,9 @@ const Placement = () => {
     { name: "Doubt solving support (Bi-Weekly sessions)", check: "✅" },
     { name: "Resume & Cold Email Live 1 Session", check: "✅" },
     { name: "Live Mock Interviews by Industry Experts", check: "❌" },
-    { name: "LinkedIn Mastery Live", check: "❌" },
-    { name: "1-1 Mentorship with Founder & CEO Kesaven", check: "❌" },
-    { name: "Side hustle Income generation", check: "❌" },
+    { name: "LinkedIn Mastery Live Session", check: "❌" },
+    { name: "1-1 Mentorship with Founder & CEO of Qriocity, Kesaven", check: "❌" },
+    { name: "How to generate passive income using your skills, live session with founder and CEO of Qriocity,Kesavan", check: "❌" },
     { name: "2 Years Validity of Recordings", check: "✅" },
   ];
 
@@ -185,11 +185,11 @@ const Placement = () => {
     { name: "Accountability Mentor", check: "✅" },
     { name: "Higher Studies A-Z - 3 hours recorded videos", check: "✅" },
     { name: "Doubt solving support (Weekly live sessions)", check: "✅" },
-    { name: "Resume & Cold Email Live (3 Session)", check: "✅" },
+    { name: "Resume & Cold Email Live Session (3 Session)", check: "✅" },
     { name: "Live Mock Interviews by Industry Experts (3 Session)", check: "✅" },
-    { name: "LinkedIn Mastery Live (3 Session)", check: "✅" },
-    { name: "1-1 Mentorship with Founder & CEO Kesaven(3 Session)", check: "✅" },
-    { name: "Side hustle Income generation (3 Session)", check: "✅" },
+    { name: "LinkedIn Mastery Live Session (3 Session)", check: "✅" },
+    { name: "1-1 Mentorship with Founder & CEO of Qriocity, Kesaven(3 Session)", check: "✅" },
+    { name: "How to generate passive income using your skills, live session with founder and CEO of Qriocity,Kesavan", check: "✅" },
     { name: "Lifetime Validity of Recordings", check: "✅" },
   ];
   const feature4 = [
