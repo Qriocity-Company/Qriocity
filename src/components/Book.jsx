@@ -3,23 +3,20 @@ import React, { useEffect, useState } from "react";
 const Book = () => {
   const initialTime = 15 * 60 * 1000; // 15 minutes in milliseconds
   const [offerEndTime, setOfferEndTime] = useState(Date.now() + initialTime);
-  const [isTimerActive, setIsTimerActive] = useState(true);
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
-    let timer;
-    if (isTimerActive) {
-      timer = setInterval(() => {
-        setTimeLeft(calculateTimeLeft());
+    const timer = setInterval(() => {
+      const time = calculateTimeLeft();
+      setTimeLeft(time);
 
-        if (calculateTimeLeft().total <= 0) {
-          clearInterval(timer);
-        }
-      }, 1000);
-    }
+      if (time.total <= 0) {
+        clearInterval(timer);
+      }
+    }, 1000);
 
     return () => clearInterval(timer);
-  }, [isTimerActive, offerEndTime]);
+  }, [offerEndTime]);
 
   function calculateTimeLeft() {
     const difference = Math.max(0, offerEndTime - Date.now());
@@ -31,40 +28,34 @@ const Book = () => {
     return { hours, minutes, seconds, total: difference };
   }
 
-  // Toggle the timer
-  const toggleTimer = () => {
-    if (isTimerActive) {
-      setIsTimerActive(false);
-    } else {
-      setOfferEndTime(Date.now() + timeLeft.total);
-      setIsTimerActive(true);
-    }
-  };
+  // If the timer has finished, don't render the footer
+  if (timeLeft.total <= 0) {
+    return null;
+  }
+
+  const handleSubmit=()=>{
+    window.location.href="https://courses.qriocity.in/s/store"
+  }
 
   return (
     <div className="bg-[#000000] h-[100px] w-full p-4 flex justify-between z-50 items-center bottom-0 fixed">
       <div className="flex flex-col">
         <div className="flex justify-center items-center lg:gap-6 gap-2 h-full">
-          
-        
         </div>
-        <h1 className="mt-2 text-white lg:text-bold lg:text-xl lg:ml-10 text-sm">
+        <h1 className="mt-2 text-white lg:text-bold text-lg lg:text-xl lg:ml-10 ">
           Offer ends in {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s!!
         </h1>
       </div>
 
       <div className="flex flex-col justify-center items-center lg:mr-10">
-        <span className="lg:-mr-20 -mr-10 -mb-2 bg-[#DCDCDC] rounded-2xl px-2 lg:px-4 z-50 py-1">
-          90% seats booked
-        </span>
-        <button
-          className="lg:px-14 py-4 px-2 rounded-full lg:font-bold text-white"
+       
+        <button onClick={handleSubmit}
+          className="lg:px-14 py-4 px-4 rounded-full lg:font-bold text-white"
           style={{
             background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
           }}
-          onClick={toggleTimer} // Toggle the timer on click
         >
-          {isTimerActive ? "Register Now" : "Start Your Journey Now"}
+          Register Now
         </button>
       </div>
     </div>
