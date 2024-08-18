@@ -419,9 +419,9 @@ const handleSubmit=()=>{
                   ENTRY
                 </h3>
                 <div className="text-center text-orange-500 lg:text-3xl text-xl font-semibold mt-2">
-                  ₹1499{" "}
+                  ₹4999{" "}
                   <span className="line-through text-gray-400 lg:text-2xl text-sm">
-                    ₹4999{" "}
+                    ₹12000{" "}
                   </span>
                   <span className=" lg:text-2xl text-sm">
                        COUPON71
@@ -451,9 +451,9 @@ const handleSubmit=()=>{
                   SKILLED
                 </h3>
                 <div className="text-center text-orange-500 lg:text-3xl text-xl font-semibold mt-2">
-                  ₹3999{" "}
+                  ₹9999{" "}
                   <span className="line-through text-gray-400 lg:text-2xl text-sm">
-                    ₹9999{" "}
+                    ₹20000{" "}
                   </span>
                   <span className=" lg:text-2xl text-sm">
                       COUPON61
@@ -484,9 +484,9 @@ const handleSubmit=()=>{
                   MASTERY
                 </h3>
                 <div className="text-center text-orange-500 lg:text-3xl text-xl font-semibold mt-2">
-                  ₹7999{" "}
+                  ₹19999{" "}
                   <span className="line-through text-gray-400 lg:text-2xl text-sm">
-                    ₹19999
+                    ₹20000
                   </span>
                   <span className=" lg:text-2xl text-sm">
                        COUPON50
