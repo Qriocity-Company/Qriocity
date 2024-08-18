@@ -525,7 +525,7 @@ const handleSubmit=()=>{
             <div className="flex flex-wrap justify-center items-center gap-10 mt-20">
               { featureDetails.map((data,index)=>{
                 return(
-              <div className="bg-[#0F0F0F] rounded-xl p-4 lg:h-[300px] h-auto lg:w-[521px] w-[300px] flex lg:flex-row flex-col lg:justify-start lg:items-center justify-center items-center lg:gap-10">
+              <div className="bg-[#0F0F0F] rounded-xl p-4 h-[400px] lg:h-[300px]  lg:w-[521px] w-[300px] flex lg:flex-row flex-col lg:justify-start lg:items-center justify-center items-center lg:gap-10">
                 <div className="border-[#FA9D51] border-2 p-[1px] rounded-xl">
                   <div className="bg-white p-2 rounded-xl text-orange-500 ">
                   {data.icon}
