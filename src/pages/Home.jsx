@@ -14,7 +14,7 @@ const Home = () => {
         <Courses />
         <Project />
         <Testimonial />
-        <WebinarPopup/>
+        
       </div>
       <Footer />
     </>

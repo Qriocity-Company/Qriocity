@@ -14,6 +14,8 @@ import { TiTick } from "react-icons/ti";
 import { faComments, faLaptop, faCertificate, faChartLine, faPuzzlePiece, faVideo } from '@fortawesome/free-solid-svg-icons';
 
 import Testimonials from "../components/Testimonials";
+import Footer2 from "../components/Footer2";
+import Book from "../components/Book";
 const Placement = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -108,11 +110,11 @@ const Placement = () => {
     { name: "Accountability Mentor", check1: "❌", check2: "✅", check3: "✅" },
     { name: "Higher Studies A-Z - 3 hours recorded videos", check1: "❌", check2: "✅", check3: "✅" },
     { name: "Doubt solving support", check1: "Only Community forum Support", check2: "Bi-Weekly sessions", check3: "Weekly live sessions" },
-    { name: "Resume & Cold Email Live", check1: "❌", check2: "1 Session", check3: "1 Session" },
-    { name: "Live Mock Interviews by Industry Experts", check1: "❌", check2: "❌", check3: "1 Session" },
-    { name: "LinkedIn Mastery Live", check1: "❌", check2: "❌", check3: "1 Session" },
-    { name: "1-1 Mentorship with Founder & CEO Kesaven", check1: "❌", check2: "❌", check3: "1 Session" },
-    { name: "Side hustle Income generation", check1: "❌", check2: "❌", check3: "1 Session" },
+    { name: "Resume & Cold Email Live Session", check1: "❌", check2: "1 Session", check3: "3 Session" },
+    { name: "Live Mock Interviews by Industry Experts", check1: "❌", check2: "❌", check3: "3 Session" },
+    { name: "LinkedIn Mastery Live Session", check1: "❌", check2: "❌", check3: "3 Session" },
+    { name: "1-1 Mentorship with Founder & CEO of Qriociy, Kesaven", check1: "❌", check2: "❌", check3: "3 Session" },
+    { name: "How to generate passive income using your skills, live session with founder and CEO of Qriocity,Kesavan", check1: "❌", check2: "❌", check3: "3 Session" },
     { name: "Validity of Recordings", check1: "6 Months", check2: "2 Years", check3: "Lifetime" }
   ];
 
@@ -183,11 +185,11 @@ const Placement = () => {
     { name: "Accountability Mentor", check: "✅" },
     { name: "Higher Studies A-Z - 3 hours recorded videos", check: "✅" },
     { name: "Doubt solving support (Weekly live sessions)", check: "✅" },
-    { name: "Resume & Cold Email Live", check: "✅" },
-    { name: "Live Mock Interviews by Industry Experts (1 Session)", check: "✅" },
-    { name: "LinkedIn Mastery Live (1 Session)", check: "✅" },
-    { name: "1-1 Mentorship with Founder & CEO Kesaven(1 Session)", check: "✅" },
-    { name: "Side hustle Income generation (1 Session)", check: "✅" },
+    { name: "Resume & Cold Email Live (3 Session)", check: "✅" },
+    { name: "Live Mock Interviews by Industry Experts (3 Session)", check: "✅" },
+    { name: "LinkedIn Mastery Live (3 Session)", check: "✅" },
+    { name: "1-1 Mentorship with Founder & CEO Kesaven(3 Session)", check: "✅" },
+    { name: "Side hustle Income generation (3 Session)", check: "✅" },
     { name: "Lifetime Validity of Recordings", check: "✅" },
   ];
   const feature4 = [
@@ -340,10 +342,14 @@ const handleSubmit=()=>{
                   </td>
                   <td className="p-4 text-center border-r border-gray-700">
                     <div className="lg:text-3xl text-xl font-semibold">
-                      ₹1499{" "}
+                      ₹4999{" "}
                       <span className="line-through text-gray-400 lg:text-2xl text-sm">
-                        ₹4999
+                        ₹12000 {" "}
                       </span>
+                      <span className=" lg:text-2xl text-sm">
+                       COUPON71
+                      Discounted Price ₹1499</span>
+                                          
                     </div>
                     <button onClick={handleSubmit} className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
                       Register Now
@@ -351,10 +357,14 @@ const handleSubmit=()=>{
                   </td>
                   <td className="p-4 text-center border-r border-gray-700">
                     <div className="lg:text-3xl text-xl font-semibold">
-                      ₹3999{" "}
+                      ₹9999{" "}
                       <span className="line-through text-gray-400 lg:text-2xl text-sm">
-                        ₹9999
+                        ₹20000{" "}
                       </span>
+                      <span className=" lg:text-2xl text-sm">
+                      COUPON61
+                      Discounted Price ₹3999
+                     </span>
                     </div>
                     <button onClick={handleSubmit} className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
                       Register Now
@@ -362,10 +372,16 @@ const handleSubmit=()=>{
                   </td>
                   <td className="p-4 text-center ">
                     <div className="lg:text-3xl text-xl font-semibold">
-                      ₹7999{" "}
+                      ₹19999{" "}
                       <span className="line-through text-gray-400 lg:text-2xl text-sm">
-                        ₹19999
+                        ₹35000{" "}
                       </span>
+                      <span className=" lg:text-2xl text-sm">
+                       COUPON50
+                       Discounted Price ₹7999
+
+                     </span>
+
                     </div>
                     <button onClick={handleSubmit} className="bg-orange-500 text-white lg:w-[200px] w-auto p-1 mt-2 rounded-lg hover:bg-orange-600">
                       Register Now
@@ -405,8 +421,11 @@ const handleSubmit=()=>{
                 <div className="text-center text-orange-500 lg:text-3xl text-xl font-semibold mt-2">
                   ₹1499{" "}
                   <span className="line-through text-gray-400 lg:text-2xl text-sm">
-                    ₹4999
+                    ₹4999{" "}
                   </span>
+                  <span className=" lg:text-2xl text-sm">
+                       COUPON71
+                      Discounted Price ₹1499</span>
                 </div>
 
                 <ul className="mt-4 text-white  space-y-2">
@@ -434,8 +453,12 @@ const handleSubmit=()=>{
                 <div className="text-center text-orange-500 lg:text-3xl text-xl font-semibold mt-2">
                   ₹3999{" "}
                   <span className="line-through text-gray-400 lg:text-2xl text-sm">
-                    ₹9999
+                    ₹9999{" "}
                   </span>
+                  <span className=" lg:text-2xl text-sm">
+                      COUPON61
+                      Discounted Price ₹3999
+                     </span>
                 </div>
 
                 <ul className="mt-4 text-white space-y-2">
@@ -465,6 +488,11 @@ const handleSubmit=()=>{
                   <span className="line-through text-gray-400 lg:text-2xl text-sm">
                     ₹19999
                   </span>
+                  <span className=" lg:text-2xl text-sm">
+                       COUPON50
+                       Discounted Price ₹7999
+
+                   </span>
                 </div>
 
                 <ul className="mt-4 text-white space-y-2">
@@ -613,9 +641,10 @@ const handleSubmit=()=>{
           ))}
         </div>
 
-        <button onClick={handleSubmit} className=" p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-10 mb-10 text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
+        <button onClick={handleSubmit} className=" mb-[200px] p-4 rounded-full w-[300px] bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white mt-10  text-[22px] hover:scale-105 cursor-pointer place-self-center font-semibold">
           Start Your Journey Now
         </button>
+        <Book/>
       </div>
     </>
   );
