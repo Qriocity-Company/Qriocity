@@ -472,7 +472,7 @@ const Dsa = () => {
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={clock} />
                 <h1 className="font-bold text-lg lg:text-xl flex flex-col justify-center items-start">
-                  3 hour <span>Session</span>{" "}
+                  2 hour <span>Session</span>{" "}
                 </h1>
               </div>
 
