@@ -22,6 +22,7 @@ import interviewprep from "../assets/interviewprep.png";
 import { Testimonial } from "../components/Testimonial";
 import { ImSpinner8 } from "react-icons/im";
 import Faq from "../components/Faq";
+import certificate from "../assets/certificate.png";
 import axios from "axios";
 import p1 from "../assets/p1.png"
 import p2 from "../assets/p2.jpg"
@@ -113,6 +114,15 @@ const Dsa = () => {
   const handleForm = () => {
     setForm(!form);
   };
+  const data2 = [
+    { name: "Live Lectures", check1: "✅", check2: "✅" },
+    { name: "Price", check1: "₹999", check2: "₹199" },
+    { name: "Community Support", check1: "only 5 days", check2: "free lifetime discord community" },
+    { name: "Accountability Mentor", check1: "❌", check2: "✅" },
+    { name: "Bootcamp Completition Certificate", check1: "❌", check2: "✅" },
+    { name: "Bonus", check1: "❌", check2: "bonus worth 4999" },
+    { name: "Class Recording", check1: "❌", check2: "✅" },
+  ];
   const timelineData = [
     {
       content: " Day 1: Python Basics - Learn Python fundamentals with hands-on coding exercises to build a solid foundation.",
@@ -679,14 +689,14 @@ const Dsa = () => {
             {/* Right Column */}
             <div className="hidden lg:flex flex-col items-center gap-4 px-4 lg:px-0 mt-10 lg:mt-20">
               <div className="bg-slate-50 shadow-xl rounded-2xl w-full lg:w-[250px] h-[100px] flex justify-center items-center flex-col text-lg lg:text-xl font-bold">
-                High Salary{" "}
-                <span className="text-base lg:text-xl">Package</span>
+                Problem Solving{" "}
+                <span className="text-base lg:text-xl">Skills</span>
               </div>
 
               <div className="bg-slate-50 shadow-xl rounded-2xl w-full lg:w-[500px] h-[100px] flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-10 mt-2">
                 <h1 className="text-lg lg:text-xl font-bold flex flex-col items-center">
-                  Hidden Job{" "}
-                  <span className="text-base lg:text-xl">market</span>
+                  Master DSA{" "}
+                  <span className="text-base lg:text-xl">Concepts</span>
                 </h1>
                 <div
                   className="rounded-full h-24 w-24 lg:h-32 lg:w-32 text-white flex flex-col justify-center items-center font-bold text-xl lg:text-2xl z-20"
@@ -699,13 +709,14 @@ const Dsa = () => {
                   <span>Job</span>
                 </div>
                 <h1 className="text-lg lg:text-xl font-bold flex flex-col items-center">
-                  Attractive{" "}
-                  <span className="text-base lg:text-xl">Portfolio</span>
+                  High Salary{" "}
+                  <span className="text-base lg:text-xl">Package</span>
                 </h1>
               </div>
 
+
               <div className="bg-slate-50 shadow-xl rounded-2xl w-full lg:w-[250px] h-[100px] flex justify-center items-center flex-col text-lg lg:text-xl font-bold">
-                Personal <span className="text-base lg:text-xl">Branding</span>
+                Top 1%<span className="text-base lg:text-xl">Candidate</span>
               </div>
             </div>
           </div>
@@ -800,6 +811,76 @@ const Dsa = () => {
             </div>
           </div>
         </div>
+        
+        <div className="mt-20 flex justify-center items-center flex-col">
+          <h1 className="mt-10 text-black font-bold text-[40px]">COMPARISON</h1>
+          <h1 className="text-white  font-semibold lg:text-[45px] text-[30px] lg:mt-0 mt-5">
+            What makes us standout?
+          </h1>
+
+          <div className="lg:w-[900px]  w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
+            <table className="w-full table-fixed border-collapse">
+              <thead>
+                <tr>
+                  <th className="text-center p-4 text-white lg:text-2xl text-xl border-b border-gray-700 border-r">
+                    Features
+                  </th>
+
+                  <th className=" text-center p-4 text-white lg:text-2xl text-xl border-b border-r border-gray-700">
+                    Other Platforms
+                  </th>
+                  <th className=" text-center p-4 text-orange-500 lg:text-2xl text-xl border-b border-gray-700">
+                    Qriocity
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-white ">
+                {/* Pricing Row */}
+
+                {/* Feature Rows */}
+                {data2.map((row, rowIndex) => (
+                <tr>
+                  <td className="p-4 text-left border-t border-r border-gray-700">
+                    {row.name}
+                  </td>
+                  <td className="p-4 text-center border-t border-r border-gray-700 text-green-400">
+                    {row.check1}
+                  </td>
+                  <td className="p-4 text-center border-t  border-gray-700 text-green-400">
+                  {row.check2}
+                  </td>
+                </tr>
+                ))}
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+
+        <div className="mt-20 flex justify-center items-center flex-col">
+          <h1 className="mt-10 text-black font-bold lg:text-[40px] text-[30px]">
+            Make your resume shine
+          </h1>
+          <h1 className="text-white  font-semibold text-[45px]">Certificate</h1>
+        </div>
+        <img
+          className="place-self-center lg:mt-10 mt-10 p-4"
+          src={certificate}
+        />
+        <div className="flex justify-center">
+             <button
+            className="px-14 py-4 rounded-full font-bold text-white "
+            style={{
+              background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+            }}
+            onClick={handleForm}
+          >
+            Register now at ₹199 only
+          </button>
+          </div>
+        
        <Testimonials2/>
 
         <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
