@@ -22,6 +22,8 @@ import Refund from "./pages/Refund";
 import RoadMap from "./pages/RoadMap";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import Placement from "./pages/Placement";
+import Dsa from "./pages/Dsa";
+import Fullstack from "./pages/Fullstack";
 
 function App() {
   return (
@@ -48,6 +50,8 @@ function App() {
           <Route path="/refund" element={<Refund />} />
           <Route path="/webinar" element={<RoadMap />} />
           <Route path="/courses" element={<Placement />} />
+          <Route path="/DsaBootcamp" element={<Dsa/>} />
+          <Route path="/FullstackBootcamp" element={<Fullstack/>} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
         <ToastContainer
