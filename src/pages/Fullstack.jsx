@@ -22,9 +22,17 @@ import interviewprep from "../assets/interviewprep.png";
 import { Testimonial } from "../components/Testimonial";
 import { ImSpinner8 } from "react-icons/im";
 import Faq from "../components/Faq";
+import certificate from "../assets/certificate.png";
 import axios from "axios";
+import f1 from "../assets/f1.jpg"
+import f2 from "../assets/f2.jpg"
+import p3 from "../assets/p3.jpg"
+import f4 from "../assets/f4.jpg"
+import f5 from "../assets/f5.png"
 import toast, { Toaster } from "react-hot-toast";
-const Fullstack = () => {
+import Testimonials from "../components/Testimonials";
+import Testimonials2 from "../components/Testimonials2";
+const FullStack = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -106,38 +114,43 @@ const Fullstack = () => {
   const handleForm = () => {
     setForm(!form);
   };
+  const data2 = [
+    { name: "Live Lectures", check1: "✅", check2: "✅" },
+    { name: "Price", check1: "₹999", check2: "₹199" },
+    { name: "Community Support", check1: "Only 5 days", check2: "Free lifetime discord community" },
+    { name: "Accountability Mentor", check1: "❌", check2: "✅" },
+    { name: "Bootcamp Completition Certificate", check1: "❌", check2: "✅" },
+    { name: "Bonus", check1: "❌", check2: "Bonus worth ₹4999" },
+    { name: "Class Recording", check1: "❌", check2: "✅" },
+  ];
   const timelineData = [
     {
-      content: "Clear roadmap to get your dream job",
-      img: dream,
+      content: "Day 1: Learn HTML structure, semantic tags, and formatting basics.",
+      img: f1,
       alt: "Clear roadmap",
     },
     {
-      content: "How to build an attractive portfolio",
-      img: portfolio,
+      content: "Day 2: Explore links, images, tables, and SEO meta tags.",
+      img: f2,
       alt: "Portfolio",
     },
     {
-      content: "How to find hidden job market?",
-      img: jobmarket,
+      content: "Day 3: Understand CSS basics, box model, and text styling.",
+      img: p3,
       alt: "Job market",
     },
     {
-      content: "Magical Process to get any internship or job",
-      img: internship,
+      content: "Day 4: Dive into Flexbox, responsive design, and JavaScript basics.",
+      img: f4,
       alt: "Internship",
     },
     {
-      content: "Best LinkedIn hacks to get your dream job",
-      img: hacks,
+      content: "Day 5: Build a to-do list with HTML, CSS, and JavaScript.",
+      img: f5,
       alt: "LinkedIn hacks",
     },
-    {
-      content: "Complete Interview preparation guide",
-      img: interviewprep,
-      alt: "Interview preparation",
-    },
   ];
+  
 
   const handleSubmitForm = async () => {
     setLoading(true);
@@ -176,38 +189,39 @@ const Fullstack = () => {
 
   const faqs = [
     {
-      question: "What will I learn from this webinar?",
-      answer: "You will learn strategies to access the hidden job market, find high-paying jobs, and the exact steps followed by over 10,000 students to land their dream jobs within 3 months.",
+      question: "What if I have a busy schedule? Will I be able to keep up with the bootcamp?",
+      answer: "Each session is recorded, and you'll have lifetime access to the materials. You can catch up at your own pace.",
     },
     {
-      question: "Who is this webinar for?",
-      answer: "This webinar is ideal for job seekers, recent graduates, and professionals looking to switch careers or find better job opportunities.",
+      question: "I’m a beginner with only basic programming knowledge. Is this bootcamp suitable for me?",
+      answer: "Absolutely! The bootcamp is designed to start from the basics and gradually move to advanced topics. Beginners are welcome and encouraged.",
     },
     {
-      question: "Is the webinar really free?",
-      answer: "Yes, the webinar is completely free of charge. Our goal is to provide valuable insights and strategies to help you achieve your career goals.",
+      question: "Is the bootcamp really worth the price of 199 INR?",
+      answer: "Yes! This bootcamp is a comprehensive, hands-on experience that covers everything you need to excel in DSA. Plus, you get valuable bonuses like lifetime community access, top problem sets, and Mock Interview Recordings by Industry experts.",
     },
     {
-      question: "How long is the webinar?",
-      answer: "The webinar will last for 3 hours, providing in-depth knowledge and actionable strategies to enhance your job search.",
+      question: "What kind of support will I receive during the bootcamp?",
+      answer: "You'll have access to a dedicated community on Discord where you can ask questions, share progress, and get support from instructors and peers.",
     },
     {
-      question: "Will there be a Q&A session?",
-      answer: "Yes, there will be a Q&A session at the end of the webinar where you can ask any questions you have regarding the job search process.",
+      question: "Will I get any certificate after completing the bootcamp?",
+      answer: "Yes, you'll receive a certificate of completion, which you can showcase on your resume and LinkedIn profile.",
     },
     {
-      question: "How can I register for the webinar?",
-      answer: "You can register by clicking the Book your Free Spot button.",
+      question: "How much time should I dedicate each day to make the most of this bootcamp?",
+      answer: "We recommend setting aside 2-3 hours each day for live sessions and practice. This ensures you get the most out of the content and assignments.",
     },
     {
-      question: "Can I share the webinar information with my friends?",
-      answer: "Absolutely! We encourage you to share the webinar details with anyone who might benefit from it.",
+      question: "How does this bootcamp compare to free resources available online?",
+      answer: "This bootcamp offers structured learning, personalized feedback, and live support—things you won't easily find in free resources. It's designed to fast-track your learning and prepare you for real-world challenges.",
     },
     {
-      question: "Will I get recording of this program?",
-      answer: "No, this is a live webinar and no recording will be shared.",
+      question: "How interactive are the sessions? Will I have the opportunity to ask questions?",
+      answer: "The sessions are highly interactive. You'll have the chance to ask questions during the live sessions, and there will be Q&A segments at the end of each day.",
     },
   ];
+  
   
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -230,7 +244,7 @@ const Fullstack = () => {
                 &times;
               </h1>
               <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
-                Book Your Free Spot Now
+                Register now at ₹199 only Now
               </h2>
               <p className="text-center mb-2 text-[12px]">After submitting this form, you will be redirected to the Graphy website. Please register using Google to receive the WhatsApp group link and the webinar link via your registered email.</p>
               <div>
@@ -336,7 +350,7 @@ const Fullstack = () => {
                 &times;
               </h1>
               <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
-                Book Your Free Spot Now
+                Register now at ₹199 only Now
               </h2>
               <p className="text-center mb-2 text-[12px]">After submitting this form, you will be redirected to the Graphy website. Please register using Google to receive the WhatsApp group link and the webinar link via your registered email.</p>
               <div>
@@ -448,34 +462,36 @@ const Fullstack = () => {
           </div>
           <div className="flex flex-col justify-center lg:items-start items-center lg:mr-40 mt-14 lg:mt-40">
             <h1 className=" font-bold text-3xl lg:text-[40px]">
-              Get your Dream Career{" "}
+            Master Full Stack {" "}
             </h1>
             <h1 className=" font-bold text-3xl mt-2 lg:mt-5 lg:text-[40px]">
-              Roadmap in 3 hours
+            Development  in 5 days
             </h1>
             <h1 className="font-semibold text-xl mt-5">
-              Learn how to find Hidden job market and High paying jobs.
+            Learn to Build and Deploy Web Applications
+
             </h1>
             <div className="bg-[#FFF7F4] border-2 border-[#F15A29] h-[121px] w-auto lg:w-[550px] mt-5 rounded-2xl flex justify-center items-center p-4 text-lg">
               <h1>
-                Learn the exact strategies that made{" "}
-                <span className="font-bold">10K+ students</span> get their dream
-                job in 3 months <span className="font-bold">for free !</span>
+              Discover the exact strategies that have helped{" "}
+                <span className="font-bold">10K+ students </span> 
+                develop their full stack development skills 
+                <span className="font-bold"> within 5 Days</span>
               </h1>
             </div>
             <div className="flex justify-center items-center mt-10 gap-8 lg:gap-20">
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={clock} />
                 <h1 className="font-bold text-lg lg:text-xl flex flex-col justify-center items-start">
-                  3 hour <span>Session</span>{" "}
+                  2 hour <span>Session</span>{" "}
                 </h1>
               </div>
 
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={calendar} />
                 <h1 className="font-bold lg:text-xl text-lg flex flex-col justify-center items-start">
-                  August 18, <span>2024</span>
-                  <span className="text-lg">11am - 2pm</span>{" "}
+                  September 5-10, <span>2024</span>
+                  <span className="text-lg">7pm-9pm</span>{" "}
                 </h1>
                 
               </div>
@@ -493,7 +509,7 @@ const Fullstack = () => {
                 }}
                 onClick={handleForm}
               >
-                Book your Free spot
+                Register now at ₹199 only
               </button>
             </div>
           </div>
@@ -520,39 +536,34 @@ const Fullstack = () => {
             <div className="flex justify-center items-center gap-5 lg:gap-10">
               <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
               <h1 className="lg:text-xl text-lg font-semibold">
-              Recent Graduates: Kickstart your career with a high-paying job.
+              1st/2nd/3rd Year Students: Start your journey into full stack development and secure your Internships and Pre-placement offer.
               </h1>
             </div>
             <div className="flex justify-center items-center gap-5 lg:gap-10">
               <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
               <h1 className="lg:text-xl text-lg font-semibold">
-              Career Changers: Transition smoothly into a new industry or role.
+              Final Year Students: Prepare for your placement interviews with a solid understanding of full stack development.
               </h1>
             </div>
             <div className="flex justify-center items-center gap-5 lg:gap-10">
               <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
               <h1 className="lg:text-xl text-lg font-semibold">
-              Job Seekers: Enhance your career prospects with better opportunities
+              Job Seekers: Boost your chances of landing a top tech job by mastering the essential skills of web development.
               </h1>
             </div>
             <div className="flex justify-center items-center gap-5 lg:gap-10">
               <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
               <h1 className="lg:text-xl text-lg font-semibold">
-              Working Professionals: Advance in your field and secure promotions.
+              Working Professionals: Expand your skill set and open up new career opportunities by learning full stack development.
               </h1>
             </div>
             <div className="flex justify-center items-center gap-5 lg:gap-10">
               <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
               <h1 className="lg:text-xl text-lg font-semibold">
-              Students: Prepare for your future career with effective job search strategies.
+              Career Changers: Transition into a lucrative career in software development with a comprehensive introduction to full stack development.
               </h1>
             </div>
-            <div className="flex justify-center items-center gap-5 lg:gap-10">
-              <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
-              <h1 className="lg:text-xl text-lg font-semibold">
-              Individuals Seeking Career Growth: Reach new heights in your professional journey.
-              </h1>
-            </div>
+            
           </div>
         </div>
 
@@ -571,7 +582,7 @@ const Fullstack = () => {
             >
               you learn{" "}
             </span>{" "}
-            in this 3 hours session?
+            in this 5-Day Bootcamp?
           </h1>
 
           <div className="relative flex flex-col justify-center items-center mt-10 gap-10 px-4 sm:px-8 md:px-16">
@@ -598,11 +609,11 @@ const Fullstack = () => {
                 } justify-center items-center gap-10 md:gap-20 z-40`}
               >
                 <img
-                  className="h-[200px] w-full md:w-[250px] object-cover"
+                  className="h-[250px] w-full md:w-[250px] object-contain"
                   src={item.img}
                   alt={item.alt}
                 />
-                <div className="bg-white p-4 rounded-xl h-[100px] w-full md:w-[200px] lg:w-[230px] font-semibold text-lg flex justify-center items-center">
+                <div className="bg-white p-4 rounded-xl h-[200px] w-full md:w-[200px] lg:w-[250px] font-semibold text-lg flex justify-center items-center">
                   {item.content}
                 </div>
               </div>
@@ -620,7 +631,7 @@ const Fullstack = () => {
               }}
               onClick={handleForm}
             >
-              Book your Free spot
+              Register now at ₹199 only
             </button>
           </div>
         </div>
@@ -639,7 +650,7 @@ const Fullstack = () => {
             >
               Life-Changing benefits{" "}
             </span>{" "}
-            of Attending our session
+            of Attending our Bootcamp
           </h1>
           <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20 mt-10 lg:mt-20 px-4 lg:px-0">
             {/* Left Column */}
@@ -647,27 +658,29 @@ const Fullstack = () => {
               <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
                 <FaStar color="#26CFD3" />
                 <h1 className="text-center lg:text-left">
-                Unlock Hidden Job Markets : Access unadvertised job opportunities.
+                Build Real-World Projects: Develop a full stack web application from scratch, ready to showcase in your portfolio.
 
                 </h1>
               </div>
               <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
                 <FaStar color="#26CFD3" />
                 <h1 className="text-center lg:text-left">
-                Achieve High-Paying Jobs : Secure lucrative dream jobs with proven techniques.
+                Master Essential Tools: Gain proficiency in tools and frameworks used by industry professionals.
+
                 </h1>
               </div>
               <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
                 <FaStar color="#26CFD3" />
                 <h1 className="text-center lg:text-left">
-                  
-                Accelerate Career Growth : Fast-track your professional developmen
+                Enhance Your Job Prospects: Stand out in job interviews with hands-on experience in full stack development.
+
+                
                 </h1>
               </div>
               <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
                 <FaStar color="#26CFD3" />
                 <h1 className="text-center lg:text-left">
-                Master Job Interviews : Confidently navigate interviews and leave a lasting impression.
+                Expand Your Skill Set: Learn how to manage both front-end and back-end development, making you a versatile developer.
                 </h1>
               </div>
             </div>
@@ -675,14 +688,14 @@ const Fullstack = () => {
             {/* Right Column */}
             <div className="hidden lg:flex flex-col items-center gap-4 px-4 lg:px-0 mt-10 lg:mt-20">
               <div className="bg-slate-50 shadow-xl rounded-2xl w-full lg:w-[250px] h-[100px] flex justify-center items-center flex-col text-lg lg:text-xl font-bold">
-                High Salary{" "}
-                <span className="text-base lg:text-xl">Package</span>
+                Problem Solving{" "}
+                <span className="text-base lg:text-xl">Skills</span>
               </div>
 
               <div className="bg-slate-50 shadow-xl rounded-2xl w-full lg:w-[500px] h-[100px] flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-10 mt-2">
                 <h1 className="text-lg lg:text-xl font-bold flex flex-col items-center">
-                  Hidden Job{" "}
-                  <span className="text-base lg:text-xl">market</span>
+                  Master Full Stack{" "}
+                  <span className="text-base lg:text-xl">Concepts</span>
                 </h1>
                 <div
                   className="rounded-full h-24 w-24 lg:h-32 lg:w-32 text-white flex flex-col justify-center items-center font-bold text-xl lg:text-2xl z-20"
@@ -695,13 +708,14 @@ const Fullstack = () => {
                   <span>Job</span>
                 </div>
                 <h1 className="text-lg lg:text-xl font-bold flex flex-col items-center">
-                  Attractive{" "}
-                  <span className="text-base lg:text-xl">Portfolio</span>
+                  High Salary{" "}
+                  <span className="text-base lg:text-xl">Package</span>
                 </h1>
               </div>
 
+
               <div className="bg-slate-50 shadow-xl rounded-2xl w-full lg:w-[250px] h-[100px] flex justify-center items-center flex-col text-lg lg:text-xl font-bold">
-                Personal <span className="text-base lg:text-xl">Branding</span>
+                Top 1%<span className="text-base lg:text-xl">Candidate</span>
               </div>
             </div>
           </div>
@@ -717,7 +731,7 @@ const Fullstack = () => {
               }}
               onClick={handleForm}
             >
-              Book your Free spot
+              Register now at ₹199 only
             </button>
           </div>
 
@@ -729,7 +743,7 @@ const Fullstack = () => {
               <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
                 <FaStar className="ml-2" size={30} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  LinkedIn Bio <span>Optimization</span> <span>Guide</span>
+                Top 10 <span>Full Stack</span> <span>Project Ideas</span>pdf
                 </h1>
                 <img
                   className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
@@ -739,7 +753,7 @@ const Fullstack = () => {
               <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
                 <FaStar className="ml-2" size={30} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Cover letter & <span>ATS Resume</span> <span>Template</span>
+                Technical Mock <span>Interview conducted</span> <span>by Industry</span>Experts(Recorded)
                 </h1>
                 <img
                   className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
@@ -749,7 +763,7 @@ const Fullstack = () => {
               <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
                 <FaStar className="ml-2" size={30} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Discord <span>Community</span> <span>lifetime access</span>
+                  Discord <span>Community</span> <span>lifetime </span><span> access</span>
                 </h1>
                 <img
                   className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
@@ -759,7 +773,7 @@ const Fullstack = () => {
               <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
                 <FaStar className="ml-2" size={30} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Top 100 <span>Interview Q/A</span> <span>PDF</span>
+                  1-1 Mentorship <span>call with founder</span>& CEO of <span>Qriocity,Kesavan</span>
                 </h1>
                 <img
                   className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
@@ -769,8 +783,9 @@ const Fullstack = () => {
               <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
                 <FaStar className="ml-2" size={30} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Top 50 Leetcode <span>problems and</span>{" "}
-                  <span>solutions</span>
+                  Lifetime <span>Access to</span>{" "}
+                  <span>Bootcamp </span>
+                  <span> Material</span>
                 </h1>
                 <img
                   className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
@@ -790,78 +805,82 @@ const Fullstack = () => {
                 }}
                 onClick={handleForm}
               >
-                Book your Free spot
+                Register now at ₹199 only
               </button>
             </div>
           </div>
         </div>
-        <div className="mt-20 flex flex-col">
-          <h1 className="place-self-center mt-10 text-[50px] font-serif font-bold">
-            Testimonials
+        
+        <div className="mt-20 flex justify-center items-center flex-col">
+          <h1 className="mt-10 text-black font-bold text-[40px]">COMPARISON</h1>
+          <h1 className="text-white  font-semibold lg:text-[45px] text-[30px] lg:mt-0 mt-5">
+            What makes us standout?
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "This webinar was incredibly insightful and well-organized. The
-                speakers were knowledgeable and engaging. Highly recommend!"
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm"> Rahul</p>
-                <p className="text-sm">Chennai</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "I learned so much from this webinar. The content was relevant
-                and the delivery was excellent. Looking forward to the next
-                one!"
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Gowthami</p>
-                <p className="text-sm">Chennai</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "I attended Qriocity’s Webinar last week, the webinar was really good and I got a clear process of how I can get my dream job. Also I understood how to crack high package jobs in top companies"
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Krithika</p>
-                <p className="text-sm">Bangalore</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "Fantastic webinar! The presenters were top-notch, and the
-                content was both informative and inspiring."
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Ayush</p>
-                <p className="text-sm">Delhi</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "The webinar exceeded my expectations. The topics covered were
-                current and the speakers were engaging."
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Kishore</p>
-                <p className="text-sm">Vellore</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "Great webinar with valuable insights. The Q&A session was
-                particularly helpful."
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Arthi</p>
-                <p className="text-sm">Coimbatore</p>
-              </div>
-            </div>
+
+          <div className="lg:w-[900px]  w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
+            <table className="w-full table-fixed border-collapse">
+              <thead>
+                <tr>
+                  <th className="text-center p-4 text-white lg:text-2xl text-xl border-b border-gray-700 border-r">
+                    Features
+                  </th>
+
+                  <th className=" text-center p-4 text-white lg:text-2xl text-xl border-b border-r border-gray-700">
+                    Other Platforms
+                  </th>
+                  <th className=" text-center p-4 text-orange-500 lg:text-2xl text-xl border-b border-gray-700">
+                    Qriocity
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-white ">
+                {/* Pricing Row */}
+
+                {/* Feature Rows */}
+                {data2.map((row, rowIndex) => (
+                <tr>
+                  <td className="p-4 text-left border-t border-r border-gray-700">
+                    {row.name}
+                  </td>
+                  <td className="p-4 text-center border-t border-r border-gray-700 text-green-400">
+                    {row.check1}
+                  </td>
+                  <td className="p-4 text-center border-t  border-gray-700 text-green-400">
+                  {row.check2}
+                  </td>
+                </tr>
+                ))}
+                
+              </tbody>
+            </table>
           </div>
         </div>
+
+
+
+        <div className="mt-20 flex justify-center items-center flex-col">
+          <h1 className="mt-10 text-black font-bold lg:text-[40px] text-[30px]">
+            Make your resume shine
+          </h1>
+          <h1 className="text-white  font-semibold text-[45px]">Certificate</h1>
+        </div>
+        <img
+          className="place-self-center lg:mt-10 mt-10 p-4"
+          src={certificate}
+        />
+        <div className="flex justify-center">
+             <button
+            className="px-14 py-4 rounded-full font-bold text-white "
+            style={{
+              background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+            }}
+            onClick={handleForm}
+          >
+            Register now at ₹199 only
+          </button>
+          </div>
+        
+       <Testimonials2/>
 
         <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
           <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
@@ -874,7 +893,7 @@ const Fullstack = () => {
             }}
             onClick={handleForm}
           >
-            Book your Free spot
+            Register now at ₹199 only
           </button>
         </div>
         <div className="w-full flex flex-col items-center p-2 md:p-0 justify-center mt-20 bg-[#e3efec]">
@@ -917,7 +936,7 @@ const Fullstack = () => {
               }}
               onClick={handleForm}
             >
-              Book your Free spot
+              Register now at ₹199 only
             </button>
           </div>
         </div>
@@ -927,7 +946,7 @@ const Fullstack = () => {
         <div className="flex flex-col">
           <div className="flex justify-center items-center lg:gap-6 gap-2 h-full">
             <h1 className="font-bold text-2xl lg:text-5xl text-white lg:ml-10">
-              FREE
+            ₹199
             </h1>
             <h1 className=" text-[20px] text-white line-through">₹999</h1>
           </div>
@@ -949,7 +968,7 @@ const Fullstack = () => {
             }}
             onClick={handleForm}
           >
-            Book your Free spot
+            Register now at ₹199 only
           </button>
         </div>
       </div>
@@ -957,4 +976,4 @@ const Fullstack = () => {
   );
 };
 
-export default Fullstack;
+export default FullStack;

@@ -117,10 +117,10 @@ const Dsa = () => {
   const data2 = [
     { name: "Live Lectures", check1: "✅", check2: "✅" },
     { name: "Price", check1: "₹999", check2: "₹199" },
-    { name: "Community Support", check1: "only 5 days", check2: "free lifetime discord community" },
+    { name: "Community Support", check1: "Only 5 days", check2: "Free lifetime discord community" },
     { name: "Accountability Mentor", check1: "❌", check2: "✅" },
     { name: "Bootcamp Completition Certificate", check1: "❌", check2: "✅" },
-    { name: "Bonus", check1: "❌", check2: "bonus worth 4999" },
+    { name: "Bonus", check1: "❌", check2: "Bonus worth ₹4999" },
     { name: "Class Recording", check1: "❌", check2: "✅" },
   ];
   const timelineData = [

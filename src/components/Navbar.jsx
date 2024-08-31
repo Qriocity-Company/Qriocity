@@ -44,6 +44,9 @@ export const Navbar = () => {
           <Link to="/webinar" className={isRouteActive("/webinar")}>
             Webinar
           </Link>
+          <Link to="/Bootcamp" className={isRouteActive("/Bootcamp")}>
+            Bootcamp
+          </Link>
         </div>
         <div className="md:hidden flex items-center">
           {showMenu ? (
@@ -121,6 +124,15 @@ export const Navbar = () => {
               }}
             >
               Webinar
+            </Link>
+            <Link
+              to="/Bootcamp"
+              className={isRouteActive("/Bootcamp")}
+              onClick={() => {
+                toggleMenu();
+              }}
+            >
+              Bootcamp
             </Link>
 
             <HiX
