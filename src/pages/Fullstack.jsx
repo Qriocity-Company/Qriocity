@@ -32,6 +32,7 @@ import f5 from "../assets/f5.png"
 import toast, { Toaster } from "react-hot-toast";
 import Testimonials from "../components/Testimonials";
 import Testimonials2 from "../components/Testimonials2";
+import Testimonials3 from "../components/Testimonials3";
 const FullStack = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -688,14 +689,14 @@ const FullStack = () => {
             {/* Right Column */}
             <div className="hidden lg:flex flex-col items-center gap-4 px-4 lg:px-0 mt-10 lg:mt-20">
               <div className="bg-slate-50 shadow-xl rounded-2xl w-full lg:w-[250px] h-[100px] flex justify-center items-center flex-col text-lg lg:text-xl font-bold">
-                Problem Solving{" "}
-                <span className="text-base lg:text-xl">Skills</span>
+                Attractive{" "}
+                <span className="text-base lg:text-xl">Portfolio</span>
               </div>
 
               <div className="bg-slate-50 shadow-xl rounded-2xl w-full lg:w-[500px] h-[100px] flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-10 mt-2">
                 <h1 className="text-lg lg:text-xl font-bold flex flex-col items-center">
                   Master Full Stack{" "}
-                  <span className="text-base lg:text-xl">Concepts</span>
+                  <span className="text-base lg:text-xl">Development</span>
                 </h1>
                 <div
                   className="rounded-full h-24 w-24 lg:h-32 lg:w-32 text-white flex flex-col justify-center items-center font-bold text-xl lg:text-2xl z-20"
@@ -812,8 +813,8 @@ const FullStack = () => {
         </div>
         
         <div className="mt-20 flex justify-center items-center flex-col">
-          <h1 className="mt-10 text-black font-bold text-[40px]">COMPARISON</h1>
-          <h1 className="text-white  font-semibold lg:text-[45px] text-[30px] lg:mt-0 mt-5">
+          <h1 className="mt-10 text-red-500 font-bold text-[25px]">COMPARISON</h1>
+          <h1 className="text-black  font-semibold lg:text-[45px] text-[30px] lg:mt-0 mt-5">
             What makes us standout?
           </h1>
 
@@ -880,7 +881,7 @@ const FullStack = () => {
           </button>
           </div>
         
-       <Testimonials2/>
+       <Testimonials3/>
 
         <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
           <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">

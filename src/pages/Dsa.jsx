@@ -813,8 +813,8 @@ const Dsa = () => {
         </div>
         
         <div className="mt-20 flex justify-center items-center flex-col">
-          <h1 className="mt-10 text-black font-bold text-[40px]">COMPARISON</h1>
-          <h1 className="text-white  font-semibold lg:text-[45px] text-[30px] lg:mt-0 mt-5">
+          <h1 className="mt-10 text-red-500 font-bold text-[25px]">COMPARISON</h1>
+          <h1 className="text-black  font-semibold lg:text-[45px] text-[30px] lg:mt-0 mt-5">
             What makes us standout?
           </h1>
 
