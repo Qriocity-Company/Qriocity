@@ -29,6 +29,8 @@ import p3 from "../assets/p3.jpg"
 import p4 from "../assets/p4.jpg"
 import p5 from "../assets/p5.png"
 import toast, { Toaster } from "react-hot-toast";
+import Testimonials from "../components/Testimonials";
+import Testimonials2 from "../components/Testimonials2";
 const Dsa = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -232,7 +234,7 @@ const Dsa = () => {
                 &times;
               </h1>
               <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
-                Book Your Free Spot Now
+                Register now at ₹199 only Now
               </h2>
               <p className="text-center mb-2 text-[12px]">After submitting this form, you will be redirected to the Graphy website. Please register using Google to receive the WhatsApp group link and the webinar link via your registered email.</p>
               <div>
@@ -338,7 +340,7 @@ const Dsa = () => {
                 &times;
               </h1>
               <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
-                Book Your Free Spot Now
+                Register now at ₹199 only Now
               </h2>
               <p className="text-center mb-2 text-[12px]">After submitting this form, you will be redirected to the Graphy website. Please register using Google to receive the WhatsApp group link and the webinar link via your registered email.</p>
               <div>
@@ -496,7 +498,7 @@ const Dsa = () => {
                 }}
                 onClick={handleForm}
               >
-                Book your Free spot
+                Register now at ₹199 only
               </button>
             </div>
           </div>
@@ -623,7 +625,7 @@ const Dsa = () => {
               }}
               onClick={handleForm}
             >
-              Book your Free spot
+              Register now at ₹199 only
             </button>
           </div>
         </div>
@@ -719,7 +721,7 @@ const Dsa = () => {
               }}
               onClick={handleForm}
             >
-              Book your Free spot
+              Register now at ₹199 only
             </button>
           </div>
 
@@ -741,7 +743,7 @@ const Dsa = () => {
               <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
                 <FaStar className="ml-2" size={30} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                Thechnical Mock <span>Interview conducted</span> <span>by Industry</span>Experts(Recorded)
+                Technical Mock <span>Interview conducted</span> <span>by Industry</span>Experts(Recorded)
                 </h1>
                 <img
                   className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
@@ -793,78 +795,12 @@ const Dsa = () => {
                 }}
                 onClick={handleForm}
               >
-                Book your Free spot
+                Register now at ₹199 only
               </button>
             </div>
           </div>
         </div>
-        <div className="mt-20 flex flex-col">
-          <h1 className="place-self-center mt-10 text-[50px] font-serif font-bold">
-            Testimonials
-          </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "This webinar was incredibly insightful and well-organized. The
-                speakers were knowledgeable and engaging. Highly recommend!"
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm"> Rahul</p>
-                <p className="text-sm">Chennai</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "I learned so much from this webinar. The content was relevant
-                and the delivery was excellent. Looking forward to the next
-                one!"
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Gowthami</p>
-                <p className="text-sm">Chennai</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "I attended Qriocity’s Webinar last week, the webinar was really good and I got a clear process of how I can get my dream job. Also I understood how to crack high package jobs in top companies"
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Krithika</p>
-                <p className="text-sm">Bangalore</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "Fantastic webinar! The presenters were top-notch, and the
-                content was both informative and inspiring."
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Ayush</p>
-                <p className="text-sm">Delhi</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "The webinar exceeded my expectations. The topics covered were
-                current and the speakers were engaging."
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Kishore</p>
-                <p className="text-sm">Vellore</p>
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg shadow-xl bg-white flex flex-col justify-between h-full">
-              <p className="text-gray-700 mb-4">
-                "Great webinar with valuable insights. The Q&A session was
-                particularly helpful."
-              </p>
-              <div className="p-2 bg-orange-500 text-white rounded mt-4 text-center">
-                <p className="text-sm">Arthi</p>
-                <p className="text-sm">Coimbatore</p>
-              </div>
-            </div>
-          </div>
-        </div>
+       <Testimonials2/>
 
         <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
           <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
@@ -877,7 +813,7 @@ const Dsa = () => {
             }}
             onClick={handleForm}
           >
-            Book your Free spot
+            Register now at ₹199 only
           </button>
         </div>
         <div className="w-full flex flex-col items-center p-2 md:p-0 justify-center mt-20 bg-[#e3efec]">
@@ -920,7 +856,7 @@ const Dsa = () => {
               }}
               onClick={handleForm}
             >
-              Book your Free spot
+              Register now at ₹199 only
             </button>
           </div>
         </div>
@@ -930,7 +866,7 @@ const Dsa = () => {
         <div className="flex flex-col">
           <div className="flex justify-center items-center lg:gap-6 gap-2 h-full">
             <h1 className="font-bold text-2xl lg:text-5xl text-white lg:ml-10">
-              FREE
+            ₹199
             </h1>
             <h1 className=" text-[20px] text-white line-through">₹999</h1>
           </div>
@@ -952,7 +888,7 @@ const Dsa = () => {
             }}
             onClick={handleForm}
           >
-            Book your Free spot
+            Register now at ₹199 only
           </button>
         </div>
       </div>
