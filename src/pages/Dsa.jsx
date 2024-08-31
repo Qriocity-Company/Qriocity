@@ -103,7 +103,7 @@ const Dsa = () => {
 
       if (data?.success) {
         localStorage.setItem("RoadmapPopUp", true);
-        window.location.href="https://courses.qriocity.in/single-checkout/66b35ef1dee0af7f1cf35ee4?pid=p1"
+        window.location.href="https://courses.qriocity.in/courses/DSA-5-Days-Live-Bootcamp-Batch-7-66d1a82aecbcc22b23e91bb9"
         setPopuploading(false);
         setpopForm(false);
       }
@@ -173,7 +173,7 @@ const Dsa = () => {
         toast.success("Your seat has been booked succesfully");
 
         setLoading(false);
-         window.location.href="https://courses.qriocity.in/single-checkout/66b35ef1dee0af7f1cf35ee4?pid=p1";
+         window.location.href="https://courses.qriocity.in/courses/DSA-5-Days-Live-Bootcamp-Batch-7-66d1a82aecbcc22b23e91bb9";
         setName2("");
         setEmail2("");
         setDepartment2("");

@@ -104,7 +104,7 @@ const FullStack = () => {
 
       if (data?.success) {
         localStorage.setItem("RoadmapPopUp", true);
-        window.location.href="https://courses.qriocity.in/single-checkout/66b35ef1dee0af7f1cf35ee4?pid=p1"
+        window.location.href="https://courses.qriocity.in/courses/FullStack-5-Days-Live-Bootcamp-Batch-7-66d1a867f9270338c8f4b4d5"
         setPopuploading(false);
         setpopForm(false);
       }
@@ -174,7 +174,7 @@ const FullStack = () => {
         toast.success("Your seat has been booked succesfully");
 
         setLoading(false);
-         window.location.href="https://courses.qriocity.in/single-checkout/66b35ef1dee0af7f1cf35ee4?pid=p1";
+         window.location.href="https://courses.qriocity.in/courses/FullStack-5-Days-Live-Bootcamp-Batch-7-66d1a867f9270338c8f4b4d5";
         setName2("");
         setEmail2("");
         setDepartment2("");
