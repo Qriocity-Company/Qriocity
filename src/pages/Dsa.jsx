@@ -23,6 +23,11 @@ import { Testimonial } from "../components/Testimonial";
 import { ImSpinner8 } from "react-icons/im";
 import Faq from "../components/Faq";
 import axios from "axios";
+import p1 from "../assets/p1.png"
+import p2 from "../assets/p2.jpg"
+import p3 from "../assets/p3.jpg"
+import p4 from "../assets/p4.jpg"
+import p5 from "../assets/p5.png"
 import toast, { Toaster } from "react-hot-toast";
 const Dsa = () => {
   const [name, setName] = useState("");
@@ -109,27 +114,27 @@ const Dsa = () => {
   const timelineData = [
     {
       content: " Day 1: Python Basics - Learn Python fundamentals with hands-on coding exercises to build a solid foundation.",
-      img: dream,
+      img: p1,
       alt: "Clear roadmap",
     },
     {
       content: " Day 2: Conditional Statements and Loops - Master control flow in Python, with practice on interview-style questions.",
-      img: portfolio,
+      img: p2,
       alt: "Portfolio",
     },
     {
       content: " Day 3: Strings and Arrays - Deep dive into string and array operations, solving common interview problems.",
-      img: jobmarket,
+      img: p3,
       alt: "Job market",
     },
     {
       content: " Day 4: Container Data Types - Understand and apply lists, tuples, sets, and dictionaries in practical scenarios.",
-      img: internship,
+      img: p4,
       alt: "Internship",
     },
     {
       content: "Day 5: Searching & Sorting Algorithms - Learn and implement searching & Sorting techniques with hands-on interview problem solving.",
-      img: hacks,
+      img: p5,
       alt: "LinkedIn hacks",
     },
  
@@ -596,7 +601,7 @@ const Dsa = () => {
                 } justify-center items-center gap-10 md:gap-20 z-40`}
               >
                 <img
-                  className="h-[200px] w-full md:w-[250px] object-cover"
+                  className="h-[250px] w-full md:w-[250px] object-contain"
                   src={item.img}
                   alt={item.alt}
                 />
