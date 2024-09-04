@@ -209,14 +209,14 @@ const Dsa = () => {
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={clock} />
                 <h1 className="font-bold text-lg lg:text-xl flex flex-col justify-center items-start">
-                  2 hour <span>Session</span>{" "}
+                  2 hour <span>live Classes</span><span>Everyday</span>{" "}
                 </h1>
               </div>
 
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={calendar} />
                 <h1 className="font-bold lg:text-xl text-lg flex flex-col justify-center items-start">
-                  September 5-10, <span>2024</span>
+                  September 9-13, <span>2024</span>
                   <span className="text-lg">7pm-9pm</span>{" "}
                 </h1>
                 
