@@ -88,7 +88,7 @@ const FullStack = () => {
   };
   const data2 = [
     { name: "Live Lectures", check1: "✅", check2: "✅" },
-    { name: "Price", check1: "₹999", check2: "₹199" },
+    { name: "Price", check1: "₹999", check2: "₹99" },
     { name: "Community Support", check1: "Only 5 days", check2: "Free lifetime discord community" },
     { name: "Accountability Mentor", check1: "❌", check2: "✅" },
     { name: "Bootcamp Completition Certificate", check1: "❌", check2: "✅" },
@@ -136,7 +136,7 @@ const FullStack = () => {
       answer: "Absolutely! The bootcamp is designed to start from the basics and gradually move to advanced topics. Beginners are welcome and encouraged.",
     },
     {
-      question: "Is the bootcamp really worth the price of 199 INR?",
+      question: "Is the bootcamp really worth the price of 99 INR?",
       answer: "Yes! This bootcamp is a comprehensive, hands-on experience that covers everything you need to excel in DSA. Plus, you get valuable bonuses like lifetime community access, top problem sets, and Mock Interview Recordings by Industry experts.",
     },
     {
@@ -219,7 +219,7 @@ const FullStack = () => {
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={calendar} />
                 <h1 className="font-bold lg:text-xl text-lg flex flex-col justify-center items-start">
-                  September 9-13, <span>2024</span>
+                  September 16-20, <span>2024</span>
                   <span className="text-lg">7pm-9pm</span>{" "}
                 </h1>
                 
@@ -238,7 +238,7 @@ const FullStack = () => {
                 }}
                 onClick={handleForm}
               >
-                Register now at ₹199 only
+                Register now at ₹99 only
               </button>
             </div>
           </div>
@@ -360,7 +360,7 @@ const FullStack = () => {
               }}
               onClick={handleForm}
             >
-              Register now at ₹199 only
+              Register now at ₹99 only
             </button>
           </div>
         </div>
@@ -460,7 +460,7 @@ const FullStack = () => {
               }}
               onClick={handleForm}
             >
-              Register now at ₹199 only
+              Register now at ₹99 only
             </button>
           </div>
 
@@ -534,7 +534,7 @@ const FullStack = () => {
                 }}
                 onClick={handleForm}
               >
-                Register now at ₹199 only
+                Register now at ₹99 only
               </button>
             </div>
           </div>
@@ -605,7 +605,7 @@ const FullStack = () => {
             }}
             onClick={handleForm}
           >
-            Register now at ₹199 only
+            Register now at ₹99 only
           </button>
           </div>
         
@@ -622,7 +622,7 @@ const FullStack = () => {
             }}
             onClick={handleForm}
           >
-            Register now at ₹199 only
+            Register now at ₹99 only
           </button>
         </div>
         <div className="w-full flex flex-col items-center p-2 md:p-0 justify-center mt-20 bg-[#e3efec]">
@@ -665,7 +665,7 @@ const FullStack = () => {
               }}
               onClick={handleForm}
             >
-              Register now at ₹199 only
+              Register now at ₹99 only
             </button>
           </div>
         </div>
@@ -675,7 +675,7 @@ const FullStack = () => {
         <div className="flex flex-col">
           <div className="flex justify-center items-center lg:gap-6 gap-2 h-full">
             <h1 className="font-bold text-2xl lg:text-5xl text-white lg:ml-10">
-            ₹199
+            ₹99
             </h1>
             <h1 className=" text-[20px] text-white line-through">₹999</h1>
           </div>
@@ -697,7 +697,7 @@ const FullStack = () => {
             }}
             onClick={handleForm}
           >
-            Register now at ₹199 only
+            Register now at ₹99 only
           </button>
         </div>
       </div>
