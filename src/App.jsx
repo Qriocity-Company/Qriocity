@@ -26,6 +26,7 @@ import Dsa from "./pages/Dsa";
 import Fullstack from "./pages/Fullstack";
 import FullStack from "./pages/Fullstack";
 import BootCamp from "./pages/BootCamp";
+import ProjectWorkshop from "./pages/ProjectWorkshop";
 
 function App() {
   return (
@@ -52,9 +53,10 @@ function App() {
           <Route path="/refund" element={<Refund />} />
           <Route path="/webinar" element={<RoadMap />} />
           <Route path="/courses" element={<Placement />} />
-          <Route path="/DsaBootcamp" element={<Dsa/>} />
-          <Route path="/FullstackBootcamp" element={<FullStack/>} />
-          <Route path="/Bootcamp" element={<BootCamp/>} />
+          <Route path="/DsaBootcamp" element={<Dsa />} />
+          <Route path="/FullstackBootcamp" element={<FullStack />} />
+          <Route path="/Bootcamp" element={<BootCamp />} />
+          <Route path="/projectWorkshop" element={<ProjectWorkshop />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
         <ToastContainer
