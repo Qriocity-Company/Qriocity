@@ -10,18 +10,13 @@ import { FaStar } from "react-icons/fa";
 import Linkedin from "../assets/linkedin.png";
 import doc from "../assets/doc.png";
 import discord from "../assets/discord.png";
-import f1 from "../assets/f1.jpg";
-import f2 from "../assets/f2.jpg";
-import p3 from "../assets/p3.jpg";
-import f4 from "../assets/f4.jpg";
-import f5 from "../assets/f5.png";
-import Testimonials3 from "../components/Testimonials3";
 import { FaPython } from "react-icons/fa";
 import { VscSymbolOperator } from "react-icons/vsc";
 import { FaVideo } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { FcIdea } from "react-icons/fc";
 import { PiFilePpt } from "react-icons/pi";
+import Testimonials4 from "../components/Testimonials4";
 
 const ProjectWorkshop = () => {
   const [name, setName] = useState("");
@@ -180,6 +175,9 @@ const ProjectWorkshop = () => {
     },
   ];
 
+  // Split the FAQs into two columns
+  const firstColumnFAQs = faqs.slice(0, 5);
+  const secondColumnFAQs = faqs.slice(5);
   useEffect(() => {
     AOS.init({ duration: 1000 });
     if (!filled) {
@@ -191,7 +189,7 @@ const ProjectWorkshop = () => {
     <>
       <div className="flex flex-col p-4 bg-white min-h-screen w-full">
         <div className="flex lg:flex-row flex-col justify-between items-center">
-          <div className="flex justify-start items-start mt-40">
+          <div className="hidden lg:flex justify-start items-start mt-40">
             <img
               className=" h-[300px] "
               style={{
@@ -207,13 +205,13 @@ const ProjectWorkshop = () => {
           </div>
           <div className="flex flex-col justify-center lg:items-start items-center lg:mr-40 mt-14 lg:mt-40">
             <h1 className=" font-bold text-3xl lg:text-[40px]">
-              Final Year Projects{" "}
+              Final Year Projects,{" "}
             </h1>
             <h1 className=" font-bold text-3xl mt-2 lg:mt-5 lg:text-[40px]">
-              Simplified in 2 Hours
+              Simplified in 2 Hours!
             </h1>
             <h1 className="font-semibold text-xl mt-5">
-              Learn the Secrets to Stress-Free Final Year Projects
+              Learn the Secrets to Stress-Free Final Year Projects!
             </h1>
             <div className="bg-[#FFF7F4] border-2 border-[#F15A29]  w-auto lg:w-[500px] mt-5 rounded-2xl flex justify-center items-center p-4 text-lg">
               <h1>
@@ -262,10 +260,10 @@ const ProjectWorkshop = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center mt-28 lg:mt-40">
-          <h1 className="font-bold lg:text-4xl text-lg">
+          <h1 className="font-bold lg:text-4xl text-md">
             Who{" "}
             <span
-              className="px-6 lg:py-2 rounded-2xl font-bold text-white"
+              className="px-4 lg:py-2 rounded-2xl font-bold text-white"
               style={{
                 background:
                   "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
@@ -276,7 +274,7 @@ const ProjectWorkshop = () => {
             >
               Should Attend{" "}
             </span>{" "}
-            This Webinar?
+            This MasterClass?
           </h1>
           <div className="flex justify-center flex-col gap-8 items-start mt-10 lg:mt-20">
             <div className="flex justify-center items-center gap-5 lg:gap-10">
@@ -512,7 +510,7 @@ const ProjectWorkshop = () => {
               <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[200px] lg:h-[250px] lg:w-[250px]">
                 <FaStar className="ml-2" size={30} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  ATS-Friendly <span>Resume and </span> Templates - 99
+                  ATS-Friendly <span>Resume and </span> Templates - Rs.99
                 </h1>
                 <img
                   className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
@@ -599,7 +597,7 @@ const ProjectWorkshop = () => {
           </div>
         </div>
 
-        <Testimonials3 />
+        <Testimonials4 />
 
         <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
           <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
@@ -615,49 +613,85 @@ const ProjectWorkshop = () => {
             TRANSFORM YOUR CAREER NOW
           </button>
         </div>
-        <div className="w-full flex flex-col items-center p-2 md:p-0 justify-center mt-20 bg-[#e3efec]">
-          <div className="max-w-2xl mx-auto py-8 md:mt-20  ">
-            <h2 className="lg:text-[36px] text-[20px] font-bold text-center text-blue-600">
-              FAQs :
-              <span className=" ml-2 text-gray-800">
-                Here’s everything you may ask...
-              </span>
-            </h2>
+      </div>
+      <div className="w-full flex flex-col items-center md:p-0 justify-center bg-[#e3efec]">
+        <div className="max-w-2xl mx-auto py-8 md:mt-20 mt-10 p-2">
+          <h2 className="lg:text-[36px] text-[20px] font-bold text-center text-blue-600">
+            FAQs :
+            <span className=" ml-2 text-gray-800">
+              Here’s everything you may ask...
+            </span>
+          </h2>
 
-            <div className="mt-20">
-              {faqs.map((faq, index) => (
-                <div key={index} className="border-2 border-gray-300 mb-2">
+          <div className="mt-10 md:mt-20 flex flex-col md:flex-row justify-center items-start md:gap-20">
+            {/* Left Column */}
+            <div className="w-full md:w-auto">
+              {firstColumnFAQs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="border-2 border-gray-300 mb-2 w-full md:w-[500px] transition-all duration-300"
+                >
                   <button
-                    className="w-full text-left flex justify-between items-center p-4 text-lg text-gray-800 font-semibold hover:bg-gray-100 focus:outline-none"
+                    className="w-full text-left flex justify-between items-center p-4 text-base md:text-lg text-gray-800 font-semibold hover:bg-gray-100 focus:outline-none"
                     onClick={() => toggleAccordion(index)}
                   >
                     {faq.question}
                     <span>{activeIndex === index ? "-" : "+"}</span>
                   </button>
-                  {activeIndex === index && (
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      activeIndex === index ? "max-h-screen" : "max-h-0"
+                    }`}
+                  >
                     <div className="p-4 text-gray-700 bg-gray-50">
                       {faq.answer}
                     </div>
-                  )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Column */}
+            <div className="w-full md:w-auto">
+              {secondColumnFAQs.map((faq, index) => (
+                <div
+                  key={index + 7}
+                  className="border-2 border-gray-300 mb-2 w-full md:w-[500px] transition-all duration-300"
+                >
+                  <button
+                    className="w-full text-left flex justify-between items-center p-4 text-base md:text-lg text-gray-800 font-semibold hover:bg-gray-100 focus:outline-none"
+                    onClick={() => toggleAccordion(index + 7)}
+                  >
+                    {faq.question}
+                    <span>{activeIndex === index + 7 ? "-" : "+"}</span>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      activeIndex === index + 7 ? "max-h-screen" : "max-h-0"
+                    }`}
+                  >
+                    <div className="p-4 text-gray-700 bg-gray-50">
+                      {faq.answer}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center lg:mr-10 mt-5 mb-40">
-            <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
-              90% seats booked
-            </span>
-            <button
-              className="px-14 py-4 rounded-full font-bold text-white "
-              style={{
-                background:
-                  "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-              }}
-              onClick={handleForm}
-            >
-              BOOK YOUR FREE SPOT NOW
-            </button>
-          </div>
+        </div>
+        <div className="flex flex-col justify-center items-center lg:mr-10 mt-5 mb-40">
+          <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
+            90% seats booked
+          </span>
+          <button
+            className="px-14 py-4 rounded-full font-bold text-white "
+            style={{
+              background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+            }}
+            onClick={handleForm}
+          >
+            BOOK YOUR FREE SPOT NOW
+          </button>
         </div>
       </div>
 
