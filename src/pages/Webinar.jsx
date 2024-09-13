@@ -216,6 +216,7 @@ const MainCard = ({ setShowForm }) => {
           name: name,
           email: email,
           phone: phone,
+          college: college,
           date: currentDate.toLocaleDateString(),
         }
       );
@@ -269,7 +270,7 @@ const MainCard = ({ setShowForm }) => {
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
       {popupForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-gradient-to-br from-green-400 via-black to-orange-400 mb-10  rounded-lg shadow-lg w-96 p-6 text-white flex flex-col">
+          <div className="bg-gradient-to-br from-green-400 via-black to-orange-400 mb-10  rounded-lg shadow-lg w-96 p-6 text-white flex flex-col z-50">
             <h1
               onClick={handleClose}
               className="place-self-end cursor-pointer text-2xl text-gray-100"
