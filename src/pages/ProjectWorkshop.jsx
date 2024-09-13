@@ -332,7 +332,7 @@ const ProjectWorkshop = () => {
             >
               you learn{" "}
             </span>{" "}
-            in this 5-Day Bootcamp?
+            in this 2-hour session?
           </h1>
 
           <div className="relative flex flex-col justify-center items-center mt-10 gap-10 px-4 sm:px-8 md:px-16">
