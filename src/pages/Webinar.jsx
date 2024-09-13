@@ -750,6 +750,20 @@ const Webinar = () => {
                 ?
               </div>
             </div>
+            <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 mb-10">
+              <button
+                className="px-14 py-4 rounded-full font-bold text-white"
+                style={{
+                  background:
+                    "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                }}
+                onClick={() => {
+                  scrollToTop();
+                }}
+              >
+               SOLVE ALL YOUR PROBLEMS NOW
+              </button>
+            </div>
           </div>
 
           {/* Our Project Categories section */}
@@ -784,13 +798,88 @@ const Webinar = () => {
           </div> */}
 
           {/* Your Path to Project Success section */}
-          <div className="md:mt-20 mt-10   ">
+          {/* <div className="md:mt-20 mt-10   ">
             <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
               Start with a Project Consultation, End with Your Dream Job
             </div>
             <img src={Group} />
+          </div> */}
+<div className="bg-[#EDEDED] mt-20 flex flex-col justify-start items-center p-4">
+            <h1 className="font-bold lg:text-4xl lg:mt-20 mt-8">
+            Start with a  {" "}
+              <span
+                className="lg:px-8 lg:py-2 px-4 py-1 rounded-2xl font-bold text-white"
+                style={{
+                  background:
+                    "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                  display: "inline-block", // Required to apply transformations
+                  transform: "rotate(-2deg)", // Adjust the degree to control the tilt
+                  transformOrigin: "center", // Optional: adjust the pivot point of the rotation
+                }}
+              >
+                Project Consultation,{" "}
+              </span>{" "}
+              End with Your Dream Job
+            </h1>
+
+            <div className="relative flex flex-col justify-center items-center mt-10 gap-10 px-4 sm:px-8 md:px-16">
+              {/* Vertical Line */}
+              <div className="absolute inset-0 flex justify-center">
+                <div className="w-1 h-full bg-gray-300 relative">
+                  {/* Circles on the line */}
+                  <div
+                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
+                    style={{ top: "0%" }} // Start of the line
+                  ></div>
+                  <div
+                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
+                    style={{ top: "16%" }}
+                  ></div>
+                  <div
+                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
+                    style={{ top: "33%" }}
+                  ></div>
+                  <div
+                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
+                    style={{ top: "50%" }}
+                  ></div>
+                  <div
+                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
+                    style={{ top: "66%" }}
+                  ></div>
+                  <div
+                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
+                    style={{ top: "83%" }}
+                  ></div>
+                  <div
+                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
+                    style={{ top: "100%" }} // End of the line
+                  ></div>
+                </div>
+              </div>
+
+              {timelineData.map((item, index) => (
+                <div
+                  key={index}
+                 
+                  className={`flex flex-col md:flex-row ${
+                    index % 2 === 0 ? "md:flex-row-reverse" : ""
+                  } justify-center  items-center gap-10 md:gap-20 z-40`}
+                >
+                  <img
+                    className="h-[250px] w-full md:w-[250px] object-contain"
+                    src={item.img}
+                    alt={item.alt}
+                  />
+                  <div className="bg-slate-200 p-4 rounded-xl h-[200px] w-full md:w-[200px] lg:w-[250px] font-semibold text-lg flex justify-center items-center">
+                    {item.content}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
+          
           <div className="md:mt-20 mt-10 text-center md:p-16 p-2 ">
             <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
               End-to-End Project Solution
@@ -977,10 +1066,24 @@ const Webinar = () => {
                 </div>
               </div>
             </div>
+            <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 ">
+              <button
+                className="px-14 py-4 rounded-full font-bold text-white"
+                style={{
+                  background:
+                    "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                }}
+                onClick={() => {
+                  scrollToTop();
+                }}
+              >
+                GET END-END PROJECT SOLUTION NOW
+              </button>
+            </div>
           </div>
 
           {/* Exclusive Offer section*/}
-          <div className="mt-20 bg-[#FEEEE9] h-auto w-full rounded-xl flex flex-col justify-center items-center p-4 mb-10">
+          <div className="mt-10 bg-[#FEEEE9] h-auto w-full rounded-xl flex flex-col justify-center items-center p-4 mb-10">
             <h1 className="text-4xl font-bold mt-10 lg:text-[50px]">
               Exciting <span className="text-[#F26530]">bonuses</span>
             </h1>
@@ -1090,6 +1193,20 @@ const Webinar = () => {
                 <FaCertificate className="place-self-end mt-5 h-10 w-10 text-blue-500 lg:h-14 lg:w-14" />
               </div>
             </div>
+            <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 mb-10">
+              <button
+                className="px-14 py-4 rounded-full font-bold text-white"
+                style={{
+                  background:
+                    "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                }}
+                onClick={() => {
+                  scrollToTop();
+                }}
+              >
+                UNLOCK THESE BONUSES FOR FREE NOW
+              </button>
+            </div>
           </div>
 
           <div className="mt-20 flex justify-center items-center flex-col">
@@ -1136,82 +1253,23 @@ const Webinar = () => {
                 </tbody>
               </table>
             </div>
-          </div>
-
-          <div className="bg-[#EDEDED] mt-20 flex flex-col justify-start items-center p-4">
-            <h1 className="font-bold lg:text-4xl lg:mt-20 mt-8">
-              What will{" "}
-              <span
-                className="lg:px-8 lg:py-2 px-4 py-1 rounded-2xl font-bold text-white"
+            <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 mb-10">
+              <button
+                className="px-14 py-4 rounded-full font-bold text-white"
                 style={{
                   background:
                     "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-                  display: "inline-block", // Required to apply transformations
-                  transform: "rotate(-2deg)", // Adjust the degree to control the tilt
-                  transformOrigin: "center", // Optional: adjust the pivot point of the rotation
+                }}
+                onClick={() => {
+                  scrollToTop();
                 }}
               >
-                you learn{" "}
-              </span>{" "}
-              in this 2-hour session?
-            </h1>
-
-            <div className="relative flex flex-col justify-center items-center mt-10 gap-10 px-4 sm:px-8 md:px-16">
-              {/* Vertical Line */}
-              <div className="absolute inset-0 flex justify-center">
-                <div className="w-1 h-full bg-gray-300 relative">
-                  {/* Circles on the line */}
-                  <div
-                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
-                    style={{ top: "0%" }} // Start of the line
-                  ></div>
-                  <div
-                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
-                    style={{ top: "16%" }}
-                  ></div>
-                  <div
-                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
-                    style={{ top: "33%" }}
-                  ></div>
-                  <div
-                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
-                    style={{ top: "50%" }}
-                  ></div>
-                  <div
-                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
-                    style={{ top: "66%" }}
-                  ></div>
-                  <div
-                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
-                    style={{ top: "83%" }}
-                  ></div>
-                  <div
-                    className="hidden lg:block absolute w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"
-                    style={{ top: "100%" }} // End of the line
-                  ></div>
-                </div>
-              </div>
-
-              {timelineData.map((item, index) => (
-                <div
-                  key={index}
-                  data-aos="fade-up"
-                  className={`flex flex-col md:flex-row ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : ""
-                  } justify-center items-center gap-10 md:gap-20 z-40`}
-                >
-                  <img
-                    className="h-[250px] w-full md:w-[250px] object-contain"
-                    src={item.img}
-                    alt={item.alt}
-                  />
-                  <div className="bg-slate-200 p-4 rounded-xl h-[200px] w-full md:w-[200px] lg:w-[250px] font-semibold text-lg flex justify-center items-center">
-                    {item.content}
-                  </div>
-                </div>
-              ))}
+                START YOUR PROJECT JOURNEY WITH QRIOCITY
+              </button>
             </div>
           </div>
+
+          
 
           {/* Exclusive Offer section  */}
           {/* <div className="md:mt-20 mt-10 text-center ">
@@ -1442,6 +1500,20 @@ const Webinar = () => {
                   experience the difference!
                 </div>
               </div>
+            </div>
+            <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 mb-10">
+              <button
+                className="px-14 py-4 rounded-full font-bold text-white"
+                style={{
+                  background:
+                    "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                }}
+                onClick={() => {
+                  scrollToTop();
+                }}
+              >
+              BOOK YOUR FREE CONSULTATION CALL NOW
+              </button>
             </div>
           </div>
 
