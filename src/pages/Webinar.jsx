@@ -6,6 +6,19 @@ import User2 from "../assets/user_02.jpg";
 import User3 from "../assets/user_03.jpg";
 import User4 from "../assets/User4.jpg";
 import Review from "../assets/review.png";
+import clock from "../assets/clock.png";
+import calendar from "../assets/calendar.png";
+import bullet from "../assets/bullet.png";
+import { FaStar } from "react-icons/fa";
+import Linkedin from "../assets/linkedin.png";
+import doc from "../assets/doc.png";
+
+
+import discord from "../assets/discord.png";
+import interview from "../assets/interview.png";
+
+
+import leetcode from "../assets/leetcode.png";
 import DataScience from "../assets/Data_Science.svg";
 import MachineLearning from "../assets/machineLearning.svg";
 import ArtificialIntelligence from "../assets/Ai.svg";
@@ -25,7 +38,7 @@ import insta from "../assets/Group 1000004397.svg";
 import name from "../assets/ri_user-4-fill.svg";
 import email from "../assets/ic_round-alternate-email.svg";
 import phone from "../assets/fluent_phone-20-filled.svg";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin ,FaPython,FaChessQueen,FaCertificate } from "react-icons/fa";
 import hand from "../assets/Image COntact.png";
 import Modal from "../components/Modal";
 import laptop2 from "../assets/laptop-2.png";
@@ -39,7 +52,68 @@ import Popup from "../components/Popup";
 import axios from "axios";
 import { ImSpinner8 } from "react-icons/im";
 import emailjs from "@emailjs/browser";
+import PricingSection from "../components/PricingSection";
+import Testimonials4 from "../components/Testimonials4";
+import dream from "../assets/dream.png";
+import portfolio from "../assets/portfolio.png";
+import jobmarket from "../assets/jobmarket.png";
+import internship from "../assets/internship.png";
+import hacks from "../assets/hacks.png";
+import interviewprep from "../assets/interviewprep.png";
+
 // import MachineLearning from "../assets/machineLearning.svg";
+const faqs = [
+  {
+    question: "What types of final year projects do you offer?",
+    answer: "We offer a wide range of projects across domains such as Machine Learning, Data Science, IoT, Electronics-based, Web Development, Cloud Computing, Cybersecurity, and more.",
+  },
+  {
+    question: "Are your projects 100% original and plagiarism-free?",
+    answer: "Yes, all our projects come with 0% plagiarism. We ensure that the code, documentation, and content are original.",
+  },
+  {
+    question: "Can I get a project based on an IEEE 2024 base paper?",
+    answer: "Yes, we provide projects based on the latest IEEE 2024 base papers tailored to your specific requirements.",
+  },
+  {
+    question: "How long will it take to deliver a complete project?",
+    answer: "We offer a 1-day project delivery guarantee for most projects. However, the timeline may vary based on project complexity.",
+  },
+  {
+    question: "Do you offer guidance on choosing a project domain?",
+    answer: "Absolutely! We offer 1-1 consultation to help you select the best domain and project title based on your interests and career goals.",
+  },
+  {
+    question: "What if I need multiple revisions for my project PPTs?",
+    answer: "We understand that project guides may ask you to change a few slides in the PPT, and we are totally fine with doing multiple changes in the presentation.",
+  },
+  {
+    question: "Do you provide project explanation videos?",
+    answer: "Yes, we provide a full project explanation video where we walk you through the entire code and execution process.",
+  },
+  {
+    question: "Is the project suitable for real-world applications?",
+    answer: "Yes, all of our projects are designed to have real-world applicability, giving you practical experience with industry-standard technologies.",
+  },
+  {
+    question: "Can you develop my own idea/problem statement?",
+    answer: "Definitely! We encourage you to share your ideas, and we'll develop that into a working product.",
+  },
+  {
+    question: "What if I need extra features added to the project?",
+    answer: "You can request additional features, and we will assess the feasibility and make the necessary updates.",
+  },
+  {
+    question: "What happens if my project is rejected by my guide?",
+    answer: "Our project titles are unique and advanced research-based, so they won’t get rejected. However, if your title is rejected, we will provide a new project at no extra charge.",
+  },
+  {
+    question: "Do you offer projects for students outside India?",
+    answer: "Yes, we deliver projects and help with assignments internationally, ensuring they are customized to your local academic requirements.",
+  },
+];
+
+
 
 const images = [
   { name: "Data Science", src: DataScience },
@@ -52,6 +126,19 @@ const images = [
   { name: "Full Stack Development", src: Web },
   { name: "App Development", src: App },
   // Add more objects as needed
+];
+const data2 = [
+  { name: "College Format ppt and report", check1: "❌", check2: "✅" },
+  { name: "Project Titles", check1: "Old Basic Titles", check2: "Novelity Based Research Titles" },
+  { name: "Plagiarism", check1: "Github Codes", check2: "0% Plagiarized Code" },
+  { name: "Review Wise Code", check1: "Only full code", check2: "Module Wise Code" },
+  { name: "Referral Program", check1: "❌", check2: "Earn upto 10k " },
+  { name: "Placement Preparation support", check1: "❌", check2: "Free Placement Support" },
+  { name: "Bonus", check1: "❌", check2: "Bonus worth ₹7993" },
+  { name: "Price Discount", check1: "5-10%", check2: "30-40%" },
+  { name: "Doubt Solving Sessions", check1: "❌", check2: "1-1 Project explainations" },
+  { name: "Delivery Timing", check1: "No guaranteed delivery date", check2: "1 Day" },
+ 
 ];
 
 const scrollToTop = () => {
@@ -76,6 +163,9 @@ const MainCard = ({ setShowForm }) => {
     senderEmail: "",
     phoneNumber: "",
     message: "",
+    departmentCollege:"",
+    YearCollege:"",
+    College:"",
   });
 
   const handleChange = (e) => {
@@ -267,120 +357,17 @@ const MainCard = ({ setShowForm }) => {
   };
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
-      {popupForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-gradient-to-br from-green-400 via-black to-orange-400 mb-10  rounded-lg shadow-lg w-96 p-6 text-white flex flex-col">
-            <h1
-              onClick={handleClose}
-              className="place-self-end cursor-pointer text-2xl text-gray-100"
-            >
-              &times;
-            </h1>
-            <h2 className="text-xl font-bold mb-4 text-center text-gray-100">
-              Get Free Top 10 HR Questions and Answers
-            </h2>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full p-2 border-2 border-black  outline-none focus:ring-2  text-black rounded-xl"
-                  placeholder="Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full p-2 border-2 border-black rounded-xl outline-none focus:ring-2  text-black"
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
-                  placeholder="Contact Number"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <input
-                  type="text"
-                  id="college"
-                  name="college"
-                  className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
-                  placeholder="College Name"
-                  value={college}
-                  onChange={(e) => setCollege(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <input
-                  type="text"
-                  id="department"
-                  name="department"
-                  className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
-                  placeholder="Department"
-                  value={department}
-                  onChange={(e) => setDepartment(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <select
-                  className="w-full p-2 border-black  rounded-xl outline-none focus:ring-2  text-black border-2"
-                  value={year}
-                  onChange={(e) => setYear(e.target.value)}
-                >
-                  <option hidden>Select Your Year</option>
-                  <option>First Year</option>
-                  <option>Second Year</option>
-                  <option>Third Year</option>
-                  <option>Fourth Year</option>
-                  <option>Graduate</option>
-                </select>
-              </div>
-              <div className="flex justify-center items-center">
-                <button
-                  type="submit"
-                  className="bg-gradient-to-r from-orange-600 to-orange-400 text-white  py-2 rounded-full hover:from-orange-500 hover:to-orange-600 px-10"
-                  onClick={handlePopUp}
-                >
-                  {popuploading ? (
-                    <ImSpinner8 className="animate-spin" />
-                  ) : (
-                    "Download"
-                  )}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-      {showPopup && <Popup />}
+      
+    
       <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
-        Empowering Future <br /> Tech Innovators
+        Quick, Quality Projects <br /> Delivered in 1 Day
       </div>
       <p className="text-[#FBA154] md:text-3xl mt-5 ">
-        Your Final Year Project, Our Expert Guidance
+      Leave the project to us and get your dream job
       </p>
 
       <form onSubmit={onSubmit} className="w-[80%] mt-8">
-        <div className="flex  flex-col md:flex-row w-[100%] justify-between gap-4 text-black">
+        <div className="flex  flex-col  md:flex-row w-[100%] justify-between gap-4 text-black">
           <input
             type="text"
             name="name"
@@ -405,6 +392,32 @@ const MainCard = ({ setShowForm }) => {
 
           <input
             type="text"
+            name="College"
+            placeholder="College Name"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.College}
+            onChange={handleChange}
+          />
+          </div>
+          <div className="flex  flex-col  mt-5 md:mt-10  md:flex-row w-[100%] justify-between gap-4 text-black">
+            <input
+            type="text"
+            name="departmentCollege"
+            placeholder="Enter Department"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.departmentCollege}
+            onChange={handleChange}
+          />
+            <input
+            type="text"
+            name="YearCollege"
+            placeholder="Enter year"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.YearCollege}
+            onChange={handleChange}
+          />
+            <input
+            type="text"
             name="message"
             placeholder="Enter Message"
             className="p-4 bg-white rounded-lg outline-none w-full"
@@ -421,7 +434,7 @@ const MainCard = ({ setShowForm }) => {
             {loading ? (
               <ImSpinner8 size={30} className="animate-spin" />
             ) : (
-              "Book Free Consultation Call"
+              "BOOK FREE CONSULTATION CALL"
             )}
           </button>
         </div>
@@ -508,6 +521,15 @@ const ProblemCard = ({ content, boldContent, pos }) => {
 
 const Webinar = () => {
   const [showForm, setShowForm] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    if (activeIndex === index) {
+      setActiveIndex(null); // Collapse if already active
+    } else {
+      setActiveIndex(index); // Open the clicked one
+    }
+  };
 
   useEffect(() => {
     // setTimeout(() => {
@@ -560,52 +582,13 @@ const Webinar = () => {
             <div className="lg:text-6xl md:text-4xl text-2xl text-center  text-white  ">
               Why Choose us?
             </div>
-            <div className="bg-[#353535] rounded-xl mt-16 p-10 grid lg:grid-cols-3 md:grid-cols-2 gap-10 place-content-center">
+             {/* <div className="bg-[#353535] rounded-xl mt-16 p-10 grid lg:grid-cols-3 md:grid-cols-2 gap-10 place-content-center">
               <div className="max-w-xs bg-white p-5 rounded-xl ">
                 <div className="text-[#F15A29] md:text-5xl text-4xl font-[700] ">
-                  200+
+                  400+
                 </div>
-                <div className="flex items-end justify-between">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="122"
-                    height="40"
-                    viewBox="0 0 122 41"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_208_3815)">
-                      <path
-                        d="M118.199 24.4647L121.584 26.721C120.486 28.3389 117.858 31.1149 113.316 31.1149C107.675 31.1149 103.475 26.7508 103.475 21.199C103.475 15.2913 107.72 11.2834 112.841 11.2834C117.992 11.2834 120.515 15.3802 121.332 17.5919L121.777 18.7202L108.507 24.2123C109.516 26.2015 111.09 27.2109 113.316 27.2109C115.543 27.2109 117.086 26.1124 118.199 24.4647ZM107.794 20.8876L116.656 17.2062C116.166 15.9743 114.711 15.0986 112.974 15.0986C110.763 15.0986 107.69 17.058 107.794 20.8876Z"
-                        fill="#FF302F"
-                      />
-                      <path
-                        d="M97.0771 1.17492H101.352V30.2095H97.0771V1.17468V1.17492Z"
-                        fill="#20B15A"
-                      />
-                      <path
-                        d="M90.3386 12.0554H94.4651V29.6898C94.4651 37.0077 90.1456 40.021 85.0392 40.021C80.23 40.021 77.3356 36.7851 76.2519 34.1579L80.037 32.5842C80.7197 34.2022 82.3674 36.1172 85.0392 36.1172C88.3196 36.1172 90.3386 34.0835 90.3386 30.2836V28.8587H90.1902C89.2103 30.0461 87.3401 31.1148 84.9651 31.1148C80.0072 31.1148 75.4648 26.7952 75.4648 21.229C75.4648 15.6327 80.0072 11.2688 84.9651 11.2688C87.3253 11.2688 89.2103 12.3227 90.1902 13.4805H90.3386V12.0556V12.0554ZM90.6353 21.229C90.6353 17.7257 88.3049 15.1726 85.3361 15.1726C82.3376 15.1726 79.8142 17.7257 79.8142 21.229C79.8142 24.6874 82.3376 27.196 85.3361 27.196C88.3051 27.211 90.6355 24.6874 90.6355 21.229H90.6353Z"
-                        fill="#3686F7"
-                      />
-                      <path
-                        d="M51.9972 21.1547C51.9972 26.8697 47.5442 31.0703 42.0816 31.0703C36.6193 31.0703 32.166 26.8549 32.166 21.1547C32.166 15.4103 36.6193 11.2244 42.0816 11.2244C47.5442 11.2244 51.9972 15.4103 51.9972 21.1547ZM47.6629 21.1547C47.6629 17.5924 45.0799 15.1429 42.0816 15.1429C39.0833 15.1429 36.5003 17.5924 36.5003 21.1547C36.5003 24.6875 39.0833 27.1666 42.0816 27.1666C45.0801 27.1666 47.6629 24.6875 47.6629 21.1547Z"
-                        fill="#FF302F"
-                      />
-                      <path
-                        d="M73.6535 21.199C73.6535 26.914 69.2002 31.1146 63.7379 31.1146C58.2753 31.1146 53.8223 26.9137 53.8223 21.199C53.8223 15.4546 58.2753 11.2834 63.7379 11.2834C69.2002 11.2834 73.6535 15.4398 73.6535 21.199ZM69.3041 21.199C69.3041 17.6367 66.7214 15.1872 63.7228 15.1872C60.7246 15.1872 58.1416 17.6367 58.1416 21.199C58.1416 24.7318 60.7246 27.2109 63.7228 27.2109C66.7362 27.2109 69.3041 24.717 69.3041 21.199Z"
-                        fill="#FFBA40"
-                      />
-                      <path
-                        d="M15.8676 26.7656C9.64798 26.7656 4.77942 21.7483 4.77942 15.5287C4.77942 9.30933 9.64798 4.29209 15.8676 4.29209C19.2224 4.29209 21.6714 5.61312 23.4824 7.30539L26.4661 4.32187C23.9427 1.90236 20.5732 0.0614014 15.8676 0.0614014C7.34738 0.0616396 0.177734 7.00873 0.177734 15.5287C0.177734 24.0492 7.34738 30.996 15.8676 30.996C20.4693 30.996 23.9427 29.482 26.6591 26.6617C29.4496 23.8709 30.3105 19.9522 30.3105 16.7756C30.3105 15.7811 30.1919 14.7569 30.0582 13.9999H15.8676V18.1265H25.9762C25.6793 20.7094 24.863 22.4758 23.6606 23.6779C22.2059 25.1477 19.9053 26.7656 15.8676 26.7656Z"
-                        fill="#3686F7"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_208_3815">
-                        <rect width="122" height="40.0312" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <img src={Review} />
+                <div className="flex  justify-between ">
+                  <img src="https://www.pngall.com/wp-content/uploads/9/Google-Review-PNG-Clipart.png" className="h-[50px] w-[100px]" />
                 </div>
               </div>
               <AchivementCard number="5000" title="Projects Delivered" />
@@ -614,14 +597,14 @@ const Webinar = () => {
               <AchivementCard number="10000" title="IEEE Papers published" />
 
               <AchivementCard number="500" title="Colleges Served" />
-            </div>
+            </div>  */}
           </div>
 
-          <div className="relative md:mt-20 mt-10  space-y-10 text-center md:p-16 p-4 ">
+          <div className="relative md:mt-0 mt-10  space-y-10 text-center md:p-16 p-4 ">
             <ContentCard content="Project Delivery in 1 day" />
-            <ContentCard content="IEEE Research based Advanced Titles" />
-            <ContentCard content="Support including PPTs, Reports and VIVA preparation" />
-            <ContentCard content="24/7 Support through WhatsApp and Phone" />
+            <ContentCard content="Advanced Unique IEEE Titles" />
+            <ContentCard content="PPT’s and Reports in your college format " />
+            <ContentCard content="24/7 Support through WhatsApp" />
             <button
               className="btn md:mt-20  mt-10 text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
@@ -630,7 +613,7 @@ const Webinar = () => {
               }}
             >
               {" "}
-              Book Free Consultation Call{" "}
+              BOOK FREE CONSULTATION CALL{" "}
             </button>
             <div className="bg-[#3cffff] hidden md:block absolute top-[50%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
             <div className="bg-[#FF7A00]  hidden md:block absolute top-[80%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
@@ -639,7 +622,8 @@ const Webinar = () => {
           {/* What problem we will solve? section  */}
           <div className="md:mt-20 mt-10 md:p-16 p-4 z-0 ">
             <div className="lg:text-6xl md:text-4xl text-2xl text-center text-white  ">
-              What problem we will solve?
+            Stuck with Projects or Placements? Consider its solved
+
             </div>
             <div className="relative mt-16 md:px-20   space-y-12    ">
               <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
@@ -693,7 +677,7 @@ const Webinar = () => {
           </div>
 
           {/* Our Project Categories section */}
-          <div className="md:mt-20 mt-10 text-center md:p-16 p-4 ">
+          {/* <div className="md:mt-20 mt-10 text-center md:p-16 p-4 ">
             <div className="md:text-4xl  text-2xl p-2 md:p-5 px-10 md:px-24 w-fit mx-auto  rounded-full border border-white  text-center text-white mb-10 ">
               Our Project Categories
             </div>
@@ -719,22 +703,24 @@ const Webinar = () => {
               }}
             >
               {" "}
-              Book Free Consultation Call{" "}
+              BOOK FREE CONSULTATION CALL{" "}
             </button>
-          </div>
+          </div> */}
 
           {/* Your Path to Project Success section */}
-          <div className="md:mt-20 mt-10   ">
+           <div className="md:mt-20 mt-10   ">
             <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
-              Your Path to Project Success Our Deliverables
+            Start with a Project Consultation, End with Your Dream Job
             </div>
             <img src={Group} />
           </div>
 
-          {/* Our Deliverables  section    */}
+          
           <div className="md:mt-20 mt-10 text-center md:p-16 p-2 ">
             <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
-              Our Deliverables
+              
+             End-to-End Project Solution
+
             </div>
             <div className="md:mt-20 mt-10 md:max-w-3xl max-w-[350px] text-center mx-auto bg-[#0C2F31] rounded-xl">
               <div className=" p-6 flex gap-3 md:gap-10   md:ml-10  items-center  mx-auto">
@@ -949,103 +935,169 @@ const Webinar = () => {
                 </div>
               </div>
             </div>
+          </div> 
+
+
+          
+
+{/* Exclusive Offer section*/}
+<div className="mt-20 bg-[#FEEEE9] h-auto  max-w-full rounded-xl flex flex-col justify-start items-center p-4 mb-10">
+            <h1 className="text-4xl font-bold mt-6 lg:text-[50px]">
+              Exciting <span className="text-[#F26530]">bonuses</span>
+            </h1>
+            <div className="mt-10 lg:mt-20 flex flex-wrap justify-center items-center gap-4 lg:gap-5 w-full">
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={30} color="#F15A29" />
+                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                Python <span>10 hours </span> <span>recorded videos</span>Rs1499
+                </h1>
+             
+                <FaPython  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"/>
+              </div>
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={30} color="#F15A29" />
+                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                Apptitude <span>2 hours</span> <span>recorded videos</span>Rs999
+                </h1>
+                <img
+                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                  src={doc}
+                />
+              </div>
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={30} color="#F15A29" />
+                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                  DSA <span>3 hours</span> <span>recorded videos </span><span>Rs 999</span>
+                </h1>
+                <FaChessQueen  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"/>
+              </div>
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={30} color="#F15A29" />
+                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                Higher Studies  <span>A - Z</span> 1 hour recorded videos <span>Rs 999</span>
+                </h1>
+                <img
+                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                  src={interview}
+                />
+              </div>
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={30} color="#F15A29" />
+                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                  2  <span>Recorded</span>{" "}
+                  <span>Mock Interviews </span>
+                  <span>Rs 499</span>
+                </h1>
+                <img
+                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                  src={interview}
+                />
+              </div>
+            
+            <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={30} color="#F15A29" />
+                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                2 Resume <span>& Cold Email</span> <span>Live Sessions</span> Rs 999
+                </h1>
+                <img
+                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                  src={doc}
+                />
+              </div>
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={30} color="#F15A29" />
+                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                2 <span>Linkedin Mastery</span> <span>Live Sessions</span>Rs 1999
+                </h1>
+                <img
+                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                  src={Linkedin}
+                />
+              </div>
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={30} color="#F15A29" />
+                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                  Discord <span>Community</span> <span>lifetime access </span><span>Lifetime valisity</span>
+                </h1>
+                <img
+                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                  src={discord}
+                />
+              </div>
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={30} color="#F15A29" />
+                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                  1-1 Mentorship <span>call with founder</span>& CEO of <span>Qriocity,Kesavan</span>
+                </h1>
+                <img
+                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                  src={interview}
+                />
+              </div>
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={30} color="#F15A29" />
+                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                  Course  <span>COmpletition Certificate</span>{" "}
+                  <span>Linkedin Shareable </span>
+                  <span> Certificate</span>
+                </h1>
+                <FaCertificate  className="place-self-end mt-5 h-10 w-10 text-blue-500 lg:h-14 lg:w-14"/>
+              </div>
+              </div>
+            
+            
           </div>
 
-          {/* Exclusive Bonuses for Our Students section */}
-          <div className="md:mt-20 mt-10 text-center md:p-16 p-4 ">
-            <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
-              Exclusive Bonuses for Our Students
-            </div>
-            <div className="grid gap-10 mt-10 md:mt-20 md:gap-20 md:grid-cols-2  place-items-center">
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img
-                  src={play}
-                  alt=""
-                  className="absolute top-[7%] left-[10%]"
-                />
-                <img src={Laptop} />
-                <div className="text-start text-3xl font-[700]">
-                  Master Python from basics to Advanced Levels
-                </div>
-                <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
-                  Worth ₹ 999
-                </div>
-              </div>
+          <div className="mt-20 flex justify-center items-center flex-col">
+          <h1 className="mt-10 text-red-500 font-bold text-[25px]">COMPARISON</h1>
+          <h1 className="text-white  font-semibold lg:text-[45px] text-[30px] lg:mt-0 mt-5">
+            What makes us standout?
+          </h1>
 
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img
-                  src={play}
-                  alt=""
-                  className="absolute top-[7%] left-[10%]"
-                />
-                <img src={laptop2} />
-                <div className="text-start text-3xl font-[700]">
-                  Enhance Problem-Solving with HackerRank solutions
-                </div>
-                <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
-                  Worth ₹ 4999
-                </div>
-              </div>
+          <div className="lg:w-[900px]  w-auto mx-auto p-4 bg-[#0F0F0F] rounded-lg overflow-hidden mt-10">
+            <table className="w-full table-fixed border-collapse">
+              <thead>
+                <tr>
+                  <th className="text-center p-4 text-white lg:text-2xl text-xl border-b border-gray-700 border-r">
+                    Features
+                  </th>
 
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img
-                  src={play}
-                  alt=""
-                  className="absolute top-[7%] left-[10%]"
-                />
-                <img src={hs} />
-                <div className="text-start text-3xl font-[700]">
-                  Roadmap to Higher Studies Education
-                </div>
-                <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
-                  Worth ₹ 999
-                </div>
-              </div>
+                  <th className=" text-center p-4 text-white lg:text-2xl text-xl border-b border-r border-gray-700">
+                    Other Project Centers
+                  </th>
+                  <th className=" text-center p-4 text-orange-500 lg:text-2xl text-xl border-b border-gray-700">
+                    Qriocity
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-white ">
+                {/* Pricing Row */}
 
-              <div className=" p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img
-                  src={pdf}
-                  alt=""
-                  className="absolute top-[9%] left-[12%] md:top-[7%] md:left-[10%]"
-                />
-                <img src={cap} />
-                <div className="text-start text-3xl font-[700]">
-                  Internship & Project Certificate
-                </div>
-                <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
-                  Worth ₹ 2999
-                </div>
-              </div>
-
-              <div className="md:col-span-2 p-8 bg-white text-black md:max-w-md max-w-xs  flex flex-col items-start md:gap-5 gap-2 rounded-xl relative">
-                <img
-                  src={vcbtn}
-                  alt=""
-                  className="absolute top-[9%] left-[12%] md:top-[7%] md:left-[10%] rounded-[100%]"
-                />
-                <img src={cguidance} />
-                <div className="text-start text-3xl font-[700]">
-                  Free Career Guidance session
-                </div>
-                <div className="bg-[#26CFD3] p-2 px-4 rounded-full w-fit">
-                  Worth ₹ 499
-                </div>
-              </div>
-            </div>
-            <button
-              className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
-              style={{}}
-              onClick={() => {
-                scrollToTop();
-              }}
-            >
-              {" "}
-              Unlock These Bonuses Now!{" "}
-            </button>
+                {/* Feature Rows */}
+                {data2.map((row, rowIndex) => (
+                <tr>
+                  <td className="p-4 text-left border-t border-r border-gray-700">
+                    {row.name}
+                  </td>
+                  <td className="p-4 text-center border-t border-r border-gray-700 text-green-400">
+                    {row.check1}
+                  </td>
+                  <td className="p-4 text-center border-t  border-gray-700 text-green-400">
+                  {row.check2}
+                  </td>
+                </tr>
+                ))}
+                
+              </tbody>
+            </table>
           </div>
+        </div>
+        
+
+
 
           {/* Exclusive Offer section  */}
-          <div className="md:mt-20 mt-10 text-center ">
+          {/* <div className="md:mt-20 mt-10 text-center ">
             <div className="md:text-6xl bg-white w-full  text-2xl md:p-5 p-2 px-20 text-center text-black mb-10 font-[500] flex  items-center justify-center gap-5 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1092,12 +1144,16 @@ const Webinar = () => {
               }}
             >
               {" "}
-              Book Free Consultation Call{" "}
+              BOOK FREE CONSULTATION CALL{" "}
             </button>
+          </div> */}
+          <div className="flex w-full flex-col mt-20 items-center justify-center">
+          <h1 className="text-white text-[32px] font-bold ">Exclusive Offers</h1>
+          <PricingSection/>
           </div>
 
           {/* Unable to decide? */}
-          <div className="md:mt-20 mt-10 text-center md:p-16 p-4 ">
+          {/* <div className="md:mt-20 mt-10 text-center md:p-16 p-4 ">
             <div className="md:text-6xl  text-2xl md:p-5 p-2 px-10 md:px-20 w-fit mx-auto    text-center text-white font-[500] ">
               Unable to decide?
             </div>
@@ -1224,7 +1280,11 @@ const Webinar = () => {
                 <img src={User4} className=" w-[300px]" />
               </div>
             </div>
-          </div>
+          </div> */}
+
+<Testimonials4/>
+
+          
 
           {/* Still Not Sure? We Have */}
           <div className="md:mt-20 mt-10 text-center mb-36 md:mb-20 md:p-16 p-4 ">
@@ -1268,20 +1328,62 @@ const Webinar = () => {
             </div>
           </div>
 
-          {/* FAQ  section here .... */}
-          {/* <Faq/> */}
+          <div className="w-full flex flex-col items-center p-2 md:p-0 justify-center mt-20 bg-white">
+  <div className="max-w-5xl mx-auto py-8 md:mt-20">
+    <h2 className="lg:text-[36px] text-[20px] font-bold text-center text-blue-600">
+      FAQs :
+      <span className="ml-2 text-gray-800">Here’s everything you may ask...</span>
+    </h2>
+
+    <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {faqs.map((faq, index) => (
+        <div key={index} className="border-2 border-gray-300 mb-2">
+          <button
+            className="w-full text-left flex justify-between items-center p-4 text-lg text-gray-800 font-semibold hover:bg-gray-100 focus:outline-none"
+            onClick={() => toggleAccordion(index)}
+          >
+            {faq.question}
+            <span>{activeIndex === index ? "-" : "+"}</span>
+          </button>
+          {activeIndex === index && (
+            <div className="p-4 text-gray-700 bg-gray-50">{faq.answer}</div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div className="flex flex-col justify-center items-center lg:mr-10 mt-5 mb-40">
+
+    <button
+      className="px-14 py-4 rounded-full font-bold text-white"
+      style={{
+        background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+      }}
+      onClick={() => {
+        scrollToTop();
+      }}
+      
+    >
+     BOOK FREE CONSULTATION CALL
+    </button>
+  </div>
+</div>
+
         </div>
       </div>
 
-      <footer className=" z-50  fixed bottom-0 left-0 w-full bg-black text-white p-2">
+      
+
+      <footer className=" z-50 py-6   fixed bottom-0 left-0 w-full bg-black text-white p-2">
         <div className="md:w-5/6 mx-auto">
           <div className="flex justify-between items-center">
             <div>
-              <p className="md:text-5xl text-xl font-semibold  text-[#F15A29] ">
-                ₹7999
-                <span className="ml-3 md:text-2xl text-xs line-through">
+              <p className="md:text-4xl text-xl font-semibold  text-[#F15A29] ">
+                Free Strike off
+                <span className="ml-3 md:text-4xl text-xs line">
                   {" "}
-                  ₹22495
+                  ₹7993
                 </span>
               </p>
               <p className="md:text-lg  text-sm font-semibold">
@@ -1297,7 +1399,7 @@ const Webinar = () => {
                   scrollToTop();
                 }}
               >
-                Book Free Consultation Call
+                BOOK FREE CONSULTATION CALL
               </button>
             </div>
           </div>
