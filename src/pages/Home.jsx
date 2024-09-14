@@ -7,6 +7,7 @@ import { Footer } from "../components/Footer";
 import WebinarPopup from "../components/WebinarPopup";
 import { ImSpinner8 } from "react-icons/im";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const Home = () => {
   const [popupForm, setpopForm] = useState(false);
@@ -41,9 +42,8 @@ const Home = () => {
       );
 
       if (data?.success) {
+        toast.success("You will get the course access within 24 hours!");
         localStorage.setItem("popUpForm", true);
-        // window.location.href =
-        //   "https://courses.qriocity.in/single-checkout/66b35ef1dee0af7f1cf35ee4?pid=p1";
         setPopuploading(false);
         setpopForm(false);
       }
@@ -53,7 +53,9 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (!isFilled) setpopForm(true);
+    setTimeout(() => {
+      if (!isFilled) setpopForm(true);
+    }, 1500);
   }, []);
   return (
     <>
@@ -61,7 +63,7 @@ const Home = () => {
         <Hero />
         {popupForm && (
           <div className="fixed inset-0 bg-black h-screen  bg-opacity-10 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-gradient-to-bl from-orange-500 via-slate-500 to-white z-50  rounded-lg shadow-lg w-96 p-4 text-white flex flex-col">
+            <div className="bg-gradient-to-bl from-green-500 via-slate-500 to-slate-200 z-50  rounded-lg shadow-lg w-96 p-4 text-white flex flex-col">
               <h1
                 onClick={handleClose}
                 className="place-self-end cursor-pointer text-4xl font-bold text-gray-100"
@@ -69,7 +71,7 @@ const Home = () => {
                 &times;
               </h1>
               <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">
-                Get Your Free DSA Course!!
+                Fill the form and get Your Free DSA Course!!
               </h2>
 
               <div>
@@ -167,6 +169,7 @@ const Home = () => {
         <Courses />
         <Project />
         <Testimonial />
+        <Toaster position="top-center" reverseOrder={false} />
       </div>
       <Footer />
     </>
