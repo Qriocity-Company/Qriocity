@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import Faq from "../components/Faq";
 import "../styles/Contact.css";
 import User1 from "../assets/user_01.jpg";
@@ -254,6 +254,16 @@ const MainCard = ({ setShowForm }) => {
     // Facebook Pixel - Track form submission event
     window.fbq("track", "Form Submission"); // You can name this event 'Lead' or any custom event name like 'FormSubmission'
 
+    // Google Tag - Track form submission event
+    if (window.gtag) {
+      window.gtag("event", "form_submission", {
+        event_category: "Contact Form",
+        event_label: "Lead Form", // You can customize the label
+        value: 1, // Optional value, like a conversion count
+      });
+    }
+
+    // Proceed with form submission
     await fetch("https://crm-backend-o6sb.onrender.com/customer/send", {
       method: "POST",
       headers: {
@@ -261,24 +271,25 @@ const MainCard = ({ setShowForm }) => {
       },
       body: JSON.stringify({ formData }),
     });
+
     setLoading(false);
-     // Custom styled alert using SweetAlert2
-     Swal.fire({
-      title: 'Thank You!',
-      text: 'Thanks for contacting, our team will contact you shortly.',
-      icon: 'success',
-      confirmButtonText: 'OK',
-      background: '#f4f4f4',
+
+    // Custom styled alert using SweetAlert2
+    Swal.fire({
+      title: "Thank You!",
+      text: "Thanks for contacting, our team will contact you shortly.",
+      icon: "success",
+      confirmButtonText: "OK",
+      background: "#f4f4f4",
       customClass: {
-          popup: 'rounded-lg', // Customize popup style
-          title: 'font-bold text-lg', // Customize title style
-          content: 'text-md', // Customize content style
+        popup: "rounded-lg", // Customize popup style
+        title: "font-bold text-lg", // Customize title style
+        content: "text-md", // Customize content style
       },
-  });
+    });
 
     await updateSpreadSheet();
     handleClick();
-    
 
     // Reset form fields after submission
     setFormData({
@@ -793,7 +804,7 @@ const Webinar = () => {
                   scrollToTop();
                 }}
               >
-               SOLVE ALL YOUR PROBLEMS NOW
+                SOLVE ALL YOUR PROBLEMS NOW
               </button>
             </div>
           </div>
@@ -836,9 +847,9 @@ const Webinar = () => {
             </div>
             <img src={Group} />
           </div> */}
-<div className="bg-[#EDEDED] mt-20 flex flex-col justify-start items-center p-4">
+          <div className="bg-[#EDEDED] mt-20 flex flex-col justify-start items-center p-4">
             <h1 className="font-bold lg:text-4xl lg:mt-20 mt-8">
-            Start with a  {" "}
+              Start with a{" "}
               <span
                 className="lg:px-8 lg:py-2 px-4 py-1 rounded-2xl font-bold text-white"
                 style={{
@@ -893,7 +904,6 @@ const Webinar = () => {
               {timelineData.map((item, index) => (
                 <div
                   key={index}
-                 
                   className={`flex flex-col md:flex-row ${
                     index % 2 === 0 ? "md:flex-row-reverse" : ""
                   } justify-center  items-center gap-10 md:gap-20 z-40`}
@@ -910,7 +920,6 @@ const Webinar = () => {
               ))}
             </div>
           </div>
-
 
           <div className="md:mt-20 mt-10 text-center md:p-16 p-2 ">
             <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
@@ -1301,8 +1310,6 @@ const Webinar = () => {
             </div>
           </div>
 
-          
-
           {/* Exclusive Offer section  */}
           {/* <div className="md:mt-20 mt-10 text-center ">
             <div className="md:text-6xl bg-white w-full  text-2xl md:p-5 p-2 px-20 text-center text-black mb-10 font-[500] flex  items-center justify-center gap-5 ">
@@ -1544,7 +1551,7 @@ const Webinar = () => {
                   scrollToTop();
                 }}
               >
-              BOOK YOUR FREE CONSULTATION CALL NOW
+                BOOK YOUR FREE CONSULTATION CALL NOW
               </button>
             </div>
           </div>
