@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Swal from 'sweetalert2';
 import Faq from "../components/Faq";
 import "../styles/Contact.css";
 import User1 from "../assets/user_01.jpg";
@@ -259,10 +260,24 @@ const MainCard = ({ setShowForm }) => {
       },
       body: JSON.stringify({ formData }),
     });
+    setLoading(false);
+     // Custom styled alert using SweetAlert2
+     Swal.fire({
+      title: 'Thank You!',
+      text: 'Thanks for contacting, our team will contact you shortly.',
+      icon: 'success',
+      confirmButtonText: 'OK',
+      background: '#f4f4f4',
+      customClass: {
+          popup: 'rounded-lg', // Customize popup style
+          title: 'font-bold text-lg', // Customize title style
+          content: 'text-md', // Customize content style
+      },
+  });
 
     await updateSpreadSheet();
     handleClick();
-    setLoading(false);
+    
 
     // Reset form fields after submission
     setFormData({
@@ -270,6 +285,9 @@ const MainCard = ({ setShowForm }) => {
       senderEmail: "",
       phoneNumber: "",
       message: "",
+      departmentCollege: "",
+      YearCollege: "",
+      College: "",
     });
 
     // Show popup for 2.5 seconds
@@ -474,6 +492,7 @@ const MainCard = ({ setShowForm }) => {
             className="p-4 bg-white rounded-lg outline-none w-full"
             value={formData.College}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="flex  flex-col  mt-5 md:mt-10  md:flex-row w-[100%] justify-between gap-4 text-black">
@@ -484,6 +503,7 @@ const MainCard = ({ setShowForm }) => {
             className="p-4 bg-white rounded-lg outline-none w-full"
             value={formData.departmentCollege}
             onChange={handleChange}
+            required
           />
           <input
             type="text"
@@ -492,6 +512,7 @@ const MainCard = ({ setShowForm }) => {
             className="p-4 bg-white rounded-lg outline-none w-full"
             value={formData.YearCollege}
             onChange={handleChange}
+            required
           />
           <input
             type="text"
@@ -500,11 +521,12 @@ const MainCard = ({ setShowForm }) => {
             className="p-4 bg-white rounded-lg outline-none w-full"
             value={formData.message}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="flex justify-center items-center">
           <button
-            className="btn mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl  flex justify-center items-center"
+            className="btn mt-10  font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl  flex justify-center items-center"
             type="submit"
           >
             {" "}
@@ -683,7 +705,7 @@ const Webinar = () => {
             <ContentCard content="PPT’s and Reports in your college format " />
             <ContentCard content="24/7 Support through WhatsApp" />
             <button
-              className="btn md:mt-20  mt-10 text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
+              className="btn md:mt-20 font-bold  mt-10 text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
               onClick={() => {
                 scrollToTop();
@@ -879,7 +901,7 @@ const Webinar = () => {
             </div>
           </div>
 
-          
+
           <div className="md:mt-20 mt-10 text-center md:p-16 p-2 ">
             <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
               End-to-End Project Solution
