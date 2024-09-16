@@ -467,12 +467,17 @@ const MainCard = ({ setShowForm }) => {
 
   const location = useLocation();
   useEffect(() => {
-    if (window.gtag) {
-      window.gtag("config", "AW-11433484632", {
-        page_path: location.pathname,
-      });
-    }
+    let timeoutId = setTimeout(() => {
+      if (window.gtag) {
+        window.gtag("config", "AW-11433484632", {
+          page_path: location.pathname,
+        });
+      }
+    }, 500); // Delay of 500ms to prevent multiple fires in quick succession
+
+    return () => clearTimeout(timeoutId);
   }, [location]);
+
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
       <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
