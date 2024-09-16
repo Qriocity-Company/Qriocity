@@ -487,7 +487,7 @@ const MainCard = ({ setShowForm }) => {
         Leave the project to us and get your dream job
       </p>
 
-      <form className="w-[80%] mt-8">
+      <form onSubmit={onSubmit} className="w-[80%] mt-8">
         <div className="flex  flex-col  md:flex-row w-[100%] justify-between gap-4 text-black">
           <input
             type="text"
@@ -552,7 +552,6 @@ const MainCard = ({ setShowForm }) => {
         </div>
         <div className="flex justify-center items-center">
           <button
-            onClick={onSubmit}
             className="btn mt-10  font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl  flex justify-center items-center"
             type="submit"
           >
