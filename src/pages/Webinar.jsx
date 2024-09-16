@@ -651,12 +651,6 @@ const Webinar = () => {
     }
   };
 
-  useEffect(() => {
-    // setTimeout(() => {
-    //   setShowForm(true);
-    // }, 5000);
-  }, []);
-
   const offerEndTime = new Date();
   offerEndTime.setHours(offerEndTime.getHours() + 12);
 
