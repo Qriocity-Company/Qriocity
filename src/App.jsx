@@ -27,6 +27,7 @@ import Fullstack from "./pages/Fullstack";
 import FullStack from "./pages/Fullstack";
 import BootCamp from "./pages/BootCamp";
 import ProjectWorkshop from "./pages/ProjectWorkshop";
+import WebinarAds from "./pages/WebinarAds";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           {/*<Route path="/courses" element={<OurCourses />} />*/}
           <Route path="/about" element={<AboutUs />} />
           <Route path="/consultations" element={<Webinar />} />
+          <Route path="/consultationsAds" element={<WebinarAds />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:blog" element={<BlogItem />} />
           <Route
