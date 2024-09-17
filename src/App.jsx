@@ -42,8 +42,8 @@ function App() {
           {/*<Route path="/courses" element={<OurCourses />} />*/}
           <Route path="/about" element={<AboutUs />} />
           <Route path="/consultations" element={<Webinar />} />
-          <Route path="/bookAcall" element={<WebinarAds />} />
-          <Route path="/bookacallnow" element={<WebinarGoogleAds />} />
+          <Route exact path="/bookAcall" element={<WebinarAds />} />
+          <Route exact path="/bookacall" element={<WebinarGoogleAds />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:blog" element={<BlogItem />} />
           <Route
