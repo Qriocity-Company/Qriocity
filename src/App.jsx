@@ -43,7 +43,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/consultations" element={<Webinar />} />
           <Route exact path="/bookAcall" element={<WebinarAds />} />
-          <Route exact path="/bookacall" element={<WebinarGoogleAds />} />
+          <Route exact path="/bookacallnow" element={<WebinarGoogleAds />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:blog" element={<BlogItem />} />
           <Route
