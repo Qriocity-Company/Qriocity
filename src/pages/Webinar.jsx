@@ -65,6 +65,7 @@ import internship from "../assets/internship.png";
 import hacks from "../assets/hacks.png";
 import interviewprep from "../assets/interviewprep.png";
 import { useLocation } from "react-router";
+import { Helmet } from "react-helmet";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
@@ -248,65 +249,83 @@ const MainCard = ({ setShowForm }) => {
     }));
   };
   async function onSubmit(event) {
-    setLoading(true);
-    event.preventDefault();
+    event.preventDefault(); // Prevent the default form submission behavior
+    setLoading(true); // Show loading state
 
     // Facebook Pixel - Track form submission event
-    window.fbq("track", "Form Submission"); // You can name this event 'Lead' or any custom event name like 'FormSubmission'
+    if (window.fbq) {
+      window.fbq("track", "Form Submission"); // Custom event name 'Form Submission'
+    }
 
-    // Google Tag - Track form submission event
+    // Google Analytics - Track form submission event
     if (window.gtag) {
       window.gtag("event", "form_submission", {
         event_category: "Contact Form",
-        event_label: "Lead Form", // You can customize the label
+        event_label: "Lead Form", // Customize the label as needed
         value: 1, // Optional value, like a conversion count
       });
     }
 
-    // Proceed with form submission
-    await fetch("https://crm-backend-o6sb.onrender.com/customer/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ formData }),
-    });
+    try {
+      // Proceed with form submission
+      await fetch("https://crm-backend-o6sb.onrender.com/customer/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ formData }),
+      });
 
-    setLoading(false);
+      // Custom styled alert using SweetAlert2
+      Swal.fire({
+        title: "Thank You!",
+        text: "Thanks for contacting, our team will contact you shortly.",
+        icon: "success",
+        confirmButtonText: "OK",
+        background: "#f4f4f4",
+        customClass: {
+          popup: "rounded-lg", // Customize popup style
+          title: "font-bold text-lg", // Customize title style
+          content: "text-md", // Customize content style
+        },
+      });
 
-    // Custom styled alert using SweetAlert2
-    Swal.fire({
-      title: "Thank You!",
-      text: "Thanks for contacting, our team will contact you shortly.",
-      icon: "success",
-      confirmButtonText: "OK",
-      background: "#f4f4f4",
-      customClass: {
-        popup: "rounded-lg", // Customize popup style
-        title: "font-bold text-lg", // Customize title style
-        content: "text-md", // Customize content style
-      },
-    });
+      await updateSpreadSheet(); // Update the spreadsheet if needed
+      handleClick(); // Additional logic or redirection after form submission
 
-    await updateSpreadSheet();
-    handleClick();
+      // Reset form fields after submission
+      setFormData({
+        name: "",
+        senderEmail: "",
+        phoneNumber: "",
+        message: "",
+        departmentCollege: "",
+        YearCollege: "",
+        College: "",
+      });
 
-    // Reset form fields after submission
-    setFormData({
-      name: "",
-      senderEmail: "",
-      phoneNumber: "",
-      message: "",
-      departmentCollege: "",
-      YearCollege: "",
-      College: "",
-    });
-
-    // Show popup for 2.5 seconds
-    setShowPopup(true);
-    setTimeout(() => {
-      setShowPopup(false);
-    }, 2500);
+      // Show popup for 2.5 seconds
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 2500);
+    } catch (error) {
+      console.error("Error during form submission:", error);
+      Swal.fire({
+        title: "Error!",
+        text: "There was an issue with the form submission. Please try again.",
+        icon: "error",
+        confirmButtonText: "OK",
+        background: "#f4f4f4",
+        customClass: {
+          popup: "rounded-lg",
+          title: "font-bold text-lg",
+          content: "text-md",
+        },
+      });
+    } finally {
+      setLoading(false); // Hide loading state
+    }
   }
 
   const handleSubmit = (e) => {
@@ -465,101 +484,128 @@ const MainCard = ({ setShowForm }) => {
       );
   };
 
-  const location = useLocation();
   useEffect(() => {
     if (window.gtag) {
-      window.gtag("config", "AW-11433484632", {
-        page_path: location.pathname,
+      window.gtag("config", "G-32E3FF3TEW", {
+        page_path: "/webinar",
       });
     }
-  }, [location]);
+  }, []); // Run once on mount
+
+  useEffect(() => {
+    if (window.fbq) {
+      window.fbq("track", "ViewContent", {
+        content_name: "Consultaion Page",
+        content_category: "Consultation",
+        value: 0,
+      });
+    }
+  }, []);
   return (
-    <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
-      <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
-        Quick, Quality Projects <br /> Delivered in 1 Day
+    <>
+      <Helmet>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-32E3FF3TEW"
+        ></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-32E3FF3TEW', {
+              page_path: '/webinar',
+            });
+          `}
+        </script>
+      </Helmet>
+      <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
+        <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
+          Quick, Quality Projects <br /> Delivered in 1 Day
+        </div>
+        <p className="text-[#FBA154] md:text-3xl mt-5 ">
+          Leave the project to us and get your dream job
+        </p>
+
+        <form onSubmit={onSubmit} className="w-[80%] mt-8">
+          <div className="flex  flex-col  md:flex-row w-[100%] justify-between gap-4 text-black">
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter Name"
+              className="p-4 bg-white rounded-lg outline-none w-full "
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="text"
+              maxlength="10"
+              pattern="\d{10}"
+              name="phoneNumber"
+              placeholder="Enter Contact Number"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="text"
+              name="College"
+              placeholder="College Name"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.College}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="flex  flex-col  mt-5 md:mt-10  md:flex-row w-[100%] justify-between gap-4 text-black">
+            <input
+              type="text"
+              name="departmentCollege"
+              placeholder="Enter Department"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.departmentCollege}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="YearCollege"
+              placeholder="Enter year of studying"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.YearCollege}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="message"
+              placeholder="Enter Message"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              className="btn mt-10  font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl  flex justify-center items-center"
+              type="submit"
+            >
+              {" "}
+              {loading ? (
+                <ImSpinner8 size={30} className="animate-spin" />
+              ) : (
+                "BOOK FREE CONSULTATION CALL"
+              )}
+            </button>
+          </div>
+        </form>
       </div>
-      <p className="text-[#FBA154] md:text-3xl mt-5 ">
-        Leave the project to us and get your dream job
-      </p>
-
-      <form onSubmit={onSubmit} className="w-[80%] mt-8">
-        <div className="flex  flex-col  md:flex-row w-[100%] justify-between gap-4 text-black">
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter Name"
-            className="p-4 bg-white rounded-lg outline-none w-full "
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="text"
-            maxlength="10"
-            pattern="\d{10}"
-            name="phoneNumber"
-            placeholder="Enter Contact Number"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="text"
-            name="College"
-            placeholder="College Name"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.College}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="flex  flex-col  mt-5 md:mt-10  md:flex-row w-[100%] justify-between gap-4 text-black">
-          <input
-            type="text"
-            name="departmentCollege"
-            placeholder="Enter Department"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.departmentCollege}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="YearCollege"
-            placeholder="Enter year of studying"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.YearCollege}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="message"
-            placeholder="Enter Message"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="flex justify-center items-center">
-          <button
-            className="btn mt-10  font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl  flex justify-center items-center"
-            type="submit"
-          >
-            {" "}
-            {loading ? (
-              <ImSpinner8 size={30} className="animate-spin" />
-            ) : (
-              "BOOK FREE CONSULTATION CALL"
-            )}
-          </button>
-        </div>
-      </form>
-    </div>
+    </>
   );
 };
 
