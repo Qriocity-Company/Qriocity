@@ -494,7 +494,7 @@ const MainCard = ({ setShowForm }) => {
 
   useEffect(() => {
     if (window.fbq) {
-      window.fbq("track", "View content", {
+      window.fbq("track", "ViewContent", {
         content_name: "Consultaion Page",
         content_category: "Consultation",
         value: 0,
