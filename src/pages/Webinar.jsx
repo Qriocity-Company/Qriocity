@@ -343,8 +343,6 @@ const MainCard = ({ setShowForm }) => {
     }
   }, []);
 
-
-
   const updateSpreadSheet = async () => {
     const currentDate = new Date();
     const day = String(currentDate.getDate()).padStart(2, "0");
@@ -358,7 +356,7 @@ const MainCard = ({ setShowForm }) => {
     const seconds = String(currentDate.getSeconds()).padStart(2, "0");
     const formattedTime = `${hours}:${minutes}:${seconds}`;
     try {
-      fetch("https://sheetdb.io/api/v1/jjsk0slgx4fy2", {
+      fetch(process.env.REACT_APP_SHEETDB_API, {
         method: "POST",
         headers: {
           Accept: "application/json",
