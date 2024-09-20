@@ -343,6 +343,8 @@ const MainCard = ({ setShowForm }) => {
     }
   }, []);
 
+
+
   const updateSpreadSheet = async () => {
     const currentDate = new Date();
     const day = String(currentDate.getDate()).padStart(2, "0");

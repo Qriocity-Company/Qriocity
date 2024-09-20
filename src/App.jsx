@@ -1,11 +1,10 @@
 // App.js
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { Navbar } from "./components/Navbar";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
-import OurCourses from "./pages/OurCourses";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AboutUs from "./pages/AboutUs";
 import { Footer } from "./components/Footer";
@@ -24,16 +23,45 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 import Placement from "./pages/Placement";
 import Dsa from "./pages/Dsa";
 import Fullstack from "./pages/Fullstack";
-import FullStack from "./pages/Fullstack";
 import BootCamp from "./pages/BootCamp";
 import ProjectWorkshop from "./pages/ProjectWorkshop";
 import WebinarAds from "./pages/WebinarAds";
 import WebinarGoogleAds from "./pages/WebinarGoogleAds";
 
 function App() {
+  useEffect(() => {
+    // Facebook Pixel code
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
+    );
+
+    fbq("init", "6604459609678289");
+    fbq("track", "ViewContent");
+  }, []);
+
   return (
     <Router>
-      <div className="bg-[rgb(0,0,0)] z-50  flex flex-col overflow-hidden">
+      <div className="bg-[rgb(0,0,0)] z-50 flex flex-col overflow-hidden">
         <Navbar />
         <Routes>
           <Route index path="/" element={<Home />} />
