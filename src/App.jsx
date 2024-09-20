@@ -85,7 +85,7 @@ function App() {
           <Route path="/webinar" element={<RoadMap />} />
           <Route path="/courses" element={<Placement />} />
           <Route path="/DsaBootcamp" element={<Dsa />} />
-          <Route path="/FullstackBootcamp" element={<FullStack />} />
+          <Route path="/FullstackBootcamp" element={<Fullstack />} />
           <Route path="/Bootcamp" element={<BootCamp />} />
           <Route path="/projectWorkshop" element={<ProjectWorkshop />} />
           {/* <Route path="*" element={<NoPage />} /> */}
