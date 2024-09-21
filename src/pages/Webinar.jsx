@@ -230,6 +230,7 @@ const MainCard = ({ setShowForm }) => {
   const [college, setCollege] = useState();
   const [year, setYear] = useState();
   const filled = localStorage.getItem("PopUp");
+  const pixelID = 6604459609678289;
 
   const [formData, setFormData] = useState({
     name: "",
@@ -250,13 +251,12 @@ const MainCard = ({ setShowForm }) => {
   };
   async function onSubmit(event) {
     event.preventDefault(); // Prevent the default form submission behavior
+
     setLoading(true); // Show loading state
 
     // Facebook Pixel - Track form submission event
-    if (window.fbq) {
-      window.fbq("track", "Form Submission"); // Custom event name 'Form Submission'
-    }
 
+    window.fbq("track", "Form Submission");
     // Google Analytics - Track form submission event
     if (window.gtag) {
       window.gtag("event", "form_submission", {
@@ -338,6 +338,38 @@ const MainCard = ({ setShowForm }) => {
     setpopForm(false);
   };
   useEffect(() => {
+    // Check if Facebook Pixel script is already present
+    if (!window.fbq) {
+      // Dynamically inject the Facebook Pixel script into the page
+      (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+
+      // Initialize Facebook Pixel with the provided Pixel ID
+      window.fbq("init", pixelID);
+    }
+  }, [pixelID]); // Re-run the effect only if pixelId changes
+  useEffect(() => {
     if (!filled) {
       setpopForm(true);
     }
@@ -356,7 +388,7 @@ const MainCard = ({ setShowForm }) => {
     const seconds = String(currentDate.getSeconds()).padStart(2, "0");
     const formattedTime = `${hours}:${minutes}:${seconds}`;
     try {
-      fetch(process.env.REACT_APP_SHEETDB_API, {
+      fetch("https://sheetdb.io/api/v1/jjsk0slgx4fy2", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -493,13 +525,7 @@ const MainCard = ({ setShowForm }) => {
   }, []); // Run once on mount
 
   useEffect(() => {
-    if (window.fbq) {
-      window.fbq("track", "ViewContent", {
-        content_name: "Consultaion Page",
-        content_category: "Consultation",
-        value: 0,
-      });
-    }
+    window.fbq("track", "PageView");
   }, []);
   return (
     <>
