@@ -229,6 +229,7 @@ const MainCard = ({ setShowForm }) => {
   const [college, setCollege] = useState();
   const [year, setYear] = useState();
   const filled = localStorage.getItem("PopUp");
+  const location = useLocation();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -251,18 +252,6 @@ const MainCard = ({ setShowForm }) => {
     setLoading(true);
     event.preventDefault();
 
-    // Facebook Pixel - Track form submission event
-    window.fbq("track", "Form Submission"); // You can name this event 'Lead' or any custom event name like 'FormSubmission'
-
-    // Google Tag - Track form submission event
-    if (window.gtag) {
-      window.gtag("event", "form_submission", {
-        event_category: "Contact Form",
-        event_label: "Lead Form", // You can customize the label
-        value: 1, // Optional value, like a conversion count
-      });
-    }
-
     // Proceed with form submission
     await fetch(
       "https://crm-backend-o6sb.onrender.com/googleadsCustomer/send",
@@ -276,6 +265,14 @@ const MainCard = ({ setShowForm }) => {
     );
 
     setLoading(false);
+
+    if (window.gtag) {
+      window.gtag("event", "form_submission", {
+        event_category: "Form",
+        event_label: "Contact Form",
+        value: 1,
+      });
+    }
 
     // Custom styled alert using SweetAlert2
     Swal.fire({
@@ -468,14 +465,11 @@ const MainCard = ({ setShowForm }) => {
       );
   };
 
-  const location = useLocation();
   useEffect(() => {
-    if (window.gtag) {
-      window.gtag("config", "AW-11433484632", {
-        page_path: location.pathname,
-      });
-    }
-  }, [location]);
+    window.gtag("config", "AW-11433484632", {
+      page_path: "Consultation Page",
+    });
+  }, []);
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
       <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">

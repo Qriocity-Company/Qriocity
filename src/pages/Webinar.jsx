@@ -66,7 +66,6 @@ import hacks from "../assets/hacks.png";
 import interviewprep from "../assets/interviewprep.png";
 import { useLocation } from "react-router";
 import { Helmet } from "react-helmet";
-import useFacebookPixel from "../hooks/facebookPixelHook";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
@@ -231,8 +230,6 @@ const MainCard = ({ setShowForm }) => {
   const [college, setCollege] = useState();
   const [year, setYear] = useState();
   const filled = localStorage.getItem("PopUp");
-  const pixelID = 6604459609678289;
-  useFacebookPixel(pixelID);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -254,18 +251,7 @@ const MainCard = ({ setShowForm }) => {
   async function onSubmit(event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
-    setLoading(true); // Show loading state
-
-    // Facebook Pixel - Track form submission event
-    window.fbq("track", "Form Submission");
-    // Google Analytics - Track form submission event
-    if (window.gtag) {
-      window.gtag("event", "form_submission", {
-        event_category: "Contact Form",
-        event_label: "Lead Form", // Customize the label as needed
-        value: 1, // Optional value, like a conversion count
-      });
-    }
+    setLoading(true);
 
     try {
       // Proceed with form submission
@@ -486,17 +472,6 @@ const MainCard = ({ setShowForm }) => {
       );
   };
 
-  useEffect(() => {
-    if (window.gtag) {
-      window.gtag("config", "G-32E3FF3TEW", {
-        page_path: "/webinar",
-      });
-    }
-  }, []); // Run once on mount
-
-  useEffect(() => {
-    window.fbq("track", "PageView");
-  }, []);
   return (
     <>
       <Helmet>

@@ -256,14 +256,6 @@ const MainCard = ({ setShowForm }) => {
 
     // Facebook Pixel - Track form submission event
     window.fbq("track", "Form Submission");
-    // Google Tag - Track form submission event
-    if (window.gtag) {
-      window.gtag("event", "form_submission", {
-        event_category: "Contact Form",
-        event_label: "Lead Form", // You can customize the label
-        value: 1, // Optional value, like a conversion count
-      });
-    }
 
     // Proceed with form submission
     await fetch("https://crm-backend-o6sb.onrender.com/adsCustomer/send", {
