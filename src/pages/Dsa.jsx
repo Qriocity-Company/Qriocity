@@ -82,7 +82,7 @@ const Dsa = () => {
   const [year2, setYear2] = useState("");
 
    const handleForm=()=>{
-    window.location.href="https://courses.qriocity.in/courses/DSA-5-Days-Live-Bootcamp-Batch-7-66d1a82aecbcc22b23e91bb9";
+    window.location.href="https://courses.qriocity.in/courses/DSA-5-Days-Live-Bootcamp-Batch-7-1727015864580-66f02bb8c599826fecee9f25";
    }
   const data2 = [
     { name: "Live Lectures", check1: "✅", check2: "✅" },
@@ -216,7 +216,7 @@ const Dsa = () => {
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={calendar} />
                 <h1 className="font-bold lg:text-xl text-lg flex flex-col justify-center items-start">
-                  September 20-25, <span>2024</span>
+                  September 25-30, <span>2024</span>
                   <span className="text-lg">7pm-9pm</span>{" "}
                 </h1>
                 

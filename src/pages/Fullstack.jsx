@@ -84,7 +84,7 @@ const FullStack = () => {
 
 
   const handleForm = () => {
-     window.location.href="https://courses.qriocity.in/courses/FullStack-5-Days-Live-Bootcamp-Batch-7-66d1a867f9270338c8f4b4d5"
+     window.location.href="https://courses.qriocity.in/courses/FullStack-5-Days-Live-Bootcamp-Batch-8-66f027343ca35479380be784?page=checkout&rzpCashfreeRedirectToPreCheckoutFlow=true&newCheckoutFlowParams=%2Ft%2Fpublic%2Fpre-checkout%2Fsingle-checkout%3FcourseId%3D66f027343ca35479380be784%26pid%3Dp1%26orderId%3DJtiWN1727015321311187%26courseAmount%3D99.0%26pg%3Dcashfree%26currencyCode%3DINR%26transactionId%3D66f029994fd73322511defad%26promoCode%3D50OFF#"
   };
   const data2 = [
     { name: "Live Lectures", check1: "✅", check2: "✅" },
@@ -219,7 +219,7 @@ const FullStack = () => {
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={calendar} />
                 <h1 className="font-bold lg:text-xl text-lg flex flex-col justify-center items-start">
-                  September 20-25, <span>2024</span>
+                  September 25-30, <span>2024</span>
                   <span className="text-lg">7pm-9pm</span>{" "}
                 </h1>
                 
