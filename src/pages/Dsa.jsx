@@ -82,7 +82,7 @@ const Dsa = () => {
   const [year2, setYear2] = useState("");
 
    const handleForm=()=>{
-    window.location.href="https://courses.qriocity.in/courses/DSA-5-Days-Live-Bootcamp-Batch-7-66d1a82aecbcc22b23e91bb9";
+    window.location.href="https://courses.qriocity.in/courses/DSA-5-Days-Live-Bootcamp-Batch-7-1727015864580-66f02bb8c599826fecee9f25";
    }
   const data2 = [
     { name: "Live Lectures", check1: "✅", check2: "✅" },
