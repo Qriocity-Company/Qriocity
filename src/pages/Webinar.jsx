@@ -257,7 +257,6 @@ const MainCard = ({ setShowForm }) => {
     setLoading(true); // Show loading state
 
     // Facebook Pixel - Track form submission event
-    console.log(window.fbq);
     window.fbq("track", "Form Submission");
     // Google Analytics - Track form submission event
     if (window.gtag) {

@@ -65,6 +65,7 @@ import internship from "../assets/internship.png";
 import hacks from "../assets/hacks.png";
 import interviewprep from "../assets/interviewprep.png";
 import { useLocation } from "react-router";
+import useFacebookPixel from "../hooks/facebookPixelHook";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
@@ -229,6 +230,8 @@ const MainCard = ({ setShowForm }) => {
   const [college, setCollege] = useState();
   const [year, setYear] = useState();
   const filled = localStorage.getItem("PopUp");
+  const pixelID = 6604459609678289;
+  useFacebookPixel(pixelID);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -252,7 +255,7 @@ const MainCard = ({ setShowForm }) => {
     event.preventDefault();
 
     // Facebook Pixel - Track form submission event
-
+    window.fbq("track", "Form Submission");
     // Google Tag - Track form submission event
     if (window.gtag) {
       window.gtag("event", "form_submission", {
@@ -463,6 +466,10 @@ const MainCard = ({ setShowForm }) => {
         }
       );
   };
+
+  useEffect(() => {
+    window.fbq("track", "PageView");
+  }, []);
 
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
