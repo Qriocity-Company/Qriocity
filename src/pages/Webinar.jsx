@@ -66,6 +66,7 @@ import hacks from "../assets/hacks.png";
 import interviewprep from "../assets/interviewprep.png";
 import { useLocation } from "react-router";
 import { Helmet } from "react-helmet";
+import useFacebookPixel from "../hooks/facebookPixelHook";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
@@ -231,6 +232,7 @@ const MainCard = ({ setShowForm }) => {
   const [year, setYear] = useState();
   const filled = localStorage.getItem("PopUp");
   const pixelID = 6604459609678289;
+  useFacebookPixel(pixelID);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -255,7 +257,7 @@ const MainCard = ({ setShowForm }) => {
     setLoading(true); // Show loading state
 
     // Facebook Pixel - Track form submission event
-
+    console.log(window.fbq);
     window.fbq("track", "Form Submission");
     // Google Analytics - Track form submission event
     if (window.gtag) {
@@ -337,38 +339,7 @@ const MainCard = ({ setShowForm }) => {
   const handleClose = () => {
     setpopForm(false);
   };
-  useEffect(() => {
-    // Check if Facebook Pixel script is already present
-    if (!window.fbq) {
-      // Dynamically inject the Facebook Pixel script into the page
-      (function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
 
-      // Initialize Facebook Pixel with the provided Pixel ID
-      window.fbq("init", pixelID);
-    }
-  }, [pixelID]); // Re-run the effect only if pixelId changes
   useEffect(() => {
     if (!filled) {
       setpopForm(true);
