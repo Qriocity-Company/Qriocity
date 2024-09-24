@@ -252,7 +252,7 @@ const MainCard = ({ setShowForm }) => {
     event.preventDefault();
 
     // Facebook Pixel - Track form submission event
-    window.fbq("trackCustom", "FormSubmission");
+    window.fbq("track", "Lead");
 
     // Proceed with form submission
     await fetch("https://crm-backend-o6sb.onrender.com/adsCustomer/send", {
