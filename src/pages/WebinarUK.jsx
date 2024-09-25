@@ -72,7 +72,7 @@ import { RiCustomerServiceFill } from "react-icons/ri";
 import { GrInProgress } from "react-icons/gr";
 import { MdIncompleteCircle } from "react-icons/md";
 import { HiOutlineDocumentReport } from "react-icons/hi";
-import { TbReportSearch } from "react-icons/tb";
+import { TbReportAnalytics, TbReportSearch } from "react-icons/tb";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
 
 // import MachineLearning from "../assets/machineLearning.svg";
@@ -543,7 +543,7 @@ const MainCard = ({ setShowForm }) => {
           />
 
           <PhoneInput
-            country="us"
+            country={"us"}
             inputProps={{ required: true }}
             maxlength="10"
             pattern="\d{10}"
@@ -934,7 +934,7 @@ const WebinarUK = () => {
               {/* Reusable Item Wrapper */}
               {[
                 {
-                  icon: <MdIncompleteCircle size="50px" color="white" />,
+                  icon: <TbReportAnalytics size="50px" color="white" />,
                   text: "Complete Dissertation/Thesis",
                 },
                 {
