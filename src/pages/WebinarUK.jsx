@@ -543,7 +543,7 @@ const MainCard = ({ setShowForm }) => {
           />
 
           <PhoneInput
-            country={"us"}
+            country={"gb"}
             inputProps={{ required: true }}
             maxlength="10"
             pattern="\d{10}"
