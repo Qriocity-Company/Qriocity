@@ -642,7 +642,9 @@ const ContentCard = ({ content }) => {
           </linearGradient>
         </defs>
       </svg>
-      <div className="text-white md:text-2xl text-xs font-[300]">{content}</div>
+      <div className="text-white md:text-2xl text-xs font-[300] text-start">
+        {content}
+      </div>
     </div>
   );
 };
