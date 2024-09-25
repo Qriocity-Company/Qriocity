@@ -616,7 +616,7 @@ const AchivementCard = ({ number, title }) => {
 
 const ContentCard = ({ content }) => {
   return (
-    <div className=" w-full rounded-xl border border-[#2ACDD0] p-6 flex gap-2 md:gap-10 items-center  mx-auto">
+    <div className=" w-full rounded-xl border border-[#2ACDD0] p-6 flex justify-start items-center gap-2 md:gap-10   mx-auto">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="27"
@@ -642,10 +642,7 @@ const ContentCard = ({ content }) => {
           </linearGradient>
         </defs>
       </svg>
-      <div className="text-white md:text-2xl text-xs font-[300]">
-        {" "}
-        {content}
-      </div>
+      <div className="text-white md:text-2xl text-xs font-[300]">{content}</div>
     </div>
   );
 };
@@ -932,62 +929,49 @@ const WebinarUK = () => {
               Our Deliverables
             </div>
             <div className="md:mt-20 mt-10 md:max-w-3xl max-w-[350px] text-center mx-auto bg-[#0C2F31] rounded-xl">
-              <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
-                <MdIncompleteCircle size="50px" color="white" />
-                <div className="text-white md:text-2xl text-xs font-[300]">
-                  {" "}
-                  Complete Dissertation/Thesis
+              {/* Reusable Item Wrapper */}
+              {[
+                {
+                  icon: <MdIncompleteCircle size="50px" color="white" />,
+                  text: "Complete Dissertation/Thesis",
+                },
+                {
+                  icon: <HiOutlineDocumentReport size="50px" color="white" />,
+                  text: "Turnitin Report for AI and Plagiarism",
+                },
+                {
+                  icon: <TbReportSearch size="50px" color="white" />,
+                  text: "Data Analysis Reports for both qualitative & quantitative research",
+                },
+                {
+                  icon: <FaSchool size="50px" color="white" />,
+                  text: "Custom Formatting according to your institution",
+                },
+                {
+                  icon: <LiaChalkboardTeacherSolid size="50px" color="white" />,
+                  text: "Unlimited revisions according to your guide",
+                },
+                {
+                  icon: <GrInProgress size="50px" color="white" />,
+                  text: "Progress Reports at every stage",
+                },
+                {
+                  icon: <RiCustomerServiceFill size="50px" color="white" />,
+                  text: "24/7 Customer Support",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="p-6 flex items-center gap-6 md:gap-10"
+                >
+                  <div className="flex-shrink-0">{item.icon}</div>
+                  <div className="text-white text-left md:text-2xl text-xs font-light">
+                    {item.text}
+                  </div>
                 </div>
-              </div>
-
-              <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
-                <HiOutlineDocumentReport size="50px" color="white" />
-                <div className="text-white md:text-2xl text-xs font-[300]">
-                  {" "}
-                  Turnitin Report for AI and Plagiarism
-                </div>
-              </div>
-
-              <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
-                <TbReportSearch size="50px" color="white" />
-                <div className="text-white md:text-2xl text-xs text-start font-[300]">
-                  {" "}
-                  Data Analysis Reports for both qualitative & quantitative
-                  research
-                </div>
-              </div>
-
-              <div className=" p-6 flex gap-3 md:gap-10   md:ml-10 items-center  mx-auto">
-                <FaSchool size="50px" color="white" />
-                <div className="text-white md:text-2xl text-xs font-[300] text-start">
-                  {" "}
-                  Custom Formatting according to your institution
-                </div>
-              </div>
-
-              <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
-                <LiaChalkboardTeacherSolid size="50px" color="white" />
-                <div className="text-white md:text-2xl text-xs font-[300]">
-                  {" "}
-                  Unlimited revisions according to your guide
-                </div>
-              </div>
-
-              <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
-                <GrInProgress size="50px" color="white" />
-                <div className="text-white md:text-2xl text-xs font-[300]">
-                  {" "}
-                  Progress Reports at every stage
-                </div>
-              </div>
-              <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
-                <RiCustomerServiceFill size="50px" color="white" />
-                <div className="text-white md:text-2xl text-xs font-[300]">
-                  {" "}
-                  24/7 Customer Support
-                </div>
-              </div>
+              ))}
             </div>
+
             <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 ">
               <button
                 className="lg:px-14 lg:py-4 p-6  rounded-full font-bold text-white"
@@ -1214,7 +1198,7 @@ const WebinarUK = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center lg:mr-10 mt-[200px] ">
+            <div className="flex flex-col justify-center items-center lg:mr-10 mt-[250px] ">
               <button
                 className="px-10 py-2 lg:px-14 lg:py-4 rounded-full font-bold text-white"
                 style={{
