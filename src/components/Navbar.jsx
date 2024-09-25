@@ -41,8 +41,11 @@ export const Navbar = () => {
           <Link to="/consultations" className={isRouteActive("/consultations")}>
             Free Consultations
           </Link>
-          <Link to="/webinar" className={isRouteActive("/webinar")}>
-            Webinar
+          <Link
+            to="/projectWorkshop"
+            className={isRouteActive("/projectWorkshop")}
+          >
+            Project Workshop
           </Link>
           <Link to="/Bootcamp" className={isRouteActive("/Bootcamp")}>
             Bootcamp
@@ -116,14 +119,15 @@ export const Navbar = () => {
             >
               Free Consultations
             </Link>
+
             <Link
-              to="/webinar"
+              to="/projectWorkshop"
               className={isRouteActive("/webinar")}
               onClick={() => {
                 toggleMenu();
               }}
             >
-              Webinar
+              Project Workshop
             </Link>
             <Link
               to="/Bootcamp"
