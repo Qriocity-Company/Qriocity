@@ -521,84 +521,86 @@ const MainCard = ({ setShowForm }) => {
   }, []);
 
   return (
-    <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
-      <div className="lg:text-[60px] md:text-5xl  text-3xl md:leading-[72px]  mt-8">
-        Quick, Quality Thesis &<br /> Dissertations delivered with 0% AI and
-        plagiarism
+    <div className="p-4">
+      <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
+        <div className="lg:text-[60px] md:text-5xl  text-3xl md:leading-[72px]  mt-8">
+          Quick, Quality Thesis &<br /> Dissertations delivered with 0% AI and
+          plagiarism
+        </div>
+        <p className="text-[#FBA154] md:text-3xl mt-5 ">
+          Leave the project to us and get your dream job
+        </p>
+
+        <form onSubmit={onSubmit} className="w-[80%] mt-8">
+          <div className="flex  flex-col  md:flex-row w-[100%] justify-between gap-4 text-black">
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter Name"
+              className="p-4 bg-white rounded-lg outline-none w-full "
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+
+            <PhoneInput
+              country={"gb"}
+              inputProps={{ required: true }}
+              maxlength="10"
+              pattern="\d{10}"
+              name="phoneNumber"
+              placeholder="Enter Contact Number"
+              className="  rounded-lg outline-none w-full" // Set to w-full
+              value={formData.phoneNumber}
+              onChange={(phoneNumber) =>
+                setFormData((prevState) => ({
+                  ...prevState,
+                  phoneNumber,
+                }))
+              }
+              required
+              inputStyle={{
+                height: "56px",
+                width: "100%",
+              }}
+            />
+          </div>
+          <div className="flex  flex-col  mt-5 md:mt-10  md:flex-row w-[100%] justify-between gap-4 text-black">
+            <input
+              type="text"
+              name="College"
+              placeholder="Field Of Study "
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.College}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="text"
+              name="departmentCollege"
+              placeholder="Your requirement"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.departmentCollege}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="flex justify-center items-center">
+            <button
+              className="btn mt-10  lg:font-bold font-semibold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-6 md:px-16 md:py-4 py-2 rounded-full md:text-xl  flex justify-center items-center"
+              type="submit"
+            >
+              {" "}
+              {loading ? (
+                <ImSpinner8 size={30} className="animate-spin" />
+              ) : (
+                "BOOK FREE CONSULTATION CALL"
+              )}
+            </button>
+          </div>
+        </form>
       </div>
-      <p className="text-[#FBA154] md:text-3xl mt-5 ">
-        Leave the project to us and get your dream job
-      </p>
-
-      <form onSubmit={onSubmit} className="w-[80%] mt-8">
-        <div className="flex  flex-col  md:flex-row w-[100%] justify-between gap-4 text-black">
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter Name"
-            className="p-4 bg-white rounded-lg outline-none w-full "
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-
-          <PhoneInput
-            country={"gb"}
-            inputProps={{ required: true }}
-            maxlength="10"
-            pattern="\d{10}"
-            name="phoneNumber"
-            placeholder="Enter Contact Number"
-            className="  rounded-lg outline-none w-full" // Set to w-full
-            value={formData.phoneNumber}
-            onChange={(phoneNumber) =>
-              setFormData((prevState) => ({
-                ...prevState,
-                phoneNumber,
-              }))
-            }
-            required
-            inputStyle={{
-              height: "56px",
-              width: "100%",
-            }}
-          />
-        </div>
-        <div className="flex  flex-col  mt-5 md:mt-10  md:flex-row w-[100%] justify-between gap-4 text-black">
-          <input
-            type="text"
-            name="College"
-            placeholder="Field Of Study "
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.College}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="text"
-            name="departmentCollege"
-            placeholder="Your requirement"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.departmentCollege}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="flex justify-center items-center">
-          <button
-            className="btn mt-10  lg:font-bold font-semibold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-6 md:px-16 md:py-4 py-2 rounded-full md:text-xl  flex justify-center items-center"
-            type="submit"
-          >
-            {" "}
-            {loading ? (
-              <ImSpinner8 size={30} className="animate-spin" />
-            ) : (
-              "BOOK FREE CONSULTATION CALL"
-            )}
-          </button>
-        </div>
-      </form>
     </div>
   );
 };
