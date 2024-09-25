@@ -56,7 +56,7 @@ import Popup from "../components/Popup";
 import axios from "axios";
 import { ImSpinner8 } from "react-icons/im";
 import emailjs from "@emailjs/browser";
-import PricingSection from "../components/PricingSection";
+import PricingSection2 from "../components/PricingSection2";
 import Testimonials4 from "../components/Testimonials4";
 import dream from "../assets/dream.png";
 import portfolio from "../assets/portfolio.png";
@@ -67,68 +67,70 @@ import interviewprep from "../assets/interviewprep.png";
 import { useLocation } from "react-router";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import Testimonials6 from "../components/Testimonials6";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
   {
-    question: "What types of final year projects do you offer?",
+    question: "What services do you offer for dissertations? ",
     answer:
-      "We offer a wide range of projects across domains such as Machine Learning, Data Science, IoT, Electronics-based, Web Development, Cloud Computing, Cybersecurity, and more.",
+      "We offer a full range of services, including topic selection, proposal writing, data analysis, and final dissertation writing. We handle both qualitative and quantitative research.",
   },
   {
-    question: "Are your projects 100% original and plagiarism-free?",
+    question: "How do you ensure my dissertation is plagiarism-free? ",
     answer:
-      "Yes, all our projects come with 0% plagiarism. We ensure that the code, documentation, and content are original.",
+      "We use Turnitin to scan all documents for plagiarism, and we provide a full report showing that your work is 100% original.",
   },
   {
-    question: "Can I get a project based on an IEEE 2024 base paper?",
+    question: "What happens if I need revisions?",
     answer:
-      "Yes, we provide projects based on the latest IEEE 2024 base papers tailored to your specific requirements.",
+      "We offer unlimited revisions until you are completely satisfied with the final product.",
   },
   {
-    question: "How long will it take to deliver a complete project?",
+    question: "Do you offer a fast-track service? ",
     answer:
-      "We offer a 1-day project delivery guarantee for most projects. However, the timeline may vary based on project complexity.",
+      "Yes, if you’re working with a tight deadline, we offer a priority service to complete your dissertation as quickly as possible without sacrificing quality.",
   },
   {
-    question: "Do you offer guidance on choosing a project domain?",
+    question: "Can I see progress reports during the writing process? ",
     answer:
-      "Absolutely! We offer 1-1 consultation to help you select the best domain and project title based on your interests and career goals.",
+      "Absolutely! We provide regular updates and drafts for your review so you can monitor the progress of your dissertation.",
   },
   {
-    question: "What if I need multiple revisions for my project PPTs?",
+    question: "How can I trust that you’ll meet my deadline? ",
     answer:
-      "We understand that project guides may ask you to change a few slides in the PPT, and we are totally fine with doing multiple changes in the presentation.",
+      "We have a track record of delivering every project on time. We also provide regular updates to keep you informed throughout the process.",
   },
   {
-    question: "Do you provide project explanation videos?",
+    question: "What is the 30% discount offer? ",
     answer:
-      "Yes, we provide a full project explanation video where we walk you through the entire code and execution process.",
+      "We’re currently offering 30% off on all dissertation and thesis projects. Book a free consultation now to take advantage of this limited-time offer!",
   },
   {
-    question: "Is the project suitable for real-world applications?",
+    question: " Can you help me select a dissertation topic? ",
     answer:
-      "Yes, all of our projects are designed to have real-world applicability, giving you practical experience with industry-standard technologies.",
+      " Yes, we offer assistance in selecting a relevant and research-worthy topic based on your area of interest and academic requirements.",
   },
   {
-    question: "Can you develop my own idea/problem statement?",
+    question:
+      "Do you provide support for both qualitative and quantitative research?",
     answer:
-      "Definitely! We encourage you to share your ideas, and we'll develop that into a working product.",
+      "Yes, we provide comprehensive support for both qualitative and quantitative research, including data collection, analysis, and interpretation.",
   },
   {
-    question: "What if I need extra features added to the project?",
+    question: "Is the consultation free?",
     answer:
-      "You can request additional features, and we will assess the feasibility and make the necessary updates.",
+      "Yes, we offer a free initial consultation to discuss your dissertation needs, timelines, and how we can assist you.",
   },
   {
-    question: "What happens if my project is rejected by my guide?",
+    question: " Do you offer installment payment options?  ",
     answer:
-      "Our project titles are unique and advanced research-based, so they won’t get rejected. However, if your title is rejected, we will provide a new project at no extra charge.",
+      "Yes, we offer flexible payment plans so you can pay for your dissertation services in installments as the work progresses.",
   },
   {
-    question: "Do you offer projects for students outside India?",
+    question: "Will my dissertation be confidential?",
     answer:
-      "Yes, we deliver projects and help with assignments internationally, ensuring they are customized to your local academic requirements.",
+      "Yes, confidentiality is a top priority. All of your personal and project details are kept completely private, and we ensure the security of your data.",
   },
 ];
 
@@ -145,71 +147,121 @@ const images = [
   // Add more objects as needed
 ];
 const data2 = [
-  { name: "College Format Ppt and Report", check1: "❌", check2: "✅" },
+  { name: "Formatting according to Institution", check1: "❌", check2: "✅" },
+  {
+    name: "Number of Projects",
+    check1: "Unlimited Projects",
+    check2: "Limited projects to focus on quality",
+  },
+  {
+    name: "Experience",
+    check1: "1-2 years of Experience",
+    check2: "5+ Years of Experience",
+  },
+  {
+    name: "Team",
+    check1: "Inexperienced team",
+    check2: "Professional team of expert developers & writers",
+  },
   {
     name: "Project Titles",
-    check1: "Old Basic Titles",
-    check2: "Novelty Based Research Titles",
+    check1: "Old basic titles",
+    check2: "Novelty based Research Titles ",
   },
-  { name: "Plagiarism", check1: "Github Codes", check2: "0% Plagiarized Code" },
   {
-    name: "Review Wise Code",
-    check1: "Only full code",
-    check2: "Module Wise Code",
+    name: "Plagiarism",
+    check1: "No Turtunin Report",
+    check2: "Turnitin Report for both AI and Plagiarism",
   },
-  { name: "Referral Program", check1: "❌", check2: "Earn upto 10k " },
   {
-    name: "Placement Preparation support",
+    name: "Progress reports",
+    check1: "Only Final Report",
+    check2: "Weekly Progress Reports",
+  },
+  {
+    name: "Referral Program",
+    check1: "❌",
+    check2: "Earn upto 100 pounds by referring friends",
+  },
+  {
+    name: "Placement Preparation Support",
     check1: "❌",
     check2: "Free Placement Support",
   },
-  { name: "Bonus", check1: "❌", check2: "Bonus worth ₹7993" },
-  { name: "Price Discount", check1: "5-10%", check2: "30-40%" },
   {
-    name: "Doubt Solving Sessions",
+    name: "Bonus",
+    check1: "❌",
+    check2: "Bonuses worth 7993",
+  },
+  {
+    name: "Price Discount",
+    check1: "5-10%",
+    check2: "30-40%",
+  },
+  {
+    name: "Doubt solving Sessions",
     check1: "❌",
     check2: "1-1 Project explanations",
   },
   {
-    name: "Delivery Timing",
+    name: "Delivery timing",
     check1: "No guaranteed delivery date",
-    check2: "1 Day",
+    check2: "Guaranteed delivered date",
   },
 ];
 
 const timelineData = [
   {
-    content: "How to choose your project domain and title",
+    content:
+      "Step 1: Initial Consultation – We start with a free 1-1 consultation to understand your academic needs, deadlines, and specific requirements.",
     img: "https://cdn.prod.website-files.com/63c5e29f1b5bc83fe0af2489/6424d753f8eb7a9e69c372fc_Gantt%20Chart%20Online%20Software%20Instagantt%20Ideation%202.webp",
     alt: "Choose Project Domain",
   },
   {
     content:
-      "Step-by-step guidance on how to complete your final year project with ease.",
+      "Step 2: Topic Selection & Proposal – We assist in choosing a research-worthy topic and develop a proposal that meets academic standards and secures approval from your institution.",
     img: "https://t3.ftcdn.net/jpg/00/50/28/04/360_F_50280421_c3QPI4se3DD2dpppDZKWv035EAlQrY7J.jpg",
     alt: "Step by Step guide",
   },
   {
     content:
-      "How to add Novelty to your project and publish your research paper.",
+      "Step 3: Literature Review – We conduct a comprehensive review of existing literature, helping you build a strong theoretical framework for your dissertation.",
     img: "https://assets.myperfectwords.com/blog/research-paper-guide/research-paper-outline/Research-Paper-Outline-MPW-9355.jpg",
     alt: "Research Paper",
   },
   {
     content:
-      "The perfect project roadmap that impresses both professors and recruiters.",
+      "Step 4: Research Design – We design your research methodology, whether qualitative or quantitative, ensuring your project meets the highest academic standards.",
     img: "https://hrfibreglass.co.uk/wp-content/uploads/2023/09/road-map.jpg",
     alt: "Project Roadmap",
   },
   {
     content:
-      "Pro tips for scoring good grades in final year projects without burning out.",
+      " Step 5: Data Collection & Analysis – Our team handles everything from data collection, statistical analysis, and presenting your findings in a clear, concise manner.",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN-Av4gw8KIUYvW5MLPU6HggvtfK7LWAYsXA&s",
     alt: "Good Grades",
   },
   {
     content:
-      "Step-by-step roadmap and plan of action on how to get your dream job.",
+      "Step 6: Writing the Dissertation – We carefully draft each chapter, ensuring that it’s well-researched, properly formatted, and free from any grammatical errors.",
+    img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
+    alt: "Dream Job",
+  },
+  {
+    content:
+      " Step 7: Plagiarism & AI Checks – Using Turnitin, we guarantee your dissertation is 100% original with no AI-generated content.",
+    img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
+    alt: "Dream Job",
+  },
+  {
+    content:
+      "Step 8: Final Edits & Feedback – After receiving your feedback, we revise the document to ensure it meets your expectations and academic requirements.",
+    img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
+    alt: "Dream Job",
+  },
+  {
+    content:
+      "Step 9: Submission-Ready Document – Receive a submission-ready dissertation that adheres to your institution’s guidelines.",
     img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
     alt: "Dream Job",
   },
@@ -725,8 +777,8 @@ const WebinarUK = () => {
             <div className="relative mt-16 md:px-20   space-y-12    ">
               <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
                 <ProblemCard
-                  content="Don't know which "
-                  boldContent="domain and title to choose?"
+                  content="Overwhelming Research Process? "
+                  boldContent=" We handle everything from research design to data collection, ensuring academic excellence"
                   pos="left"
                 />
                 <div className="lg:flex hidden justify-between items-center w-full  ">
@@ -738,15 +790,15 @@ const WebinarUK = () => {
                   <div className=" w-[10px] h-[10px] bg-white  rounded-full  text-white "></div>
                 </div>
                 <ProblemCard
-                  content=" Finding it difficult to create "
-                  boldContent="PPTs and Reports?"
+                  content="Inexperienced with Data Analysis??"
+                  boldContent="Our experts handle quantitative, qualitative, and mixed methods research with ease."
                   pos="right"
                 />
               </div>
               <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
                 <ProblemCard
-                  content=" Couldn't manage your"
-                  boldContent="academics and projects"
+                  content="Worried About Deadlines?"
+                  boldContent="We provide timely drafts, regular updates, and guarantee on-time submission."
                   pos="left"
                 />
                 <div className=" lg:flex hidden  justify-between items-center w-full ">
@@ -758,14 +810,42 @@ const WebinarUK = () => {
                   <div className=" w-[10px] h-[10px] bg-white  rounded-full  text-white "></div>
                 </div>
                 <ProblemCard
-                  content=" Have to focus on"
-                  boldContent="Placements?"
+                  content="Fear of Plagiarism?"
+                  boldContent="We use Turnitin to ensure your dissertation is 100% original and plagiarism-free."
+                  pos="right"
+                />
+              </div>
+
+              <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
+                <ProblemCard
+                  content="Need Guidance?"
+                  boldContent="We offer continuous support, addressing all your questions throughout the process."
+                  pos="left"
+                />
+                <div className=" lg:flex hidden  justify-between items-center w-full ">
+                  <div className=" w-[10px] h-[10px]  bg-white  rounded-full  text-white "></div>
+                  <div
+                    className="w-full h-0 "
+                    style={{ border: "2px dashed white" }}
+                  ></div>
+                  <div className=" w-[10px] h-[10px] bg-white  rounded-full  text-white "></div>
+                </div>
+                <ProblemCard
+                  content="Stressed About Formatting?"
+                  boldContent="We ensure your dissertation meets all formatting requirements (APA, MLA, Chicago, etc.).
+"
                   pos="right"
                 />
               </div>
 
               <div
-                className="lg:block hidden absolute font-[500] text-white text-9xl top-[40%] left-[50%]   "
+                className="lg:block hidden absolute font-[500] text-white text-9xl top-[25%] left-[50%]   "
+                style={{ transform: "translate( -50% , -50%)" }}
+              >
+                ?
+              </div>
+              <div
+                className="lg:block hidden absolute font-[500] text-white text-9xl top-[60%] left-[50%]   "
                 style={{ transform: "translate( -50% , -50%)" }}
               >
                 ?
@@ -827,7 +907,7 @@ const WebinarUK = () => {
           </div> */}
           <div className="bg-[#EDEDED] mt-20 flex flex-col justify-start items-center p-4">
             <h1 className="font-bold lg:text-4xl lg:mt-20 mt-8">
-              Start with a{" "}
+              Complete A-Z{" "}
               <span
                 className="lg:px-8 lg:py-2 px-4 py-1 rounded-2xl font-bold text-white"
                 style={{
@@ -838,12 +918,12 @@ const WebinarUK = () => {
                   transformOrigin: "center", // Optional: adjust the pivot point of the rotation
                 }}
               >
-                Project Consultation,{" "}
+                Roadmap for{" "}
               </span>{" "}
-              End with Your Dream Job
+              Your Dissertation
             </h1>
 
-            <div className="relative flex flex-col justify-center items-center mt-10 gap-10 px-4 sm:px-8 md:px-16">
+            <div className="relative flex flex-col justify-center items-center mt-10 gap-10 px-4 sm:px-8 md:px-16 mb-5">
               {/* Vertical Line */}
               <div className="absolute inset-0 flex justify-center">
                 <div className="w-1 h-full bg-gray-300 relative">
@@ -891,7 +971,7 @@ const WebinarUK = () => {
                     src={item.img}
                     alt={item.alt}
                   />
-                  <div className="bg-slate-200 p-4 rounded-xl h-[200px] w-full md:w-[200px] lg:w-[250px] font-semibold text-lg flex justify-center items-center">
+                  <div className="bg-slate-200 p-4 rounded-xl h-[250px] w-full md:w-[200px] lg:w-[250px] font-semibold text-lg flex justify-center items-center">
                     {item.content}
                   </div>
                 </div>
@@ -901,7 +981,7 @@ const WebinarUK = () => {
 
           <div className="md:mt-20 mt-10 text-center md:p-16 p-2 ">
             <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
-              End-to-End Project Solution
+              Our deliverables
             </div>
             <div className="md:mt-20 mt-10 md:max-w-3xl max-w-[350px] text-center mx-auto bg-[#0C2F31] rounded-xl">
               <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
@@ -931,7 +1011,7 @@ const WebinarUK = () => {
                 </svg>
                 <div className="text-white md:text-2xl text-xs font-[300]">
                   {" "}
-                  0,1,2,3 Review PPT's in your college format
+                  Complete Dissertation/Thesis
                 </div>
               </div>
 
@@ -965,7 +1045,7 @@ const WebinarUK = () => {
                 </svg>
                 <div className="text-white md:text-2xl text-xs font-[300]">
                   {" "}
-                  60 Pages Documentation
+                  Turnitin Report for AI and Plagiarism
                 </div>
               </div>
 
@@ -1021,9 +1101,10 @@ const WebinarUK = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <div className="text-white md:text-2xl text-xs font-[300]">
+                <div className="text-white md:text-2xl text-xs text-start font-[300]">
                   {" "}
-                  Source code (0% Plagiarism)
+                  Data Analysis Reports for both qualitative & quantitative
+                  research
                 </div>
               </div>
 
@@ -1054,7 +1135,7 @@ const WebinarUK = () => {
                 </svg>
                 <div className="text-white md:text-2xl text-xs font-[300]">
                   {" "}
-                  IEEE 2024 Base paper
+                  Custom Formatting according to your institution
                 </div>
               </div>
 
@@ -1081,7 +1162,60 @@ const WebinarUK = () => {
                 </svg>
                 <div className="text-white md:text-2xl text-xs font-[300]">
                   {" "}
-                  Full Project Explanation video
+                  Unlimited revisions according to your guide
+                </div>
+              </div>
+
+              <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 72 58"
+                  fill="none"
+                >
+                  <path
+                    d="M68.3234 42.1607H3.677C1.64953 42.1607 0 40.5119 0 38.4847V3.72397C0 1.69695 1.64953 0.0478516 3.677 0.0478516H68.3234C70.3502 0.0478516 72 1.69695 72 3.72397V38.4847C72 40.5119 70.3502 42.1607 68.3234 42.1607ZM3.677 3.01734C3.28702 3.01734 2.96919 3.33428 2.96919 3.72397V38.4847C2.96919 38.8744 3.28702 39.1915 3.677 39.1915H68.3234C68.7133 39.1915 69.0307 38.8744 69.0307 38.4847V3.72397C69.0307 3.33428 68.7134 3.01734 68.3234 3.01734H3.677Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M28.3164 32.3869C27.8288 32.1202 27.5117 31.6231 27.5117 31.0677V11.14C27.5117 10.5843 27.8223 10.0754 28.3164 9.82048C28.8101 9.56569 29.4043 9.60816 29.8572 9.93025L43.8689 19.894C44.261 20.1726 44.4931 20.6234 44.4931 21.1039C44.4931 21.5845 44.261 22.0354 43.8689 22.314C43.8689 22.314 33.3596 29.7864 29.8572 32.2774C29.6012 32.4595 29.0494 32.7882 28.3164 32.3869ZM30.4815 14.0176V28.19L40.4464 21.1039L30.4815 14.0176Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M70.5155 50.5889H42.1372C41.4782 48.0645 39.1783 46.1963 36.4504 46.1963C33.7227 46.1963 31.4234 48.0645 30.7643 50.5889H1.48467C0.664898 50.5889 0 51.2538 0 52.0735C0 52.8936 0.664898 53.5582 1.48467 53.5582H30.7644C31.4236 56.0826 33.723 57.9511 36.4505 57.9511C39.1784 57.9511 41.4783 56.0825 42.1373 53.5582H70.5155C71.3347 53.5582 72 52.8938 72 52.0735C72 51.2538 71.3347 50.5889 70.5155 50.5889ZM36.4504 54.9815C34.8476 54.9815 33.5427 53.6769 33.5427 52.0734C33.5427 50.4702 34.8476 49.1658 36.4504 49.1658C38.0539 49.1658 39.3584 50.4702 39.3584 52.0734C39.3584 53.6771 38.0539 54.9815 36.4504 54.9815Z"
+                    fill="white"
+                  />
+                </svg>
+                <div className="text-white md:text-2xl text-xs font-[300]">
+                  {" "}
+                  Progress Reports at every stage
+                </div>
+              </div>
+              <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 72 58"
+                  fill="none"
+                >
+                  <path
+                    d="M68.3234 42.1607H3.677C1.64953 42.1607 0 40.5119 0 38.4847V3.72397C0 1.69695 1.64953 0.0478516 3.677 0.0478516H68.3234C70.3502 0.0478516 72 1.69695 72 3.72397V38.4847C72 40.5119 70.3502 42.1607 68.3234 42.1607ZM3.677 3.01734C3.28702 3.01734 2.96919 3.33428 2.96919 3.72397V38.4847C2.96919 38.8744 3.28702 39.1915 3.677 39.1915H68.3234C68.7133 39.1915 69.0307 38.8744 69.0307 38.4847V3.72397C69.0307 3.33428 68.7134 3.01734 68.3234 3.01734H3.677Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M28.3164 32.3869C27.8288 32.1202 27.5117 31.6231 27.5117 31.0677V11.14C27.5117 10.5843 27.8223 10.0754 28.3164 9.82048C28.8101 9.56569 29.4043 9.60816 29.8572 9.93025L43.8689 19.894C44.261 20.1726 44.4931 20.6234 44.4931 21.1039C44.4931 21.5845 44.261 22.0354 43.8689 22.314C43.8689 22.314 33.3596 29.7864 29.8572 32.2774C29.6012 32.4595 29.0494 32.7882 28.3164 32.3869ZM30.4815 14.0176V28.19L40.4464 21.1039L30.4815 14.0176Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M70.5155 50.5889H42.1372C41.4782 48.0645 39.1783 46.1963 36.4504 46.1963C33.7227 46.1963 31.4234 48.0645 30.7643 50.5889H1.48467C0.664898 50.5889 0 51.2538 0 52.0735C0 52.8936 0.664898 53.5582 1.48467 53.5582H30.7644C31.4236 56.0826 33.723 57.9511 36.4505 57.9511C39.1784 57.9511 41.4783 56.0825 42.1373 53.5582H70.5155C71.3347 53.5582 72 52.8938 72 52.0735C72 51.2538 71.3347 50.5889 70.5155 50.5889ZM36.4504 54.9815C34.8476 54.9815 33.5427 53.6769 33.5427 52.0734C33.5427 50.4702 34.8476 49.1658 36.4504 49.1658C38.0539 49.1658 39.3584 50.4702 39.3584 52.0734C39.3584 53.6771 38.0539 54.9815 36.4504 54.9815Z"
+                    fill="white"
+                  />
+                </svg>
+                <div className="text-white md:text-2xl text-xs font-[300]">
+                  {" "}
+                  24/7 Customer Support
                 </div>
               </div>
             </div>
@@ -1106,112 +1240,85 @@ const WebinarUK = () => {
             <h1 className="text-4xl font-bold mt-10 lg:text-[50px]">
               Exciting <span className="text-[#F26530]">bonuses</span>
             </h1>
-            <div className="mt-10 lg:mt-20 flex flex-wrap justify-center items-center gap-4 lg:gap-5 w-full">
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={15} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Python <span>10 hours </span> <span>recorded videos</span>
-                  Rs.1499
-                </h1>
 
-                <FaPython className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
-              </div>
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={15} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Apptitude <span>2 hours</span> <span>recorded videos</span>
-                  Rs.999
-                </h1>
-                <img
-                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                  src={doc}
-                />
-              </div>
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={15} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  DSA <span>3 hours</span> <span>recorded videos </span>
-                  <span>Rs.999</span>
-                </h1>
-                <FaChessQueen className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
-              </div>
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={15} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Higher Studies <span>A - Z</span> 1 hour recorded videos{" "}
-                  <span>Rs.999</span>
-                </h1>
-                <img
-                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                  src={interview}
-                />
-              </div>
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={15} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  2 <span>Recorded</span> <span>Mock Interviews </span>
-                  <span>Rs.499</span>
-                </h1>
-                <img
-                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                  src={interview}
-                />
-              </div>
+            {/* Bonuses Grid */}
+            <div className="mt-10 lg:mt-20 flex justify-center items-center w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-20 justify-center items-center mx-auto">
+                {/* Bonus Item 1 */}
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                  <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                    2 Resume & <span></span>
+                    <span>Cold Email Live Sessions worth £10 </span>
+                  </h1>
+                  <FaPython className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
+                </div>
 
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={15} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  2 Resume <span>& Cold Email</span> <span>Live Sessions</span>{" "}
-                  Rs.999
-                </h1>
-                <img
-                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                  src={doc}
-                />
-              </div>
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={15} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  2 <span>Linkedin Mastery</span> <span>Live Sessions</span>
-                  Rs.1999
-                </h1>
-                <img
-                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                  src={Linkedin}
-                />
-              </div>
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={15} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Discord <span>Community</span> <span>lifetime </span>
-                  <span>Access</span>
-                </h1>
-                <img
-                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                  src={discord}
-                />
-              </div>
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={15} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Free Career Guidance <span>Session By Founder</span>& CEO of{" "}
-                  <span>Qriocity,Kesavan</span>
-                </h1>
-                <img
-                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                  src={interview}
-                />
-              </div>
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={15} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Course <span>Completion</span>{" "}
-                  <span>Linkedin Shareable </span>
-                  <span> Certificate</span>
-                </h1>
-                <FaCertificate className="place-self-end mt-5 h-10 w-10 text-blue-500 lg:h-14 lg:w-14" />
+                {/* Bonus Item 2 */}
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                  <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                    2 Linkedin
+                    <span>Mastery Live </span> <span>Sessions worth £20</span>
+                  </h1>
+                  <img
+                    className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                    src={doc}
+                  />
+                </div>
+
+                {/* Bonus Item 3 */}
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                  <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                    Free Discord Community <span>for placement guidance </span>
+                    <span>(Lifetime Access)</span>
+                  </h1>
+                  <FaChessQueen className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
+                </div>
+
+                {/* Bonus Item 4 */}
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                  <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                    30% Discount <span>on All </span>Projects worth £100
+                  </h1>
+                  <img
+                    className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                    src={interview}
+                  />
+                </div>
+
+                {/* Bonus Item 5 */}
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                  <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                    Unlimited Free
+                    <span>Plagiarism & AI </span>
+                    <span>Turnitin Report worth £50 </span>
+                  </h1>
+                  <img
+                    className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                    src={interview}
+                  />
+                </div>
+
+                {/* Bonus Item 6 */}
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                  <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
+                    5-10% Referral
+                    <span>Discount or Commission </span> <span>worth £50</span>
+                  </h1>
+                  <img
+                    className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                    src={doc}
+                  />
+                </div>
               </div>
             </div>
+
+            {/* Call to Action Button */}
             <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 mb-10">
               <button
                 className="px-14 py-4 rounded-full font-bold text-white"
@@ -1343,7 +1450,7 @@ const WebinarUK = () => {
             <h1 className="text-white text-[32px] font-bold ">
               Exclusive Offers
             </h1>
-            <PricingSection />
+            <PricingSection2 />
           </div>
 
           {/* Unable to decide? */}
@@ -1476,7 +1583,7 @@ const WebinarUK = () => {
             </div>
           </div> */}
 
-          <Testimonials4 />
+          <Testimonials6 />
 
           {/* Still Not Sure? We Have */}
           <div className="md:mt-20 mt-10 text-center mb-36 md:mb-20 md:p-16 p-4 ">
@@ -1485,29 +1592,30 @@ const WebinarUK = () => {
             </div>
             <img src={MoneyBack} className="w-1/2 mx-auto mb-10" />
 
-            <div className="relative  lg:h-[710px] md:h-[550px] h-[360px] md:w-[974px]  mx-auto md:p-16">
+            <div className="relative  lg:h-[710px] md:h-[550px] h-[550px] md:w-[974px]  mx-auto md:p-16">
               <img
                 src={Refund}
                 className="hidden lg:block absolute top-1/2 left-1/2  "
                 style={{ transform: "translate(-50% , -50%)" }}
               />
-              <div className=" absolute    lg:p-10 p-8  text-white text-justify md:leading-9 md:text-xl  flex flex-col  md:gap-10 gap-5 md:mt-28 ">
+              <div className=" absolute lg:p-10 p-8  text-white text-justify md:leading-9 md:text-xl  flex flex-col  md:gap-10 gap-5 md:mt-28 ">
                 <div>
-                  Secure your incredible final year project offer today and
-                  enjoy a money-back guarantee. Enroll now, explore our project
-                  details, and if you're not satisfied for any reason, just drop
-                  us an email, and{" "}
+                  Secure your exceptional dissertation or master's thesis offer
+                  today and enjoy a full money-back guarantee. Enroll now,
+                  explore our detailed services, and if you're not satisfied for
+                  any reason, simply drop us an email, and{" "}
                   <span className="bg-[#F15A29]">
-                    we'll refund your entire investment - no questions asked!
+                    we’ll refund your entire investment—no questions asked!
                   </span>
                 </div>
                 <div>
-                  At Qriocity, we are committed to your satisfaction and
-                  success. Dive into our comprehensive{" "}
-                  <span className="bg-[#F15A29]">
-                    project resources, expert guidance,
-                  </span>
-                  and dedicated support.
+                  At Qriocity, we are dedicated to your academic success and
+                  satisfaction. Dive into our comprehensive dissertation
+                  resources, expert mentorship, and unwavering support. Your
+                  journey toward completing your dissertation or master's thesis
+                  is entirely risk-free with our money-back guarantee. Your
+                  success, satisfaction, and peace of mind are our highest
+                  priorities. Join us today and see the difference!
                 </div>
                 <div>
                   Your venture into your final year project is{" "}
@@ -1518,7 +1626,7 @@ const WebinarUK = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 mb-10">
+            <div className="flex flex-col justify-center items-center lg:mr-10 mt-32 ">
               <button
                 className="px-14 py-4 rounded-full font-bold text-white"
                 style={{
