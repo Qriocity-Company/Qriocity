@@ -1133,7 +1133,7 @@ const WebinarUK = () => {
                     fill="white"
                   />
                 </svg>
-                <div className="text-white md:text-2xl text-xs font-[300]">
+                <div className="text-white md:text-2xl text-xs font-[300] text-start">
                   {" "}
                   Custom Formatting according to your institution
                 </div>
