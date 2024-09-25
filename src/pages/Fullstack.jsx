@@ -219,7 +219,7 @@ const FullStack = () => {
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={calendar} />
                 <h1 className="font-bold lg:text-xl text-lg flex flex-col justify-center items-start">
-                  September 25-30, <span>2024</span>
+                  September 30-4 October, <span>2024</span>
                   <span className="text-lg">7pm-9pm</span>{" "}
                 </h1>
                 
