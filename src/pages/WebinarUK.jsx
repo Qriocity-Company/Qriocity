@@ -74,6 +74,15 @@ import { MdIncompleteCircle } from "react-icons/md";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 import { TbReportAnalytics, TbReportSearch } from "react-icons/tb";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
+import step1 from "../assets/ukpics/step1.jpg";
+import step2 from "../assets/ukpics/step2.jpg";
+import step3 from "../assets/ukpics/step3.jpg";
+import step4 from "../assets/ukpics/step4.jpg";
+import step5 from "../assets/ukpics/step5.jpg";
+import step6 from "../assets/ukpics/step6.jpg";
+import step7 from "../assets/ukpics/step7.jpg";
+import step8 from "../assets/ukpics/step8.jpg";
+import step9 from "../assets/ukpics/step9.jpg";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
@@ -220,56 +229,55 @@ const timelineData = [
   {
     content:
       "Step 1: Initial Consultation – We start with a free 1-1 consultation to understand your academic needs, deadlines, and specific requirements.",
-    img: "https://cdn.prod.website-files.com/63c5e29f1b5bc83fe0af2489/6424d753f8eb7a9e69c372fc_Gantt%20Chart%20Online%20Software%20Instagantt%20Ideation%202.webp",
+    img: step1,
     alt: "Choose Project Domain",
   },
   {
     content:
       "Step 2: Topic Selection & Proposal – We assist in choosing a research-worthy topic and develop a proposal that meets academic standards and secures approval from your institution.",
-    img: "https://t3.ftcdn.net/jpg/00/50/28/04/360_F_50280421_c3QPI4se3DD2dpppDZKWv035EAlQrY7J.jpg",
+    img: step2,
     alt: "Step by Step guide",
   },
   {
     content:
       "Step 3: Literature Review – We conduct a comprehensive review of existing literature, helping you build a strong theoretical framework for your dissertation.",
-    img: "https://assets.myperfectwords.com/blog/research-paper-guide/research-paper-outline/Research-Paper-Outline-MPW-9355.jpg",
+    img: step3,
     alt: "Research Paper",
   },
   {
     content:
       "Step 4: Research Design – We design your research methodology, whether qualitative or quantitative, ensuring your project meets the highest academic standards.",
-    img: "https://hrfibreglass.co.uk/wp-content/uploads/2023/09/road-map.jpg",
+    img: step4,
     alt: "Project Roadmap",
   },
   {
     content:
       " Step 5: Data Collection & Analysis – Our team handles everything from data collection, statistical analysis, and presenting your findings in a clear, concise manner.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN-Av4gw8KIUYvW5MLPU6HggvtfK7LWAYsXA&s",
+    img: step5,
     alt: "Good Grades",
   },
   {
     content:
       "Step 6: Writing the Dissertation – We carefully draft each chapter, ensuring that it’s well-researched, properly formatted, and free from any grammatical errors.",
-    img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
+    img: step6,
     alt: "Dream Job",
   },
   {
     content:
       " Step 7: Plagiarism & AI Checks – Using Turnitin, we guarantee your dissertation is 100% original with no AI-generated content.",
-    img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
+    img: step7,
     alt: "Dream Job",
   },
   {
     content:
       "Step 8: Final Edits & Feedback – After receiving your feedback, we revise the document to ensure it meets your expectations and academic requirements.",
-    img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
+    img: step8,
     alt: "Dream Job",
   },
   {
     content:
       "Step 9: Submission-Ready Document – Receive a submission-ready dissertation that adheres to your institution’s guidelines.",
-    img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
-    alt: "Dream Job",
+    img: step9,
   },
 ];
 
@@ -279,25 +287,14 @@ const scrollToTop = () => {
 
 const MainCard = ({ setShowForm }) => {
   const [loading, setLoading] = useState(false);
-  const [popuploading, setPopuploading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [popupForm, setpopForm] = useState(false);
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [department, setDepartment] = useState();
-  const [college, setCollege] = useState();
-  const [year, setYear] = useState();
-  const filled = localStorage.getItem("PopUp");
 
   const [formData, setFormData] = useState({
     name: "",
     senderEmail: "",
     phoneNumber: "",
-    message: "",
-    departmentCollege: "",
-    YearCollege: "",
-    College: "",
+    fieldOfStudy: "",
+    requirement: "",
   });
 
   const handleChange = (e) => {
@@ -347,10 +344,8 @@ const MainCard = ({ setShowForm }) => {
       name: "",
       senderEmail: "",
       phoneNumber: "",
-      message: "",
-      departmentCollege: "",
-      YearCollege: "",
-      College: "",
+      fieldOfStudy: "",
+      requirement: "",
     });
 
     // Show popup for 2.5 seconds
@@ -359,21 +354,6 @@ const MainCard = ({ setShowForm }) => {
       setShowPopup(false);
     }, 2500);
   }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted");
-  };
-
-  const handleClose = () => {
-    setpopForm(false);
-  };
-  useEffect(() => {
-    if (!filled) {
-      setpopForm(true);
-    }
-  }, []);
 
   const updateSpreadSheet = async () => {
     const currentDate = new Date();
@@ -402,7 +382,7 @@ const MainCard = ({ setShowForm }) => {
               Date: formattedDate,
               Time: formattedTime,
               Number: formData.phoneNumber,
-              Message: formData.message,
+              Message: formData.requirement,
             },
           ],
         }),
@@ -410,75 +390,6 @@ const MainCard = ({ setShowForm }) => {
         .then((response) => response.json())
         .then((data) => console.log(data));
       return;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const updatePopSpreadSheet = async () => {
-    const currentDate = new Date();
-    // Format the date as DD/MM/YYYY
-    const day = String(currentDate.getDate()).padStart(2, "0");
-    const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are 0-based
-    const year = currentDate.getFullYear();
-    const formattedDate = `${day}/${month}/${year}`;
-
-    // Format the time as HH:MM:SS
-    const hours = String(currentDate.getHours()).padStart(2, "0");
-    const minutes = String(currentDate.getMinutes()).padStart(2, "0");
-    const seconds = String(currentDate.getSeconds()).padStart(2, "0");
-    const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-    try {
-      const response = await fetch("https://sheetdb.io/api/v1/qr63j4ua71frc", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          data: [
-            {
-              Name: name,
-              Email: email,
-              Date: formattedDate,
-              Time: formattedTime,
-              Contact: phone,
-            },
-          ],
-        }),
-      });
-
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handlePopUp = async () => {
-    setPopuploading(true);
-    const currentDate = new Date();
-    try {
-      const { data } = await axios.post(
-        "https://crm-backend-o6sb.onrender.com/enquiry/newStudent",
-        {
-          name: name,
-          email: email,
-          phone: phone,
-          date: currentDate.toLocaleDateString(),
-        }
-      );
-
-      if (data?.success) {
-        handleClickPopup();
-        localStorage.setItem("PopUp", true);
-        setPopuploading(false);
-        setpopForm(false);
-        await updatePopSpreadSheet();
-        window.location.href =
-          "https://docs.google.com/document/d/1p3nWOTCdn80Jfyb0t9BH1rrBSOcdFCuzb2UBQjIuBJY/edit?usp=drivesdk";
-      }
     } catch (error) {
       console.log(error);
     }
@@ -492,22 +403,6 @@ const MainCard = ({ setShowForm }) => {
     };
     emailjs
       .send("service_audiui6", "template_mwv0oup", data, "gNK_PfCqn5ho5f0Kb")
-      .then(
-        (result) => {},
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
-
-  const handleClickPopup = (e) => {
-    var data = {
-      name: name,
-      phone: phone,
-      email: email,
-    };
-    emailjs
-      .send("service_audiui6", "template_gftaflp", data, "gNK_PfCqn5ho5f0Kb")
       .then(
         (result) => {},
         (error) => {
@@ -916,7 +811,7 @@ const WebinarUK = () => {
                   } justify-center  items-center gap-10 md:gap-20 z-40`}
                 >
                   <img
-                    className="h-[250px] w-full md:w-[250px] object-contain"
+                    className="h-[250px] w-[250px] rounded-lg hover:opacity-80 cursor-pointer"
                     src={item.img}
                     alt={item.alt}
                   />
@@ -1284,7 +1179,7 @@ const WebinarUK = () => {
 
             <div>
               <button
-                className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white md:px-12 px-4 md:py-4 py-2 rounded-full transition duration-300 "
+                className="md:text-2xl text-xs font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29]  text-white md:px-12 px-4 md:py-4 py-2 rounded-full transition duration-300 "
                 onClick={() => {
                   scrollToTop();
                 }}
