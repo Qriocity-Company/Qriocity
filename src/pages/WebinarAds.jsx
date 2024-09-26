@@ -1336,7 +1336,7 @@ const WebinarAds = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 mb-10">
+            <div className="flex flex-col justify-center items-center lg:mr-10 mt-[250px] mb-10">
               <button
                 className="px-14 py-4 rounded-full font-bold text-white"
                 style={{
