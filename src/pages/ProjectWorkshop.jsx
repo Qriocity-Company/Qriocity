@@ -614,7 +614,7 @@ const ProjectWorkshop = () => {
           </button>
         </div>
       </div>
-      <div className="w-full flex flex-col items-center md:p-0 justify-center bg-[#e3efec]">
+      <div className="w-full flex flex-col items-center md:p-0 justify-center bg-white">
         <div className="max-w-2xl mx-auto py-8 md:mt-20 mt-10 p-2">
           <h2 className="lg:text-[36px] text-[20px] font-bold text-center text-blue-600">
             FAQs :
