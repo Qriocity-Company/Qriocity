@@ -489,8 +489,8 @@ const ProjectWorkshop = () => {
             </h1>
             <div className="mt-10 lg:mt-20 flex flex-col justify-center items-center lg:grid lg:grid-cols-3 gap-4 lg:gap-10 w-full">
               {/* Bonus 1 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={30} color="#F15A29" />
+              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[250px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={25} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                   Top 50 <span>Final Year Project</span> Ideas E-book Rs.299
                 </h1>
@@ -498,8 +498,8 @@ const ProjectWorkshop = () => {
               </div>
 
               {/* Bonus 2 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={30} color="#F15A29" />
+              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[250px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={25} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                   PPT,Report<span> and Research </span> Templates Rs.399
                 </h1>
@@ -507,8 +507,8 @@ const ProjectWorkshop = () => {
               </div>
 
               {/* Bonus 3 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={30} color="#F15A29" />
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[250px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={25} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                   ATS-Friendly <span>Resume and </span> Templates - Rs.99
                 </h1>
@@ -519,8 +519,8 @@ const ProjectWorkshop = () => {
               </div>
 
               {/* Bonus 4 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={30} color="#F15A29" />
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[250px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={25} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                   Exclusive Access <span>to Free </span> Discord Community
                 </h1>
@@ -531,8 +531,8 @@ const ProjectWorkshop = () => {
               </div>
 
               {/* Bonus 5 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={30} color="#F15A29" />
+              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[250px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={25} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                   Python - 10 hours <span>recorded videos - Rs.1499</span>
                 </h1>
@@ -540,8 +540,8 @@ const ProjectWorkshop = () => {
               </div>
 
               {/* Bonus 6 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={30} color="#F15A29" />
+              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[250px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={25} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                   Aptitude - 2 hours <span>recorded videos - Rs.999</span>
                 </h1>
@@ -549,8 +549,8 @@ const ProjectWorkshop = () => {
               </div>
 
               {/* Bonus 7 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={30} color="#F15A29" />
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[250px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={25} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                   DSA - 3 hours <span>recorded videos - Rs.999</span>
                 </h1>
@@ -558,8 +558,8 @@ const ProjectWorkshop = () => {
               </div>
 
               {/* Bonus 8 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={30} color="#F15A29" />
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[250px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={25} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                   2 Recorded <span>Mock Interviews - Rs.499</span>
                 </h1>
@@ -567,8 +567,8 @@ const ProjectWorkshop = () => {
               </div>
 
               {/* Bonus 9 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[200px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={30} color="#F15A29" />
+              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[250px] lg:h-[250px] lg:w-[250px]">
+                <FaStar className="ml-2" size={25} color="#F15A29" />
                 <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                   2 LinkedIn <span> Mastery Live Sessions - Rs.1999</span>
                 </h1>

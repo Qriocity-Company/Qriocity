@@ -45,7 +45,7 @@ const PricingSection2 = () => {
         </button>
 
         <p className="mt-4 text-gray-600 text-sm">
-          eserve Your Seat Before The Timer Ends To Unlock Bonuses Worth £100
+          Reserve Your Seat Before The Timer Ends To Unlock Bonuses Worth £100
         </p>
 
         {/* Timer Component */}

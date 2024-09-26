@@ -228,56 +228,65 @@ const data2 = [
 const timelineData = [
   {
     content:
-      "Step 1: Initial Consultation – We start with a free 1-1 consultation to understand your academic needs, deadlines, and specific requirements.",
+      "Initial Consultation – We start with a free 1-1 consultation to understand your academic needs, deadlines, and specific requirements.",
     img: step1,
     alt: "Choose Project Domain",
+    step: "Step 1",
   },
   {
     content:
-      "Step 2: Topic Selection & Proposal – We assist in choosing a research-worthy topic and develop a proposal that meets academic standards and secures approval from your institution.",
+      "Topic Selection & Proposal – We assist in choosing a research-worthy topic and develop a proposal that meets academic standards and secures approval from your institution.",
     img: step2,
     alt: "Step by Step guide",
+    step: "Step 2",
   },
   {
     content:
-      "Step 3: Literature Review – We conduct a comprehensive review of existing literature, helping you build a strong theoretical framework for your dissertation.",
+      "Literature Review – We conduct a comprehensive review of existing literature, helping you build a strong theoretical framework for your dissertation.",
     img: step3,
     alt: "Research Paper",
+    step: "Step 3",
   },
   {
     content:
-      "Step 4: Research Design – We design your research methodology, whether qualitative or quantitative, ensuring your project meets the highest academic standards.",
+      "Research Design – We design your research methodology, whether qualitative or quantitative, ensuring your project meets the highest academic standards.",
     img: step4,
     alt: "Project Roadmap",
+    step: "Step 4",
   },
   {
     content:
-      " Step 5: Data Collection & Analysis – Our team handles everything from data collection, statistical analysis, and presenting your findings in a clear, concise manner.",
+      "Data Collection & Analysis – Our team handles everything from data collection, statistical analysis, and presenting your findings in a clear, concise manner.",
     img: step5,
     alt: "Good Grades",
+    step: "Step 5",
   },
   {
     content:
-      "Step 6: Writing the Dissertation – We carefully draft each chapter, ensuring that it’s well-researched, properly formatted, and free from any grammatical errors.",
+      "Writing the Dissertation – We carefully draft each chapter, ensuring that it’s well-researched, properly formatted, and free from any grammatical errors.",
     img: step6,
     alt: "Dream Job",
+    step: "Step 6",
   },
   {
     content:
-      " Step 7: Plagiarism & AI Checks – Using Turnitin, we guarantee your dissertation is 100% original with no AI-generated content.",
+      "Plagiarism & AI Checks – Using Turnitin, we guarantee your dissertation is 100% original with no AI-generated content.",
     img: step7,
     alt: "Dream Job",
+    step: "Step 7",
   },
   {
     content:
       "Step 8: Final Edits & Feedback – After receiving your feedback, we revise the document to ensure it meets your expectations and academic requirements.",
     img: step8,
     alt: "Dream Job",
+    step: "Step 8",
   },
   {
     content:
       "Step 9: Submission-Ready Document – Receive a submission-ready dissertation that adheres to your institution’s guidelines.",
     img: step9,
+    step: "Step 9",
   },
 ];
 
@@ -815,8 +824,14 @@ const WebinarUK = () => {
                     src={item.img}
                     alt={item.alt}
                   />
-                  <div className="bg-slate-200 p-4 rounded-xl h-[250px] w-full md:w-[200px] lg:w-[250px] font-semibold text-lg flex justify-center items-center">
-                    {item.content}
+                  <div className="bg-slate-200 p-4 rounded-xl h-[260px] w-full md:w-[200px] lg:w-[250px] font-semibold flex flex-col justify-center items-center">
+                    <h1 className="font-bold text-[26px] text-orange-400">
+                      {item.step}
+                    </h1>
+                    <h2 className="mt-2 text-lg lg:text-start text-center">
+                      {" "}
+                      {item.content}
+                    </h2>
                   </div>
                 </div>
               ))}
@@ -897,7 +912,7 @@ const WebinarUK = () => {
             <div className="mt-10 lg:mt-20 flex justify-center items-center w-full">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-20 justify-center items-center mx-auto">
                 {/* Bonus Item 1 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
                   <FaStar className="ml-2" size={15} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                     2 Resume & <span></span>
@@ -907,7 +922,7 @@ const WebinarUK = () => {
                 </div>
 
                 {/* Bonus Item 2 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
                   <FaStar className="ml-2" size={15} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                     2 Linkedin
@@ -920,7 +935,7 @@ const WebinarUK = () => {
                 </div>
 
                 {/* Bonus Item 3 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
                   <FaStar className="ml-2" size={15} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                     Free Discord Community <span>for placement guidance </span>
@@ -930,7 +945,7 @@ const WebinarUK = () => {
                 </div>
 
                 {/* Bonus Item 4 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
                   <FaStar className="ml-2" size={15} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                     30% Discount <span>on All </span>Projects worth £100
@@ -942,7 +957,7 @@ const WebinarUK = () => {
                 </div>
 
                 {/* Bonus Item 5 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
                   <FaStar className="ml-2" size={15} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                     Unlimited Free
@@ -956,7 +971,7 @@ const WebinarUK = () => {
                 </div>
 
                 {/* Bonus Item 6 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[200px] lg:h-[250px] lg:w-[250px]">
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
                   <FaStar className="ml-2" size={15} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
                     5-10% Referral
