@@ -475,20 +475,20 @@ const MainCard = ({ setShowForm }) => {
           <div className="flex  flex-col  mt-5 md:mt-10  md:flex-row w-[100%] justify-between gap-4 text-black">
             <input
               type="text"
-              name="College"
+              name="Field Of Study"
               placeholder="Field Of Study "
               className="p-4 bg-white rounded-lg outline-none w-full"
-              value={formData.College}
+              value={formData.fieldOfStudy}
               onChange={handleChange}
               required
             />
 
             <input
               type="text"
-              name="departmentCollege"
+              name="Requirement"
               placeholder="Your requirement"
               className="p-4 bg-white rounded-lg outline-none w-full"
-              value={formData.departmentCollege}
+              value={formData.requirement}
               onChange={handleChange}
               required
             />
