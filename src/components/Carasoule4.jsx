@@ -129,7 +129,7 @@ function Carasoule4() {
                 className="bg-gradient-to-r from-[#FBA154] to-[#f6754a] text-white h-[250px] p-5 md:p-10 flex justify-between flex-col gap-2 border-2 rounded-xl hover:scale-105 transform transition duration-300 ease-in-out cursor-pointer"
                 key={index}
               >
-                <h1 className="gabarito text-[14px]">{banner.content}</h1>
+                <h1 className="gabarito text-[16px]">{banner.content}</h1>
                 <div className="w-full flex items-center">
                   <div className="flex w-full items-center justify-between">
                     <div className="flex gap-2 items-center">

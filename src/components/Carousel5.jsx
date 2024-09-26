@@ -93,10 +93,10 @@ function Carousel5() {
           {Banners.map((banner, index) => (
             <div className="p-5  " key={index}>
               <div
-                className="bg-gradient-to-r from-[#FBA154] to-[#f6754a] text-white h-[300px] p-5 md:p-10 flex justify-between flex-col gap-2 border-2   rounded-xl"
+                className="bg-gradient-to-r from-[#FBA154] to-[#f6754a] text-white h-[400px] p-5 md:p-10 flex justify-between flex-col gap-2 border-2   rounded-xl"
                 key={index}
               >
-                <h1 className="gabarito text-[10px]">{banner.content}</h1>
+                <h1 className="gabarito text-[14px]">{banner.content}</h1>
                 <div className="w-full flex items-center">
                   <div className="flex w-full items-center justify-between">
                     <div className="flex gap-2 items-center">
@@ -117,10 +117,10 @@ function Carousel5() {
           {Banners.map((banner, index) => (
             <div className="p-5 " key={index}>
               <div
-                className=" bg-gradient-to-r from-[#FBA154] to-[#f6754a] text-white h-[300px] p-5 md:p-10 flex justify-between flex-col gap-2 border-2   rounded-xl"
+                className=" bg-gradient-to-r from-[#FBA154] to-[#f6754a] text-white h-[400px] p-5 md:p-10 flex justify-between flex-col gap-2 border-2   rounded-xl"
                 key={index}
               >
-                <h1 className="gabarito text-[10px]">{banner.content}</h1>
+                <h1 className="gabarito text-[14px]">{banner.content}</h1>
                 <div className="w-full flex items-center">
                   <div className="flex w-full items-center justify-between">
                     <div className="flex gap-2 items-center">

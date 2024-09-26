@@ -83,6 +83,9 @@ import step6 from "../assets/ukpics/step6.jpg";
 import step7 from "../assets/ukpics/step7.jpg";
 import step8 from "../assets/ukpics/step8.jpg";
 import step9 from "../assets/ukpics/step9.jpg";
+import { TbFileCv } from "react-icons/tb";
+import { CiDiscount1 } from "react-icons/ci";
+import { BiSolidReport } from "react-icons/bi";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
@@ -912,75 +915,64 @@ const WebinarUK = () => {
             <div className="mt-10 lg:mt-20 flex justify-center items-center w-full">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-20 justify-center items-center mx-auto">
                 {/* Bonus Item 1 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
-                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={25} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    2 Resume & <span></span>
-                    <span>Cold Email Live Sessions worth £10 </span>
+                    2 Resume & Cold Email Live Sessions worth £10
                   </h1>
-                  <FaPython className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
+                  <TbFileCv className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
                 </div>
 
                 {/* Bonus Item 2 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
-                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={25} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    2 Linkedin
-                    <span>Mastery Live </span> <span>Sessions worth £20</span>
+                    2 Linkedin Mastery Live Sessions worth £20
                   </h1>
                   <img
                     className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                    src={doc}
+                    src={Linkedin}
                   />
                 </div>
 
                 {/* Bonus Item 3 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
-                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={25} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    Free Discord Community <span>for placement guidance </span>
-                    <span>(Lifetime Access)</span>
+                    Free Discord Community for placement guidance (Lifetime
+                    Access)
                   </h1>
-                  <FaChessQueen className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
+                  <img
+                    className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
+                    src={discord}
+                  />
                 </div>
 
                 {/* Bonus Item 4 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
-                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={25} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    30% Discount <span>on All </span>Projects worth £100
+                    30% Discount on All Projects worth £100
                   </h1>
-                  <img
-                    className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                    src={interview}
-                  />
+                  <CiDiscount1 className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
                 </div>
 
                 {/* Bonus Item 5 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
-                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={25} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    Unlimited Free
-                    <span>Plagiarism & AI </span>
-                    <span>Turnitin Report worth £50 </span>
+                    Unlimited Free Plagiarism & AI Turnitin Report worth £50
                   </h1>
-                  <img
-                    className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                    src={interview}
-                  />
+                  <BiSolidReport className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
                 </div>
 
                 {/* Bonus Item 6 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[250px] lg:w-[250px]">
-                  <FaStar className="ml-2" size={15} color="#F15A29" />
+                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
+                  <FaStar className="ml-2" size={25} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    5-10% Referral
-                    <span>Discount or Commission </span> <span>worth £50</span>
+                    5-10% Referral Discount or Commission worth £50
                   </h1>
-                  <img
-                    className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                    src={doc}
-                  />
+                  <CiDiscount1 className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
                 </div>
               </div>
             </div>
