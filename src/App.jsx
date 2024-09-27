@@ -28,6 +28,8 @@ import ProjectWorkshop from "./pages/ProjectWorkshop";
 import WebinarAds from "./pages/WebinarAds";
 import WebinarGoogleAds from "./pages/WebinarGoogleAds";
 import WebinarUK from "./pages/WebinarUK";
+import WebinarPhdProffesors from "./pages/WebinarPhdProffesors";
+import WebinarHardware from "./pages/WebinarHardware";
 
 function App() {
   return (
@@ -43,6 +45,16 @@ function App() {
           <Route path="/consultations" element={<Webinar />} />
           <Route exact path="/bookacall" element={<WebinarAds />} />
           <Route exact path="/thesis-service" element={<WebinarUK />} />
+          <Route
+            exact
+            path="/phd-projects"
+            element={<WebinarPhdProffesors />}
+          />
+          <Route
+            exact
+            path="/hardware-projects"
+            element={<WebinarHardware />}
+          />
           <Route exact path="/bookacallnow" element={<WebinarGoogleAds />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:blog" element={<BlogItem />} />
