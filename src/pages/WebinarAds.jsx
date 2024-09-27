@@ -65,6 +65,7 @@ import internship from "../assets/internship.png";
 import hacks from "../assets/hacks.png";
 import interviewprep from "../assets/interviewprep.png";
 import { useLocation } from "react-router";
+import usePixelTracking from "../hooks/facebookPixelHook";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
@@ -229,6 +230,7 @@ const MainCard = ({ setShowForm }) => {
   const [college, setCollege] = useState();
   const [year, setYear] = useState();
   const filled = localStorage.getItem("PopUp");
+  usePixelTracking(6604459609678289);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -252,7 +254,12 @@ const MainCard = ({ setShowForm }) => {
     event.preventDefault();
 
     // Facebook Pixel - Track form submission event
-    window.fbq("track", "Lead");
+    if (window.fbq) {
+      // Track the Lead event for the first Pixel ID
+      window.fbq("track", "Lead", {
+        pixelId: "6604459609678289", // First Pixel ID
+      });
+    }
 
     // Proceed with form submission
     await fetch("https://crm-backend-o6sb.onrender.com/adsCustomer/send", {
@@ -455,10 +462,6 @@ const MainCard = ({ setShowForm }) => {
         }
       );
   };
-
-  useEffect(() => {
-    window.fbq("track", "PageView");
-  }, []);
 
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">

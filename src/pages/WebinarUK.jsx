@@ -86,6 +86,7 @@ import step9 from "../assets/ukpics/step9.jpg";
 import { TbFileCv } from "react-icons/tb";
 import { CiDiscount1 } from "react-icons/ci";
 import { BiSolidReport } from "react-icons/bi";
+import usePixelTracking from "../hooks/facebookPixelHook";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
@@ -309,6 +310,8 @@ const MainCard = ({ setShowForm }) => {
     requirement: "",
   });
 
+  usePixelTracking(814770300732630);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
@@ -321,7 +324,11 @@ const MainCard = ({ setShowForm }) => {
     event.preventDefault();
 
     // Facebook Pixel - Track form submission event
-    window.fbq("track", "Lead");
+    if (window.fbq) {
+      window.fbq("track", "Lead", {
+        pixelId: "814770300732630",
+      });
+    }
 
     // Proceed with form submission
     await fetch("https://crm-backend-o6sb.onrender.com/ukAdsCustomer/send", {
@@ -422,10 +429,6 @@ const MainCard = ({ setShowForm }) => {
         }
       );
   };
-
-  useEffect(() => {
-    window.fbq("track", "PageView");
-  }, []);
 
   return (
     <div className="p-4">
