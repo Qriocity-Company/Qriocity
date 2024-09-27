@@ -50,6 +50,15 @@ export const Navbar = () => {
           <Link to="/Bootcamp" className={isRouteActive("/Bootcamp")}>
             Bootcamp
           </Link>
+          <Link
+            to="/thesis-service"
+            className={isRouteActive("/thesis-service")}
+          >
+            Thesis
+          </Link>
+          <Link to="/phd-projects" className={isRouteActive("/phd-projects")}>
+            Phd-projects
+          </Link>
         </div>
         <div className="md:hidden flex items-center">
           {showMenu ? (
@@ -137,6 +146,24 @@ export const Navbar = () => {
               }}
             >
               Bootcamp
+            </Link>
+            <Link
+              to="/thesis-service"
+              className={isRouteActive("/thesis-service")}
+              onClick={() => {
+                toggleMenu();
+              }}
+            >
+              Thesis
+            </Link>
+            <Link
+              to="/phd-projects"
+              className={isRouteActive("/phd-projects")}
+              onClick={() => {
+                toggleMenu();
+              }}
+            >
+              Phd-projects
             </Link>
 
             <HiX
