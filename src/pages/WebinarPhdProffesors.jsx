@@ -1,76 +1,20 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import Faq from "../components/Faq";
 import "../styles/Contact.css";
-import User1 from "../assets/user_01.jpg";
-import User2 from "../assets/user_02.jpg";
-import User3 from "../assets/user_03.jpg";
-import User4 from "../assets/User4.jpg";
-import Review from "../assets/review.png";
-import clock from "../assets/clock.png";
-import calendar from "../assets/calendar.png";
-import bullet from "../assets/bullet.png";
 import { FaSchool, FaStar } from "react-icons/fa";
 import Linkedin from "../assets/linkedin.png";
-import doc from "../assets/doc.png";
-
 import discord from "../assets/discord.png";
-import interview from "../assets/interview.png";
-
-import leetcode from "../assets/leetcode.png";
-import DataScience from "../assets/Data_Science.svg";
-import MachineLearning from "../assets/machineLearning.svg";
-import ArtificialIntelligence from "../assets/Ai.svg";
-import DeepLearning from "../assets/deeplearning.svg";
-import Blockchain from "../assets/blockchain.svg";
-import Cloud from "../assets/cloud.svg";
-import Cyber from "../assets/cyber.svg";
-import Web from "../assets/web.svg";
-import App from "../assets/app.svg";
-import Testimonial from "../assets/testimonial.png";
-import Laptop from "../assets/laptop.png";
-import Group from "../assets/group.png";
 import MoneyBack from "../assets/money_back.png";
 import Refund from "../assets/refund.png";
-import fb from "../assets/Group 1000004395.svg";
-import insta from "../assets/Group 1000004397.svg";
-import name from "../assets/ri_user-4-fill.svg";
-import email from "../assets/ic_round-alternate-email.svg";
-import phone from "../assets/fluent_phone-20-filled.svg";
-import {
-  FaLinkedin,
-  FaPython,
-  FaChessQueen,
-  FaCertificate,
-} from "react-icons/fa";
-import hand from "../assets/Image COntact.png";
 import Modal from "../components/Modal";
-import laptop2 from "../assets/laptop-2.png";
-import hs from "../assets/higher-studies.png";
-import cap from "../assets/g-cap.png";
-import cguidance from "../assets/career-guidance.png";
-import play from "../assets/play-btn.svg";
-import vcbtn from "../assets/vc-icon.png";
-import pdf from "../assets/pdf.png";
-import Popup from "../components/Popup";
-import axios from "axios";
 import { ImSpinner8 } from "react-icons/im";
 import emailjs from "@emailjs/browser";
-import PricingSection2 from "../components/PricingSection2";
-import Testimonials4 from "../components/Testimonials4";
-import dream from "../assets/dream.png";
-import portfolio from "../assets/portfolio.png";
-import jobmarket from "../assets/jobmarket.png";
-import internship from "../assets/internship.png";
-import hacks from "../assets/hacks.png";
-import interviewprep from "../assets/interviewprep.png";
-import { useLocation } from "react-router";
+import PricingSection3 from "../components/PricingSection3";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import Testimonials6 from "../components/Testimonials6";
+import Testimonials7 from "../components/Testimonials7";
 import { RiCustomerServiceFill } from "react-icons/ri";
 import { GrInProgress } from "react-icons/gr";
-import { MdIncompleteCircle } from "react-icons/md";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 import { TbReportAnalytics, TbReportSearch } from "react-icons/tb";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
@@ -91,86 +35,72 @@ import usePixelTracking from "../hooks/facebookPixelHook";
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
   {
-    question: "What services do you offer for dissertations? ",
+    question: "Do you offer topic suggestions for AI/ML research? ",
     answer:
-      "We offer a full range of services, including topic selection, proposal writing, data analysis, and final dissertation writing. We handle both qualitative and quantitative research.",
+      "Yes, we assist in developing novel ideas that align with current trends in AI and machine learning.",
   },
   {
-    question: "How do you ensure my dissertation is plagiarism-free? ",
+    question: "How do you ensure originality?",
     answer:
-      "We use Turnitin to scan all documents for plagiarism, and we provide a full report showing that your work is 100% original.",
+      "We use Turnitin and provide a detailed report to ensure your research is 100% original.",
   },
   {
-    question: "What happens if I need revisions?",
+    question: "Can I monitor progress?  ",
     answer:
-      "We offer unlimited revisions until you are completely satisfied with the final product.",
+      "Yes, we provide regular progress reports and drafts to keep you informed.",
   },
   {
-    question: "Do you offer a fast-track service? ",
+    question: "Do you offer support for AI/ML model development?",
     answer:
-      "Yes, if you’re working with a tight deadline, we offer a priority service to complete your dissertation as quickly as possible without sacrificing quality.",
+      "Absolutely! We specialize in developing and optimizing AI/ML models tailored to your research needs.",
   },
   {
-    question: "Can I see progress reports during the writing process? ",
+    question: "Is the consultation free?  ",
     answer:
-      "Absolutely! We provide regular updates and drafts for your review so you can monitor the progress of your dissertation.",
+      "Yes, we offer a free initial consultation to discuss your research goals and how we can assist you.",
   },
   {
-    question: "How can I trust that you’ll meet my deadline? ",
+    question: "What type of data can you work with? ",
     answer:
-      "We have a track record of delivering every project on time. We also provide regular updates to keep you informed throughout the process.",
+      " We work with a wide range of data types, including structured, unstructured, time-series, and image data for AI/ML model development.",
   },
   {
-    question: "What is the 30% discount offer? ",
+    question: " Can you assist with thesis writing and formatting?  ",
     answer:
-      "We’re currently offering 30% off on all dissertation and thesis projects. Book a free consultation now to take advantage of this limited-time offer!",
+      "Yes, we provide full support for structuring, writing, and formatting your thesis according to academic standards.",
   },
   {
-    question: " Can you help me select a dissertation topic? ",
+    question: "Do you offer support after the research is completed?   ",
     answer:
-      " Yes, we offer assistance in selecting a relevant and research-worthy topic based on your area of interest and academic requirements.",
+      "Yes, we provide post-submission support, including revisions and answering questions during your review process.",
   },
   {
-    question:
-      "Do you provide support for both qualitative and quantitative research?",
+    question: "Can you help with literature review?",
     answer:
-      "Yes, we provide comprehensive support for both qualitative and quantitative research, including data collection, analysis, and interpretation.",
+      " Yes, we assist in conducting a comprehensive literature review and identifying key papers relevant to your research topic.",
   },
   {
-    question: "Is the consultation free?",
+    question: "What is the timeline for completing a research paper or thesis?",
     answer:
-      "Yes, we offer a free initial consultation to discuss your dissertation needs, timelines, and how we can assist you.",
+      " Timelines vary based on the complexity of your project, but we always work to meet your deadlines, with ongoing progress updates.",
   },
   {
-    question: " Do you offer installment payment options?  ",
+    question: "Do you provide data analysis services? ",
     answer:
-      "Yes, we offer flexible payment plans so you can pay for your dissertation services in installments as the work progresses.",
+      " Yes, we offer advanced data analysis services for quantitative, qualitative, and mixed-methods research.",
   },
   {
-    question: "Will my dissertation be confidential?",
+    question: "Can you help with publishing my paper?  ",
     answer:
-      "Yes, confidentiality is a top priority. All of your personal and project details are kept completely private, and we ensure the security of your data.",
+      " Yes, we assist in preparing your research for submission, formatting according to journal requirements, and providing guidance on choosing the right journal.",
   },
 ];
 
-const images = [
-  { name: "Data Science", src: DataScience },
-  { name: "Machine Learning", src: MachineLearning },
-  { name: "Artificial Intelligence", src: ArtificialIntelligence },
-  { name: "Deep Learning", src: DeepLearning },
-  { name: "Blockchain", src: Blockchain },
-  { name: "Cloud Computing", src: Cloud },
-  { name: "Cyber security", src: Cyber },
-  { name: "Full Stack Development", src: Web },
-  { name: "App Development", src: App },
-  // Add more objects as needed
-];
 const data2 = [
-  { name: "Formatting according to Institution", check1: "❌", check2: "✅" },
   {
-    name: "Number of Projects",
-    check1: "Unlimited Projects",
-    check2: "Limited projects to focus on quality",
+    name: "Formatting according to Journal guidelines",
+    check1: "❌",
+    check2: "✅",
   },
   {
     name: "Experience",
@@ -183,9 +113,9 @@ const data2 = [
     check2: "Professional team of expert developers & writers",
   },
   {
-    name: "Project Titles",
-    check1: "Old basic titles",
-    check2: "Novelty based Research Titles ",
+    name: "Research Novelty ",
+    check1: "Basic",
+    check2: "Cutting-Edge Research in AI and ML",
   },
   {
     name: "Plagiarism",
@@ -200,17 +130,12 @@ const data2 = [
   {
     name: "Referral Program",
     check1: "❌",
-    check2: "Earn upto £100  by referring friends",
-  },
-  {
-    name: "Placement Preparation Support",
-    check1: "❌",
-    check2: "Free Placement Support",
+    check2: "Earn upto 10K by referring others",
   },
   {
     name: "Bonus",
     check1: "❌",
-    check2: "Bonuses worth £230",
+    check2: "Bonuses worth ₹7993",
   },
   {
     name: "Price Discount",
@@ -232,63 +157,63 @@ const data2 = [
 const timelineData = [
   {
     content:
-      "Initial Consultation – We start with a free 1-1 consultation to understand your academic needs, deadlines, and specific requirements.",
+      "Initial Consultation – We begin with a 1-on-1 consultation to understand your research goals, timelines, and specific requirements.",
     img: step1,
     alt: "Choose Project Domain",
     step: "Step 1",
   },
   {
     content:
-      "Topic Selection & Proposal – We assist in choosing a research-worthy topic and develop a proposal that meets academic standards and secures approval from your institution.",
+      "Topic Ideation & Proposal Writing – We assist in developing novel research topics and drafting proposals that meet academic standards and gain approval.",
     img: step2,
     alt: "Step by Step guide",
     step: "Step 2",
   },
   {
     content:
-      "Literature Review – We conduct a comprehensive review of existing literature, helping you build a strong theoretical framework for your dissertation.",
+      "Literature Review – We perform a deep dive into existing research, ensuring a robust theoretical foundation for your paper.",
     img: step3,
     alt: "Research Paper",
     step: "Step 3",
   },
   {
     content:
-      "Research Design – We design your research methodology, whether qualitative or quantitative, ensuring your project meets the highest academic standards.",
+      "Research Design & Methodology – We design a research plan tailored to your project, covering both qualitative and quantitative methods.",
     img: step4,
     alt: "Project Roadmap",
     step: "Step 4",
   },
   {
     content:
-      "Data Collection & Analysis – Our team handles everything from data collection, statistical analysis, and presenting your findings in a clear, concise manner.",
+      "Data Collection & AI/ML Model Development – Our experts collect and analyze data using cutting-edge machine learning techniques, ensuring accurate and valuable insights.",
     img: step5,
     alt: "Good Grades",
     step: "Step 5",
   },
   {
     content:
-      "Writing the Dissertation – We carefully draft each chapter, ensuring that it’s well-researched, properly formatted, and free from any grammatical errors.",
+      "Writing & Structuring – We meticulously write each section, from introduction to conclusion, maintaining logical flow and academic coherence.",
     img: step6,
     alt: "Dream Job",
     step: "Step 6",
   },
   {
     content:
-      "Plagiarism & AI Checks – Using Turnitin, we guarantee your dissertation is 100% original with no AI-generated content.",
+      " Plagiarism & AI Checks – We validate the originality of your work with Turnitin to ensure no AI-generated content.",
     img: step7,
     alt: "Dream Job",
     step: "Step 7",
   },
   {
     content:
-      "Step 8: Final Edits & Feedback – After receiving your feedback, we revise the document to ensure it meets your expectations and academic requirements.",
+      "Final Edits & Revisions – We incorporate your feedback, ensuring the final document is polished and ready for submission",
     img: step8,
     alt: "Dream Job",
     step: "Step 8",
   },
   {
     content:
-      "Step 9: Submission-Ready Document – Receive a submission-ready dissertation that adheres to your institution’s guidelines.",
+      "Submission-Ready Paper or Thesis – Receive a research paper or thesis that adheres to all university or journal guidelines.",
     img: step9,
     step: "Step 9",
   },
@@ -425,11 +350,11 @@ const MainCard = ({ setShowForm }) => {
     <div className="p-4">
       <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
         <div className="lg:text-[60px] md:text-5xl  text-3xl md:leading-[72px]  mt-8">
-          Quick, Quality Thesis &<br /> Dissertations delivered with 0% AI and
-          plagiarism
+          Quick, Quality Phd Thesis &
+          <br /> Research Papers delivered with 0% AI and plagiarism
         </div>
         <p className="text-[#FBA154] md:text-3xl mt-5 ">
-          Leave the project to us and get your dream job
+          Leave the research paper work to us and get your phd stress
         </p>
 
         <form onSubmit={onSubmit} className="w-[80%] mt-8">
@@ -444,26 +369,15 @@ const MainCard = ({ setShowForm }) => {
               required
             />
 
-            <PhoneInput
-              country={"gb"}
-              inputProps={{ required: true }}
+            <input
               maxlength="10"
               pattern="\d{10}"
               name="phoneNumber"
               placeholder="Enter Contact Number"
-              className="  rounded-lg outline-none w-full" // Set to w-full
+              className="p-4 bg-white rounded-lg outline-none w-full"
               value={formData.phoneNumber}
-              onChange={(phoneNumber) =>
-                setFormData((prevState) => ({
-                  ...prevState,
-                  phoneNumber,
-                }))
-              }
+              onChange={handleChange}
               required
-              inputStyle={{
-                height: "56px",
-                width: "100%",
-              }}
             />
           </div>
           <div className="flex  flex-col  mt-5 md:mt-10  md:flex-row w-[100%] justify-between gap-4 text-black">
@@ -586,11 +500,8 @@ const WebinarPhdProffesors = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
-    if (activeIndex === index) {
-      setActiveIndex(null); // Collapse if already active
-    } else {
-      setActiveIndex(index); // Open the clicked one
-    }
+    // If the currently active FAQ is clicked again, close it; otherwise, set the new index
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   const offerEndTime = new Date();
@@ -641,8 +552,8 @@ const WebinarPhdProffesors = () => {
             <ContentCard content="On-Time Delivery Guaranteed" />
             <ContentCard content="Expert Developers & Researchers" />
             <ContentCard content="5+ Years of Expertise" />
-            <ContentCard content="0% AI and Plagiarism Turnitin Report" />
-            <ContentCard content="Proven Success with Over 2,000 Satisfied Students" />
+            <ContentCard content="0% AI and Plagiarism – Verified with Turnitin Reports" />
+            <ContentCard content=" Proven Success with Over 500 Published Papers and Projects" />
             <button
               className="btn md:mt-20 lg:font-bold font-semibold  mt-10 text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  lg:px-16 lg:py-4 p-4 rounded-full md:text-xl "
               style={{}}
@@ -660,13 +571,15 @@ const WebinarPhdProffesors = () => {
           {/* What problem we will solve? section  */}
           <div className="md:mt-20 mt-10 md:p-16 p-4 z-0 ">
             <div className="lg:text-6xl md:text-4xl text-2xl text-center text-white  ">
-              Stuck with Projects or Placements? Consider its solved
+              Need Support for Your PhD Thesis or Research Paper? Consider It’s
+              Done.
             </div>
             <div className="relative mt-16 md:px-20   space-y-12    ">
               <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
                 <ProblemCard
-                  content="Overwhelming Research Process? "
-                  boldContent=" We handle everything from research design to data collection, ensuring academic excellence"
+                  content="Struggling with Complex Research? "
+                  boldContent="We simplify the entire process, from formulating research questions to executing advanced AI/ML models.
+"
                   pos="left"
                 />
                 <div className="lg:flex hidden justify-between items-center w-full  ">
@@ -678,15 +591,16 @@ const WebinarPhdProffesors = () => {
                   <div className=" w-[10px] h-[10px] bg-white  rounded-full  text-white "></div>
                 </div>
                 <ProblemCard
-                  content="Inexperienced with Data Analysis??"
-                  boldContent="Our experts handle quantitative, qualitative, and mixed methods research with ease."
+                  content="Need breakthrough ideas?"
+                  boldContent="We help you create research-worthy, innovative concepts in AI and ML.
+"
                   pos="right"
                 />
               </div>
               <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
                 <ProblemCard
                   content="Worried About Deadlines?"
-                  boldContent="We provide timely drafts, regular updates, and guarantee on-time submission."
+                  boldContent="We deliver on time, providing continuous progress updates and guaranteeing timely submission."
                   pos="left"
                 />
                 <div className=" lg:flex hidden  justify-between items-center w-full ">
@@ -698,16 +612,17 @@ const WebinarPhdProffesors = () => {
                   <div className=" w-[10px] h-[10px] bg-white  rounded-full  text-white "></div>
                 </div>
                 <ProblemCard
-                  content="Fear of Plagiarism?"
-                  boldContent="We use Turnitin to ensure your dissertation is 100% original and plagiarism-free."
+                  content="Concerned About Plagiarism? "
+                  boldContent="We ensure 100% originality in all deliverables, backed by comprehensive Turnitin reports."
                   pos="right"
                 />
               </div>
 
               <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
                 <ProblemCard
-                  content="Need Guidance?"
-                  boldContent="We offer continuous support, addressing all your questions throughout the process."
+                  content=" Require Guidance in Writing?"
+                  boldContent="Our Developers & Researchers are here to assist with structured writing that aligns with academic standards.
+"
                   pos="left"
                 />
                 <div className=" lg:flex hidden  justify-between items-center w-full ">
@@ -719,8 +634,8 @@ const WebinarPhdProffesors = () => {
                   <div className=" w-[10px] h-[10px] bg-white  rounded-full  text-white "></div>
                 </div>
                 <ProblemCard
-                  content="Stressed About Formatting?"
-                  boldContent="We ensure your dissertation meets all formatting requirements (APA, MLA, Chicago, etc.).
+                  content="Data Analysis Challenges?"
+                  boldContent="We handle advanced data analysis for quantitative, qualitative, and mixed-methods research with ease.
 "
                   pos="right"
                 />
@@ -770,7 +685,7 @@ const WebinarPhdProffesors = () => {
               >
                 Roadmap for{" "}
               </span>{" "}
-              Your Dissertation
+              Your Research Paper or Thesis
             </h1>
 
             <div className="relative flex flex-col justify-center items-center mt-10 gap-10 px-4 sm:px-8 md:px-16 mb-5">
@@ -821,7 +736,7 @@ const WebinarPhdProffesors = () => {
                     src={item.img}
                     alt={item.alt}
                   />
-                  <div className="bg-slate-200 p-4 rounded-xl h-[260px] w-full md:w-[200px] lg:w-[250px] font-semibold flex flex-col justify-center items-center">
+                  <div className="bg-slate-200 p-4 rounded-xl h-[280px] w-full md:w-[200px] lg:w-[250px] font-semibold flex flex-col justify-center items-center">
                     <h1 className="font-bold text-[26px] text-orange-400">
                       {item.step}
                     </h1>
@@ -844,31 +759,31 @@ const WebinarPhdProffesors = () => {
               {[
                 {
                   icon: <TbReportAnalytics size="50px" color="white" />,
-                  text: "Complete Dissertation/Thesis",
+                  text: "Complete Research Paper/Thesis ",
                 },
                 {
                   icon: <HiOutlineDocumentReport size="50px" color="white" />,
-                  text: "Turnitin Report for AI and Plagiarism",
+                  text: "Turnitin Reports for AI and Plagiarism ",
                 },
                 {
                   icon: <TbReportSearch size="50px" color="white" />,
-                  text: "Data Analysis Reports for both qualitative & quantitative research",
+                  text: "Advanced Data Analysis Reports for AI/ML Models",
                 },
                 {
                   icon: <FaSchool size="50px" color="white" />,
-                  text: "Custom Formatting according to your institution",
+                  text: "Customized Formatting as per academic guidelines ",
                 },
                 {
                   icon: <LiaChalkboardTeacherSolid size="50px" color="white" />,
-                  text: "Unlimited revisions according to your guide",
+                  text: "Unlimited Revisions until your satisfaction",
                 },
                 {
                   icon: <GrInProgress size="50px" color="white" />,
-                  text: "Progress Reports at every stage",
+                  text: "Regular Progress Reports at each stage  ",
                 },
                 {
                   icon: <RiCustomerServiceFill size="50px" color="white" />,
-                  text: "24/7 Customer Support",
+                  text: "24/7 Research Support for all queries",
                 },
               ].map((item, index) => (
                 <div
@@ -894,7 +809,7 @@ const WebinarPhdProffesors = () => {
                   scrollToTop();
                 }}
               >
-                GET END-END PROJECT SOLUTION NOW
+                BOOK YOUR FREE CONSULTATION CALL NOW
               </button>
             </div>
           </div>
@@ -907,12 +822,12 @@ const WebinarPhdProffesors = () => {
 
             {/* Bonuses Grid */}
             <div className="mt-10 lg:mt-20 flex justify-center items-center w-full">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-20 justify-center items-center mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-20 justify-center items-center mx-auto">
                 {/* Bonus Item 1 */}
                 <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
                   <FaStar className="ml-2" size={25} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    2 Resume & Cold Email Live Sessions worth £10
+                    AI/ML Research based AI/ML Project Titles worth Rs.999
                   </h1>
                   <TbFileCv className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
                 </div>
@@ -921,7 +836,7 @@ const WebinarPhdProffesors = () => {
                 <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
                   <FaStar className="ml-2" size={25} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    2 Linkedin Mastery Live Sessions worth £20
+                    Access to Exclusive AI Tools worth Rs.1999
                   </h1>
                   <img
                     className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
@@ -933,8 +848,7 @@ const WebinarPhdProffesors = () => {
                 <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
                   <FaStar className="ml-2" size={25} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    Free Discord Community for placement guidance (Lifetime
-                    Access)
+                    Unlimited Turnitin Reports worth Rs.1999
                   </h1>
                   <img
                     className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
@@ -946,25 +860,7 @@ const WebinarPhdProffesors = () => {
                 <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
                   <FaStar className="ml-2" size={25} color="#F15A29" />
                   <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    30% Discount on All Projects worth £100
-                  </h1>
-                  <CiDiscount1 className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
-                </div>
-
-                {/* Bonus Item 5 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
-                  <FaStar className="ml-2" size={25} color="#F15A29" />
-                  <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    Unlimited Free Plagiarism & AI Turnitin Report worth £50
-                  </h1>
-                  <BiSolidReport className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
-                </div>
-
-                {/* Bonus Item 6 */}
-                <div className="bg-white p-4 rounded-xl flex flex-col h-auto w-[260px] lg:h-[220px] lg:w-[250px]">
-                  <FaStar className="ml-2" size={25} color="#F15A29" />
-                  <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                    5-10% Referral Discount or Commission worth £50
+                    How to write Research Paper A-Z Guideline worth Rs.2999
                   </h1>
                   <CiDiscount1 className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
                 </div>
@@ -1034,7 +930,7 @@ const WebinarPhdProffesors = () => {
             </div>
             <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 mb-10">
               <button
-                className="lg:px-14 lg:py-4 w-[300px] p-3 rounded-full lg:font-bold font-semibold text-white"
+                className="lg:px-14 lg:py-4 p-3 rounded-full lg:font-bold font-semibold text-white"
                 style={{
                   background:
                     "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
@@ -1043,7 +939,7 @@ const WebinarPhdProffesors = () => {
                   scrollToTop();
                 }}
               >
-                START YOUR PROJECT JOURNEY WITH QRIOCITY
+                BOOK YOUR FREE CONSULTATION CALL NOW
               </button>
             </div>
           </div>
@@ -1052,10 +948,10 @@ const WebinarPhdProffesors = () => {
             <h1 className="text-white text-[32px] font-bold ">
               Exclusive Offers
             </h1>
-            <PricingSection2 />
+            <PricingSection3 />
           </div>
 
-          <Testimonials6 />
+          <Testimonials7 />
 
           {/* Still Not Sure? We Have */}
           <div className="md:mt-20 mt-10 text-center mb-36 md:mb-20 md:p-16 p-4 ">
@@ -1072,29 +968,27 @@ const WebinarPhdProffesors = () => {
               />
               <div className=" absolute lg:p-10 p-8  text-white justify-center items-start md:leading-9 md:text-xl  flex flex-col  md:gap-10 gap-5 mt-14 ">
                 <div>
-                  Secure your exceptional dissertation or master's thesis offer
-                  today and enjoy a full money-back guarantee. Enroll now,
-                  explore our detailed services, and if you're not satisfied for
-                  any reason, simply drop us an email, and{" "}
+                  Secure your exceptional PhD research paper or thesis
+                  assistance today with our risk-free, money-back guarantee.
+                  Enroll now to explore our comprehensive services, and if
+                  you're not fully satisfied, simply send us an email, and we'll{" "}
                   <span className="bg-[#F15A29]">
-                    we’ll refund your entire investment—no questions asked!
-                  </span>
+                    refund your entire investment
+                  </span>{" "}
+                  no questions asked!
                 </div>
                 <div>
-                  At Qriocity, we are dedicated to your academic success and
-                  satisfaction. Dive into our comprehensive dissertation
-                  resources, expert mentorship, and unwavering support. Your
-                  journey toward completing your dissertation or master's thesis
-                  is entirely risk-free with our money-back guarantee. Your
-                  success, satisfaction, and peace of mind are our highest
-                  priorities. Join us today and see the difference!
+                  At Qriocity, we are dedicated to your academic success.
+                  Leverage our expert guidance, tailored research support, and
+                  in-depth resources to ensure the highest quality in your work.
                 </div>
                 <div>
-                  Your venture into your final year project is{" "}
-                  <span className="bg-[#F15A29]"> completely risk-free</span>{" "}
+                  Your journey toward completing your PhD thesis or research
+                  paper is{" "}
+                  <span className="bg-[#F15A29]">completely risk-free</span>{" "}
                   with our money-back guarantee. Your success, satisfaction, and
-                  peace of mind are our top priorities. Join us today and
-                  experience the difference!
+                  peace of mind are our top priorities. Partner with us today
+                  and elevate your research to new heights!{" "}
                 </div>
               </div>
             </div>
@@ -1169,7 +1063,7 @@ const WebinarPhdProffesors = () => {
                 Free
                 <span className="ml-3 md:text-2xl text-xs line-through">
                   {" "}
-                  £ 250
+                  ₹ 8000
                 </span>
               </p>
               <p className="md:text-lg  text-sm font-semibold">
