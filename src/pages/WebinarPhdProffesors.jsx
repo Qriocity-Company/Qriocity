@@ -226,6 +226,7 @@ const scrollToTop = () => {
 const MainCard = ({ setShowForm }) => {
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  usePixelTracking(1217867812672830);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -245,6 +246,13 @@ const MainCard = ({ setShowForm }) => {
   async function onSubmit(event) {
     setLoading(true);
     event.preventDefault();
+
+    if (window.fbq) {
+      // Track the Lead event for the first Pixel ID
+      window.fbq("track", "Lead", {
+        pixelId: "1217867812672830", // First Pixel ID
+      });
+    }
 
     // Proceed with form submission
     await fetch("https://crm-backend-o6sb.onrender.com/phdProffesors/send", {

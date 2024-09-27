@@ -43,28 +43,14 @@ import {
   FaChessQueen,
   FaCertificate,
 } from "react-icons/fa";
-import hand from "../assets/Image COntact.png";
+
 import Modal from "../components/Modal";
-import laptop2 from "../assets/laptop-2.png";
-import hs from "../assets/higher-studies.png";
-import cap from "../assets/g-cap.png";
-import cguidance from "../assets/career-guidance.png";
-import play from "../assets/play-btn.svg";
-import vcbtn from "../assets/vc-icon.png";
-import pdf from "../assets/pdf.png";
-import Popup from "../components/Popup";
 import axios from "axios";
 import { ImSpinner8 } from "react-icons/im";
 import emailjs from "@emailjs/browser";
 import PricingSection from "../components/PricingSection";
 import Testimonials4 from "../components/Testimonials4";
-import dream from "../assets/dream.png";
-import portfolio from "../assets/portfolio.png";
-import jobmarket from "../assets/jobmarket.png";
-import internship from "../assets/internship.png";
-import hacks from "../assets/hacks.png";
-import interviewprep from "../assets/interviewprep.png";
-import { useLocation } from "react-router";
+
 import usePixelTracking from "../hooks/facebookPixelHook";
 
 // import MachineLearning from "../assets/machineLearning.svg";
@@ -230,7 +216,7 @@ const MainCard = ({ setShowForm }) => {
   const [college, setCollege] = useState();
   const [year, setYear] = useState();
   const filled = localStorage.getItem("PopUp");
-  usePixelTracking(6604459609678289);
+  usePixelTracking(1217867812672830);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -252,7 +238,12 @@ const MainCard = ({ setShowForm }) => {
   async function onSubmit(event) {
     setLoading(true);
     event.preventDefault();
-
+    if (window.fbq) {
+      // Track the Lead event for the first Pixel ID
+      window.fbq("track", "Lead", {
+        pixelId: "1217867812672830", // First Pixel ID
+      });
+    }
     // Proceed with form submission
     await fetch(
       "https://crm-backend-o6sb.onrender.com/hardwareCustomers/send",
