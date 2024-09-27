@@ -200,7 +200,7 @@ const data2 = [
   {
     name: "Referral Program",
     check1: "❌",
-    check2: "Earn upto 100 pounds by referring friends",
+    check2: "Earn upto £100  by referring friends",
   },
   {
     name: "Placement Preparation Support",
