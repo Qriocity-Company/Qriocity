@@ -1614,7 +1614,7 @@ const Webinar = () => {
         </div>
       </div>
 
-      <footer className=" z-50 py-6   fixed bottom-0 left-0 w-full bg-black text-white p-2">
+      <footer className=" z-40 py-6   fixed bottom-0 left-0 w-full bg-black text-white p-2">
         <div className="md:w-5/6 mx-auto">
           <div className="flex justify-between items-center">
             <div>

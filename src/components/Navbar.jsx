@@ -71,7 +71,7 @@ export const Navbar = () => {
           )}
         </div>
         {showMenu && (
-          <div className="md:hidden fixed top-0 left-0 w-[80%] font-bold h-screen z-[999] backdrop-blur-[0.8rem] flex flex-col gap-10 py-10 items-center text-white bg-[#f4691e] text-[28px] font-Raleway">
+          <div className="md:hidden fixed top-0 left-0 w-[80%] font-bold h-screen z-[50] backdrop-blur-[0.8rem] flex flex-col gap-10 py-10 items-center text-white bg-[#f4691e] text-[28px] font-Raleway overflow-auto">
             <Link
               to="/"
               className={isRouteActive("/")}
