@@ -49,61 +49,66 @@ import axios from "axios";
 import { ImSpinner8 } from "react-icons/im";
 import emailjs from "@emailjs/browser";
 import PricingSection from "../components/PricingSection";
-import Testimonials4 from "../components/Testimonials4";
+import Testimonials8 from "../components/Testimonials8";
 
 import usePixelTracking from "../hooks/facebookPixelHook";
+import PricingSection4 from "../components/PricingSection4";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
   {
-    question: "What types of final year projects do you offer?",
+    question: " What types of hardware projects do you assist with?",
     answer:
-      "We offer a wide range of projects across domains such as Machine Learning, Data Science, IoT, Electronics-based, Web Development, Cloud Computing, Cybersecurity, and more.",
+      "We assist with a wide range of hardware projects, including IoT systems, embedded systems, robotics, automation, sensor networks, PCB design, and prototyping.",
   },
   {
-    question: "Are your projects 100% original and plagiarism-free?",
+    question: " Can you help me choose the right components for my project? ",
     answer:
-      "Yes, all our projects come with 0% plagiarism. We ensure that the code, documentation, and content are original.",
+      " Yes, our team provides expert guidance on selecting the best components based on your project's requirements and budget.",
   },
   {
-    question: "Can I get a project based on an IEEE 2024 base paper?",
+    question: " Do you offer prototyping services for hardware projects?",
     answer:
-      "Yes, we provide projects based on the latest IEEE 2024 base papers tailored to your specific requirements.",
+      "Absolutely! We specialize in developing fully functional prototypes, from PCB design to final assembly and testing.",
   },
   {
-    question: "How long will it take to deliver a complete project?",
+    question: " How long does it take to complete a hardware project?",
     answer:
-      "We offer a 1-day project delivery guarantee for most projects. However, the timeline may vary based on project complexity.",
+      " The timeline depends on the complexity of the project. However, we guarantee timely delivery and will provide an estimated completion time during the consultation phase.",
   },
   {
-    question: "Do you offer guidance on choosing a project domain?",
+    question:
+      " What if I don't have a clear idea for my hardware project? Can you help?",
     answer:
-      "Absolutely! We offer 1-1 consultation to help you select the best domain and project title based on your interests and career goals.",
+      "Yes, we offer consultation services to help you brainstorm and develop innovative hardware project ideas based on your interests or requirements.",
   },
   {
-    question: "What if I need multiple revisions for my project PPTs?",
+    question: "Do you assist with project documentation? ",
     answer:
-      "We understand that project guides may ask you to change a few slides in the PPT, and we are totally fine with doing multiple changes in the presentation.",
+      "Yes, we provide detailed documentation, including schematics, component lists, testing results, and user manuals, as part of the project deliverables.",
   },
   {
-    question: "Do you provide project explanation videos?",
+    question: " Can I track the progress of my hardware project?  ",
     answer:
-      "Yes, we provide a full project explanation video where we walk you through the entire code and execution process.",
+      "Yes, we provide regular progress reports to keep you informed at every stage of development, ensuring transparency and confidence.",
   },
   {
-    question: "Is the project suitable for real-world applications?",
+    question:
+      "What kind of support do you provide after the project is completed?  ",
     answer:
-      "Yes, all of our projects are designed to have real-world applicability, giving you practical experience with industry-standard technologies.",
+      "We offer post-project support, including troubleshooting, updates, and guidance on future iterations or expansions of the project.",
   },
   {
-    question: "Can you develop my own idea/problem statement?",
+    question:
+      "Can you help with hardware integration for IoT and automation projects?",
     answer:
-      "Definitely! We encourage you to share your ideas, and we'll develop that into a working product.",
+      "Yes, we specialize in integrating hardware components like sensors, controllers, and communication modules to create seamless IoT and automation systems.",
   },
   {
-    question: "What if I need extra features added to the project?",
+    question:
+      "Do you assist with certification and compliance for hardware products? ",
     answer:
-      "You can request additional features, and we will assess the feasibility and make the necessary updates.",
+      "Yes, we can guide you through the certification and compliance process, ensuring your project adheres to industry regulations and standards.",
   },
   {
     question: "What happens if my project is rejected by my guide?",
@@ -111,9 +116,15 @@ const faqs = [
       "Our project titles are unique and advanced research-based, so they won’t get rejected. However, if your title is rejected, we will provide a new project at no extra charge.",
   },
   {
-    question: "Do you offer projects for students outside India?",
+    question:
+      "What platforms do you support for embedded system development?  ",
     answer:
-      "Yes, we deliver projects and help with assignments internationally, ensuring they are customized to your local academic requirements.",
+      "We work with a variety of platforms, including Arduino, Raspberry Pi, ESP32, STM32, and more, depending on your project’s needs.",
+  },
+  {
+    question: " What are the costs involved in a hardware project? ",
+    answer:
+      "The cost depends on the complexity of the project, components required, and development time. We provide a detailed quote after the initial consultation.",
   },
 ];
 
@@ -132,17 +143,25 @@ const images = [
 const data2 = [
   { name: "College Format Ppt and Report", check1: "❌", check2: "✅" },
   {
-    name: "Project Titles",
-    check1: "Old Basic Titles",
-    check2: "Novelty Based Research Titles",
+    name: "Project Innovation",
+    check1: "Basic",
+    check2: "Cutting-Edge Innovations in Hardware Development",
   },
-  { name: "Plagiarism", check1: "Github Codes", check2: "0% Plagiarized Code" },
+  {
+    name: "Team",
+    check1: "Inexperienced Team",
+    check2: "Professional Developers & Engineers",
+  },
   {
     name: "Review Wise Code",
-    check1: "Only full code",
+    check1: "❌",
     check2: "Module Wise Code",
   },
-  { name: "Referral Program", check1: "❌", check2: "Earn upto 10k " },
+  {
+    name: "Referral Program",
+    check1: "❌",
+    check2: "Earn upto 10k by referring friends ",
+  },
   {
     name: "Placement Preparation support",
     check1: "❌",
@@ -158,45 +177,73 @@ const data2 = [
   {
     name: "Delivery Timing",
     check1: "No guaranteed delivery date",
-    check2: "1 Day",
+    check2: "7 Days",
   },
 ];
 
 const timelineData = [
   {
-    content: "How to choose your project domain and title",
+    content:
+      "We begin with a 1-on-1 consultation to understand your project goals, timelines, and specific requirements.",
     img: "https://cdn.prod.website-files.com/63c5e29f1b5bc83fe0af2489/6424d753f8eb7a9e69c372fc_Gantt%20Chart%20Online%20Software%20Instagantt%20Ideation%202.webp",
     alt: "Choose Project Domain",
+    step: "Step 1: Initial Consultation",
   },
   {
     content:
-      "Step-by-step guidance on how to complete your final year project with ease.",
+      "We assist in creating innovative hardware concepts and drafting proposals for approval.",
     img: "https://t3.ftcdn.net/jpg/00/50/28/04/360_F_50280421_c3QPI4se3DD2dpppDZKWv035EAlQrY7J.jpg",
     alt: "Step by Step guide",
+    step: "Step 2: Concept Design & Proposal Development ",
   },
   {
     content:
-      "How to add Novelty to your project and publish your research paper.",
+      " We carefully select components and design schematics that form the foundation of your hardware project.",
     img: "https://assets.myperfectwords.com/blog/research-paper-guide/research-paper-outline/Research-Paper-Outline-MPW-9355.jpg",
     alt: "Research Paper",
+    step: "Step 3: Component Selection & Schematic Design",
   },
   {
     content:
-      "The perfect project roadmap that impresses both professors and recruiters.",
+      "We build and test prototypes to ensure functionality, efficiency, and reliability.",
     img: "https://hrfibreglass.co.uk/wp-content/uploads/2023/09/road-map.jpg",
     alt: "Project Roadmap",
+    step: " Step 4: Prototype Development & Testing ",
   },
   {
     content:
-      "Pro tips for scoring good grades in final year projects without burning out.",
+      "Our experts integrate components, ensuring seamless communication between hardware elements. ",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN-Av4gw8KIUYvW5MLPU6HggvtfK7LWAYsXA&s",
     alt: "Good Grades",
+    step: "Step 5: Hardware Integration & Final Assembly",
   },
   {
     content:
-      "Step-by-step roadmap and plan of action on how to get your dream job.",
+      "We conduct comprehensive tests, including performance, stress, and endurance tests to guarantee hardware reliability.",
     img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
     alt: "Dream Job",
+    step: "Step 6: Final Quality Assurance Testing",
+  },
+  {
+    content:
+      "We validate your hardware for industry standards and compliance certifications.",
+    img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
+    alt: "Dream Job",
+    step: "Step 7: Certification & Compliance Checks",
+  },
+  {
+    content:
+      "We incorporate your feedback, making necessary adjustments to ensure the final product meets your requirements.",
+    img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
+    alt: "Dream Job",
+    step: "Step 8: Final Edits & Adjustments ",
+  },
+  {
+    content:
+      "Receive a fully functional, deployment-ready hardware system, adhering to all project specifications.",
+    img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
+    alt: "Dream Job",
+    step: "Step 9: Ready-to-Deploy Hardware Solution",
   },
 ];
 
@@ -451,8 +498,9 @@ const MainCard = ({ setShowForm }) => {
 
   return (
     <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
-      <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
-        Quick, Quality Projects <br /> Delivered in 1 Day
+      <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  mt-10">
+        Expert Hardware Solutions
+        <br /> Delivered to Your Door in 7 Days – Guaranteed!
       </div>
       <p className="text-[#FBA154] md:text-3xl mt-5 ">
         Leave the project to us and get your dream job
@@ -514,7 +562,7 @@ const MainCard = ({ setShowForm }) => {
           <input
             type="text"
             name="message"
-            placeholder="Enter Message"
+            placeholder="Enter Requirement"
             className="p-4 bg-white rounded-lg outline-none w-full"
             value={formData.message}
             onChange={handleChange}
@@ -678,29 +726,15 @@ const WebinarHardware = () => {
             <div className="lg:text-6xl md:text-4xl text-2xl text-center  text-white  ">
               Why Choose us?
             </div>
-            {/* <div className="bg-[#353535] rounded-xl mt-16 p-10 grid lg:grid-cols-3 md:grid-cols-2 gap-10 place-content-center">
-              <div className="max-w-xs bg-white p-5 rounded-xl ">
-                <div className="text-[#F15A29] md:text-5xl text-4xl font-[700] ">
-                  400+
-                </div>
-                <div className="flex  justify-between ">
-                  <img src="https://www.pngall.com/wp-content/uploads/9/Google-Review-PNG-Clipart.png" className="h-[50px] w-[100px]" />
-                </div>
-              </div>
-              <AchivementCard number="5000" title="Projects Delivered" />
-              <AchivementCard number="10000" title="Satisfied Students" />
-              <AchivementCard number="5" title="Years of Experience" />
-              <AchivementCard number="10000" title="IEEE Papers published" />
-
-              <AchivementCard number="500" title="Colleges Served" />
-            </div>  */}
           </div>
 
           <div className="relative md:mt-0 mt-10  space-y-10 text-center md:p-16 p-4 ">
-            <ContentCard content="Project Delivery in 1 day" />
-            <ContentCard content="Advanced Unique IEEE Titles" />
-            <ContentCard content="PPT’s and Reports in your college format " />
-            <ContentCard content="24/7 Support through WhatsApp" />
+            <ContentCard content="On-Time Delivery Guaranteed" />
+            <ContentCard content="Expert Engineers & Hardware Developers" />
+            <ContentCard content=" 5+ Years of Hands-On Expertise in Hardware Development " />
+            <ContentCard content="PPT’s and Reports in your college format" />
+            <ContentCard content=" Proven Success with Over 500 Delivered Projects " />
+            <ContentCard content="PPT’s and Reports in your college format" />
             <button
               className="btn md:mt-20 font-bold  mt-10 text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
               style={{}}
@@ -718,13 +752,14 @@ const WebinarHardware = () => {
           {/* What problem we will solve? section  */}
           <div className="md:mt-20 mt-10 md:p-16 p-4 z-0 ">
             <div className="lg:text-6xl md:text-4xl text-2xl text-center text-white  ">
-              Stuck with Projects or Placements? Consider its solved
+              Need Support for Your Hardware Design or Development? Consider
+              It’s Done.
             </div>
             <div className="relative mt-16 md:px-20   space-y-12    ">
               <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
                 <ProblemCard
-                  content="Don't know which "
-                  boldContent="domain and title to choose?"
+                  content="Struggling with Complex Designs?"
+                  boldContent="We make it easy by handling everything, from creating schematics to building working prototypes."
                   pos="left"
                 />
                 <div className="lg:flex hidden justify-between items-center w-full  ">
@@ -736,15 +771,15 @@ const WebinarHardware = () => {
                   <div className=" w-[10px] h-[10px] bg-white  rounded-full  text-white "></div>
                 </div>
                 <ProblemCard
-                  content=" Finding it difficult to create "
-                  boldContent="PPTs and Reports?"
+                  content="Need Innovative Hardware Solutions?"
+                  boldContent="We help you design cutting-edge hardware systems for IoT, robotics, automation, and more. "
                   pos="right"
                 />
               </div>
               <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
                 <ProblemCard
-                  content=" Couldn't manage your"
-                  boldContent="academics and projects"
+                  content="Worried About Deadlines?"
+                  boldContent="We deliver on time, providing continuous updates and guaranteeing timely completion. "
                   pos="left"
                 />
                 <div className=" lg:flex hidden  justify-between items-center w-full ">
@@ -756,15 +791,42 @@ const WebinarHardware = () => {
                   <div className=" w-[10px] h-[10px] bg-white  rounded-full  text-white "></div>
                 </div>
                 <ProblemCard
-                  content=" Have to focus on"
-                  boldContent="Placements?"
+                  content="Concerned About Quality Assurance?"
+                  boldContent=" We ensure 100% quality, backed by rigorous testing and detailed reports."
+                  pos="right"
+                />
+              </div>
+
+              <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
+                <ProblemCard
+                  content=" Require Guidance in Prototyping?"
+                  boldContent="Our Engineers & Developers are here to assist with structured workflows that align with industry standards.  "
+                  pos="left"
+                />
+                <div className=" lg:flex hidden  justify-between items-center w-full ">
+                  <div className=" w-[10px] h-[10px]  bg-white  rounded-full  text-white "></div>
+                  <div
+                    className="w-full h-0 "
+                    style={{ border: "2px dashed white" }}
+                  ></div>
+                  <div className=" w-[10px] h-[10px] bg-white  rounded-full  text-white "></div>
+                </div>
+                <ProblemCard
+                  content="Facing Hardware Integration Challenges?"
+                  boldContent=" We handle advanced integration for sensors, controllers, and communication modules with ease."
                   pos="right"
                 />
               </div>
 
               <div
                 className="lg:block hidden absolute font-[500] text-white text-9xl top-[40%] left-[50%]   "
-                style={{ transform: "translate( -50% , -50%)" }}
+                style={{ transform: "translate( -50% , 70%)" }}
+              >
+                ?
+              </div>
+              <div
+                className="lg:block hidden absolute font-[500] text-white text-9xl top-[40%] left-[50%]   "
+                style={{ transform: "translate( -50% , -150%)" }}
               >
                 ?
               </div>
@@ -785,47 +847,9 @@ const WebinarHardware = () => {
             </div>
           </div>
 
-          {/* Our Project Categories section */}
-          {/* <div className="md:mt-20 mt-10 text-center md:p-16 p-4 ">
-            <div className="md:text-4xl  text-2xl p-2 md:p-5 px-10 md:px-24 w-fit mx-auto  rounded-full border border-white  text-center text-white mb-10 ">
-              Our Project Categories
-            </div>
-            <div className="grid md:grid-cols-3 gap-14 place-items-center mt-16 w-[75%] mx-auto">
-              {images.map((m, index) => {
-                return (
-                  <div className="flex flex-col items-center">
-                    <img
-                      src={m.src}
-                      className="bg-[#0C2F31] p-8 rounded-2xl  border border-[#F15A29] "
-                      style={{ boxShadow: "0px 9px 0px 0px #F15A29" }}
-                    />
-                    <p className="text-white md:text-2xl mt-5">{m.name}</p>
-                  </div>
-                );
-              })}
-            </div>
-            <button
-              className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
-              style={{}}
-              onClick={() => {
-                scrollToTop();
-              }}
-            >
-              {" "}
-              BOOK FREE CONSULTATION CALL{" "}
-            </button>
-          </div> */}
-
-          {/* Your Path to Project Success section */}
-          {/* <div className="md:mt-20 mt-10   ">
-            <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
-              Start with a Project Consultation, End with Your Dream Job
-            </div>
-            <img src={Group} />
-          </div> */}
           <div className="bg-[#EDEDED] mt-20 flex flex-col justify-start items-center p-4">
-            <h1 className="font-bold lg:text-4xl lg:mt-20 mt-8">
-              Start with a{" "}
+            <h1 className="font-bold lg:text-4xl lg:mt-20 mt-8 text-center">
+              Complete{" "}
               <span
                 className="lg:px-8 lg:py-2 px-4 py-1 rounded-2xl font-bold text-white"
                 style={{
@@ -836,9 +860,9 @@ const WebinarHardware = () => {
                   transformOrigin: "center", // Optional: adjust the pivot point of the rotation
                 }}
               >
-                Project Consultation,{" "}
+                A-Z Roadmap{" "}
               </span>{" "}
-              End with Your Dream Job
+              for Your Hardware Project
             </h1>
 
             <div className="relative flex flex-col justify-center items-center mt-10 gap-10 px-4 sm:px-8 md:px-16">
@@ -885,12 +909,18 @@ const WebinarHardware = () => {
                   } justify-center  items-center gap-10 md:gap-20 z-40`}
                 >
                   <img
-                    className="h-[250px] w-full md:w-[250px] object-contain"
+                    className="h-[250px] w-[250px] rounded-lg hover:opacity-80 cursor-pointer"
                     src={item.img}
                     alt={item.alt}
                   />
-                  <div className="bg-slate-200 p-4 rounded-xl h-[200px] w-full md:w-[200px] lg:w-[250px] font-semibold text-lg flex justify-center items-center">
-                    {item.content}
+                  <div className="bg-slate-200 p-4 rounded-xl h-[280px] w-full md:w-[200px] lg:w-[250px] font-semibold flex flex-col justify-center items-center">
+                    <h1 className="font-bold text-[22px] text-orange-400">
+                      {item.step}
+                    </h1>
+                    <h2 className="mt-2 text-lg lg:text-start text-center">
+                      {" "}
+                      {item.content}
+                    </h2>
                   </div>
                 </div>
               ))}
@@ -899,7 +929,7 @@ const WebinarHardware = () => {
 
           <div className="md:mt-20 mt-10 text-center md:p-16 p-2 ">
             <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
-              End-to-End Project Solution
+              Our Deliverables
             </div>
             <div className="md:mt-20 mt-10 md:max-w-3xl max-w-[350px] text-center mx-auto bg-[#0C2F31] rounded-xl">
               <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
@@ -929,7 +959,7 @@ const WebinarHardware = () => {
                 </svg>
                 <div className="text-white md:text-2xl text-xs font-[300] text-start">
                   {" "}
-                  0,1,2,3 Review PPT's in your college format
+                  Complete Hardware Design & Development
                 </div>
               </div>
 
@@ -961,9 +991,9 @@ const WebinarHardware = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <div className="text-white md:text-2xl text-xs font-[300]">
+                <div className="text-white md:text-2xl text-xs font-[300] text-start">
                   {" "}
-                  60 Pages Documentation
+                  Detailed Testing & Quality Assurance Reports
                 </div>
               </div>
 
@@ -1019,9 +1049,9 @@ const WebinarHardware = () => {
                     </clipPath>
                   </defs>
                 </svg>
-                <div className="text-white md:text-2xl text-xs font-[300]">
+                <div className="text-white md:text-2xl text-xs font-[300] text-start">
                   {" "}
-                  Source code (0% Plagiarism)
+                  Prototypes & Final Hardware Assembly
                 </div>
               </div>
 
@@ -1050,9 +1080,9 @@ const WebinarHardware = () => {
                     fill="white"
                   />
                 </svg>
-                <div className="text-white md:text-2xl text-xs font-[300]">
+                <div className="text-white md:text-2xl text-xs font-[300] text-start">
                   {" "}
-                  IEEE 2024 Base paper
+                  0,1,2,3 Review PPT’s and Reports in your college format
                 </div>
               </div>
 
@@ -1077,9 +1107,35 @@ const WebinarHardware = () => {
                     fill="white"
                   />
                 </svg>
-                <div className="text-white md:text-2xl text-xs font-[300]">
+                <div className="text-white md:text-2xl text-xs font-[300] text-start">
                   {" "}
-                  Full Project Explanation video
+                  Regular Progress Reports at Each Stage
+                </div>
+              </div>
+              <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 72 58"
+                  fill="none"
+                >
+                  <path
+                    d="M68.3234 42.1607H3.677C1.64953 42.1607 0 40.5119 0 38.4847V3.72397C0 1.69695 1.64953 0.0478516 3.677 0.0478516H68.3234C70.3502 0.0478516 72 1.69695 72 3.72397V38.4847C72 40.5119 70.3502 42.1607 68.3234 42.1607ZM3.677 3.01734C3.28702 3.01734 2.96919 3.33428 2.96919 3.72397V38.4847C2.96919 38.8744 3.28702 39.1915 3.677 39.1915H68.3234C68.7133 39.1915 69.0307 38.8744 69.0307 38.4847V3.72397C69.0307 3.33428 68.7134 3.01734 68.3234 3.01734H3.677Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M28.3164 32.3869C27.8288 32.1202 27.5117 31.6231 27.5117 31.0677V11.14C27.5117 10.5843 27.8223 10.0754 28.3164 9.82048C28.8101 9.56569 29.4043 9.60816 29.8572 9.93025L43.8689 19.894C44.261 20.1726 44.4931 20.6234 44.4931 21.1039C44.4931 21.5845 44.261 22.0354 43.8689 22.314C43.8689 22.314 33.3596 29.7864 29.8572 32.2774C29.6012 32.4595 29.0494 32.7882 28.3164 32.3869ZM30.4815 14.0176V28.19L40.4464 21.1039L30.4815 14.0176Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M70.5155 50.5889H42.1372C41.4782 48.0645 39.1783 46.1963 36.4504 46.1963C33.7227 46.1963 31.4234 48.0645 30.7643 50.5889H1.48467C0.664898 50.5889 0 51.2538 0 52.0735C0 52.8936 0.664898 53.5582 1.48467 53.5582H30.7644C31.4236 56.0826 33.723 57.9511 36.4505 57.9511C39.1784 57.9511 41.4783 56.0825 42.1373 53.5582H70.5155C71.3347 53.5582 72 52.8938 72 52.0735C72 51.2538 71.3347 50.5889 70.5155 50.5889ZM36.4504 54.9815C34.8476 54.9815 33.5427 53.6769 33.5427 52.0734C33.5427 50.4702 34.8476 49.1658 36.4504 49.1658C38.0539 49.1658 39.3584 50.4702 39.3584 52.0734C39.3584 53.6771 38.0539 54.9815 36.4504 54.9815Z"
+                    fill="white"
+                  />
+                </svg>
+                <div className="text-white md:text-2xl text-xs font-[300] text-start">
+                  {" "}
+                  24/7 Technical Support for All Queries
                 </div>
               </div>
             </div>
@@ -1280,10 +1336,10 @@ const WebinarHardware = () => {
             <h1 className="text-white text-[32px] font-bold ">
               Exclusive Offers
             </h1>
-            <PricingSection />
+            <PricingSection4 />
           </div>
 
-          <Testimonials4 />
+          <Testimonials8 />
 
           {/* Still Not Sure? We Have */}
           <div className="md:mt-20 mt-10 text-center mb-36 md:mb-20 md:p-16 p-4 ">
@@ -1300,32 +1356,29 @@ const WebinarHardware = () => {
               />
               <div className=" absolute    lg:p-10 p-8  text-white text-justify md:leading-9 md:text-xl  flex flex-col  md:gap-10 gap-5 md:mt-28 ">
                 <div>
-                  Secure your incredible final year project offer today and
-                  enjoy a money-back guarantee. Enroll now, explore our project
-                  details, and if you're not satisfied for any reason, just drop
-                  us an email, and{" "}
-                  <span className="bg-[#F15A29]">
-                    we'll refund your entire investment - no questions asked!
-                  </span>
+                  SSecure exceptional hardware project assistance today with our
+                  risk-free, money-back guarantee. Enroll now to explore our
+                  comprehensive services, and if you're not fully satisfied,
+                  simply send us an email, and we'll refund your entire
+                  investment—no questions asked!
                 </div>
                 <div>
-                  At Qriocity, we are committed to your satisfaction and
-                  success. Dive into our comprehensive{" "}
-                  <span className="bg-[#F15A29]">
-                    project resources, expert guidance,
-                  </span>
-                  and dedicated support.
+                  At Qriocity, we are dedicated to delivering high-quality
+                  hardware solutions. Leverage our expert guidance, tailored
+                  project support, and in-depth resources to ensure the best
+                  possible outcomes for your hardware projects.
                 </div>
                 <div>
-                  Your venture into your final year project is{" "}
-                  <span className="bg-[#F15A29]"> completely risk-free</span>{" "}
-                  with our money-back guarantee. Your success, satisfaction, and
-                  peace of mind are our top priorities. Join us today and
-                  experience the difference!
+                  {" "}
+                  Your journey toward completing your hardware project is
+                  completely risk-free with our money-back guarantee. Your
+                  success, satisfaction, and peace of mind are our top
+                  priorities. Partner with us today and elevate your hardware
+                  development to new heights!
                 </div>
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center lg:mr-10 mt-[250px] mb-10">
+            <div className="flex flex-col justify-center items-center lg:mr-10 mt-[300px] mb-10">
               <button
                 className="px-14 py-4 rounded-full font-bold text-white"
                 style={{
