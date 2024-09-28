@@ -69,7 +69,7 @@ const ProjectWorkshop = () => {
 
   const handleForm = () => {
     window.location.href =
-      "https://courses.qriocity.in/courses/FullStack-5-Days-Live-Bootcamp-Batch-7-66d1a867f9270338c8f4b4d5";
+      "https://courses.qriocity.in/courses/Final-Year-Projects-Simplified-in-2-Hours-66f7e9dc55bbc06fd2f4b437";
   };
   const data2 = [
     { name: "Live Lectures", check1: "✅", check2: "✅" },
