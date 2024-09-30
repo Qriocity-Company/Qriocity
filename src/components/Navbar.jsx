@@ -18,11 +18,11 @@ export const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 w-screen z-[50] bg-[#0000006c] backdrop-blur-[0.5rem] ">
-      <div className="flex flex-row justify-between max-w-[1440px] h-[66px] w-full items-center px-8 md:px-[64px] ">
+      <div className="flex flex-row justify-between max-w-[1440px] h-[66px] w-full items-center px-4 md:px-[20px] ">
         <Link to="/">
           <img src={logo} alt="company logo" />
         </Link>
-        <div className="hidden md:flex flex-row gap-6 font-RedHat text-white">
+        <div className="hidden md:flex flex-row gap-5 font-RedHat text-white">
           <Link to="/" className={isRouteActive("/")}>
             Home
           </Link>
@@ -160,7 +160,7 @@ export const Navbar = () => {
                 toggleMenu();
               }}
             >
-              Thesis
+              Thesis/Dissertations
             </Link>
             <Link
               to="/phd-projects"
@@ -170,6 +170,16 @@ export const Navbar = () => {
               }}
             >
               Phd-projects
+            </Link>
+
+            <Link
+              to="/hardware-projects"
+              className={isRouteActive("/hardware-projects")}
+              onClick={() => {
+                toggleMenu();
+              }}
+            >
+              Hardware-projects
             </Link>
 
             <HiX
