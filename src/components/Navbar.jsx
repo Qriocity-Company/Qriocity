@@ -54,10 +54,16 @@ export const Navbar = () => {
             to="/thesis-service"
             className={isRouteActive("/thesis-service")}
           >
-            Thesis
+            Thesis/Dissertations
           </Link>
           <Link to="/phd-projects" className={isRouteActive("/phd-projects")}>
             Phd-projects
+          </Link>
+          <Link
+            to="/hardware-projects"
+            className={isRouteActive("/hardware-projects")}
+          >
+            Hardware-projects
           </Link>
         </div>
         <div className="md:hidden flex items-center">
