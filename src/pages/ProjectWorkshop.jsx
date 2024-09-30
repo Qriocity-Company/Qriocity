@@ -235,7 +235,7 @@ const ProjectWorkshop = () => {
               <div className="flex justify-center items-center gap-1 lg:gap-5">
                 <img src={calendar} />
                 <h1 className="font-bold lg:text-xl text-lg flex flex-col justify-center items-start">
-                  2-Hour Masterclass <span> September 16-20,2024</span>{" "}
+                  2-Hour Masterclass <span> October 6-20,2024</span>{" "}
                   <span className="text-lg">7pm-9pm</span>{" "}
                 </h1>
               </div>
