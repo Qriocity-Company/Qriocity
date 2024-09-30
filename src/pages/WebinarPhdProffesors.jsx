@@ -362,7 +362,8 @@ const MainCard = ({ setShowForm }) => {
           <br /> Research Papers delivered with 0% AI and plagiarism
         </div>
         <p className="text-[#FBA154] md:text-3xl mt-5 ">
-          Leave the research paper work to us and get your phd stress
+          Leave the research paper work to us and finish your PhD
+          with zero stress
         </p>
 
         <form onSubmit={onSubmit} className="w-[80%] mt-8">
