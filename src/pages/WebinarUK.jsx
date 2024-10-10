@@ -91,63 +91,63 @@ import usePixelTracking from "../hooks/facebookPixelHook";
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
   {
-    question: "What services do you offer for dissertations? ",
+    question: "What services do you offer for assignments and coursework? ",
     answer:
-      "We offer a full range of services, including topic selection, proposal writing, data analysis, and final dissertation writing. We handle both qualitative and quantitative research.",
+      "We offer a full range of services, including topic selection, research, writing, data analysis, and final submission-ready documents for all types of assignments and coursework.",
   },
   {
-    question: " How do you ensure my dissertation is plagiarism-free? ",
+    question: "How do you ensure my assignment is plagiarism-free?",
     answer:
-      "We use Turnitin to scan all documents for plagiarism, and we provide a full report showing that your work is 100% original.",
+      "We use Turnitin to scan all documents for plagiarism, and we provide a full report ensuring your work is 100% original and free of AI-generated content.",
   },
   {
-    question: "What happens if I need revisions?",
+    question: " What happens if I need revisions?",
     answer:
       "We offer unlimited revisions until you are completely satisfied with the final product.",
   },
   {
     question: "Do you offer a fast-track service?  ",
     answer:
-      "Yes, if you’re working with a tight deadline, we offer a priority service to complete your dissertation as quickly as possible without sacrificing quality.",
+      "Yes, if you’re working with a tight deadline, we offer a priority service to complete your assignment or coursework as quickly as possible without sacrificing quality.",
   },
   {
-    question: " Can I see progress reports during the writing process?   ",
+    question: "Can I see progress reports during the writing process? ",
     answer:
-      "Absolutely! We provide regular updates and drafts for your review so you can monitor the progress of your dissertation.",
+      "Absolutely! We provide regular updates and drafts for your review so you can monitor the progress of your assignment or coursework.",
   },
   {
     question: " How can I trust that you’ll meet my deadline?",
     answer:
-      "We have a track record of delivering every project on time. We also provide regular updates to keep you informed throughout the process.",
+      "We have a proven track record of delivering every project on time. We also provide regular updates to keep you informed throughout the process.",
   },
   {
     question: "What is the 30% discount offer?",
     answer:
-      "We’re currently offering 30% off on all dissertation and thesis projects. Book a free consultation now to take advantage of this limited-time offer!",
+      "We’re currently offering 30% off on all assignments and coursework projects. Book a free consultation now to take advantage of this limited-time offer!",
   },
   {
-    question: "Can you help me select a dissertation topic?",
+    question: "Can you help me select a topic for my assignment? ",
     answer:
-      " Yes, we offer assistance in selecting a relevant and research-worthy topic based on your area of interest and academic requirements.",
+      "Yes, we offer assistance in selecting a relevant and research-worthy topic based on your academic requirements and area of interest.",
   },
   {
     question:
-      "Do you provide support for both qualitative and quantitative research? ",
+      " Do you provide support for both qualitative and quantitative assignments? ",
     answer:
-      "Yes, we provide comprehensive support for both qualitative and quantitative research, including data collection, analysis, and interpretation.",
+      "Yes, we provide comprehensive support for both qualitative and quantitative assignments, including research, data collection, analysis, and interpretation.",
   },
   {
     question: "Is the consultation free?",
     answer:
-      " Yes, we offer a free initial consultation to discuss your dissertation needs, timelines, and how we can assist you.",
+      "Yes, we offer a free initial consultation to discuss your assignment needs, timelines, and how we can assist you.",
   },
   {
     question: " Do you offer installment payment options?  ",
     answer:
-      "Yes, we offer flexible payment plans so you can pay for your dissertation services in installments as the work progresses.",
+      "Yes, we offer flexible payment plans so you can pay for your assignment services in installments as the work progresses.",
   },
   {
-    question: " Will my dissertation be confidential?  ",
+    question: " Will my assignment be confidential? ",
     answer:
       "Yes, confidentiality is a top priority. All of your personal and project details are kept completely private, and we ensure the security of your data.",
   },
