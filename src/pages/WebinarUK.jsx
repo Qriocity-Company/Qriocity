@@ -147,7 +147,7 @@ const faqs = [
       "Yes, we offer flexible payment plans so you can pay for your assignment services in installments as the work progresses.",
   },
   {
-    question: " Will my assignment be confidential? ",
+    question: "Will my assignment be confidential? ",
     answer:
       "Yes, confidentiality is a top priority. All of your personal and project details are kept completely private, and we ensure the security of your data.",
   },
