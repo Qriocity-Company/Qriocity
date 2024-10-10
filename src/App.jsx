@@ -44,7 +44,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/consultations" element={<Webinar />} />
           <Route exact path="/bookacall" element={<WebinarAds />} />
-          <Route exact path="/thesis-service" element={<WebinarUK />} />
+          <Route exact path="/assignments-service" element={<WebinarUK />} />
           <Route
             exact
             path="/phd-projects"

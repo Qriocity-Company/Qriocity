@@ -52,9 +52,9 @@ export const Navbar = () => {
           </Link>
           <Link
             to="/thesis-service"
-            className={isRouteActive("/thesis-service")}
+            className={isRouteActive("/assignments-service")}
           >
-            Thesis/Dissertations
+            Assignments/ Courseworks
           </Link>
           <Link to="/phd-projects" className={isRouteActive("/phd-projects")}>
             Phd-projects
@@ -155,12 +155,12 @@ export const Navbar = () => {
             </Link>
             <Link
               to="/thesis-service"
-              className={isRouteActive("/thesis-service")}
+              className={isRouteActive("/assignments-service")}
               onClick={() => {
                 toggleMenu();
               }}
             >
-              Thesis/Dissertations
+              Assignments/ Courseworks
             </Link>
             <Link
               to="/phd-projects"
