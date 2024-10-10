@@ -96,7 +96,7 @@ const faqs = [
       "We offer a full range of services, including topic selection, proposal writing, data analysis, and final dissertation writing. We handle both qualitative and quantitative research.",
   },
   {
-    question: "How do you ensure my dissertation is plagiarism-free? ",
+    question: " How do you ensure my dissertation is plagiarism-free? ",
     answer:
       "We use Turnitin to scan all documents for plagiarism, and we provide a full report showing that your work is 100% original.",
   },
@@ -106,40 +106,40 @@ const faqs = [
       "We offer unlimited revisions until you are completely satisfied with the final product.",
   },
   {
-    question: "Do you offer a fast-track service? ",
+    question: "Do you offer a fast-track service?  ",
     answer:
       "Yes, if you’re working with a tight deadline, we offer a priority service to complete your dissertation as quickly as possible without sacrificing quality.",
   },
   {
-    question: "Can I see progress reports during the writing process? ",
+    question: " Can I see progress reports during the writing process?   ",
     answer:
       "Absolutely! We provide regular updates and drafts for your review so you can monitor the progress of your dissertation.",
   },
   {
-    question: "How can I trust that you’ll meet my deadline? ",
+    question: " How can I trust that you’ll meet my deadline?",
     answer:
       "We have a track record of delivering every project on time. We also provide regular updates to keep you informed throughout the process.",
   },
   {
-    question: "What is the 30% discount offer? ",
+    question: "What is the 30% discount offer?",
     answer:
       "We’re currently offering 30% off on all dissertation and thesis projects. Book a free consultation now to take advantage of this limited-time offer!",
   },
   {
-    question: " Can you help me select a dissertation topic? ",
+    question: "Can you help me select a dissertation topic?",
     answer:
       " Yes, we offer assistance in selecting a relevant and research-worthy topic based on your area of interest and academic requirements.",
   },
   {
     question:
-      "Do you provide support for both qualitative and quantitative research?",
+      "Do you provide support for both qualitative and quantitative research? ",
     answer:
       "Yes, we provide comprehensive support for both qualitative and quantitative research, including data collection, analysis, and interpretation.",
   },
   {
     question: "Is the consultation free?",
     answer:
-      "Yes, we offer a free initial consultation to discuss your dissertation needs, timelines, and how we can assist you.",
+      " Yes, we offer a free initial consultation to discuss your dissertation needs, timelines, and how we can assist you.",
   },
   {
     question: " Do you offer installment payment options?  ",
@@ -147,7 +147,7 @@ const faqs = [
       "Yes, we offer flexible payment plans so you can pay for your dissertation services in installments as the work progresses.",
   },
   {
-    question: "Will my dissertation be confidential?",
+    question: " Will my dissertation be confidential?  ",
     answer:
       "Yes, confidentiality is a top priority. All of your personal and project details are kept completely private, and we ensure the security of your data.",
   },
@@ -1081,29 +1081,24 @@ const WebinarUK = () => {
               />
               <div className=" absolute lg:p-10 p-8  text-white justify-center items-start md:leading-9 md:text-xl  flex flex-col  md:gap-10 gap-5 mt-14 ">
                 <div>
-                  Secure your exceptional dissertation or master's thesis offer
-                  today and enjoy a full money-back guarantee. Enroll now,
-                  explore our detailed services, and if you're not satisfied for
-                  any reason, simply drop us an email, and{" "}
+                  Secure your outstanding assignment or coursework offer today
+                  and enjoy a full money-back guarantee. Enroll now, explore our
+                  detailed services, and if you're not satisfied for any reason,
+                  simply drop us an email, and{" "}
                   <span className="bg-[#F15A29]">
                     we’ll refund your entire investment—no questions asked!
                   </span>
                 </div>
                 <div>
-                  At Qriocity, we are dedicated to your academic success and
-                  satisfaction. Dive into our comprehensive dissertation
-                  resources, expert mentorship, and unwavering support. Your
-                  journey toward completing your dissertation or master's thesis
-                  is entirely risk-free with our money-back guarantee. Your
-                  success, satisfaction, and peace of mind are our highest
-                  priorities. Join us today and see the difference!
+                  At Qriocity, we are committed to your academic success and
+                  satisfaction. Dive into our comprehensive assignment
+                  resources, expert guidance, and ongoing support.
                 </div>
                 <div>
-                  Your venture into your final year project is{" "}
-                  <span className="bg-[#F15A29]"> completely risk-free</span>{" "}
-                  with our money-back guarantee. Your success, satisfaction, and
-                  peace of mind are our top priorities. Join us today and
-                  experience the difference!
+                  Your journey toward completing your assignments and coursework
+                  is entirely risk-free with our money-back guarantee. Your
+                  success, satisfaction, and peace of mind are our top
+                  priorities. Join us today and experience the difference!
                 </div>
               </div>
             </div>
