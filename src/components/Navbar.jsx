@@ -51,7 +51,7 @@ export const Navbar = () => {
             Bootcamp
           </Link>
           <Link
-            to="/thesis-service"
+            to="/assignments-service"
             className={isRouteActive("/assignments-service")}
           >
             Assignments/ Courseworks
@@ -154,7 +154,7 @@ export const Navbar = () => {
               Bootcamp
             </Link>
             <Link
-              to="/thesis-service"
+              to="/assignments-service"
               className={isRouteActive("/assignments-service")}
               onClick={() => {
                 toggleMenu();
