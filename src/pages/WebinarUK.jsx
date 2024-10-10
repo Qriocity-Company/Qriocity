@@ -168,9 +168,9 @@ const images = [
 const data2 = [
   { name: "Formatting according to Institution", check1: "❌", check2: "✅" },
   {
-    name: "Number of Projects",
-    check1: "Unlimited Projects",
-    check2: "Limited projects to focus on quality",
+    name: "Number of Assignments",
+    check1: "Unlimited Assignments",
+    check2: "Limited assignments to focus on quality",
   },
   {
     name: "Experience",
@@ -210,7 +210,7 @@ const data2 = [
   {
     name: "Bonus",
     check1: "❌",
-    check2: "Bonuses worth £230",
+    check2: "Bonuses worth £100",
   },
   {
     name: "Price Discount",
@@ -220,7 +220,7 @@ const data2 = [
   {
     name: "Doubt solving Sessions",
     check1: "❌",
-    check2: "1-1 Project explanations",
+    check2: "1-1 Zoom sessions",
   },
   {
     name: "Delivery timing",
@@ -232,63 +232,63 @@ const data2 = [
 const timelineData = [
   {
     content:
-      "Initial Consultation – We start with a free 1-1 consultation to understand your academic needs, deadlines, and specific requirements.",
+      "Initial Consultation – We begin with a free 1-1 consultation to understand your assignment requirements, deadlines, and academic goals.",
     img: step1,
     alt: "Choose Project Domain",
     step: "Step 1",
   },
   {
     content:
-      "Topic Selection & Proposal – We assist in choosing a research-worthy topic and develop a proposal that meets academic standards and secures approval from your institution.",
+      "Topic Selection & Proposal –  We help you choose an appropriate topic (if required) and create a clear proposal or plan that aligns with your coursework guidelines.",
     img: step2,
     alt: "Step by Step guide",
     step: "Step 2",
   },
   {
     content:
-      "Literature Review – We conduct a comprehensive review of existing literature, helping you build a strong theoretical framework for your dissertation.",
+      "Research & Literature Review – We conduct thorough research and review relevant literature to provide a solid foundation for your assignment.",
     img: step3,
     alt: "Research Paper",
     step: "Step 3",
   },
   {
     content:
-      "Research Design – We design your research methodology, whether qualitative or quantitative, ensuring your project meets the highest academic standards.",
+      "Assignment Structure & Planning – We organize and structure your assignment, ensuring it follows the required format and academic standards.",
     img: step4,
     alt: "Project Roadmap",
     step: "Step 4",
   },
   {
     content:
-      "Data Collection & Analysis – Our team handles everything from data collection, statistical analysis, and presenting your findings in a clear, concise manner.",
+      "Data Collection & Analysis – If your assignment involves data, we handle the collection, analysis, and presentation, ensuring accuracy and clarity.",
     img: step5,
     alt: "Good Grades",
     step: "Step 5",
   },
   {
     content:
-      "Writing the Dissertation – We carefully draft each chapter, ensuring that it’s well-researched, properly formatted, and free from any grammatical errors.",
+      "Writing the Assignment – Each section is written with proper research, coherent arguments, and attention to formatting and grammar.",
     img: step6,
     alt: "Dream Job",
     step: "Step 6",
   },
   {
     content:
-      "Plagiarism & AI Checks – Using Turnitin, we guarantee your dissertation is 100% original with no AI-generated content.",
+      "Plagiarism & AI Checks – Using Turnitin, we ensure your assignment is 100% original and free from AI-generated content.",
     img: step7,
     alt: "Dream Job",
     step: "Step 7",
   },
   {
     content:
-      "Step 8: Final Edits & Feedback – After receiving your feedback, we revise the document to ensure it meets your expectations and academic requirements.",
+      "Revisions & Feedback – Based on your input, we make revisions to guarantee the final document meets your expectations and academic standards",
     img: step8,
     alt: "Dream Job",
     step: "Step 8",
   },
   {
     content:
-      "Step 9: Submission-Ready Document – Receive a submission-ready dissertation that adheres to your institution’s guidelines.",
+      "Submission-Ready Document – You receive a polished, submission-ready assignment that complies with all institutional guidelines.",
     img: step9,
     step: "Step 9",
   },
@@ -434,11 +434,11 @@ const MainCard = ({ setShowForm }) => {
     <div className="p-4">
       <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
         <div className="lg:text-[60px] md:text-5xl  text-3xl md:leading-[72px]  mt-8">
-          Quick, Quality Thesis &<br /> Dissertations delivered with 0% AI and
-          plagiarism
+          Quick, Quality Assignments &<br /> Courseworks delivered with 0% AI
+          and plagiarism
         </div>
         <p className="text-[#FBA154] md:text-3xl mt-5 ">
-          Leave the project to us and get your dream job
+          Leave the Assignments & Courseworks to us and get your dream job
         </p>
 
         <form onSubmit={onSubmit} className="w-[80%] mt-8">
@@ -669,7 +669,7 @@ const WebinarUK = () => {
           {/* What problem we will solve? section  */}
           <div className="md:mt-20 mt-10 md:p-16 p-4 z-0 ">
             <div className="lg:text-6xl md:text-4xl text-2xl text-center text-white  ">
-              Stuck with Projects or Placements? Consider its solved
+              Stuck with Assignments & Courseworks? Consider its solved
             </div>
             <div className="relative mt-16 md:px-20   space-y-12    ">
               <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
@@ -687,8 +687,8 @@ const WebinarUK = () => {
                   <div className=" w-[10px] h-[10px] bg-white  rounded-full  text-white "></div>
                 </div>
                 <ProblemCard
-                  content="Inexperienced with Data Analysis??"
-                  boldContent="Our experts handle quantitative, qualitative, and mixed methods research with ease."
+                  content="Writer’s Block?"
+                  boldContent=" Our experts craft each section with logical flow and coherence."
                   pos="right"
                 />
               </div>
@@ -779,7 +779,7 @@ const WebinarUK = () => {
               >
                 Roadmap for{" "}
               </span>{" "}
-              Your Dissertation
+              Your Assignments & Courseworks
             </h1>
 
             <div className="relative flex flex-col justify-center items-center mt-10 gap-10 px-4 sm:px-8 md:px-16 mb-5">
@@ -853,7 +853,7 @@ const WebinarUK = () => {
               {[
                 {
                   icon: <TbReportAnalytics size="50px" color="white" />,
-                  text: "Complete Dissertation/Thesis",
+                  text: "Complete Assignment or Coursework",
                 },
                 {
                   icon: <HiOutlineDocumentReport size="50px" color="white" />,
@@ -861,19 +861,19 @@ const WebinarUK = () => {
                 },
                 {
                   icon: <TbReportSearch size="50px" color="white" />,
-                  text: "Data Analysis Reports for both qualitative & quantitative research",
+                  text: " Data Analysis Reports (if required) for both qualitative & quantitative work",
                 },
                 {
                   icon: <FaSchool size="50px" color="white" />,
-                  text: "Custom Formatting according to your institution",
+                  text: "Custom Formatting according to your institution's guidelines",
                 },
                 {
                   icon: <LiaChalkboardTeacherSolid size="50px" color="white" />,
-                  text: "Unlimited revisions according to your guide",
+                  text: "Unlimited revisions based on your professor's feedback",
                 },
                 {
                   icon: <GrInProgress size="50px" color="white" />,
-                  text: "Progress Reports at every stage",
+                  text: " Progress Updates at every stage",
                 },
                 {
                   icon: <RiCustomerServiceFill size="50px" color="white" />,

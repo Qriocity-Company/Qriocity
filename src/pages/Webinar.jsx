@@ -713,22 +713,6 @@ const Webinar = () => {
             <div className="lg:text-6xl md:text-4xl text-2xl text-center  text-white  ">
               Why Choose us?
             </div>
-            {/* <div className="bg-[#353535] rounded-xl mt-16 p-10 grid lg:grid-cols-3 md:grid-cols-2 gap-10 place-content-center">
-              <div className="max-w-xs bg-white p-5 rounded-xl ">
-                <div className="text-[#F15A29] md:text-5xl text-4xl font-[700] ">
-                  400+
-                </div>
-                <div className="flex  justify-between ">
-                  <img src="https://www.pngall.com/wp-content/uploads/9/Google-Review-PNG-Clipart.png" className="h-[50px] w-[100px]" />
-                </div>
-              </div>
-              <AchivementCard number="5000" title="Projects Delivered" />
-              <AchivementCard number="10000" title="Satisfied Students" />
-              <AchivementCard number="5" title="Years of Experience" />
-              <AchivementCard number="10000" title="IEEE Papers published" />
-
-              <AchivementCard number="500" title="Colleges Served" />
-            </div>  */}
           </div>
 
           <div className="relative md:mt-0 mt-10  space-y-10 text-center md:p-16 p-4 ">
@@ -820,44 +804,6 @@ const Webinar = () => {
             </div>
           </div>
 
-          {/* Our Project Categories section */}
-          {/* <div className="md:mt-20 mt-10 text-center md:p-16 p-4 ">
-            <div className="md:text-4xl  text-2xl p-2 md:p-5 px-10 md:px-24 w-fit mx-auto  rounded-full border border-white  text-center text-white mb-10 ">
-              Our Project Categories
-            </div>
-            <div className="grid md:grid-cols-3 gap-14 place-items-center mt-16 w-[75%] mx-auto">
-              {images.map((m, index) => {
-                return (
-                  <div className="flex flex-col items-center">
-                    <img
-                      src={m.src}
-                      className="bg-[#0C2F31] p-8 rounded-2xl  border border-[#F15A29] "
-                      style={{ boxShadow: "0px 9px 0px 0px #F15A29" }}
-                    />
-                    <p className="text-white md:text-2xl mt-5">{m.name}</p>
-                  </div>
-                );
-              })}
-            </div>
-            <button
-              className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
-              style={{}}
-              onClick={() => {
-                scrollToTop();
-              }}
-            >
-              {" "}
-              BOOK FREE CONSULTATION CALL{" "}
-            </button>
-          </div> */}
-
-          {/* Your Path to Project Success section */}
-          {/* <div className="md:mt-20 mt-10   ">
-            <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
-              Start with a Project Consultation, End with Your Dream Job
-            </div>
-            <img src={Group} />
-          </div> */}
           <div className="bg-[#EDEDED] mt-20 flex flex-col justify-start items-center p-4">
             <h1 className="font-bold lg:text-4xl lg:mt-20 mt-8">
               Start with a{" "}
@@ -1321,193 +1267,12 @@ const Webinar = () => {
             </div>
           </div>
 
-          {/* Exclusive Offer section  */}
-          {/* <div className="md:mt-20 mt-10 text-center ">
-            <div className="md:text-6xl bg-white w-full  text-2xl md:p-5 p-2 px-20 text-center text-black mb-10 font-[500] flex  items-center justify-center gap-5 ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewBox="0 0 94 94"
-                fill="none"
-              >
-                <path
-                  d="M31.7666 34.8523H37.9379M56.4521 59.5377H62.6234M62.6234 31.7666L31.7666 62.6234M42.8812 5.78511L35.9137 12.7402C34.7718 13.8842 33.2225 14.5279 31.6061 14.5299H20.6334C19.0163 14.5299 17.4654 15.1723 16.322 16.3158C15.1785 17.4593 14.5361 19.0101 14.5361 20.6273V31.5999C14.5341 33.2163 13.8904 34.7657 12.7464 35.9076L5.78511 42.8874C4.6421 44.0308 4 45.5813 4 47.1981C4 48.8148 4.6421 50.3654 5.78511 51.5088L12.7588 58.4763C13.3243 59.042 13.773 59.7136 14.079 60.4527C14.385 61.1918 14.5424 61.9839 14.5423 62.7839V73.7566C14.5423 77.1261 17.27 79.8539 20.6396 79.8539H31.6123C33.2292 79.8539 34.7782 80.4957 35.9199 81.6436L42.8936 88.6111C44.037 89.7541 45.5875 90.3962 47.2043 90.3962C48.821 90.3962 50.3716 89.7541 51.515 88.6111L58.4824 81.6374C59.6254 80.4957 61.1746 79.8543 62.7901 79.8539H73.7627C75.3799 79.8539 76.9307 79.2115 78.0742 78.068C79.2177 76.9246 79.8601 75.3737 79.8601 73.7566V62.7839C79.8601 61.167 80.5019 59.618 81.6498 58.4763L88.6172 51.5026C89.7602 50.3592 90.4023 48.8087 90.4023 47.1919C90.4023 45.5752 89.7602 44.0246 88.6172 42.8812L81.6436 35.9137C80.5019 34.7708 79.8605 33.2216 79.8601 31.6061V20.6334C79.8601 19.0163 79.2177 17.4654 78.0742 16.322C76.9307 15.1785 75.3799 14.5361 73.7627 14.5361H62.7901C61.1737 14.5341 59.6243 13.8904 58.4824 12.7464L51.5026 5.78511C50.3592 4.6421 48.8087 4 47.1919 4C45.5752 4 44.0246 4.6421 42.8812 5.78511Z"
-                  stroke="#F15A29"
-                  stroke-width="6.17137"
-                />
-              </svg>
-              Exclusive Offer
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewBox="0 0 94 94"
-                fill="none"
-              >
-                <path
-                  d="M31.7666 34.8523H37.9379M56.4521 59.5377H62.6234M62.6234 31.7666L31.7666 62.6234M42.8812 5.78511L35.9137 12.7402C34.7718 13.8842 33.2225 14.5279 31.6061 14.5299H20.6334C19.0163 14.5299 17.4654 15.1723 16.322 16.3158C15.1785 17.4593 14.5361 19.0101 14.5361 20.6273V31.5999C14.5341 33.2163 13.8904 34.7657 12.7464 35.9076L5.78511 42.8874C4.6421 44.0308 4 45.5813 4 47.1981C4 48.8148 4.6421 50.3654 5.78511 51.5088L12.7588 58.4763C13.3243 59.042 13.773 59.7136 14.079 60.4527C14.385 61.1918 14.5424 61.9839 14.5423 62.7839V73.7566C14.5423 77.1261 17.27 79.8539 20.6396 79.8539H31.6123C33.2292 79.8539 34.7782 80.4957 35.9199 81.6436L42.8936 88.6111C44.037 89.7541 45.5875 90.3962 47.2043 90.3962C48.821 90.3962 50.3716 89.7541 51.515 88.6111L58.4824 81.6374C59.6254 80.4957 61.1746 79.8543 62.7901 79.8539H73.7627C75.3799 79.8539 76.9307 79.2115 78.0742 78.068C79.2177 76.9246 79.8601 75.3737 79.8601 73.7566V62.7839C79.8601 61.167 80.5019 59.618 81.6498 58.4763L88.6172 51.5026C89.7602 50.3592 90.4023 48.8087 90.4023 47.1919C90.4023 45.5752 89.7602 44.0246 88.6172 42.8812L81.6436 35.9137C80.5019 34.7708 79.8605 33.2216 79.8601 31.6061V20.6334C79.8601 19.0163 79.2177 17.4654 78.0742 16.322C76.9307 15.1785 75.3799 14.5361 73.7627 14.5361H62.7901C61.1737 14.5341 59.6243 13.8904 58.4824 12.7464L51.5026 5.78511C50.3592 4.6421 48.8087 4 47.1919 4C45.5752 4 44.0246 4.6421 42.8812 5.78511Z"
-                  stroke="#F15A29"
-                  stroke-width="6.17137"
-                />
-              </svg>
-            </div>
-            <div className="md:max-w-lg max-w-xs mb-10 mt-20  p-10 text-2xl rounded mx-auto text-white bg-[#2E2E2E]">
-              Total Value - <span className="font-bold">₹22495</span>
-            </div>
-            <div className="md:max-w-lg max-w-xs mb-10  p-10 text-2xl rounded mx-auto  text-white bg-[#2D8F91]">
-              Regular Price - <span className="font-bold">₹12000</span>
-            </div>
-            <div className="md:max-w-lg max-w-xs  p-10 text-2xl  rounded mx-auto   bg-[#26CFD3]">
-              Discounted Price <span className="font-bold">₹7999</span>
-            </div>
-            <button
-              className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
-              style={{}}
-              onClick={() => {
-                scrollToTop();
-              }}
-            >
-              {" "}
-              BOOK FREE CONSULTATION CALL{" "}
-            </button>
-          </div> */}
           <div className="flex w-full flex-col mt-20 items-center justify-center">
             <h1 className="text-white text-[32px] font-bold ">
               Exclusive Offers
             </h1>
             <PricingSection />
           </div>
-
-          {/* Unable to decide? */}
-          {/* <div className="md:mt-20 mt-10 text-center md:p-16 p-4 ">
-            <div className="md:text-6xl  text-2xl md:p-5 p-2 px-10 md:px-20 w-fit mx-auto    text-center text-white font-[500] ">
-              Unable to decide?
-            </div>
-            <p className="text-white md:text-xl">
-              Listen Stories Of Success From Other People I have Worked With
-            </p>
-
-            <div className="md:mt-20 mt-10  grid md:grid-cols-2 gap-10 place-items-center">
-              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl flex justify-center items-center flex-col ">
-                <svg
-                  className="absolute -top-5 right-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="64"
-                  height="64"
-                  viewBox="0 0 108 98"
-                  fill="none"
-                >
-                  <path
-                    d="M97.2002 97.1983C100.064 97.1983 102.811 96.0605 104.837 94.0351C106.862 92.0098 108 89.2628 108 86.3985V60.0254C108 57.1611 106.862 54.4141 104.837 52.3887C102.811 50.3634 100.064 49.2255 97.2002 49.2255H82.21C82.21 45.4348 82.4368 41.6333 82.8796 37.8425C83.5492 33.825 84.6724 30.2503 86.2276 27.1291C87.7935 23.9972 89.8023 21.5456 92.2647 19.7529C94.7162 17.7441 97.8374 16.7397 101.639 16.7397V0C95.3858 0 89.9211 1.33918 85.2232 4.01753C80.5662 6.66873 76.5622 10.3295 73.5054 14.7309C70.4374 19.5835 68.1762 24.9011 66.8095 30.4771C65.4324 36.6304 64.7585 42.9202 64.8007 49.2255V86.3985C64.8007 89.2628 65.9386 92.0098 67.9639 94.0351C69.9893 96.0605 72.7363 97.1983 75.6006 97.1983H97.2002ZM32.4013 97.1983C35.2656 97.1983 38.0126 96.0605 40.0379 94.0351C42.0633 92.0098 43.2011 89.2628 43.2011 86.3985V60.0254C43.2011 57.1611 42.0633 54.4141 40.0379 52.3887C38.0126 50.3634 35.2656 49.2255 32.4013 49.2255H17.4112C17.4112 45.4348 17.638 41.6333 18.0808 37.8425C18.7503 33.825 19.8735 30.2503 21.4287 27.1291C22.9947 23.9972 25.0034 21.5456 27.4658 19.7529C29.9174 17.7441 33.0385 16.7397 36.84 16.7397V0C30.5869 0 25.1222 1.33918 20.4243 4.01753C15.7673 6.66873 11.7633 10.3295 8.70652 14.7309C5.63856 19.5835 3.37729 24.9011 2.01064 30.4771C0.63351 36.6304 -0.0403975 42.9202 0.00187137 49.2255V86.3985C0.00187137 89.2628 1.1397 92.0098 3.16506 94.0351C5.19042 96.0605 7.9374 97.1983 10.8017 97.1983H32.4013Z"
-                    fill="#F15A29"
-                  />
-                </svg>
-                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
-                  <div>
-                    {" "}
-                    <b>Bhatri Narayana </b>{" "}
-                    <span className="italic">CSE, VIT University</span>{" "}
-                  </div>{" "}
-                  <br /> <br />
-                  Qriocity made my final project so much easier. They helped me
-                  choose a good topic and were there to help me whenever I
-                  needed. They answered quickly and explained things in a way I
-                  could understand. I'm really glad I found them
-                </p>
-
-                <img src={User1} className=" w-[300px]" />
-              </div>
-
-              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl flex justify-center items-center flex-col ">
-                <svg
-                  className="absolute -top-5 right-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="64"
-                  height="64"
-                  viewBox="0 0 108 98"
-                  fill="none"
-                >
-                  <path
-                    d="M97.2002 97.1983C100.064 97.1983 102.811 96.0605 104.837 94.0351C106.862 92.0098 108 89.2628 108 86.3985V60.0254C108 57.1611 106.862 54.4141 104.837 52.3887C102.811 50.3634 100.064 49.2255 97.2002 49.2255H82.21C82.21 45.4348 82.4368 41.6333 82.8796 37.8425C83.5492 33.825 84.6724 30.2503 86.2276 27.1291C87.7935 23.9972 89.8023 21.5456 92.2647 19.7529C94.7162 17.7441 97.8374 16.7397 101.639 16.7397V0C95.3858 0 89.9211 1.33918 85.2232 4.01753C80.5662 6.66873 76.5622 10.3295 73.5054 14.7309C70.4374 19.5835 68.1762 24.9011 66.8095 30.4771C65.4324 36.6304 64.7585 42.9202 64.8007 49.2255V86.3985C64.8007 89.2628 65.9386 92.0098 67.9639 94.0351C69.9893 96.0605 72.7363 97.1983 75.6006 97.1983H97.2002ZM32.4013 97.1983C35.2656 97.1983 38.0126 96.0605 40.0379 94.0351C42.0633 92.0098 43.2011 89.2628 43.2011 86.3985V60.0254C43.2011 57.1611 42.0633 54.4141 40.0379 52.3887C38.0126 50.3634 35.2656 49.2255 32.4013 49.2255H17.4112C17.4112 45.4348 17.638 41.6333 18.0808 37.8425C18.7503 33.825 19.8735 30.2503 21.4287 27.1291C22.9947 23.9972 25.0034 21.5456 27.4658 19.7529C29.9174 17.7441 33.0385 16.7397 36.84 16.7397V0C30.5869 0 25.1222 1.33918 20.4243 4.01753C15.7673 6.66873 11.7633 10.3295 8.70652 14.7309C5.63856 19.5835 3.37729 24.9011 2.01064 30.4771C0.63351 36.6304 -0.0403975 42.9202 0.00187137 49.2255V86.3985C0.00187137 89.2628 1.1397 92.0098 3.16506 94.0351C5.19042 96.0605 7.9374 97.1983 10.8017 97.1983H32.4013Z"
-                    fill="#F15A29"
-                  />
-                </svg>
-                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
-                  <div>
-                    {" "}
-                    <b>Goutham </b>{" "}
-                    <span className="italic">ECE, Satyabama University</span>{" "}
-                  </div>{" "}
-                  <br />
-                  <br />I didn't have to worry about writing reports or making
-                  slides for my project because Qriocity did all that. This let
-                  me focus on My placements.
-                </p>
-
-                <img src={User2} className=" w-[300]" />
-              </div>
-              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl flex justify-center items-center flex-col">
-                <svg
-                  className="absolute -top-5 right-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="64"
-                  height="64"
-                  viewBox="0 0 108 98"
-                  fill="none"
-                >
-                  <path
-                    d="M97.2002 97.1983C100.064 97.1983 102.811 96.0605 104.837 94.0351C106.862 92.0098 108 89.2628 108 86.3985V60.0254C108 57.1611 106.862 54.4141 104.837 52.3887C102.811 50.3634 100.064 49.2255 97.2002 49.2255H82.21C82.21 45.4348 82.4368 41.6333 82.8796 37.8425C83.5492 33.825 84.6724 30.2503 86.2276 27.1291C87.7935 23.9972 89.8023 21.5456 92.2647 19.7529C94.7162 17.7441 97.8374 16.7397 101.639 16.7397V0C95.3858 0 89.9211 1.33918 85.2232 4.01753C80.5662 6.66873 76.5622 10.3295 73.5054 14.7309C70.4374 19.5835 68.1762 24.9011 66.8095 30.4771C65.4324 36.6304 64.7585 42.9202 64.8007 49.2255V86.3985C64.8007 89.2628 65.9386 92.0098 67.9639 94.0351C69.9893 96.0605 72.7363 97.1983 75.6006 97.1983H97.2002ZM32.4013 97.1983C35.2656 97.1983 38.0126 96.0605 40.0379 94.0351C42.0633 92.0098 43.2011 89.2628 43.2011 86.3985V60.0254C43.2011 57.1611 42.0633 54.4141 40.0379 52.3887C38.0126 50.3634 35.2656 49.2255 32.4013 49.2255H17.4112C17.4112 45.4348 17.638 41.6333 18.0808 37.8425C18.7503 33.825 19.8735 30.2503 21.4287 27.1291C22.9947 23.9972 25.0034 21.5456 27.4658 19.7529C29.9174 17.7441 33.0385 16.7397 36.84 16.7397V0C30.5869 0 25.1222 1.33918 20.4243 4.01753C15.7673 6.66873 11.7633 10.3295 8.70652 14.7309C5.63856 19.5835 3.37729 24.9011 2.01064 30.4771C0.63351 36.6304 -0.0403975 42.9202 0.00187137 49.2255V86.3985C0.00187137 89.2628 1.1397 92.0098 3.16506 94.0351C5.19042 96.0605 7.9374 97.1983 10.8017 97.1983H32.4013Z"
-                    fill="#F15A29"
-                  />
-                </svg>
-                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
-                  <div>
-                    {" "}
-                    <b>Deeksha </b>{" "}
-                    <span className="italic">IT, Githam University</span>{" "}
-                  </div>{" "}
-                  <br />
-                  <br />
-                  Qriocity was super fast in giving me the materials I needed
-                  for my project. They also gave me some great advice about my
-                  future career. Working with them taught me a lot and made me
-                  feel more confident.
-                </p>
-
-                <img src={User3} className=" w-[300px]" />
-              </div>
-
-              <div className=" relative md:max-w-md max-w-xs p-5 bg-[#0C2F31] rounded-xl flex justify-center items-center flex-col">
-                <svg
-                  className="absolute -top-5 right-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="64"
-                  height="64"
-                  viewBox="0 0 108 98"
-                  fill="none"
-                >
-                  <path
-                    d="M97.2002 97.1983C100.064 97.1983 102.811 96.0605 104.837 94.0351C106.862 92.0098 108 89.2628 108 86.3985V60.0254C108 57.1611 106.862 54.4141 104.837 52.3887C102.811 50.3634 100.064 49.2255 97.2002 49.2255H82.21C82.21 45.4348 82.4368 41.6333 82.8796 37.8425C83.5492 33.825 84.6724 30.2503 86.2276 27.1291C87.7935 23.9972 89.8023 21.5456 92.2647 19.7529C94.7162 17.7441 97.8374 16.7397 101.639 16.7397V0C95.3858 0 89.9211 1.33918 85.2232 4.01753C80.5662 6.66873 76.5622 10.3295 73.5054 14.7309C70.4374 19.5835 68.1762 24.9011 66.8095 30.4771C65.4324 36.6304 64.7585 42.9202 64.8007 49.2255V86.3985C64.8007 89.2628 65.9386 92.0098 67.9639 94.0351C69.9893 96.0605 72.7363 97.1983 75.6006 97.1983H97.2002ZM32.4013 97.1983C35.2656 97.1983 38.0126 96.0605 40.0379 94.0351C42.0633 92.0098 43.2011 89.2628 43.2011 86.3985V60.0254C43.2011 57.1611 42.0633 54.4141 40.0379 52.3887C38.0126 50.3634 35.2656 49.2255 32.4013 49.2255H17.4112C17.4112 45.4348 17.638 41.6333 18.0808 37.8425C18.7503 33.825 19.8735 30.2503 21.4287 27.1291C22.9947 23.9972 25.0034 21.5456 27.4658 19.7529C29.9174 17.7441 33.0385 16.7397 36.84 16.7397V0C30.5869 0 25.1222 1.33918 20.4243 4.01753C15.7673 6.66873 11.7633 10.3295 8.70652 14.7309C5.63856 19.5835 3.37729 24.9011 2.01064 30.4771C0.63351 36.6304 -0.0403975 42.9202 0.00187137 49.2255V86.3985C0.00187137 89.2628 1.1397 92.0098 3.16506 94.0351C5.19042 96.0605 7.9374 97.1983 10.8017 97.1983H32.4013Z"
-                    fill="#F15A29"
-                  />
-                </svg>
-                <p className="text-white text-start mb-8 w-5/6 p-8 md:text-lg">
-                  <div>
-                    {" "}
-                    <b>Ramya </b>{" "}
-                    <span className="italic">CSE, Veltech University</span>{" "}
-                  </div>{" "}
-                  <br /> <br />
-                  Working with Qriocity was a stress-free experience. They took
-                  care of the tough parts of my project, so I could focus on
-                  learning. They're awesome!
-                </p>
-
-                <img src={User4} className=" w-[300px]" />
-              </div>
-            </div>
-          </div> */}
 
           <Testimonials4 />
 
