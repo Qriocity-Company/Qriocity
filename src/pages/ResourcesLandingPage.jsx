@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 import bg from "../Utils/bg-image.jpg";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from "react-router-dom";
 
 const ResourceLandingPage = () => {
   const { uniqueLink } = useParams();
-  const [docLink, setDocLink] = useState('');
-  const [title, setTitle] = useState('');
+  const [docLink, setDocLink] = useState("");
+  const [title, setTitle] = useState("");
   const navigate = useNavigate();
   const filled = localStorage.getItem("Filled");
 
   useEffect(() => {
     const fetchDocLink = async () => {
       try {
-        const response = await axios.get(`https://crm-backend-o6sb.onrender.com/api/doc/getDocLink/${uniqueLink}`);
-        
+        const response = await axios.get(
+          `https://crm-backend-o6sb.onrender.com/api/doc/getDocLink/${uniqueLink}`
+        );
+
         setDocLink(response.data.doc.docLink);
         setTitle(response.data.doc.title);
       } catch (error) {
-        console.error('Error fetching document link', error);
+        console.error("Error fetching document link", error);
       }
     };
 
@@ -44,12 +46,14 @@ const ResourceLandingPage = () => {
               FREE PDF RESOURCE
             </h1>
           </div>
-          <h2 className="lg:text-4xl text-2xl font-bold mt-10 place-self-center bg-clip-text text-transparent bg-gradient-to-r from-white to-[#FF5924]">
+          <h2 className="lg:text-4xl text-2xl font-bold mt-10 place-self-center text-center bg-clip-text text-transparent bg-gradient-to-r from-white to-[#FF5924]">
             {title}
           </h2>
           <div className="mt-10 flex items-center justify-center">
             <p className="text-2xl text-center">
-              Best proven reels ideas for coaches, content creators as well service based businesses to get more followers and leads
+              Get all your free resources here that helps you to get your dream
+              job. Also please share this page link to your friends if you found
+              our resources useful.
             </p>
           </div>
           <button
