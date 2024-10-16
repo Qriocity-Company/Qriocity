@@ -728,7 +728,7 @@ const WebinarHardware = () => {
             </div>
           </div>
 
-          <div className="relative md:mt-0 mt-10  space-y-10 text-center md:p-16 p-4 ">
+          <div className="relative md:mt-0 mt-10  space-y-10 lg:text-center text-start md:p-16 p-4 ">
             <ContentCard content="On-Time Delivery Guaranteed" />
             <ContentCard content="Expert Engineers & Hardware Developers" />
             <ContentCard content=" 5+ Years of Hands-On Expertise in Hardware Development " />
