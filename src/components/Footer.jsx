@@ -34,7 +34,7 @@ export const Footer = () => {
             </div>
             <div className="footer-item address pl-8 ">
               <img src={phone} alt="" className="icon" />
-              <div>9944878589</div>
+              <div>+91 73073 48103</div>
             </div>
             <div className="footer-item mail pl-8 ">
               <IoIosMail size={22} />
@@ -113,7 +113,7 @@ export const Footer = () => {
           </div>
         </footer>
       </div>
-      <div className="flex items-center text-gray-400 mt-3 flex-col md:flex-row text-[14px] gap-8">
+      <div className="flex justify-center items-center text-gray-400 mt-3 flex-col md:flex-row text-[14px] gap-8">
         <a
           className="hover:underline hover:underline-offset-4 "
           href="/privacy-policy"
@@ -127,7 +127,7 @@ export const Footer = () => {
           Refund & Cancellation policy
         </a>
       </div>
-      <div className="items-center text-gray-400 mt-4 flex flex-col md:flex-row text-[14px]">
+      <div className="items-center justify-center text-gray-400 mt-4 flex flex-col md:flex-row text-[14px]">
         <p> © 2024 Qriocity Ventures Privte Limited. </p>
         <p> All rights reserved.</p>
         <br />
