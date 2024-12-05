@@ -236,7 +236,7 @@ const MainCard = ({ setShowForm }) => {
 
     try {
       // Proceed with form submission
-      await fetch("https://crm-backend-o6sb.onrender.com/customer/send", {
+      await fetch("https://crm-backend-o6sb.onrender.com/earnCustomer/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

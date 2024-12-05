@@ -73,7 +73,7 @@ function App() {
           <Route path="/FullstackBootcamp" element={<Fullstack />} />
           <Route path="/Bootcamp" element={<BootCamp />} />
           <Route path="/projectWorkshop" element={<ProjectWorkshop />} />
-          <Route path="/earnWebinar" element={<EarnWebinar />} />
+          <Route path="/campus-expert-program" element={<EarnWebinar />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
         <ToastContainer
