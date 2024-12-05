@@ -30,6 +30,7 @@ import WebinarGoogleAds from "./pages/WebinarGoogleAds";
 import WebinarUK from "./pages/WebinarUK";
 import WebinarPhdProffesors from "./pages/WebinarPhdProffesors";
 import WebinarHardware from "./pages/WebinarHardware";
+import EarnWebinar from "./pages/EarnWebinar";
 
 function App() {
   return (
@@ -72,6 +73,7 @@ function App() {
           <Route path="/FullstackBootcamp" element={<Fullstack />} />
           <Route path="/Bootcamp" element={<BootCamp />} />
           <Route path="/projectWorkshop" element={<ProjectWorkshop />} />
+          <Route path="/earnWebinar" element={<EarnWebinar />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
         <ToastContainer

@@ -1,9 +1,8 @@
 import React from "react";
 import "../App.css";
 import Carousel8 from "./Carousel8";
-import CarasouleWithIframe from "./Carasoule4";
 
-function Testimonials4() {
+function Testimonials9() {
   return (
     <div className="w-full font-serif  flex  justify-center items-center px-2 md:px-0 py-10 md:py-20">
       <div className="w-full   flex flex-col justify-center items-center gap-6 md:gap-16">
@@ -14,11 +13,11 @@ function Testimonials4() {
           Listen from the people whom we have worked with
         </h1>
         <div>
-          <CarasouleWithIframe />
+          <Carousel8 />
         </div>
       </div>
     </div>
   );
 }
 
-export default Testimonials4;
+export default Testimonials9;
