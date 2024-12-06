@@ -67,6 +67,7 @@ import interviewprep from "../assets/interviewprep.png";
 import { useLocation } from "react-router";
 import { Helmet } from "react-helmet";
 import Testimonials9 from "../components/Testimonials9";
+import usePixelTracking from "../hooks/facebookPixelHook";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
@@ -211,7 +212,7 @@ const MainCard = ({ setShowForm }) => {
   const [college, setCollege] = useState();
   const [year, setYear] = useState();
   const filled = localStorage.getItem("PopUp");
-
+  usePixelTracking(6604459609678289);
   const [formData, setFormData] = useState({
     name: "",
     senderEmail: "",
@@ -233,6 +234,12 @@ const MainCard = ({ setShowForm }) => {
     event.preventDefault(); // Prevent the default form submission behavior
 
     setLoading(true);
+    if (window.fbq) {
+      // Track the Lead event for the first Pixel ID
+      window.fbq("track", "Lead", {
+        pixelId: "6604459609678289", // First Pixel ID
+      });
+    }
 
     try {
       // Proceed with form submission
