@@ -630,9 +630,9 @@ const ProblemCard = ({ content, boldContent, pos }) => {
       </div>
 
       <div className="text-white mt-3 ">
-        {content}
-        <br />
         <span className="font-bold">{boldContent}</span>
+        <br />
+        {content}
       </div>
     </div>
   );
@@ -768,28 +768,6 @@ const EarnWebinar = () => {
 
               <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
                 <ProblemCard
-                  content="Work from anywhere, anytime - fully flexible with your college schedule.
-"
-                  boldContent="Looking for Part-Time Work? "
-                  pos="left"
-                />
-                <div className=" lg:flex hidden  justify-between items-center w-full ">
-                  <div className=" w-[10px] h-[10px]  bg-white  rounded-full  text-white "></div>
-                  <div
-                    className="w-full h-0 "
-                    style={{ border: "2px dashed white" }}
-                  ></div>
-                  <div className=" w-[10px] h-[10px] bg-white  rounded-full  text-white "></div>
-                </div>
-                <ProblemCard
-                  content="Earn rewards like iPhone 16 and MacBook M2 by performing well."
-                  boldContent="Want Exciting Rewards? "
-                  pos="right"
-                />
-              </div>
-
-              <div className="flex lg:flex-row flex-col md:gap-0 gap-10 p-5 justify-between items-center ">
-                <ProblemCard
                   content="Receive internship certification and real-world work experience.
 
 "
@@ -812,19 +790,14 @@ const EarnWebinar = () => {
               </div>
 
               <div
-                className="lg:block hidden absolute font-[500] text-white text-9xl top-[20%] left-[50%]   "
+                className="lg:block hidden absolute font-[500] text-white text-9xl top-[25%] left-[50%]   "
                 style={{ transform: "translate( -50% , -50%)" }}
               >
                 ?
               </div>
+
               <div
-                className="lg:block hidden absolute font-[500] text-white text-9xl top-[45%] left-[50%]   "
-                style={{ transform: "translate( -50% , -50%)" }}
-              >
-                ?
-              </div>
-              <div
-                className="lg:block hidden absolute font-[500] text-white text-9xl top-[70%] left-[50%]   "
+                className="lg:block hidden absolute font-[500] text-white text-9xl top-[60%] left-[50%]   "
                 style={{ transform: "translate( -50% , -50%)" }}
               >
                 ?
@@ -1171,7 +1144,7 @@ const EarnWebinar = () => {
                 Free
                 <span className="ml-3 md:text-2xl text-xs line-through">
                   {" "}
-                  ₹8000
+                  ₹1000
                 </span>
               </p>
               <p className="md:text-lg  text-sm font-semibold">
