@@ -31,6 +31,7 @@ import WebinarUK from "./pages/WebinarUK";
 import WebinarPhdProffesors from "./pages/WebinarPhdProffesors";
 import WebinarHardware from "./pages/WebinarHardware";
 import EarnWebinar from "./pages/EarnWebinar";
+import ThankYouPage from "./pages/ThankYouPage";
 
 function App() {
   return (
@@ -74,6 +75,7 @@ function App() {
           <Route path="/Bootcamp" element={<BootCamp />} />
           <Route path="/projectWorkshop" element={<ProjectWorkshop />} />
           <Route path="/campus-expert-program" element={<EarnWebinar />} />
+          <Route path="/thankYou" element={<ThankYouPage />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
         <ToastContainer
