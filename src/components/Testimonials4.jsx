@@ -11,7 +11,7 @@ function Testimonials4() {
           Unable to decide?
         </h1>
         <h1 className=" text-center text-white text-[20px]  md:text-[32px] font-semibold ">
-          Listen from the people whom we have worked with
+          Hear our Students Success Stories
         </h1>
         <div>
           <CarasouleWithIframe />

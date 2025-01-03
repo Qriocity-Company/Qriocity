@@ -8,6 +8,8 @@ import "../App.css";
 const iframeLinks = [
   "https://www.youtube.com/embed/n66_7be_Mho",
   "https://www.youtube.com/embed/HEca583ur0o",
+  "https://youtube.com/embed/m7RUMwFm6os",
+  "https://youtube.com/embed/uxiStoqtSIs",
 ];
 
 function CarasouleWithIframe() {
@@ -94,10 +96,6 @@ function CarasouleWithIframe() {
   return (
     <div className="h-full w-full px-4 md:px-8 py-8">
       <div className="slider-container max-w-7xl mx-auto flex flex-col items-center gap-4">
-        <h2 className="text-3xl font-bold text-white mb-6 text-center">
-          Our Videos
-        </h2>
-
         {/* Conditionally render carousel or static layout */}
         {isMobileView ? (
           <div className="static-videos w-full grid grid-cols-1 gap-4">
