@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WNKD4HLZ');</script>
-  <!-- End Google Tag Manager -->
-
+    <!-- Required Meta Tags -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="Qriocity as a training institution for IT Graduates assisting them to scale up the IT industry"
     />
     <title>Qriocity</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WNKD4HLZ");
+    </script>
+    <!-- End Google Tag Manager -->
+
     <!-- Google Pixel Code -->
     <script
       async
@@ -31,16 +41,24 @@
       gtag("js", new Date());
       gtag("config", "AW-11433484632");
     </script>
-
-    <!-- Combined Meta Pixel Code -->
+    <!-- End Google Pixel Code -->
   </head>
   <body>
-    
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNKD4HLZ"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WNKD4HLZ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- React Root -->
     <div id="root"></div>
 
+    <!-- Main Application Script -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
