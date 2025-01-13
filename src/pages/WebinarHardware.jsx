@@ -469,9 +469,12 @@ const MainCard = ({ setShowForm }) => {
       name: formData.name,
       phone: formData.phoneNumber,
       message: formData.message,
+      college: formData.College,
+      department: formData.departmentCollege,
+      year: formData.YearCollege,
     };
     emailjs
-      .send("service_audiui6", "template_mwv0oup", data, "gNK_PfCqn5ho5f0Kb")
+      .send("service_audiui6", "template_cbf241q", data, "gNK_PfCqn5ho5f0Kb")
       .then(
         (result) => {},
         (error) => {

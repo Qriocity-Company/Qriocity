@@ -342,10 +342,11 @@ const MainCard = ({ setShowForm }) => {
     var data = {
       name: formData.name,
       phone: formData.phoneNumber,
-      message: formData.message,
+      requirement: formData.requirement,
+      study: formData.fieldOfStudy,
     };
     emailjs
-      .send("service_audiui6", "template_mwv0oup", data, "gNK_PfCqn5ho5f0Kb")
+      .send("service_audiui6", "template_lt63u1o", data, "gNK_PfCqn5ho5f0Kb")
       .then(
         (result) => {},
         (error) => {
