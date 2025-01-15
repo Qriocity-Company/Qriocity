@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ThankYouPage = () => {
+  useEffect(() => {
+    // Trigger GTM page view event
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "pageview",
+      page: "ThankYouPage",
+    });
+  }, []);
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-tr from-green-600 via-green-300 to-green-100 p-4">
       <div className="bg-white p-8 rounded-lg shadow-lg text-center max-w-md">
@@ -9,7 +18,7 @@ const ThankYouPage = () => {
           Thank you for registering with us!
         </h1>
         <p className="text-gray-700 mb-6">
-          You will get an call soon from our team.
+          You will get a call soon from our team.
         </p>
         <Link
           to="/bookAcallnow"
