@@ -3,12 +3,25 @@ import { Link } from "react-router-dom";
 
 const ThankYouPage = () => {
   useEffect(() => {
+    // Inject the event script dynamically
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.innerHTML = `
+      gtag('event', 'conversion', {'send_to': 'AW-11517624771/h4s3CIzTn4IaEMODhPQq'});
+    `;
+    document.head.appendChild(script);
+
     // Trigger GTM page view event
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "pageview",
       page: "ThankYouPage",
     });
+
+    // Cleanup script when the component unmounts
+    return () => {
+      document.head.removeChild(script);
+    };
   }, []);
 
   return (
