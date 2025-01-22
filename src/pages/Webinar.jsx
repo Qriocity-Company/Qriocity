@@ -1280,7 +1280,7 @@ const Webinar = () => {
           <Testimonials4 />
 
           {/* Still Not Sure? We Have */}
-          <div className="md:mt-20 mt-10 text-center mb-36 md:mb-20 md:p-16 p-4 ">
+          {/* <div className="md:mt-20 mt-10 text-center mb-36 md:mb-20 md:p-16 p-4 ">
             <div className="lg:text-6xl md:text-4l  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
               Still Not Sure? We Have
             </div>
@@ -1333,7 +1333,7 @@ const Webinar = () => {
                 BOOK YOUR FREE CONSULTATION CALL NOW
               </button>
             </div>
-          </div>
+          </div> */}
 
           <div className="w-full flex flex-col items-center p-2 md:p-0 justify-center mt-20 bg-white">
             <div className="max-w-5xl mx-auto py-8 md:mt-20">

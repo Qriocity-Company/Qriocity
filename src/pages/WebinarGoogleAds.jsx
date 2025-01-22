@@ -80,7 +80,7 @@ const WebinarGoogleAds = () => {
             </div>
           </div>
 
-            <div className="relative md:mt-0 mt-10  space-y-10 text-center md:p-16 p-4 ">
+          <div className="relative md:mt-0 mt-10  space-y-10 text-center md:p-16 p-4 ">
             <ContentCard content="Project Delivery in 1 day" />
             <ContentCard content="Advanced Unique IEEE Titles" />
             <ContentCard content="PPT’s and Reports in your college format " />
@@ -100,17 +100,17 @@ const WebinarGoogleAds = () => {
           </div>
 
           {/* What problem we will solve? section  */}
-          <ProblemSection/>
-          <TimelineComponent/>
-          <ProjectSolution/> 
-          <BonusesSection/>
-          <Comparision/>
+          <ProblemSection />
+          <TimelineComponent />
+          <ProjectSolution />
+          <BonusesSection />
+          <Comparision />
           <Testimonials4 />
-          <MoneyBackSection/>
-          <FaqSection/>
+          {/* <MoneyBackSection/> */}
+          <FaqSection />
         </div>
       </div>
-        <FooterBook/>
+      <FooterBook />
     </div>
   );
 };
