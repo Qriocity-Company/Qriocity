@@ -34,11 +34,11 @@ export const Footer = () => {
             </div>
             <div className="footer-item address pl-8 ">
               <img src={phone} alt="" className="icon" />
-              <div>+91 8754381419</div>
+              <div>+91 9629401419</div>
             </div>
             <div className="footer-item mail pl-8 ">
               <IoIosMail size={22} />
-              <div>contact@qriocity.in</div>
+              <div>qriocityventures@gmail.com </div>
             </div>
           </div>
 
