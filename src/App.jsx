@@ -32,6 +32,7 @@ import WebinarPhdProffesors from "./pages/WebinarPhdProffesors";
 import WebinarHardware from "./pages/WebinarHardware";
 import EarnWebinar from "./pages/EarnWebinar";
 import ThankYouPage from "./pages/ThankYouPage";
+import ConsultAds from "./pages/ConsultAds";
 
 function App() {
   return (
@@ -58,6 +59,11 @@ function App() {
             element={<WebinarHardware />}
           />
           <Route exact path="/bookacallnow" element={<WebinarGoogleAds />} />
+          <Route
+            exact
+            path="/bookconsultation"
+            element={<ConsultAds />}
+          />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:blog" element={<BlogItem />} />
           <Route
