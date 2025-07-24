@@ -10,7 +10,6 @@ import BonusesSection from "../components/WebinarGoogleAds/BonusSection";
 import ProjectSolution from "../components/WebinarGoogleAds/ProjectSolution";
 import TimelineComponent from "../components/WebinarGoogleAds/TimelineComponent";
 import ProblemSection from "../components/WebinarGoogleAds/ProblemSection";
-import MainCard from "../components/WebinarGoogleAds/MainCard";
 import MainCard2 from "../components/MainCard2";
 const scrollToTop = () => {
   window.scrollTo(0, 0);
