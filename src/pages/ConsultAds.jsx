@@ -11,6 +11,7 @@ import ProjectSolution from "../components/WebinarGoogleAds/ProjectSolution";
 import TimelineComponent from "../components/WebinarGoogleAds/TimelineComponent";
 import ProblemSection from "../components/WebinarGoogleAds/ProblemSection";
 import MainCard from "../components/WebinarGoogleAds/MainCard";
+import MainCard2 from "../components/MainCard2";
 const scrollToTop = () => {
   window.scrollTo(0, 0);
 };
@@ -71,7 +72,7 @@ const ConsultAds = () => {
         <div className=" text-white w-full md:mt-20 mt-10  flex justify-center items-center  font-figtree ">
           <div className="bg-[#3cffff] hidden md:block absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
           <div className="bg-[#FF7A00]  hidden md:block absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
-          <MainCard setShowForm={setShowForm} />
+          <MainCard2 setShowForm={setShowForm} />
         </div>
         <div className="bg-gradient-to-b  md:mt-20 mt-10  from-[#04131300] to-[#041313] w-full ">
           <div className=" md:w-5/6 mx-auto   md:p-16 p-4">
