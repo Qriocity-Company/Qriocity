@@ -11,6 +11,7 @@ import ProjectSolution from "../components/WebinarGoogleAds/ProjectSolution";
 import TimelineComponent from "../components/WebinarGoogleAds/TimelineComponent";
 import ProblemSection from "../components/WebinarGoogleAds/ProblemSection";
 import MainCard2 from "../components/MainCard2";
+import usePixelTracking from "../hooks/facebookPixelHook";
 const scrollToTop = () => {
   window.scrollTo(0, 0);
 };
@@ -54,6 +55,7 @@ const ContentCard = ({ content }) => {
 const ConsultAds = () => {
   const [showForm, setShowForm] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
+   usePixelTracking(6604459609678289);
 
   const toggleAccordion = (index) => {
     if (activeIndex === index) {
