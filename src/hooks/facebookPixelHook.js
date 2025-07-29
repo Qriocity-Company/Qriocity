@@ -35,12 +35,21 @@ const usePixelTracking = (pixelID) => {
   useEffect(() => {
     loadFacebookPixelScript();
 
-    fbq("init", pixelID);
-
-    fbq("track", "PageView");
+    if (window.fbq) {
+      fbq("init", pixelID);
+      fbq("track", "PageView");
+    }
   }, [pixelID]);
 
-  return null; // No need to return anything for simple tracking
+  // Function to track lead events
+  const trackLead = () => {
+    if (window.fbq) {
+      fbq("track", "Lead");
+    }
+  };
+
+  // Return the trackLead function so components can use it
+  return { trackLead };
 };
 
 export default usePixelTracking;

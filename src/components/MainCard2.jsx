@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import emailjs from "emailjs-com";
 import { ImSpinner8 } from "react-icons/im";
+import usePixelTracking from './hooks/usePixelTracking'; // Adjust the path as needed
 
 const MainCard2 = ({ setShowForm }) => {
   const [loading, setLoading] = useState(false);
@@ -20,6 +21,7 @@ const MainCard2 = ({ setShowForm }) => {
   const filled = localStorage.getItem("PopUp");
   const location = useLocation();
   const navigate = useNavigate();
+  const { trackLead } = usePixelTracking("1922723368223680"); // Replace with your actual pixel ID
 
   const [formData, setFormData] = useState({
     name: "",
@@ -40,8 +42,9 @@ const MainCard2 = ({ setShowForm }) => {
   };
   async function onSubmit(event) {
     setLoading(true);
+     
     event.preventDefault();
-
+ trackLead();
     // Proceed with form submission
     await fetch(
       "https://crm-backend-o6sb.onrender.com/consultadsCustomer/send",
