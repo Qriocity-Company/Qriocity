@@ -34,7 +34,7 @@ export const Footer = () => {
             </div>
             <div className="footer-item address pl-8 ">
               <img src={phone} alt="" className="icon" />
-              <div>+91 9629401419</div>
+              <div>+91 6385337672</div>
             </div>
             <div className="footer-item mail pl-8 ">
               <IoIosMail size={22} />
