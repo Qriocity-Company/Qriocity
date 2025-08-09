@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import emailjs from "emailjs-com";
 import { ImSpinner8 } from "react-icons/im";
-import usePixelTracking from './hooks/usePixelTracking'; // Adjust the path as needed
+import usePixelTracking from "../hooks/facebookPixelHook.js"; // Adjust the path as needed
 
 const MainCard2 = ({ setShowForm }) => {
   const [loading, setLoading] = useState(false);
