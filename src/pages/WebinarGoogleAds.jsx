@@ -68,10 +68,17 @@ const WebinarGoogleAds = () => {
       {showForm && <Modal setShowForm={setShowForm} />}
 
       <div className="relative mt-20">
-        <div className=" text-white w-full md:mt-20 mt-10  flex justify-center items-center  font-figtree ">
+        <div className="flex-col text-white w-full md:mt-20 mt-10  flex justify-center items-center  font-figtree ">
           <div className="bg-[#3cffff] hidden md:block absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
           <div className="bg-[#FF7A00]  hidden md:block absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
           <MainCard setShowForm={setShowForm} />
+          <h1 className="mt-10 text-md md:text-4xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#FF7A00] via-[#ffbb00] to-[#ffea00] drop-shadow-lg animate-pulse">
+            📞 Call{" "}
+            <span className=" decoration-[#FF7A00] ">
+              +91 6385337672
+            </span>{" "}
+            to book your project
+          </h1>
         </div>
         <div className="bg-gradient-to-b  md:mt-20 mt-10  from-[#04131300] to-[#041313] w-full ">
           <div className=" md:w-5/6 mx-auto   md:p-16 p-4">

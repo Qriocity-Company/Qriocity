@@ -350,7 +350,9 @@ const MainCard = ({ setShowForm }) => {
           </button>
         </div>
       </form>
+     
     </div>
+    
   );
 };
 
