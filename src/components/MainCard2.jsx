@@ -40,81 +40,77 @@ const MainCard2 = ({ setShowForm }) => {
       [name]: value,
     }));
   };
- async function onSubmit(event) {
-   setLoading(true);
-   event.preventDefault();
+  async function onSubmit(event) {
+    setLoading(true);
+    event.preventDefault();
 
-   // Track lead
-   trackLead();
+    // Track lead
+    trackLead();
 
-   try {
-     // Send data to backend API
-     await fetch(
-       "https://crm-backend-o6sb.onrender.com/consultadsCustomer/send",
-       {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify(formData),
-       }
-     );
+    try {
+      // Send data to backend API
+      await fetch("http://localhost:5000/consultadsCustomer/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ formData }),
+      });
 
-     // Send data to Google Apps Script Web App
-     const webAppUrl =
-       "https://script.google.com/macros/s/AKfycbzWUudswNPPCH-Qf03ao0_E94cy4Assb6unRqg4Mc013di95fXvzWDQo5_ZmufguNmIHQ/exec";
+      // Send data to Google Apps Script Web App
+      const webAppUrl =
+        "https://script.google.com/macros/s/AKfycby9hEZP4yD5Oj6N8hcwUYDakN_AJ8WL8t-6sayNwTkubzrY0e6lZom8Cwy-3sQA0sJqFg/exec";
 
-     await fetch(webAppUrl, {
-       method: "POST",
-       mode: "no-cors", // Google Script requires no-cors
-       headers: {
-         "Content-Type": "application/json",
-       },
-       body: JSON.stringify(formData),
-     });
+      await fetch(webAppUrl, {
+        method: "POST",
+        mode: "no-cors", // Google Script requires no-cors
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-     // Stop loading
-     setLoading(false);
+      // Stop loading
+      setLoading(false);
 
-     // Google Analytics tracking
-     if (window.gtag) {
-       window.gtag("event", "form_submission", {
-         event_category: "Form",
-         event_label: "Contact Form",
-         value: 1,
-       });
-     }
+      // Google Analytics tracking
+      if (window.gtag) {
+        window.gtag("event", "form_submission", {
+          event_category: "Form",
+          event_label: "Contact Form",
+          value: 1,
+        });
+      }
 
-     // Update spreadsheet (your existing function)
-     await updateSpreadSheet();
+      // Update spreadsheet (your existing function)
+      await updateSpreadSheet();
 
-     // Trigger custom click handler
-     handleClick();
+      // Trigger custom click handler
+      handleClick();
 
-     // Reset form fields
-     setFormData({
-       name: "",
-       senderEmail: "",
-       phoneNumber: "",
-       message: "",
-       departmentCollege: "",
-       YearCollege: "",
-       College: "",
-     });
+      // Reset form fields
+      setFormData({
+        name: "",
+        senderEmail: "",
+        phoneNumber: "",
+        message: "",
+        departmentCollege: "",
+        YearCollege: "",
+        College: "",
+      });
 
-     // Show popup and navigate
-     navigate("/thank_you");
-     setShowPopup(true);
-     setTimeout(() => {
-       setShowPopup(false);
-     }, 2500);
-   } catch (error) {
-     console.error("Error submitting form:", error);
-     setLoading(false);
-     alert("An error occurred. Please try again.");
-   }
- }
-
+      // Show popup and navigate
+      navigate("/thank_you");
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 2500);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setLoading(false);
+      alert("An error occurred. Please try again.");
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
