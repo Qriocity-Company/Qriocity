@@ -49,13 +49,16 @@ const MainCard2 = ({ setShowForm }) => {
 
     try {
       // Send data to backend API
-      await fetch("http://localhost:5000/consultadsCustomer/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ formData }),
-      });
+      await fetch(
+        "https://crm-backend-o6sb.onrender.com/consultadsCustomer/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ formData }),
+        }
+      );
 
       // Send data to Google Apps Script Web App
       const webAppUrl =
