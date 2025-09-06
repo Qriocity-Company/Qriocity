@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import emailjs from "emailjs-com";
 import { ImSpinner8 } from "react-icons/im";
 import usePixelTracking from "../hooks/facebookPixelHook.js"; // Adjust the path as needed
+import { useParams } from "react-router-dom";
 
 const MainCard2 = ({ setShowForm }) => {
   const [loading, setLoading] = useState(false);
@@ -21,6 +22,7 @@ const MainCard2 = ({ setShowForm }) => {
   const filled = localStorage.getItem("PopUp");
   const location = useLocation();
   const navigate = useNavigate();
+   const { city } = useParams();
   const { trackLead } = usePixelTracking("1922723368223680"); // Replace with your actual pixel ID
 
   const [formData, setFormData] = useState({
@@ -56,7 +58,7 @@ const MainCard2 = ({ setShowForm }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ formData }),
+          body: JSON.stringify({ ...formData, city }),
         }
       );
 

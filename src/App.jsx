@@ -1,25 +1,27 @@
 // App.js
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
+
+// Pages
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AboutUs from "./pages/AboutUs";
-import { Footer } from "./components/Footer";
 import Webinar from "./pages/Webinar";
 import Blog from "./pages/Blog";
 import BlogItem from "./components/BlogItem";
 import Privacy from "./pages/Privacy";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import ResourceLandingPage from "./pages/ResourcesLandingPage";
 import FormPage from "./pages/FormPage";
 import TermsandServices from "./pages/TermsandServices";
 import Refund from "./pages/Refund";
 import RoadMap from "./pages/RoadMap";
-import GoogleAnalytics from "./components/GoogleAnalytics";
 import Placement from "./pages/Placement";
 import Dsa from "./pages/Dsa";
 import Fullstack from "./pages/Fullstack";
@@ -38,39 +40,42 @@ import ThankYouPage2 from "./pages/ThankyouPage2";
 function App() {
   return (
     <Router>
-      <div className="bg-[rgb(0,0,0)] z-50 flex flex-col overflow-hidden">
+      <div className="bg-black z-50 flex flex-col overflow-hidden">
         <Navbar />
+
         <Routes>
+          {/* General Routes */}
           <Route index path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
-          {/*<Route path="/courses" element={<OurCourses />} />*/}
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/consultations" element={<Webinar />} />
-          <Route exact path="/bookacall" element={<WebinarAds />} />
-          <Route exact path="/assignments-service" element={<WebinarUK />} />
-          <Route
-            exact
-            path="/phd-projects"
-            element={<WebinarPhdProffesors />}
-          />
-          <Route
-            exact
-            path="/hardware-projects"
-            element={<WebinarHardware />}
-          />
-          <Route exact path="/bookacallnow" element={<WebinarGoogleAds />} />
-          <Route exact path="/bookconsultation" element={<ConsultAds />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:blog" element={<BlogItem />} />
+
+          {/* Campaign / Consultation */}
+          <Route path="/consultations" element={<Webinar />} />
+          <Route path="/bookacall" element={<WebinarAds />} />
+          <Route path="/assignments-service" element={<WebinarUK />} />
+          <Route path="/phd-projects" element={<WebinarPhdProffesors />} />
+          <Route path="/hardware-projects" element={<WebinarHardware />} />
+          <Route path="/bookacallnow" element={<WebinarGoogleAds />} />
+
+          {/* 👇 Dynamic City Route for Consult Ads */}
+          <Route path="/bookconsultation/:city" element={<ConsultAds />} />
+
+          {/* Resources / Forms */}
           <Route
             path="/resource/:uniqueLink"
             element={<ResourceLandingPage />}
           />
           <Route path="/form/:uniqueLink" element={<FormPage />} />
+
+          {/* Policies */}
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms" element={<TermsandServices />} />
           <Route path="/refund" element={<Refund />} />
+
+          {/* Other Pages */}
           <Route path="/webinar" element={<RoadMap />} />
           <Route path="/courses" element={<Placement />} />
           <Route path="/DsaBootcamp" element={<Dsa />} />
@@ -78,10 +83,12 @@ function App() {
           <Route path="/Bootcamp" element={<BootCamp />} />
           <Route path="/projectWorkshop" element={<ProjectWorkshop />} />
           <Route path="/campus-expert-program" element={<EarnWebinar />} />
+
+          {/* Thank You Pages */}
           <Route path="/thankYou" element={<ThankYouPage />} />
           <Route path="/thank_you" element={<ThankYouPage2 />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
+
         <ToastContainer
           position="top-right"
           autoClose={1500}
@@ -94,6 +101,7 @@ function App() {
           pauseOnHover
           theme="dark"
         />
+        <Footer />
       </div>
     </Router>
   );
