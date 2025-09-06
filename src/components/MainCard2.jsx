@@ -88,7 +88,7 @@ const MainCard2 = ({ setShowForm }) => {
       }
 
       // Update spreadsheet (your existing function)
-      await updateSpreadSheet();
+      // await updateSpreadSheet();
 
       // Trigger custom click handler
       handleClick();
