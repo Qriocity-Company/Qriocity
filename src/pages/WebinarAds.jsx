@@ -66,6 +66,7 @@ import hacks from "../assets/hacks.png";
 import interviewprep from "../assets/interviewprep.png";
 import { useLocation } from "react-router";
 import usePixelTracking from "../hooks/facebookPixelHook";
+import { useParams } from "react-router-dom";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
@@ -230,6 +231,7 @@ const MainCard = ({ setShowForm }) => {
   const [college, setCollege] = useState();
   const [year, setYear] = useState();
   const filled = localStorage.getItem("PopUp");
+  const { city } = useParams();
   usePixelTracking(6604459609678289);
 
   const [formData, setFormData] = useState({
@@ -267,8 +269,21 @@ const MainCard = ({ setShowForm }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ formData }),
+      body: JSON.stringify({ ...formData, city }),
     });
+
+     const webAppUrl =
+       "https://script.google.com/macros/s/AKfycby9hEZP4yD5Oj6N8hcwUYDakN_AJ8WL8t-6sayNwTkubzrY0e6lZom8Cwy-3sQA0sJqFg/exec";
+
+     await fetch(webAppUrl, {
+       method: "POST",
+       mode: "no-cors", // Google Script requires no-cors
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(formData),
+     });
+
 
     setLoading(false);
 

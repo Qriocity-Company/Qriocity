@@ -22,7 +22,6 @@ const MainCard2 = ({ setShowForm }) => {
   const filled = localStorage.getItem("PopUp");
   const location = useLocation();
   const navigate = useNavigate();
-   const { city } = useParams();
   const { trackLead } = usePixelTracking("1922723368223680"); // Replace with your actual pixel ID
 
   const [formData, setFormData] = useState({
@@ -58,22 +57,22 @@ const MainCard2 = ({ setShowForm }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ ...formData, city }),
+          body: JSON.stringify({ ...formData }),
         }
       );
 
       // Send data to Google Apps Script Web App
-      const webAppUrl =
-        "https://script.google.com/macros/s/AKfycby9hEZP4yD5Oj6N8hcwUYDakN_AJ8WL8t-6sayNwTkubzrY0e6lZom8Cwy-3sQA0sJqFg/exec";
+      // const webAppUrl =
+      //   "https://script.google.com/macros/s/AKfycby9hEZP4yD5Oj6N8hcwUYDakN_AJ8WL8t-6sayNwTkubzrY0e6lZom8Cwy-3sQA0sJqFg/exec";
 
-      await fetch(webAppUrl, {
-        method: "POST",
-        mode: "no-cors", // Google Script requires no-cors
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      // await fetch(webAppUrl, {
+      //   method: "POST",
+      //   mode: "no-cors", // Google Script requires no-cors
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
 
       // Stop loading
       setLoading(false);
