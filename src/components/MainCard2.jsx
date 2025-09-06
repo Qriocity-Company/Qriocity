@@ -40,68 +40,81 @@ const MainCard2 = ({ setShowForm }) => {
       [name]: value,
     }));
   };
-  async function onSubmit(event) {
-    setLoading(true);
-     
-    event.preventDefault();
- trackLead();
-    // Proceed with form submission
-    await fetch(
-      "https://crm-backend-o6sb.onrender.com/consultadsCustomer/send",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ formData }),
-      }
-    );
+ async function onSubmit(event) {
+   setLoading(true);
+   event.preventDefault();
 
-    setLoading(false);
+   // Track lead
+   trackLead();
 
-    if (window.gtag) {
-      window.gtag("event", "form_submission", {
-        event_category: "Form",
-        event_label: "Contact Form",
-        value: 1,
-      });
-    }
+   try {
+     // Send data to backend API
+     await fetch(
+       "https://crm-backend-o6sb.onrender.com/consultadsCustomer/send",
+       {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify(formData),
+       }
+     );
 
-    // Custom styled alert using SweetAlert2
-    // Swal.fire({
-    //   title: "Thank You!",
-    //   text: "Thanks for contacting, our team will contact you shortly.",
-    //   icon: "success",
-    //   confirmButtonText: "OK",
-    //   background: "#f4f4f4",
-    //   customClass: {
-    //     popup: "rounded-lg", // Customize popup style
-    //     title: "font-bold text-lg", // Customize title style
-    //     content: "text-md", // Customize content style
-    //   },
-    // });
+     // Send data to Google Apps Script Web App
+     const webAppUrl =
+       "https://script.google.com/macros/s/AKfycbzWUudswNPPCH-Qf03ao0_E94cy4Assb6unRqg4Mc013di95fXvzWDQo5_ZmufguNmIHQ/exec";
 
-    await updateSpreadSheet();
-    handleClick();
+     await fetch(webAppUrl, {
+       method: "POST",
+       mode: "no-cors", // Google Script requires no-cors
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(formData),
+     });
 
-    // Reset form fields after submission
-    setFormData({
-      name: "",
-      senderEmail: "",
-      phoneNumber: "",
-      message: "",
-      departmentCollege: "",
-      YearCollege: "",
-      College: "",
-    });
+     // Stop loading
+     setLoading(false);
 
-    // Show popup for 2.5 seconds
-    navigate("/thank_you");
-    setShowPopup(true);
-    setTimeout(() => {
-      setShowPopup(false);
-    }, 2500);
-  }
+     // Google Analytics tracking
+     if (window.gtag) {
+       window.gtag("event", "form_submission", {
+         event_category: "Form",
+         event_label: "Contact Form",
+         value: 1,
+       });
+     }
+
+     // Update spreadsheet (your existing function)
+     await updateSpreadSheet();
+
+     // Trigger custom click handler
+     handleClick();
+
+     // Reset form fields
+     setFormData({
+       name: "",
+       senderEmail: "",
+       phoneNumber: "",
+       message: "",
+       departmentCollege: "",
+       YearCollege: "",
+       College: "",
+     });
+
+     // Show popup and navigate
+     navigate("/thank_you");
+     setShowPopup(true);
+     setTimeout(() => {
+       setShowPopup(false);
+     }, 2500);
+   } catch (error) {
+     console.error("Error submitting form:", error);
+     setLoading(false);
+     alert("An error occurred. Please try again.");
+   }
+ }
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
