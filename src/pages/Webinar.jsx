@@ -447,15 +447,15 @@ const MainCard = ({ setShowForm }) => {
           Leave the project to us and get your dream job
         </p>
 
-        <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
+         <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
                 {/* Email Field */}
                 <div className="flex text-black order-1 lg:order-3 self-center lg:w-[50%] w-full">
                   <input
                     type="text"
-                    name="senderEmail"
-                    placeholder="Enter Email"
+                    name="message"
+                    placeholder="Enter Message"
                     className="p-4 bg-white rounded-lg outline-none w-full"
-                    value={formData.senderEmail}
+                    value={formData.message}
                     onChange={handleChange}
                     required
                   />
@@ -472,7 +472,15 @@ const MainCard = ({ setShowForm }) => {
                     onChange={handleChange}
                     required
                   />
-        
+                  <input
+                    type="text"
+                    name="senderEmail"
+                    placeholder="Enter Email"
+                    className="p-4 bg-white rounded-lg outline-none w-full"
+                    value={formData.senderEmail}
+                    onChange={handleChange}
+                    required
+                  />
                   <input
                     type="text"
                     maxLength="10"
@@ -484,7 +492,10 @@ const MainCard = ({ setShowForm }) => {
                     onChange={handleChange}
                     required
                   />
+                </div>
         
+                {/* Department, Year, Message */}
+                <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
                   <input
                     type="text"
                     name="College"
@@ -494,10 +505,6 @@ const MainCard = ({ setShowForm }) => {
                     onChange={handleChange}
                     required
                   />
-                </div>
-        
-                {/* Department, Year, Message */}
-                <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
                   <input
                     type="text"
                     name="departmentCollege"
@@ -513,15 +520,6 @@ const MainCard = ({ setShowForm }) => {
                     placeholder="Enter year of studying"
                     className="p-4 bg-white rounded-lg outline-none w-full"
                     value={formData.YearCollege}
-                    onChange={handleChange}
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="message"
-                    placeholder="Enter Message"
-                    className="p-4 bg-white rounded-lg outline-none w-full"
-                    value={formData.message}
                     onChange={handleChange}
                     required
                   />

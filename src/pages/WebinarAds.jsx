@@ -293,100 +293,98 @@ const MainCard = ({ setShowForm }) => {
         Leave the project to us and get your dream job
       </p>
 
-      <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
-        {/* Email Field */}
-        <div className="flex text-black order-1 lg:order-3 self-center lg:w-[50%] w-full">
-          <input
-            type="text"
-            name="senderEmail"
-            placeholder="Enter Email"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.senderEmail}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        {/* Name, Phone, College */}
-        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-2">
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter Name"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="text"
-            maxLength="10"
-            pattern="\d{10}"
-            name="phoneNumber"
-            placeholder="Enter Contact Number"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="text"
-            name="College"
-            placeholder="College Name"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.College}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        {/* Department, Year, Message */}
-        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
-          <input
-            type="text"
-            name="departmentCollege"
-            placeholder="Enter Department"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.departmentCollege}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="YearCollege"
-            placeholder="Enter year of studying"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.YearCollege}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="message"
-            placeholder="Enter Message"
-            className="p-4 bg-white rounded-lg outline-none w-full"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        {/* Submit Button */}
-        <div className="flex justify-center items-center order-4">
-          <button
-            className="btn mt-10 font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl flex justify-center items-center"
-            type="submit"
-          >
-            {loading ? (
-              <ImSpinner8 size={30} className="animate-spin" />
-            ) : (
-              "BOOK FREE CONSULTATION CALL"
-            )}
-          </button>
-        </div>
-      </form>
+       <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
+              {/* Email Field */}
+              <div className="flex text-black order-1 lg:order-3 self-center lg:w-[50%] w-full">
+                <input
+                  type="text"
+                  name="message"
+                  placeholder="Enter Message"
+                  className="p-4 bg-white rounded-lg outline-none w-full"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+      
+              {/* Name, Phone, College */}
+              <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-2">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter Name"
+                  className="p-4 bg-white rounded-lg outline-none w-full"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="text"
+                  name="senderEmail"
+                  placeholder="Enter Email"
+                  className="p-4 bg-white rounded-lg outline-none w-full"
+                  value={formData.senderEmail}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="text"
+                  maxLength="10"
+                  pattern="\d{10}"
+                  name="phoneNumber"
+                  placeholder="Enter Contact Number"
+                  className="p-4 bg-white rounded-lg outline-none w-full"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+      
+              {/* Department, Year, Message */}
+              <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
+                <input
+                  type="text"
+                  name="College"
+                  placeholder="College Name"
+                  className="p-4 bg-white rounded-lg outline-none w-full"
+                  value={formData.College}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="text"
+                  name="departmentCollege"
+                  placeholder="Enter Department"
+                  className="p-4 bg-white rounded-lg outline-none w-full"
+                  value={formData.departmentCollege}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="text"
+                  name="YearCollege"
+                  placeholder="Enter year of studying"
+                  className="p-4 bg-white rounded-lg outline-none w-full"
+                  value={formData.YearCollege}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+      
+              {/* Submit Button */}
+              <div className="flex justify-center items-center order-4">
+                <button
+                  className="btn mt-10 font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl flex justify-center items-center"
+                  type="submit"
+                >
+                  {loading ? (
+                    <ImSpinner8 size={30} className="animate-spin" />
+                  ) : (
+                    "BOOK FREE CONSULTATION CALL"
+                  )}
+                </button>
+              </div>
+            </form>
     </div>
   );
 };
