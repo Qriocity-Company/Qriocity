@@ -1,74 +1,27 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import Faq from "../components/Faq";
 import "../styles/Contact.css";
-import User1 from "../assets/user_01.jpg";
-import User2 from "../assets/user_02.jpg";
-import User3 from "../assets/user_03.jpg";
-import User4 from "../assets/User4.jpg";
-import Review from "../assets/review.png";
-import clock from "../assets/clock.png";
-import calendar from "../assets/calendar.png";
-import bullet from "../assets/bullet.png";
 import { FaStar } from "react-icons/fa";
 import Linkedin from "../assets/linkedin.png";
 import doc from "../assets/doc.png";
-
 import discord from "../assets/discord.png";
 import interview from "../assets/interview.png";
 
-import leetcode from "../assets/leetcode.png";
-import DataScience from "../assets/Data_Science.svg";
-import MachineLearning from "../assets/machineLearning.svg";
-import ArtificialIntelligence from "../assets/Ai.svg";
-import DeepLearning from "../assets/deeplearning.svg";
-import Blockchain from "../assets/blockchain.svg";
-import Cloud from "../assets/cloud.svg";
-import Cyber from "../assets/cyber.svg";
-import Web from "../assets/web.svg";
-import App from "../assets/app.svg";
-import Testimonial from "../assets/testimonial.png";
-import Laptop from "../assets/laptop.png";
-import Group from "../assets/group.png";
-import MoneyBack from "../assets/money_back.png";
-import Refund from "../assets/refund.png";
-import fb from "../assets/Group 1000004395.svg";
-import insta from "../assets/Group 1000004397.svg";
-import name from "../assets/ri_user-4-fill.svg";
-import email from "../assets/ic_round-alternate-email.svg";
-import phone from "../assets/fluent_phone-20-filled.svg";
 import {
-  FaLinkedin,
   FaPython,
   FaChessQueen,
   FaCertificate,
 } from "react-icons/fa";
-import hand from "../assets/Image COntact.png";
 import Modal from "../components/Modal";
-import laptop2 from "../assets/laptop-2.png";
-import hs from "../assets/higher-studies.png";
-import cap from "../assets/g-cap.png";
-import cguidance from "../assets/career-guidance.png";
-import play from "../assets/play-btn.svg";
-import vcbtn from "../assets/vc-icon.png";
-import pdf from "../assets/pdf.png";
-import Popup from "../components/Popup";
+
 import axios from "axios";
 import { ImSpinner8 } from "react-icons/im";
 import emailjs from "@emailjs/browser";
 import PricingSection from "../components/PricingSection";
 import Testimonials4 from "../components/Testimonials4";
-import dream from "../assets/dream.png";
-import portfolio from "../assets/portfolio.png";
-import jobmarket from "../assets/jobmarket.png";
-import internship from "../assets/internship.png";
-import hacks from "../assets/hacks.png";
-import interviewprep from "../assets/interviewprep.png";
-import { useLocation } from "react-router";
 import usePixelTracking from "../hooks/facebookPixelHook";
 import { useParams } from "react-router-dom";
-
-// import MachineLearning from "../assets/machineLearning.svg";
+import { useSearchParams } from "react-router-dom";
 const faqs = [
   {
     question: "What types of final year projects do you offer?",
@@ -130,19 +83,6 @@ const faqs = [
     answer:
       "Yes, we deliver projects and help with assignments internationally, ensuring they are customized to your local academic requirements.",
   },
-];
-
-const images = [
-  { name: "Data Science", src: DataScience },
-  { name: "Machine Learning", src: MachineLearning },
-  { name: "Artificial Intelligence", src: ArtificialIntelligence },
-  { name: "Deep Learning", src: DeepLearning },
-  { name: "Blockchain", src: Blockchain },
-  { name: "Cloud Computing", src: Cloud },
-  { name: "Cyber security", src: Cyber },
-  { name: "Full Stack Development", src: Web },
-  { name: "App Development", src: App },
-  // Add more objects as needed
 ];
 const data2 = [
   { name: "College Format Ppt and Report", check1: "❌", check2: "✅" },
@@ -220,18 +160,11 @@ const scrollToTop = () => {
 };
 
 const MainCard = ({ setShowForm }) => {
+  const [searchParams] = useSearchParams();
+  const city = searchParams.get("city");
   const [loading, setLoading] = useState(false);
-  const [popuploading, setPopuploading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [popupForm, setpopForm] = useState(false);
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [department, setDepartment] = useState();
-  const [college, setCollege] = useState();
-  const [year, setYear] = useState();
-  const filled = localStorage.getItem("PopUp");
-  const { city } = useParams();
+
   usePixelTracking(6604459609678289);
 
   const [formData, setFormData] = useState({
@@ -273,7 +206,8 @@ const MainCard = ({ setShowForm }) => {
     });
 
      const webAppUrl =
-       "https://script.google.com/macros/s/AKfycby9hEZP4yD5Oj6N8hcwUYDakN_AJ8WL8t-6sayNwTkubzrY0e6lZom8Cwy-3sQA0sJqFg/exec";
+       "https://script.google.com/macros/s/AKfycbz-i9GIpmX5JubFEMIWnjsq6Rl4WHusG06zejBZurwa_L69-FRENMT8eblyykWWVVVuJg/exec?source=facebook";
+
 
      await fetch(webAppUrl, {
        method: "POST",
@@ -281,7 +215,10 @@ const MainCard = ({ setShowForm }) => {
        headers: {
          "Content-Type": "application/json",
        },
-       body: JSON.stringify(formData),
+       body: JSON.stringify({
+         ...formData,
+         city: city || "NA", 
+       }),
      });
 
 
@@ -301,7 +238,7 @@ const MainCard = ({ setShowForm }) => {
       },
     });
 
-    await updateSpreadSheet();
+   
     handleClick();
 
     // Reset form fields after submission
@@ -322,129 +259,9 @@ const MainCard = ({ setShowForm }) => {
     }, 2500);
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted");
-  };
 
-  const handleClose = () => {
-    setpopForm(false);
-  };
-  useEffect(() => {
-    if (!filled) {
-      setpopForm(true);
-    }
-  }, []);
 
-  const updateSpreadSheet = async () => {
-    const currentDate = new Date();
-    const day = String(currentDate.getDate()).padStart(2, "0");
-    const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are 0-based
-    const year = currentDate.getFullYear();
-    const formattedDate = `${day}/${month}/${year}`;
 
-    // Format the time as HH:MM:SS
-    const hours = String(currentDate.getHours()).padStart(2, "0");
-    const minutes = String(currentDate.getMinutes()).padStart(2, "0");
-    const seconds = String(currentDate.getSeconds()).padStart(2, "0");
-    const formattedTime = `${hours}:${minutes}:${seconds}`;
-    try {
-      fetch("https://sheetdb.io/api/v1/jjsk0slgx4fy2", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          data: [
-            {
-              Name: formData.name,
-              Email: formData.senderEmail,
-              Date: formattedDate,
-              Time: formattedTime,
-              Number: formData.phoneNumber,
-              Message: formData.message,
-            },
-          ],
-        }),
-      })
-        .then((response) => response.json())
-        .then((data) => console.log(data));
-      return;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const updatePopSpreadSheet = async () => {
-    const currentDate = new Date();
-    // Format the date as DD/MM/YYYY
-    const day = String(currentDate.getDate()).padStart(2, "0");
-    const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are 0-based
-    const year = currentDate.getFullYear();
-    const formattedDate = `${day}/${month}/${year}`;
-
-    // Format the time as HH:MM:SS
-    const hours = String(currentDate.getHours()).padStart(2, "0");
-    const minutes = String(currentDate.getMinutes()).padStart(2, "0");
-    const seconds = String(currentDate.getSeconds()).padStart(2, "0");
-    const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-    try {
-      const response = await fetch("https://sheetdb.io/api/v1/qr63j4ua71frc", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          data: [
-            {
-              Name: name,
-              Email: email,
-              Date: formattedDate,
-              Time: formattedTime,
-              Contact: phone,
-            },
-          ],
-        }),
-      });
-
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handlePopUp = async () => {
-    setPopuploading(true);
-    const currentDate = new Date();
-    try {
-      const { data } = await axios.post(
-        "https://crm-backend-o6sb.onrender.com/enquiry/newStudent",
-        {
-          name: name,
-          email: email,
-          phone: phone,
-          date: currentDate.toLocaleDateString(),
-        }
-      );
-
-      if (data?.success) {
-        handleClickPopup();
-        localStorage.setItem("PopUp", true);
-        setPopuploading(false);
-        setpopForm(false);
-        await updatePopSpreadSheet();
-        window.location.href =
-          "https://docs.google.com/document/d/1p3nWOTCdn80Jfyb0t9BH1rrBSOcdFCuzb2UBQjIuBJY/edit?usp=drivesdk";
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const handleClick = (e) => {
     var data = {
@@ -465,24 +282,10 @@ const MainCard = ({ setShowForm }) => {
       );
   };
 
-  const handleClickPopup = (e) => {
-    var data = {
-      name: name,
-      phone: phone,
-      email: email,
-    };
-    emailjs
-      .send("service_audiui6", "template_gftaflp", data, "gNK_PfCqn5ho5f0Kb")
-      .then(
-        (result) => {},
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
+
 
   return (
-    <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
+    <div className="lg:min-w-[1048px]  lg:h-[700px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
       <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
         Quick, Quality Projects <br /> Delivered in 1 Day
       </div>
@@ -490,13 +293,27 @@ const MainCard = ({ setShowForm }) => {
         Leave the project to us and get your dream job
       </p>
 
-      <form onSubmit={onSubmit} className="w-[80%] mt-8">
-        <div className="flex  flex-col  md:flex-row w-[100%] justify-between gap-4 text-black">
+      <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
+        {/* Email Field */}
+        <div className="flex text-black order-1 lg:order-3 self-center lg:w-[50%] w-full">
+          <input
+            type="text"
+            name="senderEmail"
+            placeholder="Enter Email"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.senderEmail}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Name, Phone, College */}
+        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-2">
           <input
             type="text"
             name="name"
             placeholder="Enter Name"
-            className="p-4 bg-white rounded-lg outline-none w-full "
+            className="p-4 bg-white rounded-lg outline-none w-full"
             value={formData.name}
             onChange={handleChange}
             required
@@ -504,7 +321,7 @@ const MainCard = ({ setShowForm }) => {
 
           <input
             type="text"
-            maxlength="10"
+            maxLength="10"
             pattern="\d{10}"
             name="phoneNumber"
             placeholder="Enter Contact Number"
@@ -524,7 +341,9 @@ const MainCard = ({ setShowForm }) => {
             required
           />
         </div>
-        <div className="flex  flex-col  mt-5 md:mt-10  md:flex-row w-[100%] justify-between gap-4 text-black">
+
+        {/* Department, Year, Message */}
+        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
           <input
             type="text"
             name="departmentCollege"
@@ -553,12 +372,13 @@ const MainCard = ({ setShowForm }) => {
             required
           />
         </div>
-        <div className="flex justify-center items-center">
+
+        {/* Submit Button */}
+        <div className="flex justify-center items-center order-4">
           <button
-            className="btn mt-10  font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl  flex justify-center items-center"
+            className="btn mt-10 font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl flex justify-center items-center"
             type="submit"
           >
-            {" "}
             {loading ? (
               <ImSpinner8 size={30} className="animate-spin" />
             ) : (
@@ -567,17 +387,6 @@ const MainCard = ({ setShowForm }) => {
           </button>
         </div>
       </form>
-    </div>
-  );
-};
-
-const AchivementCard = ({ number, title }) => {
-  return (
-    <div className="max-w-xs bg-white p-5 rounded-xl ">
-      <div className="text-[#F15A29] md:text-5xl text-4xl font-[700] ">
-        {number}+
-      </div>
-      <div className="text-xl font-[500]  "> {title}</div>
     </div>
   );
 };
@@ -659,12 +468,6 @@ const WebinarAds = () => {
     }
   };
 
-  useEffect(() => {
-    // setTimeout(() => {
-    //   setShowForm(true);
-    // }, 5000);
-  }, []);
-
   const offerEndTime = new Date();
   offerEndTime.setHours(offerEndTime.getHours() + 12);
 
@@ -698,8 +501,7 @@ const WebinarAds = () => {
 
       <div className="relative mt-20">
         <div className=" text-white w-full md:mt-20 mt-10  flex justify-center items-center  font-figtree ">
-          {/* <div class="blob blob-orange"></div>
-    <div class="blob blob-blue"></div> */}
+         
 
           <div className="bg-[#3cffff] hidden md:block absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
           <div className="bg-[#FF7A00]  hidden md:block absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
@@ -710,22 +512,7 @@ const WebinarAds = () => {
             <div className="lg:text-6xl md:text-4xl text-2xl text-center  text-white  ">
               Why Choose us?
             </div>
-            {/* <div className="bg-[#353535] rounded-xl mt-16 p-10 grid lg:grid-cols-3 md:grid-cols-2 gap-10 place-content-center">
-              <div className="max-w-xs bg-white p-5 rounded-xl ">
-                <div className="text-[#F15A29] md:text-5xl text-4xl font-[700] ">
-                  400+
-                </div>
-                <div className="flex  justify-between ">
-                  <img src="https://www.pngall.com/wp-content/uploads/9/Google-Review-PNG-Clipart.png" className="h-[50px] w-[100px]" />
-                </div>
-              </div>
-              <AchivementCard number="5000" title="Projects Delivered" />
-              <AchivementCard number="10000" title="Satisfied Students" />
-              <AchivementCard number="5" title="Years of Experience" />
-              <AchivementCard number="10000" title="IEEE Papers published" />
-
-              <AchivementCard number="500" title="Colleges Served" />
-            </div>  */}
+          
           </div>
 
           <div className="relative md:mt-0 mt-10  space-y-10 text-center md:p-16 p-4 ">
@@ -817,44 +604,9 @@ const WebinarAds = () => {
             </div>
           </div>
 
-          {/* Our Project Categories section */}
-          {/* <div className="md:mt-20 mt-10 text-center md:p-16 p-4 ">
-            <div className="md:text-4xl  text-2xl p-2 md:p-5 px-10 md:px-24 w-fit mx-auto  rounded-full border border-white  text-center text-white mb-10 ">
-              Our Project Categories
-            </div>
-            <div className="grid md:grid-cols-3 gap-14 place-items-center mt-16 w-[75%] mx-auto">
-              {images.map((m, index) => {
-                return (
-                  <div className="flex flex-col items-center">
-                    <img
-                      src={m.src}
-                      className="bg-[#0C2F31] p-8 rounded-2xl  border border-[#F15A29] "
-                      style={{ boxShadow: "0px 9px 0px 0px #F15A29" }}
-                    />
-                    <p className="text-white md:text-2xl mt-5">{m.name}</p>
-                  </div>
-                );
-              })}
-            </div>
-            <button
-              className="btn text-white md:mt-20 mt-10 bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
-              style={{}}
-              onClick={() => {
-                scrollToTop();
-              }}
-            >
-              {" "}
-              BOOK FREE CONSULTATION CALL{" "}
-            </button>
-          </div> */}
+   
 
-          {/* Your Path to Project Success section */}
-          {/* <div className="md:mt-20 mt-10   ">
-            <div className="md:text-6xl  text-2xl md:p-5 p-2 md:px-20 px-10 w-fit mx-auto   text-center text-white mb-10 ">
-              Start with a Project Consultation, End with Your Dream Job
-            </div>
-            <img src={Group} />
-          </div> */}
+          
           <div className="bg-[#EDEDED] mt-20 flex flex-col justify-start items-center p-4">
             <h1 className="font-bold lg:text-4xl lg:mt-20 mt-8">
               Start with a{" "}

@@ -53,15 +53,18 @@ function App() {
           <Route path="/blogs/:blog" element={<BlogItem />} />
 
           {/* Campaign / Consultation */}
+
+          {/* Website&Query */}
           <Route path="/consultations" element={<Webinar />} />
-          <Route path="/bookacall/:city" element={<WebinarAds />} />
-          <Route path="/bookacall" element={<WebinarAds />} />
+
+          {/* FaceBook Page */}
+          <Route path="/bookacall" element={<WebinarAds />} /> 
           <Route path="/assignments-service" element={<WebinarUK />} />
           <Route path="/phd-projects" element={<WebinarPhdProffesors />} />
           <Route path="/hardware-projects" element={<WebinarHardware />} />
           <Route path="/bookacallnow" element={<WebinarGoogleAds />} />
 
-          {/* 👇 Dynamic City Route for Consult Ads */}
+        
           <Route path="/bookconsultation" element={<ConsultAds />} />
 
           {/* Resources / Forms */}

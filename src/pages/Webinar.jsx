@@ -263,6 +263,18 @@ const MainCard = ({ setShowForm }) => {
         body: JSON.stringify({ formData }),
       });
 
+           const webAppUrl =
+             "https://script.google.com/macros/s/AKfycbz-i9GIpmX5JubFEMIWnjsq6Rl4WHusG06zejBZurwa_L69-FRENMT8eblyykWWVVVuJg/exec?source=website";
+
+           await fetch(webAppUrl, {
+             method: "POST",
+             mode: "no-cors", // Google Script requires no-cors
+             headers: {
+               "Content-Type": "application/json",
+             },
+             body: JSON.stringify(formData),
+           });
+
       // Custom styled alert using SweetAlert2
       Swal.fire({
         title: "Thank You!",
@@ -371,74 +383,8 @@ const MainCard = ({ setShowForm }) => {
     }
   };
 
-  const updatePopSpreadSheet = async () => {
-    const currentDate = new Date();
-    // Format the date as DD/MM/YYYY
-    const day = String(currentDate.getDate()).padStart(2, "0");
-    const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are 0-based
-    const year = currentDate.getFullYear();
-    const formattedDate = `${day}/${month}/${year}`;
 
-    // Format the time as HH:MM:SS
-    const hours = String(currentDate.getHours()).padStart(2, "0");
-    const minutes = String(currentDate.getMinutes()).padStart(2, "0");
-    const seconds = String(currentDate.getSeconds()).padStart(2, "0");
-    const formattedTime = `${hours}:${minutes}:${seconds}`;
 
-    try {
-      const response = await fetch("https://sheetdb.io/api/v1/qr63j4ua71frc", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          data: [
-            {
-              Name: name,
-              Email: email,
-              Date: formattedDate,
-              Time: formattedTime,
-              Contact: phone,
-            },
-          ],
-        }),
-      });
-
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handlePopUp = async () => {
-    setPopuploading(true);
-    const currentDate = new Date();
-    try {
-      const { data } = await axios.post(
-        "https://crm-backend-o6sb.onrender.com/enquiry/newStudent",
-        {
-          name: name,
-          email: email,
-          phone: phone,
-          date: currentDate.toLocaleDateString(),
-        }
-      );
-
-      if (data?.success) {
-        handleClickPopup();
-        localStorage.setItem("PopUp", true);
-        setPopuploading(false);
-        setpopForm(false);
-        await updatePopSpreadSheet();
-        window.location.href =
-          "https://docs.google.com/document/d/1p3nWOTCdn80Jfyb0t9BH1rrBSOcdFCuzb2UBQjIuBJY/edit?usp=drivesdk";
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const handleClick = (e) => {
     var data = {
@@ -493,7 +439,7 @@ const MainCard = ({ setShowForm }) => {
           `}
         </script>
       </Helmet>
-      <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
+      <div className="lg:min-w-[1048px]  lg:h-[700px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
         <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
           Quick, Quality Projects <br /> Delivered in 1 Day
         </div>
@@ -501,83 +447,100 @@ const MainCard = ({ setShowForm }) => {
           Leave the project to us and get your dream job
         </p>
 
-        <form onSubmit={onSubmit} className="w-[80%] mt-8">
-          <div className="flex  flex-col  md:flex-row w-[100%] justify-between gap-4 text-black">
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter Name"
-              className="p-4 bg-white rounded-lg outline-none w-full "
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-
-            <input
-              type="text"
-              maxlength="10"
-              pattern="\d{10}"
-              name="phoneNumber"
-              placeholder="Enter Contact Number"
-              className="p-4 bg-white rounded-lg outline-none w-full"
-              value={formData.phoneNumber}
-              onChange={handleChange}
-              required
-            />
-
-            <input
-              type="text"
-              name="College"
-              placeholder="College Name"
-              className="p-4 bg-white rounded-lg outline-none w-full"
-              value={formData.College}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="flex  flex-col  mt-5 md:mt-10  md:flex-row w-[100%] justify-between gap-4 text-black">
-            <input
-              type="text"
-              name="departmentCollege"
-              placeholder="Enter Department"
-              className="p-4 bg-white rounded-lg outline-none w-full"
-              value={formData.departmentCollege}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="YearCollege"
-              placeholder="Enter year of studying"
-              className="p-4 bg-white rounded-lg outline-none w-full"
-              value={formData.YearCollege}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="message"
-              placeholder="Enter Message"
-              className="p-4 bg-white rounded-lg outline-none w-full"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="flex justify-center items-center">
-            <button
-              className="btn mt-10  font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl  flex justify-center items-center"
-              type="submit"
-            >
-              {" "}
-              {loading ? (
-                <ImSpinner8 size={30} className="animate-spin" />
-              ) : (
-                "BOOK FREE CONSULTATION CALL"
-              )}
-            </button>
-          </div>
-        </form>
+        <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
+                {/* Email Field */}
+                <div className="flex text-black order-1 lg:order-3 self-center lg:w-[50%] w-full">
+                  <input
+                    type="text"
+                    name="senderEmail"
+                    placeholder="Enter Email"
+                    className="p-4 bg-white rounded-lg outline-none w-full"
+                    value={formData.senderEmail}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+        
+                {/* Name, Phone, College */}
+                <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-2">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter Name"
+                    className="p-4 bg-white rounded-lg outline-none w-full"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+        
+                  <input
+                    type="text"
+                    maxLength="10"
+                    pattern="\d{10}"
+                    name="phoneNumber"
+                    placeholder="Enter Contact Number"
+                    className="p-4 bg-white rounded-lg outline-none w-full"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    required
+                  />
+        
+                  <input
+                    type="text"
+                    name="College"
+                    placeholder="College Name"
+                    className="p-4 bg-white rounded-lg outline-none w-full"
+                    value={formData.College}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+        
+                {/* Department, Year, Message */}
+                <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
+                  <input
+                    type="text"
+                    name="departmentCollege"
+                    placeholder="Enter Department"
+                    className="p-4 bg-white rounded-lg outline-none w-full"
+                    value={formData.departmentCollege}
+                    onChange={handleChange}
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="YearCollege"
+                    placeholder="Enter year of studying"
+                    className="p-4 bg-white rounded-lg outline-none w-full"
+                    value={formData.YearCollege}
+                    onChange={handleChange}
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="message"
+                    placeholder="Enter Message"
+                    className="p-4 bg-white rounded-lg outline-none w-full"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+        
+                {/* Submit Button */}
+                <div className="flex justify-center items-center order-4">
+                  <button
+                    className="btn mt-10 font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl flex justify-center items-center"
+                    type="submit"
+                  >
+                    {loading ? (
+                      <ImSpinner8 size={30} className="animate-spin" />
+                    ) : (
+                      "BOOK FREE CONSULTATION CALL"
+                    )}
+                  </button>
+                </div>
+              </form>
       </div>
     </>
   );

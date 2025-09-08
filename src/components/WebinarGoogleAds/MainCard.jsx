@@ -54,6 +54,17 @@ const MainCard = ({ setShowForm }) => {
       }
     );
 
+     const webAppUrl =
+       "https://script.google.com/macros/s/AKfycbz-i9GIpmX5JubFEMIWnjsq6Rl4WHusG06zejBZurwa_L69-FRENMT8eblyykWWVVVuJg/exec?source=google";
+
+     await fetch(webAppUrl, {
+       method: "POST",
+       mode: "no-cors", // Google Script requires no-cors
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(formData),
+     });
     setLoading(false);
 
     if (window.gtag) {
@@ -265,7 +276,7 @@ const MainCard = ({ setShowForm }) => {
     });
   }, []);
   return (
-    <div className="lg:min-w-[1048px]  lg:h-[544px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
+    <div className="lg:min-w-[1048px]  lg:h-[700px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
       <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
         Quick, Quality Projects <br /> Delivered in 1 Day
       </div>
@@ -273,13 +284,27 @@ const MainCard = ({ setShowForm }) => {
         Leave the project to us and get your dream job
       </p>
 
-      <form onSubmit={onSubmit} className="w-[80%] mt-8">
-        <div className="flex  flex-col  md:flex-row w-[100%] justify-between gap-4 text-black">
+      <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
+        {/* Email Field */}
+        <div className="flex text-black order-1 lg:order-3 self-center lg:w-[50%] w-full">
+          <input
+            type="text"
+            name="senderEmail"
+            placeholder="Enter Email"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.senderEmail}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Name, Phone, College */}
+        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-2">
           <input
             type="text"
             name="name"
             placeholder="Enter Name"
-            className="p-4 bg-white rounded-lg outline-none w-full "
+            className="p-4 bg-white rounded-lg outline-none w-full"
             value={formData.name}
             onChange={handleChange}
             required
@@ -287,7 +312,7 @@ const MainCard = ({ setShowForm }) => {
 
           <input
             type="text"
-            maxlength="10"
+            maxLength="10"
             pattern="\d{10}"
             name="phoneNumber"
             placeholder="Enter Contact Number"
@@ -307,7 +332,9 @@ const MainCard = ({ setShowForm }) => {
             required
           />
         </div>
-        <div className="flex  flex-col  mt-5 md:mt-10  md:flex-row w-[100%] justify-between gap-4 text-black">
+
+        {/* Department, Year, Message */}
+        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
           <input
             type="text"
             name="departmentCollege"
@@ -336,12 +363,13 @@ const MainCard = ({ setShowForm }) => {
             required
           />
         </div>
-        <div className="flex justify-center items-center">
+
+        {/* Submit Button */}
+        <div className="flex justify-center items-center order-4">
           <button
-            className="btn mt-10  font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl  flex justify-center items-center"
+            className="btn mt-10 font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl flex justify-center items-center"
             type="submit"
           >
-            {" "}
             {loading ? (
               <ImSpinner8 size={30} className="animate-spin" />
             ) : (
@@ -350,9 +378,7 @@ const MainCard = ({ setShowForm }) => {
           </button>
         </div>
       </form>
-     
     </div>
-    
   );
 };
 
