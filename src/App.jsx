@@ -55,6 +55,7 @@ function App() {
           {/* Campaign / Consultation */}
           <Route path="/consultations" element={<Webinar />} />
           <Route path="/bookacall/:city" element={<WebinarAds />} />
+          <Route path="/bookacall" element={<WebinarAds />} />
           <Route path="/assignments-service" element={<WebinarUK />} />
           <Route path="/phd-projects" element={<WebinarPhdProffesors />} />
           <Route path="/hardware-projects" element={<WebinarHardware />} />
