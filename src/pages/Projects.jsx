@@ -26,7 +26,7 @@ const Projects = () => {
      {showForm && (
          <Modal setShowForm={setShowForm}/>
       )}
-      <div className="bg-cover bg-center bg-no-repeat header-course w-full flex flex-col justify-center items-center mt-[68px] ">
+      {/* <div className="bg-cover bg-center bg-no-repeat header-course w-full flex flex-col justify-center items-center mt-[68px] ">
         <h1 className="font-figtree text-[16px] mt-8 z-10 md:text-[48px] text-white font-semibold">
           Get 50% OFF all our Premium Projects{" "}
         </h1>
@@ -35,8 +35,8 @@ const Projects = () => {
           <span>Get Offer </span>
         </button>
         
-      </div>
-      <div className="relative">
+      </div> */}
+      <div className="relative mt-16">
         <div className="bg-[#FF7A00] absolute top-[34rem] left-[-15rem] h-[35.25rem]   w-[20rem] rounded-full blur-[10rem]"></div>
         <div className="bg-[#3cffff] absolute top-[20rem] right-[-20rem]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[10rem]"></div>
         <h1 className="font-figtree  text-[32px]  z-10 md:text-[60px] mt-8 bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent font-semibold">

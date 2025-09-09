@@ -163,7 +163,6 @@ const data2 = [
     check2: "Free Placement Support",
   },
   { name: "Bonus", check1: "❌", check2: "Bonus worth ₹7993" },
-  { name: "Price Discount", check1: "5-10%", check2: "30-40%" },
   {
     name: "Doubt Solving Sessions",
     check1: "❌",
