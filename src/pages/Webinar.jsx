@@ -16,8 +16,6 @@ import doc from "../assets/doc.png";
 
 import discord from "../assets/discord.png";
 import interview from "../assets/interview.png";
-
-import leetcode from "../assets/leetcode.png";
 import DataScience from "../assets/Data_Science.svg";
 import MachineLearning from "../assets/machineLearning.svg";
 import ArtificialIntelligence from "../assets/Ai.svg";

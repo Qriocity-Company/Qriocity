@@ -10,6 +10,7 @@ import { Footer } from "./components/Footer";
 
 // Pages
 import Home from "./pages/Home";
+import BookConsultations from "./pages/BookConsultations";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import AboutUs from "./pages/AboutUs";
@@ -46,6 +47,7 @@ function App() {
         <Routes>
           {/* General Routes */}
           <Route index path="/" element={<Home />} />
+          <Route index path="/bookConsultations" element={<BookConsultations />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<AboutUs />} />
@@ -58,13 +60,12 @@ function App() {
           <Route path="/consultations" element={<Webinar />} />
 
           {/* FaceBook Page */}
-          <Route path="/bookacall" element={<WebinarAds />} /> 
+          <Route path="/bookacall" element={<WebinarAds />} />
           <Route path="/assignments-service" element={<WebinarUK />} />
           <Route path="/phd-projects" element={<WebinarPhdProffesors />} />
           <Route path="/hardware-projects" element={<WebinarHardware />} />
           <Route path="/bookacallnow" element={<WebinarGoogleAds />} />
 
-        
           <Route path="/bookconsultation" element={<ConsultAds />} />
 
           {/* Resources / Forms */}
