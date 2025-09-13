@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaUser, FaEnvelope, FaPhone } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 import React, { useState, useEffect, useRef } from "react";
@@ -11,6 +11,9 @@ import interview from "../assets/interview.png";
 import { FaPython, FaChessQueen, FaCertificate } from "react-icons/fa";
 import { GiCalendarHalfYear } from "react-icons/gi";
 import { HiMiniBuildingOffice } from "react-icons/hi2";
+import axios from "axios";
+import { ImSpinner8 } from "react-icons/im";
+
 
 const ContentCard = ({ content }) => {
   return (
@@ -156,6 +159,96 @@ const ProblemCard = ({ content, boldContent, pos }) => {
   );
 };
 
+const SuccessModal = ({ isOpen, onClose }) => {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={onClose}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+            transition={{ type: "spring", damping: 15, stiffness: 300 }}
+            className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl border border-white/20 shadow-2xl max-w-md w-full p-8 relative overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Background decorative elements */}
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#26CFD3] rounded-full opacity-20 blur-xl"></div>
+            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#FF7A00] rounded-full opacity-20 blur-xl"></div>
+
+            {/* Content */}
+            <div className="relative z-10 text-center">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                className="w-20 h-20 bg-gradient-to-r from-[#26CFD3] to-[#1A8A8C] rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-10 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </motion.div>
+
+              <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+              <p className="text-white/80 mb-6">
+                Our team will contact you shortly to discuss your project
+                requirements.
+              </p>
+
+              {/* <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={onClose}
+                className="bg-gradient-to-r from-[#FF7A00] to-[#FF9B45] text-white font-medium py-3 px-6 rounded-lg w-full"
+              >
+                Continue Browsing
+              </motion.button> */}
+            </div>
+
+            {/* Close button */}
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 const BookConsultations = () => {
   const [formData, setFormData] = React.useState({
     name: "",
@@ -164,7 +257,8 @@ const BookConsultations = () => {
     department: "",
     year: "",
   });
-
+  const [loading, setLoading] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(true); // Add this state
   // Create a ref for the form section
   const formRef = useRef(null);
 
@@ -176,9 +270,42 @@ const BookConsultations = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setLoading(true);
+    try {
+      const { data } = await axios.post(
+        "https://crm-backend-o6sb.onrender.com/bookConsultations/send",
+        formData
+      );
+       const webAppUrl =
+         "https://script.google.com/macros/s/AKfycbyGSeEW4u9GvtdUsos4Jk6XfjS1Z9-Dg6vEjrxyvZ3QMBFByVXGoeYE-18a9z68A2pVUg/exec?source=book";
+
+       await fetch(webAppUrl, {
+         method: "POST",
+         mode: "no-cors", // Google Script requires no-cors
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify(formData),
+       });
+      setShowSuccessModal(true); // Show success modal
+      setFormData({
+        // Reset form
+        name: "",
+        email: "",
+        phone: "",
+        department: "",
+        year: "",
+      });
+      setTimeout(() => {
+        setShowSuccessModal(false);
+      }, 2500);
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   // Function to scroll to the form
@@ -329,7 +456,12 @@ const BookConsultations = () => {
                 type="submit"
                 className="w-full bg-gradient-to-r from-[#FF7A00] to-[#FF9B45] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-center transition-all hover:shadow-lg"
               >
-                Book a Call
+                {loading ? (
+                  <ImSpinner8 className="animate-spin" />
+                ) : (
+                  "Book a Call"
+                )}
+
                 {/* <FiArrowRight className="ml-2" /> */}
               </motion.button>
             </form>
@@ -403,6 +535,11 @@ const BookConsultations = () => {
             </button>
           </div>
         </div>
+
+        <SuccessModal
+          isOpen={showSuccessModal}
+          onClose={() => setShowSuccessModal(false)}
+        />
 
         {/* Why Choose Us Section */}
         <motion.div
