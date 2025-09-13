@@ -258,7 +258,7 @@ const BookConsultations = () => {
     year: "",
   });
   const [loading, setLoading] = useState(false);
-  const [showSuccessModal, setShowSuccessModal] = useState(true); // Add this state
+  const [showSuccessModal, setShowSuccessModal] = useState(false); // Add this state
   // Create a ref for the form section
   const formRef = useRef(null);
 
