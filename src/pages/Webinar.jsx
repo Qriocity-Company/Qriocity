@@ -261,7 +261,7 @@ const MainCard = ({ setShowForm }) => {
       });
 
            const webAppUrl =
-             "https://script.google.com/macros/s/AKfycbyGSeEW4u9GvtdUsos4Jk6XfjS1Z9-Dg6vEjrxyvZ3QMBFByVXGoeYE-18a9z68A2pVUg/exec?source=website";
+             "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=website";
 
            await fetch(webAppUrl, {
              method: "POST",
