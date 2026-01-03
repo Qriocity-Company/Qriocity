@@ -37,6 +37,7 @@ import EarnWebinar from "./pages/EarnWebinar";
 import ThankYouPage from "./pages/ThankYouPage";
 import ConsultAds from "./pages/ConsultAds";
 import ThankYouPage2 from "./pages/ThankyouPage2";
+import CoursesPage from "./pages/CoursesPage";
 
 function App() {
   return (
@@ -82,7 +83,7 @@ function App() {
 
           {/* Other Pages */}
           <Route path="/webinar" element={<RoadMap />} />
-          <Route path="/courses" element={<Placement />} />
+          <Route path="/courses" element={<CoursesPage />} />
           <Route path="/DsaBootcamp" element={<Dsa />} />
           <Route path="/FullstackBootcamp" element={<Fullstack />} />
           <Route path="/Bootcamp" element={<BootCamp />} />
