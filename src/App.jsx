@@ -91,7 +91,7 @@ function App() {
           <Route path="/campus-expert-program" element={<EarnWebinar />} />
 
           {/* Thank You Pages */}
-          <Route path="/thankYou" element={<ThankYouPage />} />
+          <Route path="/thankyou" element={<ThankYouPage />} />
           <Route path="/thank_you" element={<ThankYouPage2 />} />
         </Routes>
 

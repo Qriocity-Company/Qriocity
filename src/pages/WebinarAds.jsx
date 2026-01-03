@@ -20,8 +20,7 @@ import emailjs from "@emailjs/browser";
 import PricingSection from "../components/PricingSection";
 import Testimonials4 from "../components/Testimonials4";
 import usePixelTracking from "../hooks/facebookPixelHook";
-import { useParams } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 const faqs = [
   {
     question: "What types of final year projects do you offer?",
@@ -164,6 +163,7 @@ const MainCard = ({ setShowForm }) => {
   const city = searchParams.get("city");
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
 
   usePixelTracking(6604459609678289);
 
@@ -205,40 +205,48 @@ const MainCard = ({ setShowForm }) => {
       body: JSON.stringify({ ...formData, city }),
     });
 
-     const webAppUrl =
-       "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=facebook";
+    const webAppUrl =
+      "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=facebook";
 
 
-     await fetch(webAppUrl, {
-       method: "POST",
-       mode: "no-cors", // Google Script requires no-cors
-       headers: {
-         "Content-Type": "application/json",
-       },
-       body: JSON.stringify({
-         ...formData,
-         city: city || "NA", 
-       }),
-     });
+    await fetch(webAppUrl, {
+      method: "POST",
+      mode: "no-cors", // Google Script requires no-cors
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...formData,
+        city: city || "NA",
+      }),
+    });
 
 
     setLoading(false);
 
     // Custom styled alert using SweetAlert2
-    Swal.fire({
-      title: "Thank You!",
-      text: "Thanks for contacting, our team will contact you shortly.",
-      icon: "success",
-      confirmButtonText: "OK",
-      background: "#f4f4f4",
-      customClass: {
-        popup: "rounded-lg", // Customize popup style
-        title: "font-bold text-lg", // Customize title style
-        content: "text-md", // Customize content style
-      },
-    });
+    if (city === "googleads") {
+      navigate("/thankyou");
+    } else {
+      Swal.fire({
+        title: "Thank You!",
+        text: "Thanks for contacting, our team will contact you shortly.",
+        icon: "success",
+        confirmButtonText: "OK",
+        background: "#f4f4f4",
+        customClass: {
+          popup: "rounded-lg", // Customize popup style
+          title: "font-bold text-lg", // Customize title style
+          content: "text-md", // Customize content style
+        },
+      });
+      // Show popup for 2.5 seconds
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 2500);
+    }
 
-   
     handleClick();
 
     // Reset form fields after submission
@@ -251,12 +259,6 @@ const MainCard = ({ setShowForm }) => {
       YearCollege: "",
       College: "",
     });
-
-    // Show popup for 2.5 seconds
-    setShowPopup(true);
-    setTimeout(() => {
-      setShowPopup(false);
-    }, 2500);
   }
 
 
@@ -275,7 +277,7 @@ const MainCard = ({ setShowForm }) => {
     emailjs
       .send("service_audiui6", "template_8gshgga", data, "gNK_PfCqn5ho5f0Kb")
       .then(
-        (result) => {},
+        (result) => { },
         (error) => {
           console.log(error.text);
         }
@@ -293,98 +295,98 @@ const MainCard = ({ setShowForm }) => {
         Leave the project to us and get your dream job
       </p>
 
-       <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
-              {/* Email Field */}
-              <div className="flex text-black order-1 lg:order-3 self-center lg:w-[50%] w-full">
-                <input
-                  type="text"
-                  name="message"
-                  placeholder="Enter Message"
-                  className="p-4 bg-white rounded-lg outline-none w-full"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-      
-              {/* Name, Phone, College */}
-              <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-2">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Enter Name"
-                  className="p-4 bg-white rounded-lg outline-none w-full"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-                <input
-                  type="text"
-                  name="senderEmail"
-                  placeholder="Enter Email"
-                  className="p-4 bg-white rounded-lg outline-none w-full"
-                  value={formData.senderEmail}
-                  onChange={handleChange}
-                  required
-                />
-                <input
-                  type="text"
-                  maxLength="10"
-                  pattern="\d{10}"
-                  name="phoneNumber"
-                  placeholder="Enter Contact Number"
-                  className="p-4 bg-white rounded-lg outline-none w-full"
-                  value={formData.phoneNumber}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-      
-              {/* Department, Year, Message */}
-              <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
-                <input
-                  type="text"
-                  name="College"
-                  placeholder="College Name"
-                  className="p-4 bg-white rounded-lg outline-none w-full"
-                  value={formData.College}
-                  onChange={handleChange}
-                  required
-                />
-                <input
-                  type="text"
-                  name="departmentCollege"
-                  placeholder="Enter Department"
-                  className="p-4 bg-white rounded-lg outline-none w-full"
-                  value={formData.departmentCollege}
-                  onChange={handleChange}
-                  required
-                />
-                <input
-                  type="text"
-                  name="YearCollege"
-                  placeholder="Enter year of studying"
-                  className="p-4 bg-white rounded-lg outline-none w-full"
-                  value={formData.YearCollege}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-      
-              {/* Submit Button */}
-              <div className="flex justify-center items-center order-4">
-                <button
-                  className="btn mt-10 font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl flex justify-center items-center"
-                  type="submit"
-                >
-                  {loading ? (
-                    <ImSpinner8 size={30} className="animate-spin" />
-                  ) : (
-                    "BOOK FREE CONSULTATION CALL"
-                  )}
-                </button>
-              </div>
-            </form>
+      <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
+        {/* Email Field */}
+        <div className="flex text-black order-1 lg:order-3 self-center lg:w-[50%] w-full">
+          <input
+            type="text"
+            name="message"
+            placeholder="Enter Message"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Name, Phone, College */}
+        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-2">
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter Name"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="senderEmail"
+            placeholder="Enter Email"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.senderEmail}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            maxLength="10"
+            pattern="\d{10}"
+            name="phoneNumber"
+            placeholder="Enter Contact Number"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Department, Year, Message */}
+        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
+          <input
+            type="text"
+            name="College"
+            placeholder="College Name"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.College}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="departmentCollege"
+            placeholder="Enter Department"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.departmentCollege}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="YearCollege"
+            placeholder="Enter year of studying"
+            className="p-4 bg-white rounded-lg outline-none w-full"
+            value={formData.YearCollege}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Submit Button */}
+        <div className="flex justify-center items-center order-4">
+          <button
+            className="btn mt-10 font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl flex justify-center items-center"
+            type="submit"
+          >
+            {loading ? (
+              <ImSpinner8 size={30} className="animate-spin" />
+            ) : (
+              "BOOK FREE CONSULTATION CALL"
+            )}
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
@@ -499,7 +501,7 @@ const WebinarAds = () => {
 
       <div className="relative mt-20">
         <div className=" text-white w-full md:mt-20 mt-10  flex justify-center items-center  font-figtree ">
-         
+
 
           <div className="bg-[#3cffff] hidden md:block absolute top-[2.5%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
           <div className="bg-[#FF7A00]  hidden md:block absolute -top-[2%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
@@ -510,7 +512,7 @@ const WebinarAds = () => {
             <div className="lg:text-6xl md:text-4xl text-2xl text-center  text-white  ">
               Why Choose us?
             </div>
-          
+
           </div>
 
           <div className="relative md:mt-0 mt-10  space-y-10 text-center md:p-16 p-4 ">
@@ -602,9 +604,9 @@ const WebinarAds = () => {
             </div>
           </div>
 
-   
 
-          
+
+
           <div className="bg-[#EDEDED] mt-20 flex flex-col justify-start items-center p-4">
             <h1 className="font-bold lg:text-4xl lg:mt-20 mt-8">
               Start with a{" "}
@@ -662,9 +664,8 @@ const WebinarAds = () => {
               {timelineData.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col md:flex-row ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : ""
-                  } justify-center  items-center gap-10 md:gap-20 z-40`}
+                  className={`flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                    } justify-center  items-center gap-10 md:gap-20 z-40`}
                 >
                   <img
                     className="h-[250px] w-full md:w-[250px] object-contain"
