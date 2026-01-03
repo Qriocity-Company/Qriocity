@@ -34,7 +34,7 @@ const ThankYouPage = () => {
           You will get an call from our team in 1-2 hours
         </p>
         <Link
-          to="/"
+          to="/bookacall?city=googleads"
           rel="noopener noreferrer"
           className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
         >
