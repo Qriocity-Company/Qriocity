@@ -140,17 +140,26 @@ export const Navbar = () => {
                 toggleMenu();
               }}
             >
-              Free Consultations
+              Project Consultations
             </Link>
 
             <Link
               to="/projectWorkshop"
-              className={isRouteActive("/webinar")}
+              className={isRouteActive("/projectWorkshop")}
               onClick={() => {
                 toggleMenu();
               }}
             >
               Project Workshop
+            </Link>
+            <Link
+              to="/bookacall?city=googleads"
+              className={isRouteActive("/bookacall?city=googleads")}
+              onClick={() => {
+                toggleMenu();
+              }}
+            >
+              Final Year Projects
             </Link>
             <Link
               to="/Bootcamp"
