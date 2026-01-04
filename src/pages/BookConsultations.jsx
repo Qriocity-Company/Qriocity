@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaUser, FaEnvelope, FaPhone } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import Linkedin from "../assets/linkedin.png";
 import doc from "../assets/doc.png";
@@ -259,6 +260,7 @@ const BookConsultations = () => {
   });
   const [loading, setLoading] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false); // Add this state
+  const navigate = useNavigate();
   // Create a ref for the form section
   const formRef = useRef(null);
 
@@ -278,18 +280,18 @@ const BookConsultations = () => {
         "https://crm-backend-o6sb.onrender.com/bookConsultations/send",
         formData
       );
-       const webAppUrl =
-         "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=book";
+      const webAppUrl =
+        "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=book";
 
-       await fetch(webAppUrl, {
-         method: "POST",
-         mode: "no-cors", // Google Script requires no-cors
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify(formData),
-       });
-      setShowSuccessModal(true); // Show success modal
+      await fetch(webAppUrl, {
+        method: "POST",
+        mode: "no-cors", // Google Script requires no-cors
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      // setShowSuccessModal(true); // Show success modal
       setFormData({
         // Reset form
         name: "",
@@ -298,9 +300,10 @@ const BookConsultations = () => {
         department: "",
         year: "",
       });
-      setTimeout(() => {
-        setShowSuccessModal(false);
-      }, 2500);
+      navigate("/thankyou-consultation");
+      // setTimeout(() => {
+      //   setShowSuccessModal(false);
+      // }, 2500);
     } catch (error) {
       console.error("Error:", error);
     } finally {

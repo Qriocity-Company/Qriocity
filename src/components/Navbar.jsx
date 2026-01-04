@@ -13,6 +13,11 @@ export const Navbar = () => {
 
   const isRouteActive = (path) => {
     // Check if the current route matches the given path
+    if (path.includes("?")) {
+      return location.pathname + location.search === path
+        ? "font-semibold text-orange-400"
+        : "";
+    }
     return location.pathname === path ? "font-semibold text-orange-400" : "";
   };
 
@@ -39,7 +44,7 @@ export const Navbar = () => {
             Contact Us
           </Link>
           <Link to="/consultations" className={isRouteActive("/consultations")}>
-            Free Consultations
+            Project Consultations
           </Link>
           <Link
             to="/projectWorkshop"
@@ -47,24 +52,27 @@ export const Navbar = () => {
           >
             Project Workshop
           </Link>
-          <Link to="/Bootcamp" className={isRouteActive("/Bootcamp")}>
-            Bootcamp
+          <Link to="/bookacall?city=googleads" className={isRouteActive("/bookacall?city=googleads")}>
+            Final Year Projects
           </Link>
-          <Link
+          {/* <Link to="/Bootcamp" className={isRouteActive("/Bootcamp")}>
+            Bootcamp
+          </Link> */}
+          {/* <Link
             to="/assignments-service"
             className={isRouteActive("/assignments-service")}
           >
             Assignments/ Courseworks
-          </Link>
+          </Link> */}
           <Link to="/phd-projects" className={isRouteActive("/phd-projects")}>
             Phd-projects
           </Link>
-          <Link
+          {/* <Link
             to="/hardware-projects"
             className={isRouteActive("/hardware-projects")}
           >
             Hardware-projects
-          </Link>
+          </Link> */}
         </div>
         <div className="md:hidden flex items-center">
           {showMenu ? (

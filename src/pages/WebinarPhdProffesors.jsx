@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "../styles/Contact.css";
 import { FaSchool, FaStar } from "react-icons/fa";
@@ -235,6 +236,7 @@ const MainCard = ({ setShowForm }) => {
     fieldOfStudy: "",
     requirement: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -266,18 +268,18 @@ const MainCard = ({ setShowForm }) => {
     setLoading(false);
 
     // Custom styled alert using SweetAlert2
-    Swal.fire({
-      title: "Thank You!",
-      text: "Thanks for contacting, our team will contact you shortly.",
-      icon: "success",
-      confirmButtonText: "OK",
-      background: "#f4f4f4",
-      customClass: {
-        popup: "rounded-lg", // Customize popup style
-        title: "font-bold text-lg", // Customize title style
-        content: "text-md", // Customize content style
-      },
-    });
+    // Swal.fire({
+    //   title: "Thank You!",
+    //   text: "Thanks for contacting, our team will contact you shortly.",
+    //   icon: "success",
+    //   confirmButtonText: "OK",
+    //   background: "#f4f4f4",
+    //   customClass: {
+    //     popup: "rounded-lg", // Customize popup style
+    //     title: "font-bold text-lg", // Customize title style
+    //     content: "text-md", // Customize content style
+    //   },
+    // });
 
     await updateSpreadSheet();
     handleClick();
@@ -291,11 +293,13 @@ const MainCard = ({ setShowForm }) => {
       requirement: "",
     });
 
+    navigate("/thankyou-phd");
+
     // Show popup for 2.5 seconds
-    setShowPopup(true);
-    setTimeout(() => {
-      setShowPopup(false);
-    }, 2500);
+    // setShowPopup(true);
+    // setTimeout(() => {
+    //   setShowPopup(false);
+    // }, 2500);
   }
 
   const updateSpreadSheet = async () => {
@@ -348,7 +352,7 @@ const MainCard = ({ setShowForm }) => {
     emailjs
       .send("service_audiui6", "template_lt63u1o", data, "gNK_PfCqn5ho5f0Kb")
       .then(
-        (result) => {},
+        (result) => { },
         (error) => {
           console.log(error.text);
         }
@@ -737,9 +741,8 @@ const WebinarPhdProffesors = () => {
               {timelineData.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col md:flex-row ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : ""
-                  } justify-center  items-center gap-10 md:gap-20 z-40`}
+                  className={`flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                    } justify-center  items-center gap-10 md:gap-20 z-40`}
                 >
                   <img
                     className="h-[250px] w-[250px] rounded-lg hover:opacity-80 cursor-pointer"

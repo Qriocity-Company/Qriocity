@@ -20,7 +20,12 @@ import emailjs from "@emailjs/browser";
 import PricingSection from "../components/PricingSection";
 import Testimonials4 from "../components/Testimonials4";
 import usePixelTracking from "../hooks/facebookPixelHook";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import {
+  useNavigate,
+  useParams,
+  useSearchParams,
+  useLocation,
+} from "react-router-dom";
 const faqs = [
   {
     question: "What types of final year projects do you offer?",
@@ -164,6 +169,7 @@ const MainCard = ({ setShowForm }) => {
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   usePixelTracking(6604459609678289);
 
@@ -226,7 +232,9 @@ const MainCard = ({ setShowForm }) => {
 
     // Custom styled alert using SweetAlert2
     if (city === "googleads") {
-      navigate("/thankyou");
+      navigate("/thankyou", {
+        state: { from: location.pathname + location.search },
+      });
     } else {
       Swal.fire({
         title: "Thank You!",

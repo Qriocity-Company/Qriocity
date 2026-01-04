@@ -62,7 +62,7 @@ import jobmarket from "../assets/jobmarket.png";
 import internship from "../assets/internship.png";
 import hacks from "../assets/hacks.png";
 import interviewprep from "../assets/interviewprep.png";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { Helmet } from "react-helmet";
 
 // import MachineLearning from "../assets/machineLearning.svg";
@@ -234,9 +234,10 @@ const MainCard = ({ setShowForm }) => {
     phoneNumber: "",
     message: "",
     departmentCollege: "",
-    YearCollege: "",
     College: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -260,31 +261,31 @@ const MainCard = ({ setShowForm }) => {
         body: JSON.stringify({ formData }),
       });
 
-           const webAppUrl =
-             "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=website";
+      const webAppUrl =
+        "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=website";
 
-           await fetch(webAppUrl, {
-             method: "POST",
-             mode: "no-cors", // Google Script requires no-cors
-             headers: {
-               "Content-Type": "application/json",
-             },
-             body: JSON.stringify(formData),
-           });
+      await fetch(webAppUrl, {
+        method: "POST",
+        mode: "no-cors", // Google Script requires no-cors
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       // Custom styled alert using SweetAlert2
-      Swal.fire({
-        title: "Thank You!",
-        text: "Thanks for contacting, our team will contact you shortly.",
-        icon: "success",
-        confirmButtonText: "OK",
-        background: "#f4f4f4",
-        customClass: {
-          popup: "rounded-lg", // Customize popup style
-          title: "font-bold text-lg", // Customize title style
-          content: "text-md", // Customize content style
-        },
-      });
+      // Swal.fire({
+      //   title: "Thank You!",
+      //   text: "Thanks for contacting, our team will contact you shortly.",
+      //   icon: "success",
+      //   confirmButtonText: "OK",
+      //   background: "#f4f4f4",
+      //   customClass: {
+      //     popup: "rounded-lg", // Customize popup style
+      //     title: "font-bold text-lg", // Customize title style
+      //     content: "text-md", // Customize content style
+      //   },
+      // });
 
       await updateSpreadSheet(); // Update the spreadsheet if needed
       handleClick(); // Additional logic or redirection after form submission
@@ -300,11 +301,13 @@ const MainCard = ({ setShowForm }) => {
         College: "",
       });
 
+      navigate("/thankyou-consultation");
+
       // Show popup for 2.5 seconds
-      setShowPopup(true);
-      setTimeout(() => {
-        setShowPopup(false);
-      }, 2500);
+      // setShowPopup(true);
+      // setTimeout(() => {
+      //   setShowPopup(false);
+      // }, 2500);
     } catch (error) {
       console.error("Error during form submission:", error);
       Swal.fire({
@@ -395,7 +398,7 @@ const MainCard = ({ setShowForm }) => {
     emailjs
       .send("service_audiui6", "template_mwv0oup", data, "gNK_PfCqn5ho5f0Kb")
       .then(
-        (result) => {},
+        (result) => { },
         (error) => {
           console.log(error.text);
         }
@@ -411,7 +414,7 @@ const MainCard = ({ setShowForm }) => {
     emailjs
       .send("service_audiui6", "template_gftaflp", data, "gNK_PfCqn5ho5f0Kb")
       .then(
-        (result) => {},
+        (result) => { },
         (error) => {
           console.log(error.text);
         }
@@ -444,98 +447,98 @@ const MainCard = ({ setShowForm }) => {
           Leave the project to us and get your dream job
         </p>
 
-         <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
-                {/* Email Field */}
-                <div className="flex text-black order-1 lg:order-3 self-center lg:w-[50%] w-full">
-                  <input
-                    type="text"
-                    name="message"
-                    placeholder="Enter Message"
-                    className="p-4 bg-white rounded-lg outline-none w-full"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-        
-                {/* Name, Phone, College */}
-                <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-2">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter Name"
-                    className="p-4 bg-white rounded-lg outline-none w-full"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="senderEmail"
-                    placeholder="Enter Email"
-                    className="p-4 bg-white rounded-lg outline-none w-full"
-                    value={formData.senderEmail}
-                    onChange={handleChange}
-                    required
-                  />
-                  <input
-                    type="text"
-                    maxLength="10"
-                    pattern="\d{10}"
-                    name="phoneNumber"
-                    placeholder="Enter Contact Number"
-                    className="p-4 bg-white rounded-lg outline-none w-full"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-        
-                {/* Department, Year, Message */}
-                <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
-                  <input
-                    type="text"
-                    name="College"
-                    placeholder="College Name"
-                    className="p-4 bg-white rounded-lg outline-none w-full"
-                    value={formData.College}
-                    onChange={handleChange}
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="departmentCollege"
-                    placeholder="Enter Department"
-                    className="p-4 bg-white rounded-lg outline-none w-full"
-                    value={formData.departmentCollege}
-                    onChange={handleChange}
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="YearCollege"
-                    placeholder="Enter year of studying"
-                    className="p-4 bg-white rounded-lg outline-none w-full"
-                    value={formData.YearCollege}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-        
-                {/* Submit Button */}
-                <div className="flex justify-center items-center order-4">
-                  <button
-                    className="btn mt-10 font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl flex justify-center items-center"
-                    type="submit"
-                  >
-                    {loading ? (
-                      <ImSpinner8 size={30} className="animate-spin" />
-                    ) : (
-                      "BOOK FREE CONSULTATION CALL"
-                    )}
-                  </button>
-                </div>
-              </form>
+        <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
+          {/* Email Field */}
+          <div className="flex text-black order-1 lg:order-3 self-center lg:w-[50%] w-full">
+            <input
+              type="text"
+              name="message"
+              placeholder="Enter Message"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Name, Phone, College */}
+          <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-2">
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter Name"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="senderEmail"
+              placeholder="Enter Email"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.senderEmail}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              maxLength="10"
+              pattern="\d{10}"
+              name="phoneNumber"
+              placeholder="Enter Contact Number"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Department, Year, Message */}
+          <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
+            <input
+              type="text"
+              name="College"
+              placeholder="College Name"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.College}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="departmentCollege"
+              placeholder="Enter Department"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.departmentCollege}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="YearCollege"
+              placeholder="Enter year of studying"
+              className="p-4 bg-white rounded-lg outline-none w-full"
+              value={formData.YearCollege}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Submit Button */}
+          <div className="flex justify-center items-center order-4">
+            <button
+              className="btn mt-10 font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl flex justify-center items-center"
+              type="submit"
+            >
+              {loading ? (
+                <ImSpinner8 size={30} className="animate-spin" />
+              ) : (
+                "BOOK FREE CONSULTATION CALL"
+              )}
+            </button>
+          </div>
+        </form>
       </div>
     </>
   );
@@ -822,9 +825,8 @@ const Webinar = () => {
               {timelineData.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col md:flex-row ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : ""
-                  } justify-center  items-center gap-10 md:gap-20 z-40`}
+                  className={`flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                    } justify-center  items-center gap-10 md:gap-20 z-40`}
                 >
                   <img
                     className="h-[250px] w-full md:w-[250px] object-contain"

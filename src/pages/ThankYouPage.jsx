@@ -1,7 +1,20 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const ThankYouPage = () => {
+  const location = useLocation();
+
+  const getBackLink = () => {
+    if (location.state && location.state.from) {
+      return location.state.from;
+    }
+    if (location.pathname === "/thankyou-consultation") {
+      return "/consultations";
+    } else if (location.pathname === "/thankyou-phd") {
+      return "/phd-projects";
+    }
+    return "/";
+  };
   useEffect(() => {
     // Inject the event script dynamically
     const script = document.createElement("script");
@@ -34,7 +47,7 @@ const ThankYouPage = () => {
           You will get an call from our team in 1-2 hours
         </p>
         <Link
-          to="/"
+          to={getBackLink()}
           rel="noopener noreferrer"
           className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
         >

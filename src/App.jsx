@@ -93,6 +93,8 @@ function App() {
           {/* Thank You Pages */}
           <Route path="/thankyou" element={<ThankYouPage />} />
           <Route path="/thank_you" element={<ThankYouPage2 />} />
+          <Route path="/thankyou-consultation" element={<ThankYouPage />} />
+          <Route path="/thankyou-phd" element={<ThankYouPage />} />
         </Routes>
 
         <ToastContainer
