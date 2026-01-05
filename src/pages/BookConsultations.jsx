@@ -298,6 +298,10 @@ const BookConsultations = () => {
         department: "",
         year: "",
       });
+      if (typeof window !== undefined) {
+        window.location.href = "/thankyou-consultation";
+      }
+      // navigate("/thankyou-consultation");
       setTimeout(() => {
         setShowSuccessModal(false);
       }, 2500);

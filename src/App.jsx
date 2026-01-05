@@ -37,13 +37,15 @@ import EarnWebinar from "./pages/EarnWebinar";
 import ThankYouPage from "./pages/ThankYouPage";
 import ConsultAds from "./pages/ConsultAds";
 import ThankYouPage2 from "./pages/ThankyouPage2";
+import CoursesPage from "./pages/CoursesPage";
+import GTMPageViewTracker from "./hooks/GTMPageViewTracker";
 
 function App() {
   return (
     <Router>
       <div className="bg-black z-50 flex flex-col overflow-hidden">
         <Navbar />
-
+         <GTMPageViewTracker />
         <Routes>
           {/* General Routes */}
           <Route index path="/" element={<Home />} />

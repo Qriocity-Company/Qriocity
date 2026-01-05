@@ -299,6 +299,10 @@ const MainCard = ({ setShowForm }) => {
         YearCollege: "",
         College: "",
       });
+      if(typeof window !== undefined){
+        window.location.href("/thankyou");
+      }
+      // navigate("/thankyou-consultation");
 
       // Show popup for 2.5 seconds
       setShowPopup(true);

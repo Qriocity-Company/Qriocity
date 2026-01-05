@@ -225,18 +225,32 @@ const MainCard = ({ setShowForm }) => {
     setLoading(false);
 
     // Custom styled alert using SweetAlert2
-    Swal.fire({
-      title: "Thank You!",
-      text: "Thanks for contacting, our team will contact you shortly.",
-      icon: "success",
-      confirmButtonText: "OK",
-      background: "#f4f4f4",
-      customClass: {
-        popup: "rounded-lg", // Customize popup style
-        title: "font-bold text-lg", // Customize title style
-        content: "text-md", // Customize content style
-      },
-    });
+    if (city === "googleads") {
+      // navigate("/thankyou", {
+      //   state: { from: location.pathname + location.search },
+      // });
+      if (typeof window !== undefined) {
+        window.location.href = "/thankyou";
+      }
+    } else {
+      Swal.fire({
+        title: "Thank You!",
+        text: "Thanks for contacting, our team will contact you shortly.",
+        icon: "success",
+        confirmButtonText: "OK",
+        background: "#f4f4f4",
+        customClass: {
+          popup: "rounded-lg", // Customize popup style
+          title: "font-bold text-lg", // Customize title style
+          content: "text-md", // Customize content style
+        },
+      });
+      // Show popup for 2.5 seconds
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 2500);
+    }
 
    
     handleClick();

@@ -104,7 +104,10 @@ const MainCard = ({ setShowForm }) => {
     });
 
     // Show popup for 2.5 seconds
-    navigate("/thankYou");
+     if(typeof window !== undefined){
+      window.location.href = "/thankYou";
+    }
+    // navigate("/thankYou");
     setShowPopup(true);
     setTimeout(() => {
       setShowPopup(false);
