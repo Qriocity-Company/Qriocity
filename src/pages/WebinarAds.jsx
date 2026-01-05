@@ -232,9 +232,12 @@ const MainCard = ({ setShowForm }) => {
 
     // Custom styled alert using SweetAlert2
     if (city === "googleads") {
-      navigate("/thankyou", {
-        state: { from: location.pathname + location.search },
-      });
+      // navigate("/thankyou", {
+      //   state: { from: location.pathname + location.search },
+      // });
+      if (typeof window !== undefined) {
+        window.location.href = "/thankyou";
+      }
     } else {
       Swal.fire({
         title: "Thank You!",

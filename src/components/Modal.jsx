@@ -39,7 +39,10 @@ const Modal = ({ setShowForm, notify }) => {
       phoneNumber: "",
       message: "",
     });
-    navigate("/thankYou");
+    if(typeof window !== undefined){
+      window.location.href = "/thankYou";
+    }
+    // navigate("/thankyou")
     setShowPopup(true);
 
     const data = await res.json();

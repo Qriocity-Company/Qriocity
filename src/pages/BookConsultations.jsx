@@ -300,10 +300,13 @@ const BookConsultations = () => {
         department: "",
         year: "",
       });
-      navigate("/thankyou-consultation");
-      // setTimeout(() => {
-      //   setShowSuccessModal(false);
-      // }, 2500);
+      if (typeof window !== undefined) {
+        window.location.href = "/thankyou-consultation";
+      }
+      // navigate("/thankyou-consultation");
+      setTimeout(() => {
+        setShowSuccessModal(false);
+      }, 2500);
     } catch (error) {
       console.error("Error:", error);
     } finally {

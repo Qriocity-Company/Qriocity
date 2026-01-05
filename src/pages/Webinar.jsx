@@ -300,6 +300,10 @@ const MainCard = ({ setShowForm }) => {
         YearCollege: "",
         College: "",
       });
+      if(typeof window !== undefined){
+        window.location.href("/thankyou");
+      }
+      // navigate("/thankyou-consultation");
 
       navigate("/thankyou-consultation");
 

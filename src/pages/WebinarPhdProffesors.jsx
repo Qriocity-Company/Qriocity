@@ -32,6 +32,7 @@ import { TbFileCv } from "react-icons/tb";
 import { CiDiscount1 } from "react-icons/ci";
 import { BiSolidReport } from "react-icons/bi";
 import usePixelTracking from "../hooks/facebookPixelHook";
+import { WindowIcon } from "@heroicons/react/24/outline";
 
 // import MachineLearning from "../assets/machineLearning.svg";
 const faqs = [
@@ -292,6 +293,10 @@ const MainCard = ({ setShowForm }) => {
       fieldOfStudy: "",
       requirement: "",
     });
+    if(typeof window !== undefined){
+      window.location.href = "/thankyou-phd";
+    }
+    // navigate("/thankyou-phd");
 
     navigate("/thankyou-phd");
 
