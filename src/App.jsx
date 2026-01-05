@@ -84,7 +84,7 @@ function App() {
 
           {/* Other Pages */}
           <Route path="/webinar" element={<RoadMap />} />
-          <Route path="/courses" element={<Placement />} />
+          <Route path="/courses" element={<CoursesPage />} />
           <Route path="/DsaBootcamp" element={<Dsa />} />
           <Route path="/FullstackBootcamp" element={<Fullstack />} />
           <Route path="/Bootcamp" element={<BootCamp />} />
@@ -92,8 +92,10 @@ function App() {
           <Route path="/campus-expert-program" element={<EarnWebinar />} />
 
           {/* Thank You Pages */}
-          <Route path="/thankYou" element={<ThankYouPage />} />
+          <Route path="/thankyou" element={<ThankYouPage />} />
           <Route path="/thank_you" element={<ThankYouPage2 />} />
+          <Route path="/thankyou-consultation" element={<ThankYouPage />} />
+          <Route path="/thankyou-phd" element={<ThankYouPage />} />
         </Routes>
 
         <ToastContainer
