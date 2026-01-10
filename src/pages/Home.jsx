@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Hero } from "../components/Hero";
 import { Courses } from "../components/Courses";
-import { Project } from "../components/Project";
+
 import { Testimonial } from "../components/Testimonial";
-import { Footer } from "../components/Footer";
+
 import WebinarPopup from "../components/WebinarPopup";
 import { ImSpinner8 } from "react-icons/im";
 import axios from "axios";
@@ -167,11 +167,11 @@ const Home = () => {
           </div>
         )}
         <Courses />
-        <Project />
+
         <Testimonial />
         <Toaster position="top-center" reverseOrder={false} />
       </div>
-      <Footer />
+
     </>
   );
 };

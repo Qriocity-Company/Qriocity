@@ -252,7 +252,7 @@ const MainCard2 = ({ setShowForm }) => {
     emailjs
       .send("service_audiui6", "template_wja99ms", data, "gNK_PfCqn5ho5f0Kb")
       .then(
-        (result) => {},
+        (result) => { },
         (error) => {
           console.log(error.text);
         }
@@ -268,7 +268,7 @@ const MainCard2 = ({ setShowForm }) => {
     emailjs
       .send("service_audiui6", "template_gftaflp", data, "gNK_PfCqn5ho5f0Kb")
       .then(
-        (result) => {},
+        (result) => { },
         (error) => {
           console.log(error.text);
         }
@@ -361,7 +361,7 @@ const MainCard2 = ({ setShowForm }) => {
             {loading ? (
               <ImSpinner8 size={30} className="animate-spin" />
             ) : (
-              "BOOK FREE CONSULTATION CALL"
+              "BOOK CONSULTATION CALL"
             )}
           </button>
         </div>

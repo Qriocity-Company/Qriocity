@@ -60,7 +60,7 @@ const FooterBook = () => {
               className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white md:px-12 px-4 md:py-4 py-2 rounded-full transition duration-300"
               onClick={scrollToTop}
             >
-              BOOK FREE CONSULTATION CALL
+              BOOK CONSULTATION CALL
             </button>
           </div>
         </div>

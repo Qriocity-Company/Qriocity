@@ -11,12 +11,15 @@ import insta from "../assets/Group 1000004397.svg";
 import pin from "../assets/geo-alt-fill.svg";
 import phone from "../assets/telephone-fill.svg";
 import "../styles/Footer.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoIosMail } from "react-icons/io";
 export const Footer = () => {
+  const location = useLocation();
+  const isBookCallPage = location.pathname.includes("/bookacall");
+
   return (
     <>
-      <div className="footer-main w-full">
+      <div className={`footer-main w-full ${isBookCallPage ? "hidden md:block" : ""}`}>
         <footer className="footer flex md:flex-row flex-col w-5/6 mx-auto">
           <div className="footer-section">
             <img src={logo} alt="" className="footer-logo pl-8" />

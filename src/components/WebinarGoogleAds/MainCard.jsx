@@ -54,17 +54,17 @@ const MainCard = ({ setShowForm }) => {
       }
     );
 
-     const webAppUrl =
-       "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=google";
+    const webAppUrl =
+      "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=google";
 
-     await fetch(webAppUrl, {
-       method: "POST",
-       mode: "no-cors", // Google Script requires no-cors
-       headers: {
-         "Content-Type": "application/json",
-       },
-       body: JSON.stringify(formData),
-     });
+    await fetch(webAppUrl, {
+      method: "POST",
+      mode: "no-cors", // Google Script requires no-cors
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
     setLoading(false);
 
     if (window.gtag) {
@@ -104,7 +104,7 @@ const MainCard = ({ setShowForm }) => {
     });
 
     // Show popup for 2.5 seconds
-     if(typeof window !== undefined){
+    if (typeof window !== undefined) {
       window.location.href = "/thankYou";
     }
     // navigate("/thankYou");
@@ -250,7 +250,7 @@ const MainCard = ({ setShowForm }) => {
     emailjs
       .send("service_audiui6", "template_wja99ms", data, "gNK_PfCqn5ho5f0Kb")
       .then(
-        (result) => {},
+        (result) => { },
         (error) => {
           console.log(error.text);
         }
@@ -266,7 +266,7 @@ const MainCard = ({ setShowForm }) => {
     emailjs
       .send("service_audiui6", "template_gftaflp", data, "gNK_PfCqn5ho5f0Kb")
       .then(
-        (result) => {},
+        (result) => { },
         (error) => {
           console.log(error.text);
         }
@@ -374,7 +374,7 @@ const MainCard = ({ setShowForm }) => {
             {loading ? (
               <ImSpinner8 size={30} className="animate-spin" />
             ) : (
-              "BOOK FREE CONSULTATION CALL"
+              "BOOK CONSULTATION CALL"
             )}
           </button>
         </div>

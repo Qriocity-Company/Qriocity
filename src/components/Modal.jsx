@@ -39,7 +39,7 @@ const Modal = ({ setShowForm, notify }) => {
       phoneNumber: "",
       message: "",
     });
-    if(typeof window !== undefined){
+    if (typeof window !== undefined) {
       window.location.href = "/thankYou";
     }
     // navigate("/thankyou")
@@ -126,7 +126,7 @@ const Modal = ({ setShowForm, notify }) => {
                 className="btn mt-8  text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-8 py-2 rounded-full  "
                 type="submit"
               >
-                Book Free Consultation Call
+                Book Consultation Call
               </button>
             </div>
           </form>

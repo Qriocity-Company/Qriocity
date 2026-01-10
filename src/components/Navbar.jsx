@@ -37,21 +37,12 @@ export const Navbar = () => {
           <Link to="/courses" className={isRouteActive("/courses")}>
             Our Courses
           </Link>
-          <Link to="/projects" className={isRouteActive("/projects")}>
-            Projects
-          </Link>
+
           <Link to="/contact" className={isRouteActive("/contact")}>
             Contact Us
           </Link>
-          <Link to="/consultations" className={isRouteActive("/consultations")}>
-            Project Consultations
-          </Link>
-          <Link
-            to="/projectWorkshop"
-            className={isRouteActive("/projectWorkshop")}
-          >
-            Project Workshop
-          </Link>
+
+
           <Link to="/bookacall?city=googleads" className={isRouteActive("/bookacall?city=googleads")}>
             Final Year Projects
           </Link>
@@ -64,9 +55,7 @@ export const Navbar = () => {
           >
             Assignments/ Courseworks
           </Link> */}
-          <Link to="/phd-projects" className={isRouteActive("/phd-projects")}>
-            Phd-projects
-          </Link>
+
           {/* <Link
             to="/hardware-projects"
             className={isRouteActive("/hardware-projects")}
@@ -114,15 +103,7 @@ export const Navbar = () => {
               Our Courses
             </Link>
 
-            <Link
-              to="/projects"
-              className={isRouteActive("/projects")}
-              onClick={() => {
-                toggleMenu();
-              }}
-            >
-              Projects
-            </Link>
+
             <Link
               to="/contact"
               className={isRouteActive("/contact")}
@@ -133,25 +114,9 @@ export const Navbar = () => {
               Contact Us
             </Link>
 
-            <Link
-              to="/consultations"
-              className={isRouteActive("/consultations")}
-              onClick={() => {
-                toggleMenu();
-              }}
-            >
-              Project Consultations
-            </Link>
 
-            <Link
-              to="/projectWorkshop"
-              className={isRouteActive("/projectWorkshop")}
-              onClick={() => {
-                toggleMenu();
-              }}
-            >
-              Project Workshop
-            </Link>
+
+
             <Link
               to="/bookacall?city=googleads"
               className={isRouteActive("/bookacall?city=googleads")}
@@ -161,43 +126,7 @@ export const Navbar = () => {
             >
               Final Year Projects
             </Link>
-            <Link
-              to="/Bootcamp"
-              className={isRouteActive("/Bootcamp")}
-              onClick={() => {
-                toggleMenu();
-              }}
-            >
-              Bootcamp
-            </Link>
-            <Link
-              to="/assignments-service"
-              className={isRouteActive("/assignments-service")}
-              onClick={() => {
-                toggleMenu();
-              }}
-            >
-              Assignments/Courseworks
-            </Link>
-            <Link
-              to="/phd-projects"
-              className={isRouteActive("/phd-projects")}
-              onClick={() => {
-                toggleMenu();
-              }}
-            >
-              Phd-projects
-            </Link>
 
-            <Link
-              to="/hardware-projects"
-              className={isRouteActive("/hardware-projects")}
-              onClick={() => {
-                toggleMenu();
-              }}
-            >
-              Hardware-projects
-            </Link>
 
             <HiX
               className="text-[white] text-4xl cursor-pointer"

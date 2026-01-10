@@ -1,4 +1,4 @@
-import {React,useState,useEffect} from "react";
+import { React, useState, useEffect } from "react";
 
 import quote from '../assets/“.svg'
 import "../styles/Testimonial.css";
@@ -7,22 +7,29 @@ import User2 from "../assets/user_02.jpg";
 import User3 from "../assets/user_03.jpg";
 
 
-export const Testimonial = () => {
+export const Testimonial = ({ title }) => {
   const [slideIndex, setSlideIndex] = useState(1);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIndex((prevIndex) => (prevIndex === 3 ? 1 : prevIndex + 1));
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     showSlides(slideIndex);
   }, [slideIndex]);
 
   const plusSlides = (n) => {
-    if (slideIndex<=2)
+    if (slideIndex <= 2)
       setSlideIndex(slideIndex + n);
     else
       setSlideIndex(1)
   };
   const minusSlide = (n) => {
-    if (slideIndex>1)
-      setSlideIndex(slideIndex +n );
+    if (slideIndex > 1)
+      setSlideIndex(slideIndex + n);
     else
       setSlideIndex(3)
   };
@@ -44,9 +51,9 @@ export const Testimonial = () => {
       dots[i].className = dots[i].className.replace(" active", "");
     }
     const screenWidth = window.screen.width;
-    if(screenWidth>600)
+    if (screenWidth > 600)
       slides[slideIndex - 1].style.display = "flex";
-    else{
+    else {
       slides[slideIndex - 1].style.display = "block";
     }
     dots[slideIndex - 1].className += " active";
@@ -56,20 +63,19 @@ export const Testimonial = () => {
 
     <div className="testimonial-container">
 
-      <img src={quote} alt="" className="quote"/>
-      <div className="testimonial-header">Our Students Success Stories</div>
+      <img src={quote} alt="" className="quote" />
+      <div className="testimonial-header">{title || "Our Students Success Stories"}</div>
 
       <div className="outer-container">
-        
+
         <div className="slideshow-container">
 
           <div className="mySlides fade">
             <div className="slide-img-container">
-              <img src={User1} alt="" className="slide-img"/>
+              <img src={User1} alt="" className="slide-img" />
             </div>
             <div className="content">
-              <p>Qriocity made my final project so much easier. They helped me choose a good topic and were there to help me whenever I needed. They answered quickly and explained things in a way I could understand. I'm really glad I found them
-</p>
+              <p>I was completely confused about my title and domain. Qriocity mentors helped me finalize a novelty-based title and guided me for every review. My guide approved it immediately.</p>
               <div className="credentials">
                 <div>Bhatri Narayana</div>
                 <p >CSE,VIT Univeristy </p>
@@ -83,11 +89,10 @@ export const Testimonial = () => {
           </div>
           <div className="mySlides fade">
             <div className="slide-img-container">
-              <img src={User2} alt="" className="slide-img"/>
+              <img src={User2} alt="" className="slide-img" />
             </div>
             <div className="content">
-              <p>I didn't have to worry about writing reports or making slides for my project because Qriocity did all that. This let me focus on My placements.
-</p>
+              <p>My project reviews and placement training were happening at the same time. The mentorship helped me manage both smoothly. PPT, report, research paper — all guided step by step.</p>
               <div className="credentials">
                 <div>Gowtham</div>
                 <p >ECE, Satyabama University</p>
@@ -101,10 +106,10 @@ export const Testimonial = () => {
           </div>
           <div className="mySlides fade">
             <div className="slide-img-container">
-              <img src={User3} alt="" className="slide-img"/>
+              <img src={User3} alt="" className="slide-img" />
             </div>
             <div className="content">
-              <p>Qriocity was super fast in giving me the materials I needed for my project. They also gave me some great advice about my future career. Working with them taught me a lot and made me feel more confident.</p>
+              <p>I always wanted to publish a research paper but didn’t know where to start. Qriocity guided me from selecting the base paper to adding novelty and formatting the paper properly. I successfully published in a Scopus-listed journal.</p>
               <div className="credentials">
                 <div>Deeksha</div>
                 <p >IT , Githam University</p>
@@ -123,8 +128,8 @@ export const Testimonial = () => {
           <a className="next" onClick={() => plusSlides(1)}>
             &#10095;
           </a>
-          
-          
+
+
         </div>
       </div>
     </div>

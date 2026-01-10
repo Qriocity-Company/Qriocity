@@ -424,7 +424,7 @@ const MainCard = ({ setShowForm }) => {
     emailjs
       .send("service_audiui6", "template_4zesoae", data, "gNK_PfCqn5ho5f0Kb")
       .then(
-        (result) => {},
+        (result) => { },
         (error) => {
           console.log(error.text);
         }
@@ -506,7 +506,7 @@ const MainCard = ({ setShowForm }) => {
               {loading ? (
                 <ImSpinner8 size={30} className="animate-spin" />
               ) : (
-                "BOOK FREE CONSULTATION CALL"
+                "BOOK CONSULTATION CALL"
               )}
             </button>
           </div>
@@ -661,7 +661,7 @@ const WebinarUK = () => {
               }}
             >
               {" "}
-              BOOK FREE CONSULTATION CALL{" "}
+              BOOK CONSULTATION CALL{" "}
             </button>
             <div className="bg-[#3cffff] hidden md:block absolute top-[50%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
             <div className="bg-[#FF7A00]  hidden md:block absolute top-[80%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
@@ -822,9 +822,8 @@ const WebinarUK = () => {
               {timelineData.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col md:flex-row ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : ""
-                  } justify-center  items-center gap-10 md:gap-20 z-40`}
+                  className={`flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                    } justify-center  items-center gap-10 md:gap-20 z-40`}
                 >
                   <img
                     className="h-[250px] w-[250px] rounded-lg hover:opacity-80 cursor-pointer"
@@ -1159,7 +1158,7 @@ const WebinarUK = () => {
                   scrollToTop();
                 }}
               >
-                BOOK FREE CONSULTATION CALL
+                BOOK CONSULTATION CALL
               </button>
             </div>
           </div>
@@ -1190,7 +1189,7 @@ const WebinarUK = () => {
                   scrollToTop();
                 }}
               >
-                BOOK FREE CONSULTATION CALL
+                BOOK CONSULTATION CALL
               </button>
             </div>
           </div>

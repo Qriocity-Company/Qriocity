@@ -108,7 +108,7 @@ const FaqSection = () => {
           }}
           onClick={scrollToTop}
         >
-          BOOK FREE CONSULTATION CALL
+          BOOK CONSULTATION CALL
         </button>
       </div>
     </div>

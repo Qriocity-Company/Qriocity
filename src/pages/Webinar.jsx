@@ -300,7 +300,7 @@ const MainCard = ({ setShowForm }) => {
         YearCollege: "",
         College: "",
       });
-      if(typeof window !== undefined){
+      if (typeof window !== undefined) {
         window.location.href("/thankyou");
       }
       // navigate("/thankyou-consultation");
@@ -538,7 +538,7 @@ const MainCard = ({ setShowForm }) => {
               {loading ? (
                 <ImSpinner8 size={30} className="animate-spin" />
               ) : (
-                "BOOK FREE CONSULTATION CALL"
+                "BOOK CONSULTATION CALL"
               )}
             </button>
           </div>
@@ -696,7 +696,7 @@ const Webinar = () => {
               }}
             >
               {" "}
-              BOOK FREE CONSULTATION CALL{" "}
+              BOOK CONSULTATION CALL{" "}
             </button>
             <div className="bg-[#3cffff] hidden md:block absolute top-[50%] -left-[15%]  h-[15.25rem]   w-[30.25rem] rounded-full blur-[12rem]"></div>
             <div className="bg-[#FF7A00]  hidden md:block absolute top-[80%] -right-[10%] h-[35.25rem]   w-[20rem] rounded-full blur-[14rem]"></div>
@@ -1339,7 +1339,7 @@ const Webinar = () => {
                   scrollToTop();
                 }}
               >
-                BOOK FREE CONSULTATION CALL
+                BOOK CONSULTATION CALL
               </button>
             </div>
           </div>
@@ -1370,7 +1370,7 @@ const Webinar = () => {
                   scrollToTop();
                 }}
               >
-                BOOK FREE CONSULTATION CALL
+                BOOK CONSULTATION CALL
               </button>
             </div>
           </div>
