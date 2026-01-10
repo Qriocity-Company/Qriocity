@@ -313,7 +313,7 @@ const MainCard = ({ setShowForm }) => {
 
       <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">
         {/* Email Field */}
-        <div className="flex text-black order-1 lg:order-3 self-center lg:w-[50%] w-full">
+        <div className="flex text-black order-3 lg:order-3 self-center lg:w-[50%] w-full">
           <input
             type="text"
             name="message"
@@ -326,7 +326,7 @@ const MainCard = ({ setShowForm }) => {
         </div>
 
         {/* Name, Phone, College */}
-        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-2">
+        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-1 lg:order-1">
           <input
             type="text"
             name="name"
@@ -359,7 +359,7 @@ const MainCard = ({ setShowForm }) => {
         </div>
 
         {/* Department, Year, Message */}
-        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-3 lg:order-2">
+        <div className="flex flex-col md:flex-row w-full justify-between gap-4 text-black order-2 lg:order-2">
           <input
             type="text"
             name="College"
@@ -392,7 +392,7 @@ const MainCard = ({ setShowForm }) => {
         {/* Submit Button */}
         <div className="flex justify-center items-center order-4">
           <button
-            className="btn mt-10 font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-8 md:px-16 md:py-4 py-2 rounded-full md:text-xl flex justify-center items-center"
+            className="btn mt-10 font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] px-6 md:px-10 md:py-3 py-2 rounded-full md:text-xl flex justify-center items-center"
             type="submit"
           >
             {loading ? (
@@ -409,7 +409,7 @@ const MainCard = ({ setShowForm }) => {
 
 const ContentCard = ({ content }) => {
   return (
-    <div className=" w-full rounded-xl border border-[#2ACDD0] p-6 flex gap-2 md:gap-10 items-center  mx-auto">
+    <div className=" w-full rounded-xl border border-[#2ACDD0] p-6 flex gap-2 md:gap-10 items-start  mx-auto">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="27"
@@ -445,7 +445,7 @@ const ContentCard = ({ content }) => {
 
 const ProblemCard = ({ content, boldContent, pos }) => {
   return (
-    <div className=" md:min-w-[447px] min-w-[320px]  flex flex-col md:items-start items-center md:text-start text-center bg-black p-8 rounded-3xl border border-white">
+    <div className=" md:min-w-[447px] w-full  flex flex-col items-start text-start bg-black p-8 rounded-3xl border border-white">
       <div className="bg-[#26CFD3] p-1 rounded-full w-fit px-4 flex gap-2  items-center ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -506,7 +506,7 @@ const BrochureModal = ({ setShowBrochureForm }) => {
 
       Swal.fire({
         title: "Success!",
-        text: "Brochure sent to your number! It is also downloading now.",
+        text: "Project titles are downloading now...",
         icon: "success",
         confirmButtonText: "OK",
       });
@@ -541,7 +541,7 @@ const BrochureModal = ({ setShowBrochureForm }) => {
         >
           &times;
         </button>
-        <h2 className="text-2xl font-bold text-center mb-6 text-black">Download Brochure</h2>
+        <h2 className="text-2xl font-bold text-center mb-6 text-black">Download Titles</h2>
         <form onSubmit={onSubmit} className="flex flex-col gap-4">
           <input
             type="text"
@@ -585,7 +585,7 @@ const BrochureModal = ({ setShowBrochureForm }) => {
             type="submit"
             className="bg-[#F15A29] text-white font-bold py-3 rounded-full mt-2"
           >
-            {loading ? <ImSpinner8 className="animate-spin mx-auto" /> : "Download Now"}
+            {loading ? <ImSpinner8 className="animate-spin mx-auto" /> : "Download Titles"}
           </button>
         </form>
       </div>
@@ -634,7 +634,7 @@ const WebinarAds = () => {
   }
 
   return (
-    <div className=" w-full  ">
+    <div className=" w-full pb-32 ">
       {showForm && <Modal setShowForm={setShowForm} />}
       {showBrochureForm && <BrochureModal setShowBrochureForm={setShowBrochureForm} />}
 
@@ -660,7 +660,7 @@ const WebinarAds = () => {
             <ContentCard content="Research Paper Publication Support " />
             <ContentCard content="Doubt Solving via WhatsApp" />
             <button
-              className="btn md:mt-20 font-bold  mt-10 text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-16 py-4 rounded-full md:text-xl "
+              className="btn md:mt-20 font-bold  mt-10 text-white bg-gradient-to-r from-[#FBA154] to-[#F15A29]  px-10 py-3 rounded-full md:text-xl "
               style={{}}
               onClick={() => {
                 scrollToTop();
@@ -729,7 +729,7 @@ const WebinarAds = () => {
             </div>
             <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 mb-10">
               <button
-                className="px-14 py-4 rounded-full font-bold text-white"
+                className="px-8 py-3 rounded-full font-bold text-white"
                 style={{
                   background:
                     "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
@@ -759,7 +759,7 @@ const WebinarAds = () => {
 
               <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
                 <FaRobot size={60} color="white" />
-                <div className="text-white md:text-2xl text-lg font-[300]">
+                <div className="text-white md:text-2xl text-lg font-[300] text-start">
                   {" "}
                   Add novelty and AI tech to your project
                 </div>
@@ -767,7 +767,7 @@ const WebinarAds = () => {
 
               <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
                 <FaFileAlt size={60} color="white" />
-                <div className="text-white md:text-2xl text-lg font-[300]">
+                <div className="text-white md:text-2xl text-lg font-[300] text-start">
                   {" "}
                   Prepare PPTs & reports in your college format
                 </div>
@@ -775,7 +775,7 @@ const WebinarAds = () => {
 
               <div className=" p-6 flex gap-3 md:gap-10   md:ml-10 items-center  mx-auto">
                 <FaBook size={60} color="white" />
-                <div className="text-white md:text-2xl text-lg font-[300]">
+                <div className="text-white md:text-2xl text-lg font-[300] text-start">
                   {" "}
                   Publish research papers at low cost
                 </div>
@@ -783,7 +783,7 @@ const WebinarAds = () => {
 
               <div className=" p-6 flex gap-3 md:gap-10  md:ml-10  items-center  mx-auto">
                 <FaChalkboardTeacher size={60} color="white" />
-                <div className="text-white md:text-2xl text-lg font-[300]">
+                <div className="text-white md:text-2xl text-lg font-[300] text-start">
                   {" "}
                   Explain your project confidently
                 </div>
@@ -791,7 +791,7 @@ const WebinarAds = () => {
             </div>
             <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 ">
               <button
-                className="px-14 py-4 rounded-full font-bold text-white"
+                className="px-8 py-3 rounded-full font-bold text-white"
                 style={{
                   background:
                     "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
@@ -908,7 +908,7 @@ const WebinarAds = () => {
             </div>
             <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 mb-10">
               <button
-                className="px-14 py-4 rounded-full font-bold text-white"
+                className="px-8 py-3 rounded-full font-bold text-white"
                 style={{
                   background:
                     "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
@@ -968,7 +968,7 @@ const WebinarAds = () => {
             </div>
             <div className="flex flex-col justify-center items-center lg:mr-10 mt-10 mb-10">
               <button
-                className="px-14 py-4 rounded-full font-bold text-white"
+                className="px-6 py-2 rounded-full font-bold text-white text-sm md:text-base"
                 style={{
                   background:
                     "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
@@ -1057,7 +1057,7 @@ const WebinarAds = () => {
           </div>
           <div>
             <button
-              className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white md:px-12 px-4 md:py-3 py-2 rounded-full transition duration-300"
+              className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white md:px-8 px-4 md:py-2 py-2 rounded-full transition duration-300"
               onClick={() => {
                 scrollToTop();
               }}
@@ -1073,10 +1073,10 @@ const WebinarAds = () => {
             className="flex-1 text-sm font-bold bg-white text-black py-3 rounded-full border border-gray-300 shadow-lg"
             onClick={() => setShowBrochureForm(true)}
           >
-            Download Brochure
+            Download Titles
           </button>
           <button
-            className="flex-1 text-sm font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white py-3 rounded-full shadow-lg"
+            className="flex-1 text-lg font-bold bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white py-3 rounded-full shadow-lg"
             onClick={() => scrollToTop()}
           >
             Book Call

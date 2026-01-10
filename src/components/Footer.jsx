@@ -116,7 +116,7 @@ export const Footer = () => {
           </div>
         </footer>
       </div>
-      <div className="flex justify-center items-center text-gray-400 mt-3 flex-col md:flex-row text-[14px] gap-8">
+      <div className={`flex justify-center items-center text-gray-400 mt-3 flex-col md:flex-row text-[14px] gap-8 ${isBookCallPage ? "hidden" : ""}`}>
         <a
           className="hover:underline hover:underline-offset-4 "
           href="/privacy-policy"
@@ -130,7 +130,7 @@ export const Footer = () => {
           Refund & Cancellation policy
         </a>
       </div>
-      <div className="items-center justify-center text-gray-400 mt-4 flex flex-col md:flex-row text-[14px]">
+      <div className={`items-center justify-center text-gray-400 mt-4 flex flex-col md:flex-row text-[14px] ${isBookCallPage ? "hidden" : ""}`}>
         <p> © 2024 Qriocity Ventures Privte Limited. </p>
         <p> All rights reserved.</p>
         <br />
