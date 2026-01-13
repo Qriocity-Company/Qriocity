@@ -2,6 +2,10 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WorkshopThankYou = () => {
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="flex items-center justify-center min-h-screen bg-gradient-to-tr from-green-600 via-green-300 to-green-100 p-4">
             <div className="bg-white p-8 rounded-lg shadow-lg text-center max-w-md animate-fade-in-up">

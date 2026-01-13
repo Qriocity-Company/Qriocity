@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FaCheckCircle, FaTimesCircle, FaClock, FaCalendar, FaLaptop, FaDollarSign, FaRocket, FaBrain, FaCode, FaFileAlt, FaChartLine, FaComments } from "react-icons/fa";
+import { FaCheckCircle, FaTimesCircle, FaClock, FaCalendar, FaLaptop, FaRupeeSign, FaRocket, FaBrain, FaCode, FaFileAlt, FaChartLine, FaComments } from "react-icons/fa";
 
 const ProjectWorkshop = () => {
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ const ProjectWorkshop = () => {
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -191,6 +191,34 @@ const ProjectWorkshop = () => {
     },
   ];
 
+  const testimonials = [
+    {
+      text: "Before the workshop I genuinely didn’t know how to add novelty to my cybersecurity project. My guide kept saying ‘this is already done, add something unique’. After attending, I learned 3 techniques to add novelty and used AI tools to create proper architecture diagrams and PPT. My internal review went super smooth this time.",
+      name: "Aishwarya",
+      role: "Final Year — Cyber Security"
+    },
+    {
+      text: "I always thought research papers were only for topper students or required huge fees. They showed how to publish at low cost and explained the whole flow. I already submitted my abstract and waiting for acceptance.",
+      name: "Sneha R",
+      role: "Final Year — Data Science"
+    },
+    {
+      text: "The frameworks they gave for explaining the project helped me a lot in my placement interview. I could talk about novelty, implementation, and future scope without confusion and I actually got shortlisted.",
+      name: "Kavya",
+      role: "Final Year — AI/ML"
+    },
+    {
+      text: "I submitted two titles and both got rejected as common. After the workshop, I picked a more unique problem statement and added novelty features based on their framework. My guide approved it immediately.",
+      name: "Vignesh",
+      role: "Final Year — CSE"
+    },
+    {
+      text: "Our team wasted a month trying to write backend code manually. The techniques they taught for ChatGPT + Copilot + debugging literally cut our implementation time in half.",
+      name: "Jagan & Aswin",
+      role: "Final Year — CSE"
+    }
+  ];
+
   const firstColumnFAQs = faqs.slice(0, 3);
   const secondColumnFAQs = faqs.slice(3);
 
@@ -243,10 +271,10 @@ const ProjectWorkshop = () => {
                   </div>
                   <div className="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
                     <FaLaptop className="text-[#F15A29] flex-shrink-0" size={20} />
-                    <p className="font-bold text-gray-900 text-sm xl:text-base">Online (Join from Anywhere)</p>
+                    <p className="font-bold text-gray-900 text-sm xl:text-base">Online ( via Google Meet )</p>
                   </div>
                   <div className="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
-                    <FaDollarSign className="text-[#F15A29] flex-shrink-0" size={20} />
+                    <FaRupeeSign className="text-[#F15A29] flex-shrink-0" size={20} />
                     <p className="font-bold text-gray-900 text-sm xl:text-base">Absolutely FREE</p>
                   </div>
                 </div>
@@ -329,6 +357,7 @@ const ProjectWorkshop = () => {
                           <option value="CSE">CSE</option>
                           <option value="IT">IT</option>
                           <option value="Data Science">Data Science</option>
+                          <option value="AI/ML">AI/ML</option>
                           <option value="Cyber Security">Cyber Security</option>
                           <option value="Other CSE">Other</option>
                         </select>
@@ -385,7 +414,7 @@ const ProjectWorkshop = () => {
 
                     <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
                       <FaClock size={12} className="text-green-500" />
-                      <span>Takes less than 30 seconds</span>
+                      <span>Takes less than 2 seconds</span>
                     </div>
                   </form>
                 </div>
@@ -627,6 +656,37 @@ const ProjectWorkshop = () => {
 
 
 
+
+        {/* Testimonials Section */}
+        <div className="bg-gradient-to-br from-orange-50 to-white py-16 lg:py-24 px-4" data-aos="fade-up">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-bold text-3xl lg:text-4xl text-center text-gray-900 mb-12">
+              What Students Are saying
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+                  <div className="mb-4">
+                    <span className="text-4xl text-[#F15A29] font-serif">“</span>
+                  </div>
+                  <p className="text-gray-700 italic mb-6">
+                    {testimonial.text}
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold">
+                      {testimonial.name[0]}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                      <p className="text-xs text-gray-500">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* FAQ Section */}
         <div className="w-full flex flex-col items-center justify-center bg-white py-16 lg:py-24 px-4" data-aos="fade-up">
           <div className="max-w-6xl mx-auto w-full">
@@ -706,7 +766,7 @@ const ProjectWorkshop = () => {
               Don't Let Your Final Year Project Become Your Biggest Regret
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              20 slots. 1000+ students already transformed. Your turn.
+              Only 20 Slots Left. 1000+ students already transformed. Your turn.
             </p>
             <button
               className="px-10 py-4 rounded-full font-bold text-white text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
