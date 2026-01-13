@@ -41,7 +41,9 @@ export const Navbar = () => {
           <Link to="/contact" className={isRouteActive("/contact")}>
             Contact Us
           </Link>
-
+          <Link to="/project-workshop" className={isRouteActive("/project-workshop")}>
+            Project Workshop
+          </Link>
 
           <Link to="/bookacall?city=googleads" className={isRouteActive("/bookacall?city=googleads")}>
             Final Year Projects
@@ -112,6 +114,16 @@ export const Navbar = () => {
               }}
             >
               Contact Us
+            </Link>
+
+            <Link
+              to="/project-workshop"
+              className={isRouteActive("/project-workshop")}
+              onClick={() => {
+                toggleMenu();
+              }}
+            >
+              Project Workshop
             </Link>
 
 

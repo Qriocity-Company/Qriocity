@@ -38,6 +38,7 @@ import ThankYouPage from "./pages/ThankYouPage";
 import ConsultAds from "./pages/ConsultAds";
 import ThankYouPage2 from "./pages/ThankyouPage2";
 import CoursesPage from "./pages/CoursesPage";
+import ProjectWorkshop from "./pages/ProjectWorkshop";
 import GTMPageViewTracker from "./hooks/GTMPageViewTracker";
 
 function App() {
@@ -90,6 +91,7 @@ function App() {
           <Route path="/Bootcamp" element={<BootCamp />} />
 
           <Route path="/campus-expert-program" element={<EarnWebinar />} />
+          <Route path="/project-workshop" element={<ProjectWorkshop />} />
 
           {/* Thank You Pages */}
           <Route path="/thankyou" element={<ThankYouPage />} />
