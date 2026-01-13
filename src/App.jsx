@@ -39,6 +39,7 @@ import ConsultAds from "./pages/ConsultAds";
 import ThankYouPage2 from "./pages/ThankyouPage2";
 import CoursesPage from "./pages/CoursesPage";
 import ProjectWorkshop from "./pages/ProjectWorkshop";
+import WorkshopThankYou from "./pages/WorkshopThankYou";
 import GTMPageViewTracker from "./hooks/GTMPageViewTracker";
 
 function App() {
@@ -92,6 +93,7 @@ function App() {
 
           <Route path="/campus-expert-program" element={<EarnWebinar />} />
           <Route path="/project-workshop" element={<ProjectWorkshop />} />
+          <Route path="/workshop-thank-you" element={<WorkshopThankYou />} />
 
           {/* Thank You Pages */}
           <Route path="/thankyou" element={<ThankYouPage />} />

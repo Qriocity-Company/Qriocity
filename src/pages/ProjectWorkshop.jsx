@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaCheckCircle, FaTimesCircle, FaClock, FaCalendar, FaLaptop, FaDollarSign, FaRocket, FaBrain, FaCode, FaFileAlt, FaChartLine, FaComments } from "react-icons/fa";
 
 const ProjectWorkshop = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,6 +46,21 @@ const ProjectWorkshop = () => {
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
+
+    // Meta Pixel Code
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', '6604459609678289');
+    window.fbq('track', 'PageView');
   }, []);
 
   const handleInputChange = (e) => {
@@ -93,15 +110,11 @@ const ProjectWorkshop = () => {
       });
 
       if (response.ok) {
-        alert("Registration successful! We'll send you the workshop details via email.");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          college: "",
-          department: "",
-          year: "",
-        });
+        // Track Lead event
+        if (window.fbq) {
+          window.fbq('track', 'Lead');
+        }
+        navigate("/workshop-thank-you");
       } else {
         const data = await response.json();
         alert(data.error || "Something went wrong. Please try again.");
@@ -730,6 +743,13 @@ const ProjectWorkshop = () => {
           REGISTER NOW
         </button>
       </div>
+
+      {/* Meta Pixel Noscript */}
+      <noscript>
+        <img height="1" width="1" style={{ display: 'none' }}
+          src="https://www.facebook.com/tr?id=6604459609678289&ev=PageView&noscript=1"
+        />
+      </noscript>
 
       {/* Bottom padding to prevent content being hidden by sticky bar */}
       <div className="h-40 lg:h-28"></div>
