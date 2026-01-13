@@ -185,76 +185,197 @@ const ProjectWorkshop = () => {
     <>
       <div className="flex flex-col bg-white min-h-screen w-full">
         {/* Hero Section */}
-        <div className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 pt-24 lg:pt-20 pb-12 lg:pb-20 px-4 overflow-hidden">
+        {/* Hero Section with Form */}
+        <div className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 pt-24 lg:pt-32 pb-12 lg:pb-20 px-4 overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-orange-200 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-300 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
 
-          <div className="max-w-6xl mx-auto relative z-10">
-            <div className="text-center" data-aos="fade-up">
-              <h1 className="font-extrabold text-3xl lg:text-5xl xl:text-6xl leading-tight text-gray-900">
-                Stop Struggling With Your Final Year Project —
-                <span className="block mt-2 bg-gradient-to-r from-[#FBA154] to-[#F15A29] bg-clip-text text-transparent">
-                  Master AI Tools That Actually Work
-                </span>
-              </h1>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
 
-              <div className="mt-8 max-w-3xl mx-auto">
-                <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
-                  Your project review is coming. ChatGPT isn't helping. Your code is messy. Your PPT looks generic. And you're running out of time.
-                </p>
-                <p className="text-xl lg:text-2xl font-bold text-gray-900 mt-4">
-                  What if you could fix everything in just one weekend?
-                </p>
-              </div>
+              {/* Left Column: Text Content */}
+              <div className="lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
+                <h1 className="font-extrabold text-3xl lg:text-5xl xl:text-6xl leading-tight text-gray-900">
+                  Stop Struggling With Your Final Year Project —
+                  <span className="block mt-2 bg-gradient-to-r from-[#FBA154] to-[#F15A29] bg-clip-text text-transparent">
+                    Master AI Tools That Actually Work
+                  </span>
+                </h1>
 
-              <div className="bg-gradient-to-r from-[#FFF7F4] to-white border-2 border-[#F15A29] max-w-4xl mx-auto mt-8 rounded-2xl p-6 shadow-lg">
-                <p className="text-lg lg:text-xl text-gray-800">
-                  Join our <span className="font-bold text-[#F15A29]">FREE 2-Hour Workshop</span> and learn how industry experts with{" "}
-                  <span className="font-bold">7+ years of experience</span> help students like you ace their final year projects — even if you're starting late.
-                </p>
-              </div>
+                <div className="mt-6">
+                  <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
+                    Your project review is coming. ChatGPT isn't helping. Your code is messy. Your PPT looks generic. And you're running out of time.
+                  </p>
+                  <p className="text-xl lg:text-2xl font-bold text-gray-900 mt-4">
+                    What if you could fix everything in just one weekend?
+                  </p>
+                </div>
 
-              {/* Workshop Details */}
-              <div className="flex flex-wrap justify-center items-center gap-6 mt-10">
-                <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-md">
-                  <FaCalendar className="text-[#F15A29]" size={24} />
-                  <div className="text-left">
-                    <p className="font-bold text-gray-900">January 18th, Sunday</p>
-                  </div>
+                <div className="bg-gradient-to-r from-[#FFF7F4] to-white border-l-4 border-[#F15A29] mt-8 p-4 shadow-sm rounded-r-xl">
+                  <p className="text-lg text-gray-800">
+                    Join our <span className="font-bold text-[#F15A29]">FREE 2-Hour Workshop</span> and learn how industry experts with{" "}
+                    <span className="font-bold">7+ years of experience</span> help students like you ace their final year projects.
+                  </p>
                 </div>
-                <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-md">
-                  <FaClock className="text-[#F15A29]" size={24} />
-                  <div className="text-left">
-                    <p className="font-bold text-gray-900">7:00 PM - 9:00 PM</p>
+
+                {/* Workshop Details - Grid for better layout on left */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                  <div className="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
+                    <FaCalendar className="text-[#F15A29] flex-shrink-0" size={20} />
+                    <p className="font-bold text-gray-900 text-sm xl:text-base">January 18th, Sunday</p>
                   </div>
-                </div>
-                <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-md">
-                  <FaLaptop className="text-[#F15A29]" size={24} />
-                  <div className="text-left">
-                    <p className="font-bold text-gray-900">Online (Anywhere)</p>
+                  <div className="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
+                    <FaClock className="text-[#F15A29] flex-shrink-0" size={20} />
+                    <p className="font-bold text-gray-900 text-sm xl:text-base">7:00 PM - 9:00 PM</p>
                   </div>
-                </div>
-                <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-md">
-                  <FaDollarSign className="text-[#F15A29]" size={24} />
-                  <div className="text-left">
-                    <p className="font-bold text-gray-900">Absolutely FREE</p>
+                  <div className="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
+                    <FaLaptop className="text-[#F15A29] flex-shrink-0" size={20} />
+                    <p className="font-bold text-gray-900 text-sm xl:text-base">Online (Join from Anywhere)</p>
+                  </div>
+                  <div className="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
+                    <FaDollarSign className="text-[#F15A29] flex-shrink-0" size={20} />
+                    <p className="font-bold text-gray-900 text-sm xl:text-base">Absolutely FREE</p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center items-center mt-10">
-                <span className="bg-black text-white rounded-2xl px-6 py-2 text-sm font-semibold mb-3 animate-bounce">
-                  🚨 Only 20 Slots Left!
-                </span>
-                <button
-                  className="px-10 py-4 rounded-full font-bold text-white text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                  style={{
-                    background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-                  }}
-                  onClick={scrollToForm}
-                >
-                  🎯 Register Now — Only 20 Slots Left!
-                </button>
+              {/* Right Column: Registration Form */}
+              <div id="registration-form" className="lg:w-1/2 w-full" data-aos="fade-left">
+                <div className="bg-white p-6 lg:p-8 rounded-3xl shadow-2xl border-2 border-orange-100 relative">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#F15A29] text-white px-6 py-1 rounded-full text-sm font-bold shadow-lg whitespace-nowrap">
+                    🔥 Popular! Only 20 Slots Left
+                  </div>
+
+                  <div className="text-center mb-6 mt-2">
+                    <h3 className="text-2xl font-bold text-gray-900">Reserve Your Spot</h3>
+                    <p className="text-gray-500 text-sm">Join 1000+ students transforming their projects</p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <label className="block text-gray-700 font-semibold mb-1 text-sm">
+                        Full Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-3 rounded-lg border-2 ${errors.name ? "border-red-500" : "border-gray-200"
+                          } focus:border-[#F15A29] focus:outline-none transition-colors bg-gray-50`}
+                        placeholder="Enter your full name"
+                      />
+                      {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-gray-700 font-semibold mb-1 text-sm">
+                        Email Address <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-3 rounded-lg border-2 ${errors.email ? "border-red-500" : "border-gray-200"
+                          } focus:border-[#F15A29] focus:outline-none transition-colors bg-gray-50`}
+                        placeholder="your.email@example.com"
+                      />
+                      {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-gray-700 font-semibold mb-1 text-sm">
+                        Phone Number <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-3 rounded-lg border-2 ${errors.phone ? "border-red-500" : "border-gray-200"
+                          } focus:border-[#F15A29] focus:outline-none transition-colors bg-gray-50`}
+                        placeholder="10-digit mobile number"
+                      />
+                      {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-1 text-sm">
+                          Department <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                          name="department"
+                          value={formData.department}
+                          onChange={handleInputChange}
+                          className={`w-full px-4 py-3 rounded-lg border-2 ${errors.department ? "border-red-500" : "border-gray-200"
+                            } focus:border-[#F15A29] focus:outline-none transition-colors bg-gray-50 text-sm`}
+                        >
+                          <option value="">Select Dept</option>
+                          <option value="CSE">CSE</option>
+                          <option value="IT">IT</option>
+                          <option value="Data Science">Data Science</option>
+                          <option value="Cyber Security">Cyber Security</option>
+                          <option value="Other CSE">Other</option>
+                        </select>
+                        {errors.department && <p className="text-red-500 text-xs mt-1">{errors.department}</p>}
+                      </div>
+
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-1 text-sm">
+                          Year <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                          name="year"
+                          value={formData.year}
+                          onChange={handleInputChange}
+                          className={`w-full px-4 py-3 rounded-lg border-2 ${errors.year ? "border-red-500" : "border-gray-200"
+                            } focus:border-[#F15A29] focus:outline-none transition-colors bg-gray-50 text-sm`}
+                        >
+                          <option value="">Select Year</option>
+                          <option value="Final Year">Final Year</option>
+                          <option value="Pre-Final Year">Pre-Final Year</option>
+                          <option value="Other">Other</option>
+                        </select>
+                        {errors.year && <p className="text-red-500 text-xs mt-1">{errors.year}</p>}
+                      </div>
+                    </div>
+
+                    {/* College (Full width below split) */}
+                    <div>
+                      <label className="block text-gray-700 font-semibold mb-1 text-sm">
+                        College Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="college"
+                        value={formData.college}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-3 rounded-lg border-2 ${errors.college ? "border-red-500" : "border-gray-200"
+                          } focus:border-[#F15A29] focus:outline-none transition-colors bg-gray-50`}
+                        placeholder="Enter your college name"
+                      />
+                      {errors.college && <p className="text-red-500 text-xs mt-1">{errors.college}</p>}
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full px-8 py-4 rounded-full font-bold text-white text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed mt-2"
+                      style={{
+                        background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                      }}
+                    >
+                      {loading ? "Registering..." : "🚀 Reserve My Spot Now"}
+                    </button>
+
+                    <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
+                      <FaClock size={12} className="text-green-500" />
+                      <span>Takes less than 30 seconds</span>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -491,162 +612,7 @@ const ProjectWorkshop = () => {
           </div>
         </div>
 
-        {/* Registration Form Section */}
-        <div id="registration-form" className="bg-gradient-to-br from-orange-50 to-white py-16 lg:py-24 px-4" data-aos="fade-up">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="font-bold text-3xl lg:text-4xl text-gray-900 mb-4">
-                Ready to Transform Your Final Year Project?
-              </h2>
-              <p className="text-lg text-gray-700">
-                Stop wasting time with AI tools that don't work. Stop stressing about your project review.
-              </p>
-              <p className="text-xl font-bold text-[#F15A29] mt-4">
-                Register now and secure your spot!
-              </p>
-            </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-2xl border-t-4 border-[#F15A29]">
-              <div className="mb-6 bg-gradient-to-r from-[#FFF7F4] to-white p-4 rounded-xl border border-orange-200">
-                <div className="flex items-center justify-between flex-wrap gap-4">
-                  <div className="flex items-center gap-2">
-                    <FaCalendar className="text-[#F15A29]" />
-                    <span className="font-semibold">January 18th, Sunday</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaClock className="text-[#F15A29]" />
-                    <span className="font-semibold">7-9 PM</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaDollarSign className="text-[#F15A29]" />
-                    <span className="font-semibold text-green-600">FREE</span>
-                  </div>
-                </div>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    Full Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.name ? "border-red-500" : "border-gray-300"
-                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
-                    placeholder="Enter your full name"
-                  />
-                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    Email Address <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.email ? "border-red-500" : "border-gray-300"
-                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
-                    placeholder="your.email@example.com"
-                  />
-                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    Phone Number <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.phone ? "border-red-500" : "border-gray-300"
-                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
-                    placeholder="10-digit mobile number"
-                  />
-                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    College Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="college"
-                    value={formData.college}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.college ? "border-red-500" : "border-gray-300"
-                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
-                    placeholder="Enter your college name"
-                  />
-                  {errors.college && <p className="text-red-500 text-sm mt-1">{errors.college}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    Department <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    name="department"
-                    value={formData.department}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.department ? "border-red-500" : "border-gray-300"
-                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
-                  >
-                    <option value="">Select your department</option>
-                    <option value="CSE">Computer Science Engineering (CSE)</option>
-                    <option value="IT">Information Technology (IT)</option>
-                    <option value="Data Science">Data Science</option>
-                    <option value="Cyber Security">Cyber Security</option>
-                    <option value="Other CSE">Other CSE-related branch</option>
-                  </select>
-                  {errors.department && <p className="text-red-500 text-sm mt-1">{errors.department}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    Year <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    name="year"
-                    value={formData.year}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.year ? "border-red-500" : "border-gray-300"
-                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
-                  >
-                    <option value="">Select your year</option>
-                    <option value="Final Year">Final Year</option>
-                    <option value="Pre-Final Year">Pre-Final Year</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  {errors.year && <p className="text-red-500 text-sm mt-1">{errors.year}</p>}
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full px-8 py-4 rounded-full font-bold text-white text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                  style={{
-                    background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-                  }}
-                >
-                  {loading ? "Registering..." : "🚀 Reserve My Spot Now (Only 20 Left)"}
-                </button>
-
-                <p className="text-center text-sm text-gray-600 mt-4">
-                  <span className="font-semibold">Investment:</span> FREE | <span className="font-semibold">Commitment:</span> Just 2 hours that could change your final year
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
 
         {/* FAQ Section */}
         <div className="w-full flex flex-col items-center justify-center bg-white py-16 lg:py-24 px-4" data-aos="fade-up">
