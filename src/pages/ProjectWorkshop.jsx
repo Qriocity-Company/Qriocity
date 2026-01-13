@@ -1,730 +1,772 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import path from "../assets/path.png";
-import person from "../assets/person.png";
-import clock from "../assets/clock.png";
-import calendar from "../assets/calendar.png";
-import bullet from "../assets/bullet.png";
-import { FaStar } from "react-icons/fa";
-import Linkedin from "../assets/linkedin.png";
-import doc from "../assets/doc.png";
-import discord from "../assets/discord.png";
-import { FaPython } from "react-icons/fa";
-import { VscSymbolOperator } from "react-icons/vsc";
-import { FaVideo } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
-import { FcIdea } from "react-icons/fc";
-import { PiFilePpt } from "react-icons/pi";
-import Testimonials4 from "../components/Testimonials4";
+import { FaCheckCircle, FaTimesCircle, FaClock, FaCalendar, FaLaptop, FaDollarSign, FaRocket, FaBrain, FaCode, FaFileAlt, FaChartLine, FaComments } from "react-icons/fa";
 
 const ProjectWorkshop = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    college: "",
+    department: "",
+    year: "",
+  });
+  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
-  const [department, setDepartment] = useState("");
-  const [college, setCollege] = useState("");
-  const [year, setYear] = useState("");
-  const filled = localStorage.getItem("RoadmapPopUp");
-  const [popupForm, setpopForm] = useState(false);
-  const [form, setForm] = useState(false);
-  const [popuploading, setPopuploading] = useState(false);
-  const [name2, setName2] = useState("");
-  const [email2, setEmail2] = useState("");
-  const [phone2, setPhone2] = useState("");
   const [activeIndex, setActiveIndex] = useState(null);
+
+  // Countdown timer
   const offerEndTime = new Date();
   offerEndTime.setHours(offerEndTime.getHours() + 12);
-
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
   function calculateTimeLeft() {
     let difference = Math.max(0, offerEndTime - new Date());
-
     const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
     difference -= hours * 60 * 60 * 1000;
-
     const minutes = Math.floor((difference / (1000 * 60)) % 60);
     difference -= minutes * 60 * 1000;
-
     const seconds = Math.floor((difference / 1000) % 60);
-
     return { hours, minutes, seconds };
   }
+
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-  const [department2, setDepartment2] = useState("");
-  const [college2, setCollege2] = useState("");
-  const [year2, setYear2] = useState("");
 
-  const handleForm = () => {
-    window.location.href =
-      "https://courses.qriocity.in/courses/Final-Year-Projects-Simplified-in-2-Hours-66f7e9dc55bbc06fd2f4b437";
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
-  const data2 = [
-    { name: "Live Lectures", check1: "✅", check2: "✅" },
-    { name: "Price", check1: "₹999", check2: "₹99" },
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid";
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone is required";
+    } else if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ""))) {
+      newErrors.phone = "Phone must be 10 digits";
+    }
+    if (!formData.college.trim()) newErrors.college = "College is required";
+    if (!formData.department) newErrors.department = "Department is required";
+    if (!formData.year) newErrors.year = "Year is required";
+    return newErrors;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+    setLoading(true);
+
+    try {
+      const response = await fetch("https://crm-backend-o6sb.onrender.com/workshop/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Registration successful! We'll send you the workshop details via email.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          college: "",
+          department: "",
+          year: "",
+        });
+      } else {
+        const data = await response.json();
+        alert(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Network error. Please try again later.");
+      console.error("Error submitting form:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const scrollToForm = () => {
+    document.getElementById("registration-form")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const learningOutcomes = [
     {
-      name: "Community Support",
-      check1: "Only 5 days",
-      check2: "Free lifetime discord community",
+      icon: <FaRocket className="text-[#F15A29]" size={40} />,
+      title: "Select the Perfect Project Title",
+      description: "Learn how to identify titles with scope for novelty and impact",
     },
-    { name: "Accountability Mentor", check1: "❌", check2: "✅" },
-    { name: "Bootcamp Completition Certificate", check1: "❌", check2: "✅" },
-    { name: "Bonus", check1: "❌", check2: "Bonus worth ₹4999" },
-    { name: "Class Recording", check1: "❌", check2: "✅" },
-  ];
-  const timelineData = [
     {
-      content: "How to choose your project domain and title",
-      img: "https://cdn.prod.website-files.com/63c5e29f1b5bc83fe0af2489/6424d753f8eb7a9e69c372fc_Gantt%20Chart%20Online%20Software%20Instagantt%20Ideation%202.webp",
-      alt: "Choose Project Domain",
+      icon: <FaBrain className="text-[#F15A29]" size={40} />,
+      title: "Add Novelty Like a Pro",
+      description: "Discover techniques to make your project unique and publication-ready",
     },
     {
-      content:
-        "Step-by-step guidance on how to complete your final year project with ease.",
-      img: "https://t3.ftcdn.net/jpg/00/50/28/04/360_F_50280421_c3QPI4se3DD2dpppDZKWv035EAlQrY7J.jpg",
-      alt: "Step by Step guide",
+      icon: <FaCode className="text-[#F15A29]" size={40} />,
+      title: "Master AI Tools for Coding",
+      description: "Use ChatGPT, GitHub Copilot, and other tools effectively to write clean, functional code",
     },
     {
-      content:
-        "How to add Novelty to your project and publish your research paper.",
-      img: "https://assets.myperfectwords.com/blog/research-paper-guide/research-paper-outline/Research-Paper-Outline-MPW-9355.jpg",
-      alt: "Research Paper",
+      icon: <FaFileAlt className="text-[#F15A29]" size={40} />,
+      title: "Create Stunning PPTs Fast",
+      description: "Generate professional presentations using AI tools that actually impress reviewers",
     },
     {
-      content:
-        "The perfect project roadmap that impresses both professors and recruiters.",
-      img: "https://hrfibreglass.co.uk/wp-content/uploads/2023/09/road-map.jpg",
-      alt: "Project Roadmap",
+      icon: <FaChartLine className="text-[#F15A29]" size={40} />,
+      title: "Write & Publish Research Papers",
+      description: "Step-by-step guide to writing and publishing papers at minimal cost",
     },
     {
-      content:
-        "Pro tips for scoring good grades in final year projects without burning out.",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN-Av4gw8KIUYvW5MLPU6HggvtfK7LWAYsXA&s",
-      alt: "Good Grades",
-    },
-    {
-      content:
-        "Step-by-step roadmap and plan of action on how to get your dream job.",
-      img: "https://www.admitedge.com/blog/wp-content/uploads/2019/02/New-to-GRE-A-step-by-step-Guide-to-GRE-ETS-Registration.jpg",
-      alt: "Dream Job",
+      icon: <FaComments className="text-[#F15A29]" size={40} />,
+      title: "Ace Your Project Explanations",
+      description: "Learn frameworks to confidently explain your project in reviews and interviews",
     },
   ];
 
   const faqs = [
     {
-      question: " Is this session suitable for all final year students?",
-      answer:
-        "Absolutely! Whether you’re working on a technical or non-technical project, this session will help you balance both your final year work and placement preparation.",
+      question: "Is this really free?",
+      answer: "Yes, 100% free. No hidden charges, no upsells. Just pure value.",
     },
     {
-      question: "When will I receive the Bonuses?",
-      answer: "You’ll get all the bonuses once the session is over.",
+      question: "Will the recording be available if I can't attend live?",
+      answer: "This is a live, interactive workshop. To get maximum value and ask questions, we highly recommend attending live. Recordings may not be shared.",
     },
     {
-      question:
-        " How is this session different from other project/placement webinars?  ",
-      answer:
-        "This session focuses on practical strategies to manage both final year projects and placement preparation without stress, offering tools and tips that have helped thousands of students before.",
+      question: "I'm from a non-CSE branch (Mechanical/Civil/EEE). Can I join?",
+      answer: "This workshop is specifically designed for CSE, IT, Data Science, and Cyber Security students. The content won't be relevant for non-CSE branches.",
     },
     {
-      question: "How long is the session?",
-      answer:
-        "The session lasts for 2 hours and is packed with actionable strategies to balance your project and placement preparation.",
+      question: "I'm in third year. Can I attend?",
+      answer: "This workshop is tailored for final-year students facing immediate project reviews and placements. The strategies are time-sensitive and final-year specific.",
     },
     {
-      question: "Do I need any prior preparation for this session?",
-      answer:
-        "No prior preparation is needed. Just come with an open mind, and we’ll guide you through everything.",
+      question: "What if I already have a project title?",
+      answer: "Perfect! You'll learn how to add novelty, improve implementation, use AI tools for coding, and present it better. This workshop will make your existing project significantly stronger.",
     },
     {
-      question: "Is the session live or recorded?",
-      answer:
-        "It’s a live session, so you’ll be able to interact and ask questions in real-time.",
-    },
-    {
-      question: "Will this session help with time management?",
-      answer:
-        "Absolutely! We’ll focus on effective time management techniques to help you complete your project and placement prep without feeling overwhelmed.",
-    },
-    {
-      question: "Is there a Q&A section during the session? ",
-      answer:
-        "Yes, there will be a dedicated Q&A section where you can ask any specific questions about your projects or placements.",
-    },
-    {
-      question: "Can this session help with specific project titles?  ",
-      answer:
-        " Yes! We will also provide suggestions for project titles and guide you on how to choose the right one",
-    },
-    {
-      question: "Will this session cover interview preparation tips as well?  ",
-      answer:
-        "Yes, we’ll also share tips on how to prepare for interviews and perform well during placement rounds.",
+      question: "Do I need any prior knowledge of AI tools?",
+      answer: "Not at all. We'll teach you everything from scratch — the right way to use ChatGPT, prompt engineering basics, and which tools to use for what purpose.",
     },
   ];
 
-  // Split the FAQs into two columns
-  const firstColumnFAQs = faqs.slice(0, 5);
-  const secondColumnFAQs = faqs.slice(5);
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-    if (!filled) {
-      setpopForm(true);
-    }
-  }, []);
+  const firstColumnFAQs = faqs.slice(0, 3);
+  const secondColumnFAQs = faqs.slice(3);
 
   return (
     <>
-      <div className="flex flex-col p-4 bg-white min-h-screen w-full">
-        <div className="flex lg:flex-row flex-col justify-between items-center">
-          <div className="hidden lg:flex justify-start items-start mt-40">
-            <img
-              className=" h-[300px] "
-              style={{
-                maskImage:
-                  "linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)",
-                WebkitMaskImage:
-                  "linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)",
-              }}
-              src={path}
-              alt="Road"
-            />
-            <img className="h-[300px] -ml-52 z-40" src={person} alt="Person" />
-          </div>
-          <div className="flex flex-col justify-center lg:items-start items-center lg:mr-40 mt-14 lg:mt-40">
-            <h1 className=" font-bold text-3xl lg:text-[40px]">
-              Final Year Projects,{" "}
-            </h1>
-            <h1 className=" font-bold text-3xl mt-2 lg:mt-5 lg:text-[40px]">
-              Simplified in 2 Hours!
-            </h1>
-            <h1 className="font-semibold text-xl mt-5">
-              Learn the Secrets to Stress-Free Final Year Projects!
-            </h1>
-            <div className="bg-[#FFF7F4] border-2 border-[#F15A29]  w-auto lg:w-[500px] mt-5 rounded-2xl flex justify-center items-center p-4 text-lg">
-              <h1>
-                Discover the exact strategies that have helped{" "}
-                <span className="font-bold">10K+ students </span>
-                complete their final year project efficiently
-                <span className="font-bold">
-                  {" "}
-                  without compromising their placement preparation.
+      <div className="flex flex-col bg-white min-h-screen w-full">
+        {/* Hero Section */}
+        <div className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 pt-24 lg:pt-20 pb-12 lg:pb-20 px-4 overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-orange-200 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-300 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="text-center" data-aos="fade-up">
+              <h1 className="font-extrabold text-3xl lg:text-5xl xl:text-6xl leading-tight text-gray-900">
+                Stop Struggling With Your Final Year Project —
+                <span className="block mt-2 bg-gradient-to-r from-[#FBA154] to-[#F15A29] bg-clip-text text-transparent">
+                  Master AI Tools That Actually Work
                 </span>
               </h1>
-            </div>
-            <div className="flex flex-col lg:flex-row justify-center items-start lg:items-center mt-10 gap-8 lg:gap-20">
-              <div className="flex justify-center items-center gap-1 lg:gap-5">
-                <img src={clock} />
-                <h1 className="font-bold text-lg lg:text-xl flex flex-col justify-center items-start">
-                  2 hour <span>live Session</span>
-                </h1>
+
+              <div className="mt-8 max-w-3xl mx-auto">
+                <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
+                  Your project review is coming. ChatGPT isn't helping. Your code is messy. Your PPT looks generic. And you're running out of time.
+                </p>
+                <p className="text-xl lg:text-2xl font-bold text-gray-900 mt-4">
+                  What if you could fix everything in just one weekend?
+                </p>
               </div>
 
-              <div className="flex justify-center items-center gap-1 lg:gap-5">
-                <img src={calendar} />
-                <h1 className="font-bold lg:text-xl text-lg flex flex-col justify-center items-start">
-                  2-Hour Masterclass <span> October 6-20,2024</span>{" "}
-                  <span className="text-lg">7pm-9pm</span>{" "}
-                </h1>
+              <div className="bg-gradient-to-r from-[#FFF7F4] to-white border-2 border-[#F15A29] max-w-4xl mx-auto mt-8 rounded-2xl p-6 shadow-lg">
+                <p className="text-lg lg:text-xl text-gray-800">
+                  Join our <span className="font-bold text-[#F15A29]">FREE 2-Hour Workshop</span> and learn how industry experts with{" "}
+                  <span className="font-bold">7+ years of experience</span> help students like you ace their final year projects — even if you're starting late.
+                </p>
               </div>
-            </div>
 
-            <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
-              <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
-                90% seats booked
-              </span>
-              <button
-                className="px-14 py-4 rounded-full font-bold text-white "
-                style={{
-                  background:
-                    "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-                }}
-                onClick={handleForm}
-              >
-                BOOK YOUR FREE SPOT NOW
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col justify-center items-center mt-28 lg:mt-40">
-          <h1 className="font-bold lg:text-4xl text-md">
-            Who{" "}
-            <span
-              className="px-4 lg:py-2 rounded-2xl font-bold text-white"
-              style={{
-                background:
-                  "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-                display: "inline-block", // Required to apply transformations
-                transform: "rotate(-2deg)", // Adjust the degree to control the tilt
-                transformOrigin: "center", // Optional: adjust the pivot point of the rotation
-              }}
-            >
-              Should Attend{" "}
-            </span>{" "}
-            This MasterClass?
-          </h1>
-          <div className="flex justify-center flex-col gap-8 items-start mt-10 lg:mt-20">
-            <div className="flex justify-center items-center gap-5 lg:gap-10">
-              <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
-              <h1 className="lg:text-xl text-lg font-semibold">
-                Final Year Students: Learn how to balance project work and
-                placement preparation effortlessly
-              </h1>
-            </div>
-            <div className="flex justify-center items-center gap-5 lg:gap-10">
-              <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
-              <h1 className="lg:text-xl text-lg font-semibold">
-                Engineering Students: Perfect your final year project without
-                sacrificing placement opportunities.
-              </h1>
-            </div>
-            <div className="flex justify-center items-center gap-5 lg:gap-10">
-              <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
-              <h1 className="lg:text-xl text-lg font-semibold">
-                Postgraduates: Ace your research projects and land your dream
-                job.
-              </h1>
-            </div>
-            <div className="flex justify-center items-center gap-5 lg:gap-10">
-              <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
-              <h1 className="lg:text-xl text-lg font-semibold">
-                Students Seeking Internships: Manage your time effectively to
-                secure both a stellar mini project and a great internship.
-              </h1>
-            </div>
-            <div className="flex justify-center items-center gap-5 lg:gap-10">
-              <img className="lg:h-auto lg:w-auto h-11" src={bullet} />
-              <h1 className="lg:text-xl text-lg font-semibold">
-                Career-Focused Students: Ensure your placement preparation stays
-                on track, even while tackling your final year project.
-              </h1>
-            </div>
-          </div>
-        </div>
-
-        <div className=" bg-[#EDEDED] mt-20  flex flex-col justify-start items-center p-4">
-          <h1 className="font-bold lg:text-4xl lg:mt-20 mt-8">
-            What will{" "}
-            <span
-              className="lg:px-8 lg:py-2 px-4 py-1 rounded-2xl font-bold text-white"
-              style={{
-                background:
-                  "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-                display: "inline-block", // Required to apply transformations
-                transform: "rotate(-2deg)", // Adjust the degree to control the tilt
-                transformOrigin: "center", // Optional: adjust the pivot point of the rotation
-              }}
-            >
-              you learn{" "}
-            </span>{" "}
-            in this 2-hour session?
-          </h1>
-
-          <div className="relative flex flex-col justify-center items-center mt-10 gap-10 px-4 sm:px-8 md:px-16">
-            {/* Vertical Line */}
-            <div className="absolute inset-0 flex justify-center">
-              <div className="w-1 h-full bg-gray-300 relative">
-                {/* Circles on the line */}
-                <div className="hidden lg:block absolute top-0 w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"></div>
-                <div className="hidden lg:block absolute bottom-0 w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"></div>
-                <div className="hidden lg:block absolute top-1/6 w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"></div>
-                <div className="hidden lg:block absolute top-1/3 w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"></div>
-                <div className="hidden lg:block absolute top-1/2 w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"></div>
-                <div className="hidden lg:block absolute top-2/3 w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"></div>
-                <div className="hidden lg:block absolute top-5/6 w-4 h-4 bg-[#F47338] rounded-full transform -translate-x-1/2"></div>
-              </div>
-            </div>
-
-            {timelineData.map((item, index) => (
-              <div
-                key={index}
-                data-aos="fade-up"
-                className={`flex flex-col md:flex-row ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                } justify-center items-center gap-10 md:gap-20 z-40`}
-              >
-                <img
-                  className="h-[250px] w-full md:w-[250px] object-contain"
-                  src={item.img}
-                  alt={item.alt}
-                />
-                <div className="bg-white p-4 rounded-xl h-[200px] w-full md:w-[200px] lg:w-[250px] font-semibold text-lg flex justify-center items-center">
-                  {item.content}
+              {/* Workshop Details */}
+              <div className="flex flex-wrap justify-center items-center gap-6 mt-10">
+                <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-md">
+                  <FaCalendar className="text-[#F15A29]" size={24} />
+                  <div className="text-left">
+                    <p className="font-bold text-gray-900">January 18th, Sunday</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-md">
+                  <FaClock className="text-[#F15A29]" size={24} />
+                  <div className="text-left">
+                    <p className="font-bold text-gray-900">7:00 PM - 9:00 PM</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-md">
+                  <FaLaptop className="text-[#F15A29]" size={24} />
+                  <div className="text-left">
+                    <p className="font-bold text-gray-900">Online (Anywhere)</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-md">
+                  <FaDollarSign className="text-[#F15A29]" size={24} />
+                  <div className="text-left">
+                    <p className="font-bold text-gray-900">Absolutely FREE</p>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-          <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
-            <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
-              90% seats booked
-            </span>
-            <button
-              className="px-14 py-4 rounded-full font-bold text-white "
-              style={{
-                background:
-                  "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-              }}
-              onClick={handleForm}
-            >
-              BOOK YOUR FREE SPOT NOW
-            </button>
-          </div>
-        </div>
 
-        <div className="flex justify-center items-center lg:mt-20 mt-10 flex-col">
-          <h1 className="font-bold text-lg lg:text-4xl lg:mt-20 mt-10">
-            <span
-              className="lg:px-8 lg:py-2 px-4 py-1 rounded-2xl font-bold text-white"
-              style={{
-                background:
-                  "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-                display: "inline-block", // Required to apply transformations
-                transform: "rotate(-1deg)", // Adjust the degree to control the tilt
-                transformOrigin: "center", // Optional: adjust the pivot point of the rotation
-              }}
-            >
-              Life-Changing benefits{" "}
-            </span>{" "}
-            of Attending our Bootcamp
-          </h1>
-          <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20 mt-10 lg:mt-20 px-4 lg:px-0">
-            {/* Left Column */}
-            <div className="flex flex-col justify-center items-center gap-4 lg:gap-6">
-              <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
-                <FaStar size="50px" color="#26CFD3" />
-                <h1 className="text-center lg:text-left">
-                  Streamlined Time Management: Master the art of balancing your
-                  final year project and placement preparation.
-                </h1>
-              </div>
-              <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
-                <FaStar size="50px" color="#26CFD3" />
-                <h1 className="text-center lg:text-left">
-                  Maximized Job Opportunities: Impress recruiters with a strong
-                  project while maintaining sharp interview skills.
-                </h1>
-              </div>
-              <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
-                <FaStar size="40px" color="#26CFD3" />
-                <h1 className="text-center lg:text-left">
-                  Stress-Free Workflow: Learn how to handle both without stress
-                  or sacrificing quality.
-                </h1>
-              </div>
-              <div className="bg-[#F5FFFF] p-4 rounded-xl border-2 border-[#2E7071] w-full lg:w-[600px] flex justify-start items-center gap-4 font-semibold text-base lg:text-lg">
-                <FaStar size="50px" color="#26CFD3" />
-                <h1 className="text-center lg:text-left">
-                  Career-Boosting Project: Create a project that aligns with
-                  industry trends and showcases your talent to future employers.
-                </h1>
-              </div>
-            </div>
-
-            {/* Right Column */}
-            <div className="hidden lg:flex flex-col items-center gap-4 px-4 lg:px-0 mt-10 lg:mt-20">
-              <div className="bg-slate-50 shadow-xl rounded-2xl w-full lg:w-[250px] h-[100px] flex justify-center items-center flex-col text-lg lg:text-xl font-bold">
-                Attractive{" "}
-                <span className="text-base lg:text-xl">Portfolio</span>
-              </div>
-
-              <div className="bg-slate-50 shadow-xl rounded-2xl w-full lg:w-[500px] h-[100px] flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-10 mt-2">
-                <h1 className="text-lg lg:text-xl font-bold flex flex-col items-center">
-                  More Job{" "}
-                  <span className="text-base lg:text-xl">Oppurtunities</span>
-                </h1>
-                <div
-                  className="rounded-full h-24 w-24 lg:h-32 lg:w-32 text-white flex flex-col justify-center items-center font-bold text-xl lg:text-2xl z-20"
+              <div className="flex flex-col justify-center items-center mt-10">
+                <span className="bg-black text-white rounded-2xl px-6 py-2 text-sm font-semibold mb-3 animate-bounce">
+                  🚨 Only 20 Slots Left!
+                </span>
+                <button
+                  className="px-10 py-4 rounded-full font-bold text-white text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                   style={{
-                    background:
-                      "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                    background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
                   }}
+                  onClick={scrollToForm}
                 >
-                  <span>Your</span>
-                  <span>Career</span>
+                  🎯 Register Now — Only 20 Slots Left!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Problem-Agitation Section */}
+        <div className="bg-white py-16 lg:py-24 px-4" data-aos="fade-up">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-bold text-3xl lg:text-4xl text-center text-gray-900 mb-12">
+              Does This Sound Like You?
+            </h2>
+
+            <div className="space-y-6">
+              {[
+                "Your project idea isn't bad, but you don't know how to add novelty or make it impressive",
+                "You've tried using ChatGPT for coding and PPTs, but the output is useless or generic",
+                "Your project review is approaching, and you're nowhere near ready",
+                "You want to publish a research paper, but it seems too expensive or complicated",
+                "You're worried you won't be able to explain your project confidently in interviews",
+              ].map((item, index) => (
+                <div key={index} className="flex items-start gap-4 bg-gradient-to-r from-green-50 to-white p-4 rounded-xl border-l-4 border-green-500 shadow-sm hover:shadow-md transition-shadow">
+                  <FaCheckCircle className="text-green-500 flex-shrink-0 mt-1" size={24} />
+                  <p className="text-lg text-gray-800">{item}</p>
                 </div>
-                <h1 className="text-lg lg:text-xl font-bold flex flex-col items-center">
-                  High Salary{" "}
-                  <span className="text-base lg:text-xl">Package</span>
-                </h1>
-              </div>
-
-              <div className="bg-slate-50 shadow-xl rounded-2xl w-full lg:w-[250px] h-[100px] flex justify-center items-center flex-col text-lg lg:text-xl font-bold">
-                Stress Free
-                <span className="text-base lg:text-xl">Mindset</span>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
-            <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
-              90% seats booked
-            </span>
-            <button
-              className="px-14 py-4 rounded-full font-bold text-white "
-              style={{
-                background:
-                  "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-              }}
-              onClick={handleForm}
-            >
-              BOOK YOUR FREE SPOT NOW
-            </button>
-          </div>
-
-          <div className="mt-20 bg-[#FEEEE9] h-auto w-[900px] rounded-xl flex flex-col justify-start items-center p-4 mb-10">
-            <h1 className="text-4xl font-bold mt-6 lg:text-[50px]">
-              Exciting <span className="text-[#F26530]">bonuses</span>
-            </h1>
-            <div className="mt-10 lg:mt-20 flex flex-col justify-center items-center lg:grid lg:grid-cols-3 gap-4 lg:gap-10 w-full">
-              {/* Bonus 1 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[250px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={25} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Top 50 <span>Final Year Project</span> Ideas E-book Rs.299
-                </h1>
-                <FcIdea className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
-              </div>
-
-              {/* Bonus 2 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[250px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={25} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  PPT,Report<span> and Research </span> Templates Rs.399
-                </h1>
-                <PiFilePpt className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
-              </div>
-
-              {/* Bonus 3 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[250px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={25} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  ATS-Friendly <span>Resume and </span> Templates - Rs.99
-                </h1>
-                <img
-                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                  src={doc}
-                />
-              </div>
-
-              {/* Bonus 4 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[250px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={25} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Exclusive Access <span>to Free </span> Discord Community
-                </h1>
-                <img
-                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                  src={discord}
-                />
-              </div>
-
-              {/* Bonus 5 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[250px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={25} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Python - 10 hours <span>recorded videos - Rs.1499</span>
-                </h1>
-                <FaPython className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
-              </div>
-
-              {/* Bonus 6 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col justify-between h-auto w-[250px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={25} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  Aptitude - 2 hours <span>recorded videos - Rs.999</span>
-                </h1>
-                <VscSymbolOperator className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
-              </div>
-
-              {/* Bonus 7 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[250px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={25} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  DSA - 3 hours <span>recorded videos - Rs.999</span>
-                </h1>
-                <SiLeetcode className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
-              </div>
-
-              {/* Bonus 8 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[250px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={25} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  2 Recorded <span>Mock Interviews - Rs.499</span>
-                </h1>
-                <FaVideo className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14" />
-              </div>
-
-              {/* Bonus 9 */}
-              <div className="bg-white p-4 rounded-xl flex flex-col h-auto justify-between w-[250px] lg:h-[250px] lg:w-[250px]">
-                <FaStar className="ml-2" size={25} color="#F15A29" />
-                <h1 className="flex items-start font-bold text-sm lg:text-lg flex-col mt-4 ml-2">
-                  2 LinkedIn <span> Mastery Live Sessions - Rs.1999</span>
-                </h1>
-                <img
-                  className="place-self-end mt-5 h-10 w-10 lg:h-14 lg:w-14"
-                  src={Linkedin}
-                />
-              </div>
+              ))}
             </div>
 
-            <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
-              <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
-                90% seats booked
-              </span>
+            <div className="mt-12 bg-gradient-to-r from-orange-50 to-white p-8 rounded-2xl border-2 border-orange-200">
+              <p className="text-xl lg:text-2xl font-bold text-gray-900 text-center">
+                Here's the truth: Your project idea is fine. You're just using AI tools the wrong way — and nobody taught you the right way.
+              </p>
+              <p className="text-lg text-center text-[#F15A29] font-semibold mt-4">
+                That's exactly what this workshop will fix.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Solution Section */}
+        <div className="bg-gradient-to-br from-gray-50 to-orange-50 py-16 lg:py-24 px-4" data-aos="fade-up">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-bold text-3xl lg:text-4xl text-gray-900 mb-4">
+                Introducing:{" "}
+                <span className="bg-gradient-to-r from-[#FBA154] to-[#F15A29] bg-clip-text text-transparent">
+                  Mastering Final Year Projects with AI Tools
+                </span>
+              </h2>
+              <p className="text-xl text-gray-700 max-w-4xl mx-auto mt-6">
+                A <span className="font-bold text-[#F15A29]">FREE 2-hour live workshop</span> designed specifically for final-year engineering students who want to:
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+              {[
+                { icon: "🎯", text: "Choose project titles that stand out and add real novelty" },
+                { icon: "🤖", text: "Use AI tools like ChatGPT the right way for coding, debugging, and documentation" },
+                { icon: "📊", text: "Create professional, impressive PPTs that reviewers actually appreciate" },
+                { icon: "📝", text: "Write and publish research papers at low cost (yes, it's possible!)" },
+                { icon: "💬", text: "Explain your project with confidence in reviews and job interviews" },
+              ].map((item, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-[#F15A29]">
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <p className="text-gray-800 font-semibold">{item.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 bg-white p-8 rounded-2xl shadow-xl text-center">
+              <p className="text-lg text-gray-800">
+                Conducted by <span className="font-bold text-[#F15A29]">industry experts</span> who have mentored{" "}
+                <span className="font-bold">1000+ students</span> over <span className="font-bold">7+ years</span> and know exactly what works.
+              </p>
+            </div>
+
+            <div className="flex justify-center mt-10">
               <button
-                className="p-4 rounded-full font-bold text-white"
+                className="px-10 py-4 rounded-full font-bold text-white text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 style={{
-                  background:
-                    "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                  background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
                 }}
-                onClick={handleForm}
+                onClick={scrollToForm}
               >
-                UNLOCK THESE BONUSES NOW FOR FREE !
+                🚀 Reserve My Spot Now
               </button>
             </div>
           </div>
         </div>
 
-        <Testimonials4 />
+        {/* What You'll Learn Section */}
+        <div className="bg-white py-16 lg:py-24 px-4" data-aos="fade-up">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-bold text-3xl lg:text-4xl text-center text-gray-900 mb-4">
+              By the End of This Workshop,{" "}
+              <span className="bg-gradient-to-r from-[#FBA154] to-[#F15A29] bg-clip-text text-transparent">
+                You'll Be Able To:
+              </span>
+            </h2>
+            <p className="text-center text-xl text-gray-600 mb-12">
+              No fluff. No theory. Just practical, actionable strategies you can implement immediately.
+            </p>
 
-        <div className="flex flex-col justify-center items-center lg:mr-10 mt-10">
-          <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
-            90% seats booked
-          </span>
-          <button
-            className="px-14 py-4 rounded-full font-bold text-white "
-            style={{
-              background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-            }}
-            onClick={handleForm}
-          >
-            TRANSFORM YOUR CAREER NOW
-          </button>
-        </div>
-      </div>
-      <div className="w-full flex flex-col items-center md:p-0 justify-center bg-white">
-        <div className="max-w-2xl mx-auto py-8 md:mt-20 mt-10 p-2">
-          <h2 className="lg:text-[36px] text-[20px] font-bold text-center text-blue-600">
-            FAQs :
-            <span className=" ml-2 text-gray-800">
-              Here’s everything you may ask...
-            </span>
-          </h2>
-
-          <div className="mt-10 md:mt-20 flex flex-col md:flex-row justify-center items-start md:gap-20">
-            {/* Left Column */}
-            <div className="w-full md:w-auto">
-              {firstColumnFAQs.map((faq, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {learningOutcomes.map((outcome, index) => (
                 <div
                   key={index}
-                  className="border-2 border-gray-300 mb-2 w-full md:w-[500px] transition-all duration-300"
+                  className="bg-gradient-to-br from-white to-orange-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-orange-100"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                 >
-                  <button
-                    className="w-full text-left flex justify-between items-center p-4 text-base md:text-lg text-gray-800 font-semibold hover:bg-gray-100 focus:outline-none"
-                    onClick={() => toggleAccordion(index)}
-                  >
-                    {faq.question}
-                    <span>{activeIndex === index ? "-" : "+"}</span>
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      activeIndex === index ? "max-h-screen" : "max-h-0"
-                    }`}
-                  >
-                    <div className="p-4 text-gray-700 bg-gray-50">
-                      {faq.answer}
-                    </div>
-                  </div>
+                  <div className="mb-4">{outcome.icon}</div>
+                  <h3 className="font-bold text-xl text-gray-900 mb-3">{outcome.title}</h3>
+                  <p className="text-gray-700">{outcome.description}</p>
                 </div>
               ))}
             </div>
 
-            {/* Right Column */}
-            <div className="w-full md:w-auto">
-              {secondColumnFAQs.map((faq, index) => (
-                <div
-                  key={index + 7}
-                  className="border-2 border-gray-300 mb-2 w-full md:w-[500px] transition-all duration-300"
-                >
-                  <button
-                    className="w-full text-left flex justify-between items-center p-4 text-base md:text-lg text-gray-800 font-semibold hover:bg-gray-100 focus:outline-none"
-                    onClick={() => toggleAccordion(index + 7)}
-                  >
-                    {faq.question}
-                    <span>{activeIndex === index + 7 ? "-" : "+"}</span>
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      activeIndex === index + 7 ? "max-h-screen" : "max-h-0"
-                    }`}
-                  >
-                    <div className="p-4 text-gray-700 bg-gray-50">
-                      {faq.answer}
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="flex justify-center mt-12">
+              <button
+                className="px-10 py-4 rounded-full font-bold text-white text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                style={{
+                  background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                }}
+                onClick={scrollToForm}
+              >
+                Yes! I Want to Learn This
+              </button>
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center lg:mr-10 mt-5 mb-40">
-          <span className="-mr-20 -mb-4 bg-black text-white rounded-2xl px-4 z-30 py-1">
-            90% seats booked
-          </span>
-          <button
-            className="px-14 py-4 rounded-full font-bold text-white "
-            style={{
-              background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-            }}
-            onClick={handleForm}
-          >
-            BOOK YOUR FREE SPOT NOW
-          </button>
+
+        {/* Who This Is For Section */}
+        <div className="bg-gradient-to-br from-gray-50 to-orange-50 py-16 lg:py-24 px-4" data-aos="fade-up">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-bold text-3xl lg:text-4xl text-center text-gray-900 mb-12">
+              Who Should Attend This Workshop?
+            </h2>
+
+            <div className="bg-white p-8 rounded-2xl shadow-xl mb-8">
+              <h3 className="font-bold text-2xl text-green-600 mb-6 flex items-center gap-3">
+                <FaCheckCircle size={32} />
+                This Workshop Is For You If:
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  "You're a final-year engineering student from CSE, IT, Data Science, Cyber Security, or related CSE branches",
+                  "Your project review is coming up and you need results fast",
+                  "You've been using AI tools but not getting the results you expected",
+                  "You want to stand out in placements with a strong project and research paper",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="text-green-500 text-xl flex-shrink-0">●</span>
+                    <span className="text-lg text-gray-800">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-red-200">
+              <h3 className="font-bold text-2xl text-red-600 mb-6 flex items-center gap-3">
+                <FaTimesCircle size={32} />
+                Please Do NOT Register If:
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  "You're NOT in your final year",
+                  "You're from non-CSE branches (Mechanical, Civil, EEE, etc.)",
+                  "You're not serious about completing your project with excellence",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="text-red-500 text-xl flex-shrink-0">✗</span>
+                    <span className="text-lg text-gray-800">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-gray-700 italic">
+                We have limited capacity and want to ensure every seat goes to someone who truly needs it.
+              </p>
+            </div>
+
+            <div className="flex justify-center mt-10">
+              <button
+                className="px-10 py-4 rounded-full font-bold text-white text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                style={{
+                  background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                }}
+                onClick={scrollToForm}
+              >
+                I Qualify! Register Me Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Instructor Credibility Section */}
+        <div className="bg-white py-16 lg:py-24 px-4" data-aos="fade-up">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-bold text-3xl lg:text-4xl text-center text-gray-900 mb-6">
+              Learn From{" "}
+              <span className="bg-gradient-to-r from-[#FBA154] to-[#F15A29] bg-clip-text text-transparent">
+                Industry Experts
+              </span>{" "}
+              Who've Been There
+            </h2>
+
+            <div className="bg-gradient-to-r from-orange-50 to-white p-8 rounded-2xl shadow-xl">
+              <p className="text-xl text-gray-800 text-center mb-8">
+                This workshop is conducted by professionals with{" "}
+                <span className="font-bold text-[#F15A29]">7+ years of experience</span> helping final-year students successfully complete their projects.
+              </p>
+
+              <p className="text-lg text-gray-800 text-center mb-8">
+                They've mentored <span className="font-bold">1000+ students</span> across top engineering colleges and know:
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  "Exactly what reviewers and interviewers look for",
+                  "Which AI tools work (and which ones waste your time)",
+                  "How to add novelty without overcomplicating your project",
+                  "The fastest path from \"stuck\" to \"project ready\"",
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm">
+                    <FaCheckCircle className="text-[#F15A29] flex-shrink-0 mt-1" size={20} />
+                    <p className="text-gray-800 font-semibold">{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-lg text-gray-800 text-center mt-8 font-semibold">
+                They've seen every mistake students make — and they'll show you how to avoid them.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Registration Form Section */}
+        <div id="registration-form" className="bg-gradient-to-br from-orange-50 to-white py-16 lg:py-24 px-4" data-aos="fade-up">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="font-bold text-3xl lg:text-4xl text-gray-900 mb-4">
+                Ready to Transform Your Final Year Project?
+              </h2>
+              <p className="text-lg text-gray-700">
+                Stop wasting time with AI tools that don't work. Stop stressing about your project review.
+              </p>
+              <p className="text-xl font-bold text-[#F15A29] mt-4">
+                Register now and secure your spot!
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-2xl border-t-4 border-[#F15A29]">
+              <div className="mb-6 bg-gradient-to-r from-[#FFF7F4] to-white p-4 rounded-xl border border-orange-200">
+                <div className="flex items-center justify-between flex-wrap gap-4">
+                  <div className="flex items-center gap-2">
+                    <FaCalendar className="text-[#F15A29]" />
+                    <span className="font-semibold">January 18th, Sunday</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaClock className="text-[#F15A29]" />
+                    <span className="font-semibold">7-9 PM</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaDollarSign className="text-[#F15A29]" />
+                    <span className="font-semibold text-green-600">FREE</span>
+                  </div>
+                </div>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">
+                    Full Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.name ? "border-red-500" : "border-gray-300"
+                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
+                    placeholder="Enter your full name"
+                  />
+                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">
+                    Email Address <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.email ? "border-red-500" : "border-gray-300"
+                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
+                    placeholder="your.email@example.com"
+                  />
+                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.phone ? "border-red-500" : "border-gray-300"
+                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
+                    placeholder="10-digit mobile number"
+                  />
+                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">
+                    College Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="college"
+                    value={formData.college}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.college ? "border-red-500" : "border-gray-300"
+                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
+                    placeholder="Enter your college name"
+                  />
+                  {errors.college && <p className="text-red-500 text-sm mt-1">{errors.college}</p>}
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">
+                    Department <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    name="department"
+                    value={formData.department}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.department ? "border-red-500" : "border-gray-300"
+                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
+                  >
+                    <option value="">Select your department</option>
+                    <option value="CSE">Computer Science Engineering (CSE)</option>
+                    <option value="IT">Information Technology (IT)</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                    <option value="Other CSE">Other CSE-related branch</option>
+                  </select>
+                  {errors.department && <p className="text-red-500 text-sm mt-1">{errors.department}</p>}
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">
+                    Year <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    name="year"
+                    value={formData.year}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 rounded-lg border-2 ${errors.year ? "border-red-500" : "border-gray-300"
+                      } focus:border-[#F15A29] focus:outline-none transition-colors`}
+                  >
+                    <option value="">Select your year</option>
+                    <option value="Final Year">Final Year</option>
+                    <option value="Pre-Final Year">Pre-Final Year</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  {errors.year && <p className="text-red-500 text-sm mt-1">{errors.year}</p>}
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full px-8 py-4 rounded-full font-bold text-white text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{
+                    background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                  }}
+                >
+                  {loading ? "Registering..." : "🚀 Reserve My Spot Now (Only 20 Left)"}
+                </button>
+
+                <p className="text-center text-sm text-gray-600 mt-4">
+                  <span className="font-semibold">Investment:</span> FREE | <span className="font-semibold">Commitment:</span> Just 2 hours that could change your final year
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="w-full flex flex-col items-center justify-center bg-white py-16 lg:py-24 px-4" data-aos="fade-up">
+          <div className="max-w-6xl mx-auto w-full">
+            <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4">
+              <span className="text-blue-600">FAQs:</span>
+              <span className="ml-2 text-gray-800">Here's everything you may ask...</span>
+            </h2>
+
+            <div className="mt-12 flex flex-col md:flex-row justify-center items-start gap-8">
+              {/* Left Column */}
+              <div className="w-full md:w-auto">
+                {firstColumnFAQs.map((faq, index) => (
+                  <div
+                    key={index}
+                    className="border-2 border-gray-300 mb-4 w-full md:w-[500px] transition-all duration-300 rounded-lg overflow-hidden"
+                  >
+                    <button
+                      className="w-full text-left flex justify-between items-center p-4 text-base md:text-lg text-gray-800 font-semibold hover:bg-gray-100 focus:outline-none"
+                      onClick={() => toggleAccordion(index)}
+                    >
+                      {faq.question}
+                      <span className="text-2xl font-bold">{activeIndex === index ? "−" : "+"}</span>
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === index ? "max-h-screen" : "max-h-0"
+                        }`}
+                    >
+                      <div className="p-4 text-gray-700 bg-gray-50">{faq.answer}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Right Column */}
+              <div className="w-full md:w-auto">
+                {secondColumnFAQs.map((faq, index) => (
+                  <div
+                    key={index + 3}
+                    className="border-2 border-gray-300 mb-4 w-full md:w-[500px] transition-all duration-300 rounded-lg overflow-hidden"
+                  >
+                    <button
+                      className="w-full text-left flex justify-between items-center p-4 text-base md:text-lg text-gray-800 font-semibold hover:bg-gray-100 focus:outline-none"
+                      onClick={() => toggleAccordion(index + 3)}
+                    >
+                      {faq.question}
+                      <span className="text-2xl font-bold">{activeIndex === index + 3 ? "−" : "+"}</span>
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === index + 3 ? "max-h-screen" : "max-h-0"
+                        }`}
+                    >
+                      <div className="p-4 text-gray-700 bg-gray-50">{faq.answer}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex justify-center mt-12">
+              <button
+                className="px-10 py-4 rounded-full font-bold text-white text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                style={{
+                  background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+                }}
+                onClick={scrollToForm}
+              >
+                Still Have Questions? Register & Ask Live!
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer CTA Section */}
+        <div className="bg-gradient-to-r from-gray-900 to-gray-800 py-16 px-4" data-aos="fade-up">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-bold text-3xl lg:text-4xl text-white mb-6">
+              Don't Let Your Final Year Project Become Your Biggest Regret
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              20 slots. 1000+ students already transformed. Your turn.
+            </p>
+            <button
+              className="px-10 py-4 rounded-full font-bold text-white text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+              style={{
+                background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+              }}
+              onClick={scrollToForm}
+            >
+              🎯 Register Now Before Slots Run Out
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="bg-[#000000] h-[100px] w-full p-4 flex justify-between z-40 items-center bottom-0 fixed">
-        <div className="flex flex-col">
-          <div className="flex justify-center items-center  lg:gap-6 gap-2 h-full">
-            <h1 className="font-bold text-2xl lg:text-5xl text-white lg:ml-10">
-              FREE
-            </h1>
-            <h1 className="lg:text-[29px] text-white line-through">₹99</h1>
+      {/* Sticky Bottom Bar */}
+      <div className="bg-black h-auto w-full p-3 lg:p-4 flex flex-row justify-between items-center bottom-0 fixed z-50 shadow-2xl gap-3">
+        <div className="flex flex-col items-start">
+          <div className="flex items-center gap-2">
+            <h1 className="font-bold text-xl lg:text-4xl text-white">FREE</h1>
+            <h1 className="text-sm lg:text-xl text-white line-through">₹999</h1>
           </div>
-          <h1 className="mt-2 text-white lg:ml-10 text-sm">
-            Offer ends in {timeLeft.hours}h {timeLeft.minutes}m{" "}
-            {timeLeft.seconds}
-            s!!
+          <h1 className="text-white text-[10px] lg:text-sm mt-1">
+            Offer ends in {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
           </h1>
         </div>
 
-        <div className="flex flex-col justify-center items-center lg:mr-10">
-          <span className="lg:-mr-20 -mr-10 -mb-2 bg-[#DCDCDC] rounded-2xl px-2 lg:px-4 z-50 py-1">
-            90% seats booked
-          </span>
-          <button
-            className="lg:p-4 p-2 text-[12px] rounded-lg lg:rounded-full lg:font-bold text-white "
-            style={{
-              background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
-            }}
-            onClick={handleForm}
-          >
-            BOOK YOUR FREE SPOT NOW
-          </button>
-        </div>
+        <button
+          className="px-4 lg:px-8 py-2 lg:py-3 rounded-full font-bold text-white text-xs lg:text-base shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap"
+          style={{
+            background: "linear-gradient(to right, #FBA154 0%, #F15A29 100%)",
+          }}
+          onClick={scrollToForm}
+        >
+          REGISTER NOW
+        </button>
       </div>
+
+      {/* Bottom padding to prevent content being hidden by sticky bar */}
+      <div className="h-40 lg:h-28"></div>
     </>
   );
 };
