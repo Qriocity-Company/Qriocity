@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import student2 from '../../assets/testimonial_student_2.png';
+import student3 from '../../assets/testimonial_student_3.png';
 
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,7 +22,7 @@ const Testimonials = () => {
             name: "Karthik R.",
             role: "AI Developer at Zoho",
             prev: "IT Support",
-            image: "https://randomuser.me/api/portraits/men/32.jpg",
+            image: student2,
             quote: "After 4 years in IT support, I thought switching to AI was impossible. Qriocity proved me wrong. I was doing basic IT support work, feeling stuck. Everyone said 'AI is for IIT people only.' But the way Qriocity teaches — starting from scratch, with Tamil explanations when needed — made it possible for someone like me. The internship project on my resume got me shortlisted at Zoho. Now I'm building AI features for their products!",
             package: "₹12 LPA",
             location: "Coimbatore",
@@ -30,7 +32,7 @@ const Testimonials = () => {
             name: "Swetha M.",
             role: "Placed at Infosys",
             prev: "Final Year ECE Student",
-            image: "https://randomuser.me/api/portraits/women/65.jpg",
+            image: student3,
             quote: "My friends were worried about placements. I already had an offer letter. I joined Qriocity in my 7th semester. By the time placement season started, I had 3 AI projects on GitHub and knew how to crack ML interviews. I got placed at Infosys in their AI unit while my classmates were still preparing for generic IT roles. Best decision I made in college!",
             package: "₹6.5 LPA",
             location: "Trichy",
