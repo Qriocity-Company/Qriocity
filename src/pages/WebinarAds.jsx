@@ -305,10 +305,10 @@ const MainCard = ({ setShowForm }) => {
   return (
     <div className="lg:min-w-[1048px]  lg:h-[700px] md:min-w-[780px]  max-w-sm text-center  md:py-20 py-10 mx-auto flex flex-col p-5 justify-center items-center border-2 border-white rounded-[42px] ">
       <div className="lg:text-[72px] md:text-5xl  text-3xl md:leading-[72px]  ">
-        Quick, Quality Projects <br /> Delivered in 1 Day
+        Quick, Quality Final Year Projects Guidance
       </div>
       <p className="text-[#FBA154] md:text-3xl mt-5 ">
-        Leave the project to us and get your dream job
+        We guide your project. You focus on placements
       </p>
 
       <form onSubmit={onSubmit} className="w-[80%] mt-8 flex flex-col gap-5">

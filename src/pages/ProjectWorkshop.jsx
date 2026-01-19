@@ -13,6 +13,7 @@ const ProjectWorkshop = () => {
     college: "",
     department: "",
     year: "",
+    projectStatus: "",
   });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
@@ -88,6 +89,7 @@ const ProjectWorkshop = () => {
     if (!formData.college.trim()) newErrors.college = "College is required";
     if (!formData.department) newErrors.department = "Department is required";
     if (!formData.year) newErrors.year = "Year is required";
+    if (!formData.projectStatus) newErrors.projectStatus = "Project Status is required";
     return newErrors;
   };
 
@@ -399,6 +401,30 @@ const ProjectWorkshop = () => {
                         placeholder="Enter your college name"
                       />
                       {errors.college && <p className="text-red-500 text-xs mt-1">{errors.college}</p>}
+                    </div>
+
+                    {/* Project Status */}
+                    <div>
+                      <label className="block text-gray-700 font-semibold mb-1 text-sm">
+                        Project Status <span className="text-red-500">*</span>
+                      </label>
+                      <select
+                        name="projectStatus"
+                        value={formData.projectStatus}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-3 rounded-lg border-2 ${errors.projectStatus ? "border-red-500" : "border-gray-200"
+                          } focus:border-[#F15A29] focus:outline-none transition-colors bg-gray-50 text-sm`}
+                      >
+                        <option value="">Select Project Status</option>
+                        <option value="Haven’t Started Yet">Haven’t Started Yet</option>
+                        <option value="Just Finalized Idea / Title">Just Finalized Idea / Title</option>
+                        <option value="Title Still Not Approved">Title Still Not Approved</option>
+                        <option value="0th Review Coming Soon">0th Review Coming Soon</option>
+                        <option value="Completed 0th Review — Need Improvements">Completed 0th Review — Need Improvements</option>
+                        <option value="Completed 1st Review — Need Improvements">Completed 1st Review — Need Improvements</option>
+                        <option value="Implementation Half Done — Stuck">Implementation Half Done — Stuck</option>
+                      </select>
+                      {errors.projectStatus && <p className="text-red-500 text-xs mt-1">{errors.projectStatus}</p>}
                     </div>
 
                     <button
