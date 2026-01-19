@@ -42,7 +42,7 @@ const Testimonials = () => {
             name: "Mohammed Ashiq",
             role: "Data Analyst",
             prev: "Commerce Graduate",
-            image: "https://randomuser.me/api/portraits/men/86.jpg",
+            image: student3,
             quote: "They said commerce students can't do AI. They were wrong. Coming from a B.Com background, I had never written a single line of code. The mentors at Qriocity were so patient. They started from 'what is programming' and took me all the way to building ML models. The group learning helped a lot — knowing others were also struggling made me feel less alone. Now I'm a Data Analyst at a startup, working on AI projects!",
             package: "₹5.5 LPA",
             location: "Chennai",

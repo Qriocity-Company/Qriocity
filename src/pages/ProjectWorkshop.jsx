@@ -263,7 +263,7 @@ const ProjectWorkshop = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                   <div className="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
                     <FaCalendar className="text-[#F15A29] flex-shrink-0" size={20} />
-                    <p className="font-bold text-gray-900 text-sm xl:text-base">January 18th, Sunday</p>
+                    <p className="font-bold text-gray-900 text-sm xl:text-base">January 25th, Sunday</p>
                   </div>
                   <div className="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
                     <FaClock className="text-[#F15A29] flex-shrink-0" size={20} />
