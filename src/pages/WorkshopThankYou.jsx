@@ -18,7 +18,7 @@ const WorkshopThankYou = () => {
                 </p>
 
                 <a
-                    href="https://chat.whatsapp.com/FZoxdKCJzzw0oHSJf0zRSb"
+                    href="https://chat.whatsapp.com/KF29h1hP46e3cqYsL2ZLAJ"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 px-6 rounded-full font-bold text-lg hover:bg-[#20bd5a] transform hover:scale-105 transition-all duration-300 shadow-xl"
