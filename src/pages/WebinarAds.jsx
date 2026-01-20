@@ -1076,7 +1076,13 @@ const WebinarAds = () => {
               Offer ends soon!
             </div>
           </div>
-          <div>
+          <div className="flex gap-4 items-center">
+            <button
+              className="md:text-xl text-xs font-bold bg-white text-black md:px-6 px-4 md:py-2 py-2 rounded-full border border-gray-300 shadow-lg"
+              onClick={() => setShowBrochureForm(true)}
+            >
+              Download Titles
+            </button>
             <button
               className="md:text-2xl text-xs bg-gradient-to-r from-[#FBA154] to-[#F15A29] text-white md:px-8 px-4 md:py-2 py-2 rounded-full transition duration-300"
               onClick={() => {
