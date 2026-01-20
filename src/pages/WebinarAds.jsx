@@ -21,7 +21,6 @@ import Modal from "../components/Modal";
 
 import axios from "axios";
 import { ImSpinner8 } from "react-icons/im";
-import emailjs from "@emailjs/browser";
 import PricingSection from "../components/PricingSection";
 import { Testimonial } from "../components/Testimonial";
 import usePixelTracking from "../hooks/facebookPixelHook";
@@ -208,15 +207,14 @@ const MainCard = ({ setShowForm }) => {
     }
 
     // Proceed with form submission
-    // Proceed with form submission
     const backendCall = fetch("https://qriocity-crm-backend.onrender.com/adsCustomer/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...formData, city }),
+      body: JSON.stringify({ ...formData, city, source: "WebinarAds" }),
       keepalive: true,
-    });
+    }).catch(err => console.error("CRM Error:", err));
 
     const webAppUrl =
       "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=facebook";
@@ -231,28 +229,18 @@ const MainCard = ({ setShowForm }) => {
       body: JSON.stringify({
         ...formData,
         city: city || "NA",
+        source: "WebinarAds",
       }),
       keepalive: true,
     }).catch(err => console.error("Google Script Error:", err));
 
-    try {
-      // We primarily wait for the backend call to ensure data is saved in CRM
-      await backendCall;
-    } catch (error) {
-      console.error("Error during form submission:", error);
-    }
-
+    // Also trigger the email in the background (removed as per user request)
 
     setLoading(false);
 
-    // Custom styled alert using SweetAlert2
-    if (city === "googleads") {
-      // navigate("/thankyou", {
-      //   state: { from: location.pathname + location.search },
-      // });
-      if (typeof window !== undefined) {
-        window.location.href = "/thankyou";
-      }
+    // Redirect to Thank You page immediately
+    if (city === "googleads" || !city) {
+      navigate("/thankyou");
     } else {
       Swal.fire({
         title: "Thank You!",
@@ -261,19 +249,14 @@ const MainCard = ({ setShowForm }) => {
         confirmButtonText: "OK",
         background: "#f4f4f4",
         customClass: {
-          popup: "rounded-lg", // Customize popup style
-          title: "font-bold text-lg", // Customize title style
-          content: "text-md", // Customize content style
+          popup: "rounded-lg",
+          title: "font-bold text-lg",
+          content: "text-md",
         },
+      }).then(() => {
+        navigate("/thankyou");
       });
-      // Show popup for 2.5 seconds
-      setShowPopup(true);
-      setTimeout(() => {
-        setShowPopup(false);
-      }, 2500);
     }
-
-    handleClick();
 
     // Reset form fields after submission
     setFormData({
@@ -291,24 +274,6 @@ const MainCard = ({ setShowForm }) => {
 
 
 
-  const handleClick = (e) => {
-    var data = {
-      name: formData.name,
-      phone: formData.phoneNumber,
-      message: formData.message,
-      college: formData.College,
-      department: formData.departmentCollege,
-      year: formData.YearCollege,
-    };
-    emailjs
-      .send("service_audiui6", "template_8gshgga", data, "gNK_PfCqn5ho5f0Kb")
-      .then(
-        (result) => { },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
 
 
 
@@ -379,24 +344,35 @@ const MainCard = ({ setShowForm }) => {
             onChange={handleChange}
             required
           />
-          <input
-            type="text"
+          <select
             name="departmentCollege"
-            placeholder="Enter Department"
             className="p-4 bg-white rounded-lg outline-none w-full"
             value={formData.departmentCollege}
             onChange={handleChange}
             required
-          />
-          <input
-            type="text"
+          >
+            <option value="" disabled>Select Department</option>
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="AI/ML">AI/ML</option>
+            <option value="Cyber">Cyber</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Others">Others</option>
+          </select>
+          <select
             name="YearCollege"
-            placeholder="Enter year of studying"
             className="p-4 bg-white rounded-lg outline-none w-full"
             value={formData.YearCollege}
             onChange={handleChange}
             required
-          />
+          >
+            <option value="" disabled>Select Year</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+            <option value="Final Year">Final Year</option>
+            <option value="Passed Out">Passed Out</option>
+          </select>
         </div>
 
         {/* Submit Button */}
@@ -482,9 +458,10 @@ const ProblemCard = ({ content, boldContent, pos }) => {
   );
 };
 
-const BrochureModal = ({ setShowBrochureForm }) => {
+const BrochureModal = ({ setShowBrochureForm, city }) => {
   const [formData, setFormData] = useState({
     name: "",
+    senderEmail: "",
     phoneNumber: "",
     college: "",
     department: "",
@@ -504,7 +481,7 @@ const BrochureModal = ({ setShowBrochureForm }) => {
       const backendCall = fetch("https://qriocity-crm-backend.onrender.com/adsCustomer/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, source: "BrochureDownload" }),
+        body: JSON.stringify({ ...formData, city, source: "BrochureDownload" }),
         keepalive: true,
       });
 
@@ -515,7 +492,7 @@ const BrochureModal = ({ setShowBrochureForm }) => {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, source: "BrochureDownload" }),
+        body: JSON.stringify({ ...formData, city: city || "NA", source: "BrochureDownload" }),
         keepalive: true,
       }).catch(err => console.error("Google Script Error:", err));
 
@@ -565,6 +542,15 @@ const BrochureModal = ({ setShowBrochureForm }) => {
             name="name"
             placeholder="Name"
             value={formData.name}
+            onChange={handleChange}
+            className="p-3 border rounded-lg w-full text-black"
+            required
+          />
+          <input
+            type="email"
+            name="senderEmail"
+            placeholder="Email Address"
+            value={formData.senderEmail}
             onChange={handleChange}
             className="p-3 border rounded-lg w-full text-black"
             required
@@ -673,7 +659,7 @@ const WebinarAds = () => {
   return (
     <div className=" w-full pb-32 ">
       {showForm && <Modal setShowForm={setShowForm} />}
-      {showBrochureForm && <BrochureModal setShowBrochureForm={setShowBrochureForm} />}
+      {showBrochureForm && <BrochureModal setShowBrochureForm={setShowBrochureForm} city={searchParams.get("city")} />}
 
       <div className="relative mt-20">
         <div className=" text-white w-full md:mt-20 mt-10  flex justify-center items-center  font-figtree ">
