@@ -208,7 +208,7 @@ const MainCard = ({ setShowForm }) => {
     }
 
     // Proceed with form submission
-    await fetch("https://qriocity-crm-backend.onrender.com/adsCustomer/send", {
+    const backendCall = fetch("https://qriocity-crm-backend.onrender.com/adsCustomer/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -220,7 +220,7 @@ const MainCard = ({ setShowForm }) => {
       "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=facebook";
 
 
-    await fetch(webAppUrl, {
+    const googleScriptCall = fetch(webAppUrl, {
       method: "POST",
       mode: "no-cors", // Google Script requires no-cors
       headers: {
@@ -231,6 +231,12 @@ const MainCard = ({ setShowForm }) => {
         city: city || "NA",
       }),
     });
+
+    try {
+      await Promise.all([backendCall, googleScriptCall]);
+    } catch (error) {
+      console.error("Error during form submission:", error);
+    }
 
 
     setLoading(false);
@@ -491,19 +497,21 @@ const BrochureModal = ({ setShowBrochureForm }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      await fetch("https://crm-backend-o6sb.onrender.com/adsCustomer/send", {
+      const backendCall = fetch("https://qriocity-crm-backend.onrender.com/adsCustomer/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, source: "BrochureDownload" }),
       });
 
       const webAppUrl = "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=facebook";
-      await fetch(webAppUrl, {
+      const googleScriptCall = fetch(webAppUrl, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, source: "BrochureDownload" }),
       });
+
+      await Promise.all([backendCall, googleScriptCall]);
 
       Swal.fire({
         title: "Success!",
