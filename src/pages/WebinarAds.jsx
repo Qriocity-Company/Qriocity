@@ -501,17 +501,21 @@ const BrochureModal = ({ setShowBrochureForm }) => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, source: "BrochureDownload" }),
+        keepalive:true,
       });
 
       const webAppUrl = "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=facebook";
-      const googleScriptCall = fetch(webAppUrl, {
+
+      // Secondary call - don't block
+      fetch(webAppUrl, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, source: "BrochureDownload" }),
-      });
+        keepalive: true,
+      }).catch(err => console.error("Google Script Error:", err));
 
-      await Promise.all([backendCall, googleScriptCall]);
+      await backendCall;
 
       Swal.fire({
         title: "Success!",
