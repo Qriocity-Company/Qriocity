@@ -208,7 +208,7 @@ const MainCard = ({ setShowForm }) => {
     }
 
     // Proceed with form submission
-    await fetch("https://crm-backend-o6sb.onrender.com/adsCustomer/send", {
+    await fetch("https://qriocity-crm-backend.onrender.com/adsCustomer/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
