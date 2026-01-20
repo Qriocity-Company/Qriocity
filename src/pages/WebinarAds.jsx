@@ -208,21 +208,23 @@ const MainCard = ({ setShowForm }) => {
     }
 
     // Proceed with form submission
+    // Proceed with form submission
     const backendCall = fetch("https://qriocity-crm-backend.onrender.com/adsCustomer/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ ...formData, city }),
+      keepalive: true,
     });
 
     const webAppUrl =
       "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=facebook";
 
-
-    const googleScriptCall = fetch(webAppUrl, {
+    // Start Google Script call but don't wait for it if it's slow
+    fetch(webAppUrl, {
       method: "POST",
-      mode: "no-cors", // Google Script requires no-cors
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
@@ -230,10 +232,12 @@ const MainCard = ({ setShowForm }) => {
         ...formData,
         city: city || "NA",
       }),
-    });
+      keepalive: true,
+    }).catch(err => console.error("Google Script Error:", err));
 
     try {
-      await Promise.all([backendCall, googleScriptCall]);
+      // We primarily wait for the backend call to ensure data is saved in CRM
+      await backendCall;
     } catch (error) {
       console.error("Error during form submission:", error);
     }
@@ -501,7 +505,7 @@ const BrochureModal = ({ setShowBrochureForm }) => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, source: "BrochureDownload" }),
-        keepalive:true,
+        keepalive: true,
       });
 
       const webAppUrl = "https://script.google.com/macros/s/AKfycbwfekjniHA2SRTxmWJNbkZLyegxcfC7kc_T5jVo_eu_UGRLdsE6N5f4Cr9iwkmv2MrNzA/exec?source=facebook";
