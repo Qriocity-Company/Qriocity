@@ -478,6 +478,7 @@ const BrochureModal = ({ setShowBrochureForm }) => {
     phoneNumber: "",
     college: "",
     department: "",
+    year: "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -572,15 +573,35 @@ const BrochureModal = ({ setShowBrochureForm }) => {
             className="p-3 border rounded-lg w-full text-black"
             required
           />
-          <input
-            type="text"
+          <select
+            name="year"
+            value={formData.year}
+            onChange={handleChange}
+            className="p-3 border rounded-lg w-full text-black bg-white"
+            required
+          >
+            <option value="" disabled>Select Year of Studying</option>
+            <option value="final year">Final Year</option>
+            <option value="3rd year">3rd Year</option>
+            <option value="2nd year">2nd Year</option>
+            <option value="1st year">1st Year</option>
+            <option value="passed out">Passed Out</option>
+          </select>
+          <select
             name="department"
-            placeholder="Department"
             value={formData.department}
             onChange={handleChange}
-            className="p-3 border rounded-lg w-full text-black"
+            className="p-3 border rounded-lg w-full text-black bg-white"
             required
-          />
+          >
+            <option value="" disabled>Select Department</option>
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="AI/ML">AI/ML</option>
+            <option value="Cyber">Cyber</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Others">Others</option>
+          </select>
           <button
             type="submit"
             className="bg-[#F15A29] text-white font-bold py-3 rounded-full mt-2"
