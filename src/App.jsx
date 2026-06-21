@@ -87,8 +87,7 @@ function App() {
 
           {/* Other Pages */}
           <Route path="/webinar" element={<RoadMap />} />
-          <Route path="/courses" element={<CoursesPage />} />
-          <Route path="/ai-career" element={<AICareerStudents />} />
+          <Route path="/courses" element={<AICareerStudents />} />
           <Route path="/DsaBootcamp" element={<Dsa />} />
           <Route path="/FullstackBootcamp" element={<Fullstack />} />
           <Route path="/Bootcamp" element={<BootCamp />} />
